@@ -2,14 +2,14 @@
 
 > O padrão da marca A-Players para qualquer peça: site, landing page, apresentação, material, produto ou campanha. Extraído do site A-Players (versão Claude, outubro de 2026). Versão 1.1, 01/10/2026.
 
-Use este arquivo antes de criar qualquer coisa em nome da A-Players. Ele resume tokens, classes, padrões e regras de escrita. A referência visual completa está em index.html, publicada em /design-system/ junto com o site (/) e o A-Hub (/portal/).
+Use este arquivo antes de criar qualquer coisa em nome da A-Players. Ele resume tokens, classes, padrões e regras de escrita. A referência visual completa está em index.html, publicada em /design-system/ junto com o site (/) e o Portal do A-Player (/portal/).
 
 ## Como montar uma peça
 
 1. Carregue as fontes Manrope (títulos) e DM Sans (texto) pelo Google Fonts e a folha css/aplayers.css.
 2. Use as classes ap-*. Não reescreva componentes; a folha da peça cuida só da composição (grade, posição, ritmo).
 3. O tom de cada componente vem de --ap-tone (padrão: --ap-blue). Troque no elemento: style="--ap-tone: var(--ap-green)".
-4. Tema escuro: data-theme="dark" no html, ou deixe seguir o sistema. Na publicação, site, Design System e A-Hub leem e gravam a mesma escolha (chave ap-tema; entre visitas só com cookies de preferências permitidos).
+4. Tema escuro: data-theme="dark" no html, ou deixe seguir o sistema. Na publicação, site, Design System e Portal do A-Player leem e gravam a mesma escolha (chave ap-tema; entre visitas só com cookies de preferências permitidos).
 5. Gráfico vivo: js/grafo.js desenha cinco polos no elemento [data-graph]; para polos próprios, defina window.APDS_GRAPH_GROUPS antes de carregar o arquivo.
 6. Antes de entregar: python tools/check-peca.py <pasta> (na raiz do workspace) e render em 390x844, 1366x768 e 1920x1080, claro e escuro.
 

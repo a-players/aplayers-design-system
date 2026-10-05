@@ -1,7 +1,7 @@
 # Fonte única dos tokens do A-Players Design System.
 # Gera tokens/tokens.css, tokens/tokens.json e o bloco de tokens dentro de css/aplayers.css.
 # Os valores vêm do site A-Players (site-aplayers/site-alternativo-claude/css/site.css, 01/10/2026),
-# do A-Hub (portal/css/hub.css, lado B, 02/10/2026) e dos arquivos oficiais do logo (A-Players/logos).
+# do Portal do A-Player (portal/css/hub.css, lado B, 02/10/2026) e dos arquivos oficiais do logo (A-Players/logos).
 # Uso: python tools/build_tokens.py  (a partir da pasta do Design System)
 import io, json, os, re
 
@@ -44,7 +44,7 @@ TOKENS = {
         ('spectrum-flow', 'linear-gradient(90deg, #5fa6e3 0%, #6eb751 34%, #eb594d 67%, #f1e84e 100%)', None, 'Espectro fluido: progresso, trilhos e ligações.'),
     ],
     'lado-b': [
-        ('day', '#ffffff', '#0f1a2e', 'O dia da marca: fundo do lado B (A-Hub e peças internas), com a mesma retícula de 56px.'),
+        ('day', '#ffffff', '#0f1a2e', 'O dia da marca: fundo do lado B (Portal do A-Player e peças internas), com a mesma retícula de 56px.'),
         ('day-dots', 'rgba(23, 35, 58, .075)', 'rgba(183, 194, 211, .075)', 'Pontos da retícula sobre o dia.'),
         ('soft-blue', '#e4eef9', '#1a3455', 'Azul suave: bloco no tom azul do lado B.'),
         ('soft-blue-2', '#cfe1f4', '#1e3f66', 'Azul suave mais forte: fundo de imagem e segundo plano do bloco azul.'),

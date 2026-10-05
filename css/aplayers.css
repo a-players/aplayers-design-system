@@ -4,7 +4,7 @@
    as classes ap-*: tokens, tipografia, superfícies e componentes saem
    iguais ao site. A folha da peça cuida só da composição.
 
-   Origem: site A-Players (versão Claude, 01/10/2026), entrada e A-Hub
+   Origem: site A-Players (versão Claude, 01/10/2026), entrada e Portal do A-Player
    (02/10/2026). Versão 2.0 (04/10/2026). Cada componente diz de qual peça
    veio, para conferência. Os componentes do lado B (o dia da marca, tons
    suaves) estão no bloco LADO B, antes do movimento.
@@ -592,12 +592,12 @@ a.ap-offer:hover, a.ap-offer:focus-visible { transform: translate(-2px, -2px); b
    LADO B (versão 2.0, 04/10/2026)
    O lado A é o que o mercado vê: a noite do site e da entrada. O lado B
    somos nós: o dia da marca, os cinco tons em versão suave, as fotos do
-   time e os stickers. Os componentes abaixo nasceram no A-Hub
+   time e os stickers. Os componentes abaixo nasceram no Portal do A-Player
    (portal/css/hub.css) e na entrada (portal/css/entrar.css) e servem aos
    dois lados: sobre a folha, sobre o dia ou dentro de um painel suave.
    ===================================================================== */
 
-/* tom completo: troca o tom, o tom suave e o texto sobre o tom de uma vez. A-Hub: [data-tom] */
+/* tom completo: troca o tom, o tom suave e o texto sobre o tom de uma vez. Portal do A-Player: [data-tom] */
 .ap-tone--blue { --ap-tone: var(--ap-blue); --ap-soft: var(--ap-soft-blue); --ap-soft-2: var(--ap-soft-blue-2); --ap-on-tone: var(--ap-on-blue); }
 .ap-tone--green { --ap-tone: var(--ap-green); --ap-soft: var(--ap-soft-green); --ap-soft-2: var(--ap-soft-green-2); --ap-on-tone: var(--ap-on-green); }
 .ap-tone--red { --ap-tone: var(--ap-red); --ap-soft: var(--ap-soft-red); --ap-soft-2: var(--ap-soft-red-2); --ap-on-tone: var(--ap-on-red); }
@@ -605,8 +605,8 @@ a.ap-offer:hover, a.ap-offer:focus-visible { transform: translate(-2px, -2px); b
 .ap-tone--violet { --ap-tone: var(--ap-violet); --ap-soft: var(--ap-soft-violet); --ap-soft-2: var(--ap-soft-violet-2); --ap-on-tone: var(--ap-on-violet); }
 
 /* ----------------------------------------------------------- superfícies do lado B
-   O dia: fundo claro com a mesma retícula de 56px da noite. A-Hub: body.ahub
-   Painel suave: bloco no tom suave com canto de folha. A-Hub: .vista__cabeca, .mural, .trilha, .cartao */
+   O dia: fundo claro com a mesma retícula de 56px da noite. Portal do A-Player: body.ahub
+   Painel suave: bloco no tom suave com canto de folha. Portal do A-Player: .vista__cabeca, .mural, .trilha, .cartao */
 .ap-day {
   background: radial-gradient(circle at 1px 1px, var(--ap-day-dots) 0 1px, transparent 1.3px) 0 0 / var(--ap-grid) var(--ap-grid), var(--ap-day);
   color: var(--ap-ink);
@@ -618,8 +618,8 @@ a.ap-offer:hover, a.ap-offer:focus-visible { transform: translate(-2px, -2px); b
 .ap-panel > .ap-sticker { right: clamp(18px, 4vw, 72px); bottom: -30px; width: clamp(104px, 11vw, 168px); height: auto; transform: rotate(7deg); }
 
 /* ----------------------------------------------------------- selo da pessoa
-   Iniciais no tom da pessoa, com a placa deslocada. A-Hub: .selo; entrada: .cracha__avatar;
-   site: o selo AP do botão A-Hub no rodapé (.rodape__portal b) */
+   Iniciais no tom da pessoa, com a placa deslocada. Portal do A-Player: .selo; entrada: .cracha__avatar;
+   site: o selo AP do botão Portal do A-Player no rodapé (.rodape__portal b) */
 .ap-avatar {
   display: inline-grid; place-items: center; flex: none; width: 40px; height: 40px;
   border-radius: var(--ap-r-pill); background: var(--ap-tone); color: var(--ap-on-tone);
@@ -634,7 +634,7 @@ a.ap-offer:hover, a.ap-offer:focus-visible { transform: translate(-2px, -2px); b
 
 /* ----------------------------------------------------------- crachá
    O cartão de quem é da casa, pendurado no cordão do espectro. Entrada: .cordao, .cracha;
-   Meu A-Hub: .cracha__fio, .cracha__corpo */
+   Meu Portal: .cracha__fio, .cracha__corpo */
 .ap-lanyard { display: block; width: 14px; height: 96px; margin: 0 auto -18px; position: relative; z-index: 1; border-radius: 3px 3px 0 0; background: linear-gradient(90deg, #3580c3 0 25%, #6eb751 25% 50%, #eb594d 50% 75%, #f1e84e 75%); }
 .ap-idcard {
   position: relative; display: grid; justify-items: center; gap: 8px; padding: 36px 22px 26px; text-align: center;
@@ -654,7 +654,7 @@ a.ap-offer:hover, a.ap-offer:focus-visible { transform: translate(-2px, -2px); b
 
 /* ----------------------------------------------------------- foto da marca
    Gente de verdade numa moldura branca, levemente girada, com a placa do tom.
-   A-Hub: .foto-p (mural do LinkedIn), .rodape__collage, .foto__caixa */
+   Portal do A-Player: .foto-p (mural do LinkedIn), .rodape__collage, .foto__caixa */
 .ap-snap {
   --r: -3deg;
   position: relative; display: block; width: var(--w, 100%); margin: 0; padding: 9px 9px 0;
@@ -669,11 +669,11 @@ a.ap-offer:hover, a.ap-offer:focus-visible { transform: translate(-2px, -2px); b
 .ap-snap--wide { --ar: 16 / 10; }
 
 /* ----------------------------------------------------------- leitura no lado B
-   O bloco tipográfico do ap-post no tom suave. A-Hub: .post--suave */
+   O bloco tipográfico do ap-post no tom suave. Portal do A-Player: .post--suave */
 .ap-post--soft .ap-post__type { background: var(--ap-soft); color: var(--ap-ink); font-size: clamp(22px, 1.8vw, 26px); }
 
 /* ----------------------------------------------------------- evento
-   Data grande no tom suave, nome, onde e quando, ações. A-Hub: .evento, .encontro, .quando */
+   Data grande no tom suave, nome, onde e quando, ações. Portal do A-Player: .evento, .encontro, .quando */
 .ap-event {
   position: relative; display: grid; grid-template-columns: 132px minmax(0, 1fr) auto; align-items: stretch; min-height: 120px;
   background: var(--ap-card); color: var(--ap-ink); border: 1px solid var(--ap-line); border-radius: var(--ap-r-card);
@@ -699,7 +699,7 @@ a.ap-offer:hover, a.ap-offer:focus-visible { transform: translate(-2px, -2px); b
 .ap-when--now::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--ap-tone); box-shadow: 0 0 0 0 color-mix(in srgb, var(--ap-tone) 60%, transparent); animation: ap-pulse 2s var(--ap-ease) infinite; }
 
 /* ----------------------------------------------------------- termo do vocabulário
-   A palavra, o que ela quer dizer e como usar (e o que evitar). A-Hub: .termo, .uso */
+   A palavra, o que ela quer dizer e como usar (e o que evitar). Portal do A-Player: .termo, .uso */
 .ap-term {
   position: relative; display: flex; flex-direction: column; gap: 10px; padding: 22px 22px 18px;
   background: var(--ap-card); color: var(--ap-ink); border: 1px solid var(--ap-line); border-radius: var(--ap-r-card);
@@ -714,7 +714,7 @@ a.ap-offer:hover, a.ap-offer:focus-visible { transform: translate(-2px, -2px); b
 .ap-use--avoid span { text-decoration: line-through; text-decoration-color: var(--ap-red); text-decoration-thickness: 2px; color: var(--ap-ink-2); }
 
 /* ----------------------------------------------------------- material oficial
-   Capa do material, nome, para que serve e onde está. A-Hub: .material */
+   Capa do material, nome, para que serve e onde está. Portal do A-Player: .material */
 .ap-material {
   position: relative; display: flex; flex-direction: column; min-width: 0; overflow: hidden; text-decoration: none;
   background: var(--ap-card); color: var(--ap-ink); border: 1px solid var(--ap-line); border-radius: var(--ap-r-card);
@@ -728,7 +728,7 @@ a.ap-material:hover, a.ap-material:focus-visible { transform: translate(-3px, -3
 .ap-material__text em { margin-top: 4px; font: 600 12.5px/1.2 var(--ap-text); font-style: normal; color: var(--ap-ink-2); }
 
 /* ----------------------------------------------------------- aplicação
-   O atalho de uma aplicação: ícone oficial, nome e a tecla. A-Hub: .atalho
+   O atalho de uma aplicação: ícone oficial, nome e a tecla. Portal do A-Player: .atalho
    Ícone da Atlassian já vem num azulejo: use .ap-app--bare (a regra oficial pede
    para não pôr o ícone dentro de outro contêiner). */
 .ap-apps { display: flex; flex-wrap: wrap; gap: 14px 8px; margin: 0; padding: 0; list-style: none; }
@@ -749,8 +749,8 @@ a.ap-app:hover { color: var(--ap-ink); }
 .ap-app--add .ap-app__tile { border-style: dashed; border-color: var(--ap-line-strong); background: transparent; box-shadow: none; font: 800 26px/1 var(--ap-title); color: var(--ap-ink-2); }
 
 /* ----------------------------------------------------------- salvar e conectar
-   Salvar: o quadrado de tom que enche e gira quando o item fica guardado. A-Hub: .salvar
-   Conecta com: os itens que compartilham a mesma ligação. A-Hub: .liga */
+   Salvar: o quadrado de tom que enche e gira quando o item fica guardado. Portal do A-Player: .salvar
+   Conecta com: os itens que compartilham a mesma ligação. Portal do A-Player: .liga */
 .ap-save {
   display: inline-flex; align-items: center; gap: 7px; padding: 7px 11px 7px 9px; cursor: pointer;
   border: 1px solid var(--ap-line); border-radius: var(--ap-r-action); background: var(--ap-card);
@@ -769,7 +769,7 @@ a.ap-app:hover { color: var(--ap-ink); }
 .ap-related a:hover { background: color-mix(in srgb, var(--ap-tone) 24%, var(--ap-card)); }
 
 /* ----------------------------------------------------------- progresso
-   Segmentos de uma trilha e os passos com o próximo em destaque. A-Hub: .progresso, .mini-passos */
+   Segmentos de uma trilha e os passos com o próximo em destaque. Portal do A-Player: .progresso, .mini-passos */
 .ap-progress { display: grid; grid-template-columns: repeat(var(--n, 5), 1fr); gap: 4px; }
 .ap-progress i { height: 6px; border-radius: 3px 1px 3px 1px; background: color-mix(in srgb, var(--ap-tone) 22%, var(--ap-card)); }
 .ap-progress i.is-done { background: var(--ap-tone); }
@@ -781,7 +781,7 @@ a.ap-app:hover { color: var(--ap-ink); }
 .ap-ministeps li.is-next .ap-badge { background: var(--ap-tone); color: var(--ap-night); box-shadow: 3px 3px 0 0 var(--ap-ink); }
 
 /* ----------------------------------------------------------- busca
-   O campo grande que abre a busca, com o cursor no espectro. A-Hub: .buscao, kbd */
+   O campo grande que abre a busca, com o cursor no espectro. Portal do A-Player: .buscao, kbd */
 .ap-search {
   --ap-tone: var(--ap-yellow);
   display: flex; align-items: center; gap: 14px; width: 100%; max-width: 540px; padding: 15px 14px 15px 18px; cursor: text; text-align: left;
@@ -797,8 +797,8 @@ a.ap-app:hover { color: var(--ap-ink); }
 .ap-kbd { display: inline-block; padding: 4px 6px; border-radius: 6px 2px 6px 2px; border: 1px solid var(--ap-line-strong); background: var(--ap-card-2); color: var(--ap-ink-2); font: 600 12px/1 var(--ap-text); white-space: nowrap; }
 
 /* ----------------------------------------------------------- ação discreta e diálogo
-   Ação discreta: a segunda ação de um cartão (calendário, abrir, copiar). A-Hub: .botao-s
-   Diálogo: a camada que pede uma decisão, com a placa do tom e o Fechar com Esc. A-Hub: .camada__caixa, .fechar */
+   Ação discreta: a segunda ação de um cartão (calendário, abrir, copiar). Portal do A-Player: .botao-s
+   Diálogo: a camada que pede uma decisão, com a placa do tom e o Fechar com Esc. Portal do A-Player: .camada__caixa, .fechar */
 .ap-btn-quiet {
   display: inline-flex; align-items: center; gap: 7px; padding: 7px 11px; cursor: pointer; text-decoration: none;
   border: 1px solid var(--ap-line); border-radius: var(--ap-r-action); background: var(--ap-card);
@@ -812,7 +812,7 @@ a.ap-app:hover { color: var(--ap-ink); }
 .ap-dialog__actions { display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-end; gap: 10px; margin-top: 4px; }
 .ap-close { display: inline-flex; align-items: center; gap: 8px; padding: 6px 6px 6px 10px; cursor: pointer; border: 1px solid var(--ap-line); border-radius: var(--ap-r-action); background: var(--ap-card); font: 700 13px/1 var(--ap-text); color: var(--ap-ink-2); }
 .ap-close:hover { color: var(--ap-ink); border-color: var(--ap-ink-2); }
-/* confirmação que deixa desfazer. A-Hub: .aviso__desfazer */
+/* confirmação que deixa desfazer. Portal do A-Player: .aviso__desfazer */
 .ap-toast__action { margin-left: 4px; padding: 6px 10px; cursor: pointer; border: 1px solid rgba(255, 255, 255, .3); border-radius: var(--ap-r-badge); background: none; color: #fff; font: 700 13px/1 var(--ap-text); }
 .ap-toast__action:hover { border-color: var(--ap-yellow); }
 
