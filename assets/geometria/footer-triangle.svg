@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 260">
+  <defs>
+    <linearGradient id="footerTriangle" x1="56" y1="18" x2="238" y2="238" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#3580c3" stop-opacity=".22"/>
+      <stop offset="1" stop-color="#3580c3" stop-opacity=".05"/>
+    </linearGradient>
+  </defs>
+  <path d="M150 0 300 260H0Z" fill="url(#footerTriangle)" opacity=".72"/>
+</svg>

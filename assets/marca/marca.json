@@ -1,0 +1,170 @@
+{
+ "versao": "2.0",
+ "atualizado": "2026-10-04",
+ "cores-do-logo": {
+  "azul": "#3580C3",
+  "verde": "#6EB751",
+  "vermelho": "#EB594D",
+  "amarelo": "#F1E84E",
+  "nome-cinza": "#706B69",
+  "preto": "#1D1D1B",
+  "branco": "#FFFFFF"
+ },
+ "simbolo": "Oito triângulos, dois de cada cor do espectro, formam a letra A; o vazio no centro da base é a abertura do A.",
+ "protecao": "x = altura de um triângulo do símbolo (um terço da altura do símbolo), livre nos quatro lados.",
+ "tamanho-minimo": {
+  "tela": {
+   "horizontal": "112px de largura",
+   "vertical": "64px de largura",
+   "simbolo": "16px"
+  },
+  "impresso": {
+   "horizontal": "30 mm",
+   "vertical": "18 mm",
+   "simbolo": "6 mm"
+  }
+ },
+ "pdf": {
+  "horizontal": "assets/marca/pdf/aplayers-horizontal.pdf",
+  "vertical": "assets/marca/pdf/aplayers-vertical.pdf",
+  "simbolo": "assets/marca/pdf/aplayers-simbolo.pdf"
+ },
+ "pacote": "assets/marca/aplayers-marca.zip",
+ "versoes": [
+  {
+   "id": "aplayers-horizontal-cor-fundo-claro",
+   "layout": "Horizontal",
+   "versao": "Cor, nome em cinza",
+   "fundos": "Branco, folha e tons suaves",
+   "svg": "assets/marca/aplayers-horizontal-claro.svg",
+   "png": "assets/marca/png/aplayers-horizontal-cor-fundo-claro.png",
+   "origem": "A-Players/logos/A-Players (SVG e PNG): __logo_horizontal-01_a-players"
+  },
+  {
+   "id": "aplayers-horizontal-cor-fundo-escuro",
+   "layout": "Horizontal",
+   "versao": "Cor, nome em branco",
+   "fundos": "Noite e fotos escuras",
+   "svg": "assets/marca/aplayers-horizontal-escuro.svg",
+   "png": "assets/marca/png/aplayers-horizontal-cor-fundo-escuro.png",
+   "origem": "A-Players/logos/A-Players (SVG e PNG): __logo_horizontal-02_a-players"
+  },
+  {
+   "id": "aplayers-horizontal-branco",
+   "layout": "Horizontal",
+   "versao": "Uma cor, branco",
+   "fundos": "Azul, vermelho, noite e fotos com área escura",
+   "svg": "assets/marca/aplayers-horizontal-branco.svg",
+   "png": "assets/marca/png/aplayers-horizontal-branco.png",
+   "origem": "A-Players/logos/A-Players (SVG e PNG): __logo_horizontal-03_a-players"
+  },
+  {
+   "id": "aplayers-horizontal-preto",
+   "layout": "Horizontal",
+   "versao": "Uma cor, preto",
+   "fundos": "Verde, amarelo, violeta, vermelho e impressão em uma cor",
+   "svg": "assets/marca/aplayers-horizontal-preto.svg",
+   "png": "assets/marca/png/aplayers-horizontal-preto.png",
+   "origem": "A-Players/logos/A-Players (SVG e PNG): __logo_horizontal-04_a-players"
+  },
+  {
+   "id": "aplayers-horizontal-azul",
+   "layout": "Horizontal",
+   "versao": "Uma cor, azul",
+   "fundos": "Branco, folha, tons suaves e noite",
+   "svg": "assets/marca/aplayers-horizontal-azul.svg",
+   "png": "assets/marca/png/aplayers-horizontal-azul.png",
+   "origem": "A-Players/logos/A-Players (SVG e PNG): __logo_horizontal-azul_a-players"
+  },
+  {
+   "id": "aplayers-horizontal-verde",
+   "layout": "Horizontal",
+   "versao": "Uma cor, verde",
+   "fundos": "Noite",
+   "svg": "assets/marca/aplayers-horizontal-verde.svg",
+   "png": "assets/marca/png/aplayers-horizontal-verde.png",
+   "origem": "A-Players/logos/A-Players (SVG e PNG): __logo_horizontal-verde_a-players"
+  },
+  {
+   "id": "aplayers-horizontal-vermelho",
+   "layout": "Horizontal",
+   "versao": "Uma cor, vermelho",
+   "fundos": "Noite, branco e folha",
+   "svg": "assets/marca/aplayers-horizontal-vermelho.svg",
+   "png": "assets/marca/png/aplayers-horizontal-vermelho.png",
+   "origem": "A-Players/logos/A-Players (SVG e PNG): __logo_horizontal-vermelho_a-players"
+  },
+  {
+   "id": "aplayers-horizontal-amarelo",
+   "layout": "Horizontal",
+   "versao": "Uma cor, amarelo",
+   "fundos": "Noite",
+   "svg": "assets/marca/aplayers-horizontal-amarelo.svg",
+   "png": "assets/marca/png/aplayers-horizontal-amarelo.png",
+   "origem": "A-Players/logos/A-Players (SVG e PNG): __logo_horizontal-amarelo_a-players"
+  },
+  {
+   "id": "aplayers-vertical-cor-fundo-claro",
+   "layout": "Vertical",
+   "versao": "Cor, nome em cinza",
+   "fundos": "Branco, folha e tons suaves",
+   "svg": "assets/marca/aplayers-vertical-01.svg",
+   "png": "assets/marca/png/aplayers-vertical-cor-fundo-claro.png",
+   "origem": "A-Players/logos/A-Players (SVG e PNG): logo_vertical-01_a-players"
+  },
+  {
+   "id": "aplayers-vertical-cor-fundo-escuro",
+   "layout": "Vertical",
+   "versao": "Cor, nome em branco",
+   "fundos": "Noite e fotos escuras",
+   "svg": "assets/marca/aplayers-vertical-02.svg",
+   "png": "assets/marca/png/aplayers-vertical-cor-fundo-escuro.png",
+   "origem": "A-Players/logos/A-Players (SVG e PNG): logo_vertical-02_a-players"
+  },
+  {
+   "id": "aplayers-vertical-branco",
+   "layout": "Vertical",
+   "versao": "Uma cor, branco",
+   "fundos": "Azul, vermelho, noite e fotos com área escura",
+   "svg": "assets/marca/aplayers-vertical-03.svg",
+   "png": "assets/marca/png/aplayers-vertical-branco.png",
+   "origem": "A-Players/logos/A-Players (SVG e PNG): logo_vertical-03_a-players"
+  },
+  {
+   "id": "aplayers-vertical-preto",
+   "layout": "Vertical",
+   "versao": "Uma cor, preto",
+   "fundos": "Verde, amarelo, violeta e impressão em uma cor",
+   "svg": "assets/marca/aplayers-vertical-04.svg",
+   "png": "assets/marca/png/aplayers-vertical-preto.png",
+   "origem": "A-Players/logos/A-Players (SVG e PNG): logo_vertical-04_a-players"
+  },
+  {
+   "id": "aplayers-simbolo-cor",
+   "layout": "Símbolo",
+   "versao": "Cor",
+   "fundos": "Noite, branco, folha e tons suaves",
+   "svg": "assets/marca/aplayers-simbolo.svg",
+   "png": "assets/marca/png/aplayers-simbolo-cor.png",
+   "origem": "A-Players/logos/A-Players (SVG e PNG): logo_símbolo-01_a-players"
+  },
+  {
+   "id": "aplayers-simbolo-branco",
+   "layout": "Símbolo",
+   "versao": "Uma cor, branco",
+   "fundos": "Azul, vermelho, noite e fotos com área escura",
+   "svg": "assets/marca/aplayers-simbolo-branco.svg",
+   "png": "assets/marca/png/aplayers-simbolo-branco.png",
+   "origem": "A-Players/logos/A-Players (SVG e PNG): logo_símbolo-02_a-players"
+  },
+  {
+   "id": "aplayers-simbolo-preto",
+   "layout": "Símbolo",
+   "versao": "Uma cor, preto",
+   "fundos": "Verde, amarelo, violeta e impressão em uma cor",
+   "svg": "assets/marca/aplayers-simbolo-preto.svg",
+   "png": "assets/marca/png/aplayers-simbolo-preto.png",
+   "origem": "A-Players/logos/A-Players (SVG e PNG): logo_símbolo-03_a-players"
+  }
+ ]
+}

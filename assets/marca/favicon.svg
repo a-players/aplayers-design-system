@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 108">
+  <!-- Row 1: Green apex -->
+  <polygon points="60,0 40,36 80,36" fill="#52B34B" stroke="#fff" stroke-width="2.5" stroke-linejoin="round"/>
+  <!-- Row 2: Blue left up -->
+  <polygon points="40,36 20,72 60,72" fill="#4A7EC5" stroke="#fff" stroke-width="2.5" stroke-linejoin="round"/>
+  <!-- Row 2: Red center inverted -->
+  <polygon points="40,36 80,36 60,72" fill="#DC4E47" stroke="#fff" stroke-width="2.5" stroke-linejoin="round"/>
+  <!-- Row 2: Yellow right up -->
+  <polygon points="80,36 60,72 100,72" fill="#F2D44A" stroke="#fff" stroke-width="2.5" stroke-linejoin="round"/>
+  <!-- Row 3: Red far-left up -->
+  <polygon points="20,72 0,108 40,108" fill="#DC4E47" stroke="#fff" stroke-width="2.5" stroke-linejoin="round"/>
+  <!-- Row 3: Yellow left inverted -->
+  <polygon points="20,72 60,72 40,108" fill="#F2D44A" stroke="#fff" stroke-width="2.5" stroke-linejoin="round"/>
+  <!-- Row 3: center up = EMPTY (A hole) -->
+  <!-- Row 3: Green right inverted -->
+  <polygon points="60,72 100,72 80,108" fill="#52B34B" stroke="#fff" stroke-width="2.5" stroke-linejoin="round"/>
+  <!-- Row 3: Blue far-right up -->
+  <polygon points="100,72 80,108 120,108" fill="#4A7EC5" stroke="#fff" stroke-width="2.5" stroke-linejoin="round"/>
+</svg>
