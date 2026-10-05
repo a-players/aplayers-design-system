@@ -1,7 +1,7 @@
-# Biblioteca das frentes: gera a rota #biblioteca do index.html a partir de assets/biblioteca/biblioteca.json.
+# Biblioteca das plataformas de IA: gera a rota #biblioteca do index.html a partir de assets/biblioteca/biblioteca.json.
 # Também grava assets/biblioteca/biblioteca.js (o mesmo JSON embutido, para os detalhes abrirem até fora do servidor).
 # Uso: python tools/build_biblioteca.py  (a partir da pasta do Design System)
-# Para incluir ou trocar um logo: ponha o arquivo oficial em assets/biblioteca/<frente>/<aplicação>/,
+# Para incluir ou trocar um logo: ponha o arquivo oficial em assets/biblioteca/<plataforma>/<aplicação>/,
 # registre no biblioteca.json (com fonte e data) e rode este script.
 import io, json, os, re, html
 
@@ -11,7 +11,7 @@ D = json.load(io.open(J, encoding='utf-8'))
 E = html.escape
 
 FRENTE = {'atlassian': ('Atlassian', 'var(--ap-blue)'), 'cisp1': ('CISP1', 'var(--ap-violet)'), 'monday': ('monday.com', 'var(--ap-red)')}
-ORDEM = ['atlassian', 'cisp1', 'monday']  # ordem das frentes: Atlassian, CISP1, monday.com
+ORDEM = ['atlassian', 'cisp1', 'monday']  # ordem das plataformas de IA: Atlassian, CISP1, monday.com
 TIPO = {'marca': 'Marca', 'aplicacao': 'Aplicação', 'collection': 'Collection', 'ia': 'IA'}
 NOME_ARQ = {'icone': 'Ícone', 'simbolo': 'Símbolo', 'logo-fundo-claro': 'Logo para fundo claro', 'logo-fundo-escuro': 'Logo para fundo escuro',
             'atribuicao-fundo-claro': 'Atribuição para fundo claro', 'atribuicao-fundo-escuro': 'Atribuição para fundo escuro',
@@ -78,7 +78,7 @@ def nomes():
         elif i['id'] == 'cisp1':
             nota = 'No feminino: a CISP1'
         linhas.append(f'<tr><td><strong>{E(i["nome"])}</strong></td><td class="muted">{nome}</td><td class="muted">{E(i.get("rotulo") or i["grupo"])}</td><td class="muted">{E(nota)}</td></tr>')
-    return '<div class="tbl-wrap"><table class="tbl"><thead><tr><th>Nome oficial</th><th>Frente</th><th>Grupo</th><th>No site e em espaço curto</th></tr></thead><tbody>' + ''.join(linhas) + '</tbody></table></div>'
+    return '<div class="tbl-wrap"><table class="tbl"><thead><tr><th>Nome oficial</th><th>Plataforma</th><th>Grupo</th><th>No site e em espaço curto</th></tr></thead><tbody>' + ''.join(linhas) + '</tbody></table></div>'
 
 
 def colecoes():
@@ -117,7 +117,7 @@ ART = f'''<!-- @biblioteca:start (gerado por tools/build_biblioteca.py a partir 
   <section class="hero hero--split hero--lib ap-wrap" aria-labelledby="h-lib">
     <div class="hero__inner">
       <p class="ap-pill"><svg class="ap-tri" aria-hidden="true"><use href="#tris"/></svg>Biblioteca</p>
-      <h1 class="ap-h1" id="h-lib"><span class="ap-ln2">As três frentes,</span> <span class="ap-ln2">nos arquivos oficiais.</span></h1>
+      <h1 class="ap-h1" id="h-lib"><span class="ap-ln2">As três plataformas de IA,</span> <span class="ap-ln2">nos arquivos oficiais.</span></h1>
       <p class="ap-lead">{n_itens} marcas, Collections, aplicações e IAs da Atlassian, da CISP1 e da monday.com, com {n_arq} arquivos tirados das páginas oficiais dos fabricantes, sem edição. Busque, escolha o fundo e baixe o arquivo certo.</p>
       <nav class="hero__index" aria-label="Biblioteca">
         <a href="#biblioteca/todas" style="--ap-tone:var(--ap-yellow)">Todas</a><a href="#biblioteca/atlassian" style="--ap-tone:var(--ap-blue)">Regras da Atlassian</a><a href="#biblioteca/cisp1" style="--ap-tone:var(--ap-violet)">CISP1</a><a href="#biblioteca/monday" style="--ap-tone:var(--ap-red)">Regras da monday.com</a><a href="#biblioteca/nomes" style="--ap-tone:var(--ap-green)">Nomes oficiais</a>
@@ -150,7 +150,7 @@ ART = f'''<!-- @biblioteca:start (gerado por tools/build_biblioteca.py a partir 
           </header>
           <div class="lib-bar" data-lib-bar>
             <label class="ap-field lib-bar__busca" for="lib-q"><span>Buscar</span><input id="lib-q" type="search" placeholder="Jira, Rovo, sidekick, Collection" autocomplete="off" data-lib-q></label>
-            <div class="lib-bar__grupo"><p class="ap-label" id="lib-f">Frente</p><div class="ap-filters" role="group" aria-labelledby="lib-f" data-lib-frente>
+            <div class="lib-bar__grupo"><p class="ap-label" id="lib-f">Plataforma</p><div class="ap-filters" role="group" aria-labelledby="lib-f" data-lib-frente>
               <button type="button" class="ap-filter" aria-pressed="true" data-v="">Todas</button><button type="button" class="ap-filter" aria-pressed="false" data-v="atlassian"><span class="ap-mark" style="--ap-tone:var(--ap-blue)"></span>Atlassian</button><button type="button" class="ap-filter" aria-pressed="false" data-v="cisp1"><span class="ap-mark" style="--ap-tone:var(--ap-violet)"></span>CISP1</button><button type="button" class="ap-filter" aria-pressed="false" data-v="monday"><span class="ap-mark" style="--ap-tone:var(--ap-red)"></span>monday.com</button>
             </div></div>
             <div class="lib-bar__grupo"><p class="ap-label" id="lib-t">Tipo</p><div class="ap-filters" role="group" aria-labelledby="lib-t" data-lib-tipo>
@@ -185,7 +185,7 @@ ART = f'''<!-- @biblioteca:start (gerado por tools/build_biblioteca.py a partir 
           <header class="doc__head">
             <p class="ap-kicker">Biblioteca</p>
             <h2>CISP1</h2>
-            <p class="ap-lead">A frente própria da <span class="ap-nw">A-Players</span>: software e IA sob medida. Nos textos, a CISP1, no feminino, como no site da própria CISP1.</p>
+            <p class="ap-lead">A plataforma própria da <span class="ap-nw">A-Players</span>: software e IA sob medida. Nos textos, a CISP1, no feminino, como no site da própria CISP1.</p>
           </header>
           <div class="lib-cisp">
             <div style="--bg:#ffffff"><img src="assets/biblioteca/cisp1/logo-fundo-claro.png" alt="CISP1" loading="lazy"></div>

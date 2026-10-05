@@ -3,14 +3,15 @@
    Rotas por hash (#rota ou #rota/secao) com a cortina de quatro cores,
    abertura na primeira visita, índice lateral que acompanha a leitura,
    código das vitrines gerado do próprio exemplo, cópia, seletor de tom,
-   demos de movimento, abas, mapa de escolha, tema e tabelas vivas
-   (contraste calculado e tokens lidos de tokens/tokens.json).
+   demos de movimento, abas, mapa de escolha, tema, tabelas vivas
+   (contraste calculado e tokens lidos de tokens/tokens.json), caixas
+   vivas das três camadas e a Biblioteca (busca, filtros e arquivos).
    ===================================================================== */
 (function () {
   'use strict';
   var d = document, root = d.documentElement;
   var reduced = matchMedia('(prefers-reduced-motion: reduce)').matches || root.classList.contains('reduce-motion');
-  var ROUTES = { inicio: 'Início', fundamentos: 'Fundamentos', componentes: 'Componentes', padroes: 'Padrões', voz: 'Voz e escrita', recursos: 'Recursos' };
+  var ROUTES = { inicio: 'Início', fundamentos: 'Fundamentos', componentes: 'Componentes', padroes: 'Padrões', voz: 'Voz e escrita', biblioteca: 'Biblioteca', recursos: 'Recursos' };
   var BASE_TITLE = 'A-Players Design System';
   function $(s, c) { return (c || d).querySelector(s); }
   function $$(s, c) { return Array.prototype.slice.call((c || d).querySelectorAll(s)); }
@@ -259,6 +260,94 @@
   $$('.ap-file input[type="file"]').forEach(function (inp) {
     inp.addEventListener('change', function () { var n = inp.parentElement.querySelector('.ap-file__name'); if (n) n.textContent = inp.files && inp.files[0] ? inp.files[0].name : 'Nenhum arquivo escolhido'; });
   });
+
+  // salvar (demonstração do lado B)
+  $$('[data-demo-save]').forEach(function (b) {
+    b.addEventListener('click', function () { var on = b.getAttribute('aria-pressed') !== 'true'; b.setAttribute('aria-pressed', String(on)); b.textContent = on ? 'Salvo' : 'Salvar'; });
+  });
+
+  /* ------------------------------------------------------------ caixas vivas */
+  // o desenho do núcleo só se move enquanto está na tela; com movimento reduzido, fica parado e completo
+  $$('[data-weave]').forEach(function (el) {
+    if (!('IntersectionObserver' in window) || reduced) return;
+    new IntersectionObserver(function (en) {
+      en.forEach(function (x) { el.classList.toggle('is-live', x.isIntersecting); });
+    }, { threshold: 0.2 }).observe(el);
+  });
+
+  /* ------------------------------------------------------------ biblioteca */
+  // dados em assets/biblioteca/biblioteca.js (gerado por tools/build_biblioteca.py)
+  (function () {
+    var grid = $('[data-lib-grid]'); if (!grid) return;
+    var B = window.APDS_BIBLIOTECA || { itens: [], 'nomes-de-arquivo': {} };
+    var byId = {}; (B.itens || []).forEach(function (i) { byId[i.id] = i; });
+    var NOMES = B['nomes-de-arquivo'] || {};
+    var PLATAFORMA = { atlassian: 'Atlassian', cisp1: 'CISP1', monday: 'monday.com' };
+    var cards = $$('.lib-card', grid), q = $('[data-lib-q]'), count = $('[data-lib-count]'), empty = $('[data-lib-empty]');
+    var st = { q: '', frente: '', tipo: '', fundo: 'claro' };
+    function norm(t) { return (t || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, ''); }
+    function apply() {
+      var words = norm(st.q).split(/\s+/).filter(Boolean), n = 0;
+      cards.forEach(function (c) {
+        var hay = norm(c.dataset.busca);
+        var ok = (!st.frente || c.dataset.frente === st.frente) && (!st.tipo || c.dataset.tipo === st.tipo) && words.every(function (w) { return hay.indexOf(w) >= 0; });
+        c.hidden = !ok; if (ok) n++;
+      });
+      grid.dataset.fundo = st.fundo;
+      if (count) count.textContent = n === 1 ? '1 marca' : n + ' marcas';
+      if (empty) empty.hidden = n > 0;
+    }
+    function group(sel, key) {
+      var g = $(sel); if (!g) return;
+      $$('.ap-filter', g).forEach(function (b) {
+        b.addEventListener('click', function () {
+          $$('.ap-filter', g).forEach(function (o) { o.setAttribute('aria-pressed', String(o === b)); });
+          st[key] = b.dataset.v; apply();
+        });
+      });
+    }
+    group('[data-lib-frente]', 'frente'); group('[data-lib-tipo]', 'tipo'); group('[data-lib-fundo]', 'fundo');
+    if (q) q.addEventListener('input', function () { st.q = q.value; apply(); });
+    $$('[data-lib-clear]').forEach(function (b) {
+      b.addEventListener('click', function () {
+        st.q = ''; st.frente = ''; st.tipo = ''; if (q) q.value = '';
+        ['[data-lib-frente]', '[data-lib-tipo]'].forEach(function (s) { var g = $(s); if (g) $$('.ap-filter', g).forEach(function (o, i) { o.setAttribute('aria-pressed', String(i === 0)); }); });
+        apply(); if (q) q.focus();
+      });
+    });
+    apply();
+
+    // todos os arquivos de uma marca, numa camada com Fechar e Esc
+    var dlg = $('[data-lib-dialog]'), title = $('[data-lib-d-title]'), body = $('[data-lib-d-body]'), opener = null;
+    function data(iso) { return iso ? iso.split('-').reverse().join('/') : ''; }
+    function ext(p) { var m = /\.([a-z0-9]+)$/i.exec(p); return m ? m[1].toUpperCase() : ''; }
+    function open(id, from) {
+      var i = byId[id]; if (!i || !dlg) return;
+      opener = from || null;
+      title.textContent = i.nome;
+      var files = Object.keys(i.arquivos).map(function (k) {
+        var p = i.arquivos[k], dark = /escuro|branco/.test(k);
+        return '<li class="lib-file' + (dark ? ' lib-file--dark' : '') + '"><span class="lib-file__art"><img src="' + esc(p) + '" alt="" loading="lazy"></span>' +
+          '<span class="lib-file__info"><strong>' + esc(NOMES[k] || k) + '</strong><span>' + esc(ext(p)) + '</span></span>' +
+          '<a class="ap-btn-quiet" href="' + esc(p) + '" download="' + esc(id + '-' + k + '.' + ext(p).toLowerCase()) + '">Baixar</a></li>';
+      }).join('');
+      var pac = (i.pacotes || []).map(function (u) { return '<a class="ap-link" href="' + esc(u) + '" target="_blank" rel="noopener">Pacote oficial</a>'; }).join(' · ');
+      body.innerHTML = '<p class="lib-d__meta"><span class="ap-kicker" style="--ap-tone:' + ({ atlassian: 'var(--ap-blue)', cisp1: 'var(--ap-violet)', monday: 'var(--ap-red)' }[i.frente]) + '">' + esc(PLATAFORMA[i.frente] || '') + ' · ' + esc(i.rotulo || i.grupo) + '</span></p>' +
+        (i.desc ? '<p class="lib-d__text">' + esc(i.desc) + '</p>' : '') +
+        '<ul class="lib-files">' + files + '</ul>' +
+        '<dl class="lib-d__facts"><div><dt>Texto alternativo</dt><dd>' + esc(i.alt || i.nome) + '</dd></div>' +
+        '<div><dt>Fonte</dt><dd><a class="ap-link" href="' + esc(i.fonte) + '" target="_blank" rel="noopener">' + esc(i.fonte.replace(/^https?:\/\//, '')) + '</a>' + (pac ? ' · ' + pac : '') + ', lida em ' + esc(data(i.lido)) + '</dd></div>' +
+        (i.nota ? '<div><dt>Nota</dt><dd>' + esc(i.nota) + '</dd></div>' : '') + '</dl>';
+      if (dlg.showModal) dlg.showModal(); else dlg.setAttribute('open', '');
+    }
+    function close() { if (!dlg) return; if (dlg.close) dlg.close(); else dlg.removeAttribute('open'); }
+    if (dlg) {
+      dlg.addEventListener('close', function () { if (opener && opener.focus) opener.focus(); });
+      dlg.addEventListener('click', function (e) { if (e.target === dlg) close(); });
+      $$('[data-lib-close]', dlg).forEach(function (b) { b.addEventListener('click', close); });
+    }
+    $$('[data-lib-open]').forEach(function (b) { b.addEventListener('click', function () { open(b.dataset.libOpen, b); }); });
+  })();
 
   /* ------------------------------------------------------------ tema */
   // o mesmo tema do site (ap-tema): entre visitas só com cookies de preferências permitidos, senão vale na sessão

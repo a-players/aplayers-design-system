@@ -1,6 +1,6 @@
 # A-Players Design System
 
-> O padrão da marca A-Players para qualquer peça: site, landing page, apresentação, material, produto ou campanha. Extraído do site A-Players (versão Claude, outubro de 2026). Versão 1.1, 01/10/2026.
+> O padrão da marca A-Players para qualquer peça: site, landing page, apresentação, material, produto ou campanha. Extraído do site A-Players (versão Claude, outubro de 2026). Versão 2.1, 05/10/2026.
 
 Use este arquivo antes de criar qualquer coisa em nome da A-Players. Ele resume tokens, classes, padrões e regras de escrita. A referência visual completa está em index.html, publicada em /design-system/ junto com o site (/) e o Portal do A-Player (/portal/).
 
@@ -24,32 +24,35 @@ Use este arquivo antes de criar qualquer coisa em nome da A-Players. Ele resume 
 - Placa deslocada (o destaque da marca, no tom do item): 4px botão, 6px aba e porta, 10px cartão em repouso, 14px cartão no hover.
 - Espaço: módulo de 56px (retícula de pontos na noite), largura 1320px, margem 20 a 56px, entre seções 104 a 168px.
 - Movimento: --ap-ease (.2,.7,.2,1), --ap-ease-expo (.16,1,.3,1), --ap-ease-curtain (.7,0,.3,1); .2s, .3s, .45s, .9s.
-- Frentes: Atlassian azul, CISP1 violeta, monday.com vermelho. Papéis do Context Graph: pessoas azul, processo verde, conexão vermelho, sinal amarelo, feedback violeta.
+- Plataformas de IA: Atlassian azul, CISP1 violeta, monday.com vermelho (tokens --ap-front-*, nome mantido). Papéis do Context Graph: pessoas azul, processo verde, conexão vermelho, sinal amarelo, feedback violeta.
 
 ## Componentes (classes)
 
 - Superfícies: .ap-night, .ap-sheet, .ap-sheet--night, .ap-wrap, .ap-base.
 - Tipografia: .ap-display (com .ap-ln por linha), .ap-h1, .ap-h2, .ap-mid, .ap-h3, .ap-h4, .ap-label, .ap-lead-label, .ap-lead, .ap-ln2, .ap-hy (hífen espectral em A-Players e AI-People), .ap-nw (A-Players e AI-People nunca quebram no hífen).
 - Pill: .ap-pill (+ .ap-pill--sheet) com svg.ap-tri usando o símbolo #tris (quatro triângulos 44x10).
-- Ações: .ap-btn (+ --ghost, --line, --ink, --sm, --block), .ap-actions, .ap-link.
+- Ações: .ap-btn (+ --ghost, --line, --ink, --light, --sm, --block), .ap-actions, .ap-link. --light: branco com a placa amarela, o principal da abertura sobre a noite quando o azul já está no cabeçalho. Botão de envio de formulário no tamanho padrão.
 - Destaque: .ap-plate (a.ap-plate interativa, --flat), .ap-badge (selo numerado), .ap-kicker e .ap-mark (marca de tom de 9px), .ap-spectrum (divisor).
 - Conteúdo: .ap-chips/.ap-chip (+ --soft, --tone, --marked), .ap-bars, .ap-ticks, .ap-steps, .ap-flow (--n), .ap-acts, .ap-stepline (--n), .ap-note, .ap-fit.
-- Cartões: .ap-front (+ __logo, __text, __cta), .ap-door (+ --night, __cta), .ap-offer, .ap-post (+ __type, __meta), .ap-empty, .ap-layer3 (li.is-core).
+- Cartões: .ap-front (cartão de plataforma; + __logo, __text, __cta), .ap-door (+ --night, __cta), .ap-offer, .ap-post (+ __type, __meta), .ap-empty, .ap-layer3 (li.is-core, .ap-layer3__apps, .ap-layer3__art[data-weave]: o desenho vivo do núcleo, que só se move na tela).
+- IA em destaque: .ap-aiapps (três aplicações de IA com ícone oficial) e .ap-aiapps__more (as que completam, em texto).
 - Escolha: .ap-tabs/.ap-tab[role=tab][aria-selected], .ap-node (.is-on, .is-dim), .ap-filters/.ap-filter[aria-pressed].
 - Formulário: .ap-field (+ __hint, __error, aria-invalid), .ap-file, .ap-switch, .ap-status.
 - Cabeçalho: .ap-island, .ap-nav, .ap-nav__link[aria-current=page], .ap-strata/.ap-stratum, .ap-lang, .ap-mode.
 - Avisos: .ap-consent, .ap-toast.
-- Marca: .ap-partner (logos de parceiro com peso óptico), .ap-partner-mark (placa 68x280), .ap-app-icon, .ap-geo, .ap-sticker, .ap-photo.
+- Marca: .ap-partner (logos de parceiro com peso óptico), .ap-partner-mark (placa 68x280), .ap-app-icon, .ap-coll-logo (logo oficial de Collection, assets/parceiros/collections, quadro 466x164), .ap-on-light e .ap-on-dark (par de logos que o tema escolhe), .ap-geo, .ap-sticker, .ap-photo.
+- Lado B (peças internas, o dia da marca): .ap-day, .ap-panel, .ap-tone--blue/green/red/yellow/violet, .ap-avatar, .ap-lanyard, .ap-idcard, .ap-snap, .ap-event, .ap-when, .ap-term, .ap-uses, .ap-material, .ap-apps/.ap-app, .ap-save, .ap-related, .ap-progress, .ap-ministeps, .ap-search, .ap-kbd, .ap-btn-quiet, .ap-dialog, .ap-close, .ap-toast__action.
+- Biblioteca: logos e ícones oficiais da Atlassian, da CISP1 e da monday.com em assets/biblioteca (dados em biblioteca.json, com fonte e data); a rota #biblioteca da documentação busca, filtra e baixa.
 - Movimento: .ap-rise, .ap-display.is-entering, .ap-hy.is-charging.
 
 ## Padrões de página
 
-- Abertura sobre a noite: pill, H1 de até três linhas de sentido, apoio de 18px, um botão principal (e um fantasma), base opcional com as frentes. Tudo entra num só momento orquestrado.
+- Abertura sobre a noite: pill, H1 de até três linhas de sentido, apoio de 18px, um botão principal (e um fantasma), base opcional com as especialidades (frases numa linha só). Tudo entra num só momento orquestrado.
 - Folha sobre a noite: o conteúdo corre em .ap-sheet; a noite volta entre folhas para momentos de destaque.
 - Cabeça de seção em 12 colunas: título nas colunas 1 a 7, apoio a partir da 9.
-- Três frentes: Atlassian, CISP1, monday.com, nessa ordem, com a mesma anatomia e cada bloco na mesma linha (subgrid).
+- Três plataformas de IA: Atlassian, CISP1, monday.com, nessa ordem, com a mesma anatomia, cada bloco na mesma linha (subgrid) e textos irmãos com o mesmo número de linhas de 1280 a 1920px (ajuste o texto, não o layout).
 - Mapa de escolha: abas de desafio que acendem o caminho; o resto esmaece para 38%.
-- Fechamento na noite com a assinatura "We Are AI-People Company." e a barra espectral.
+- Fechamento na noite com a assinatura "We Are AI-People Company.", o convite "Falar sobre o meu cenário" e a barra espectral. No rodapé, o norte: "Estratégia que gera resultado. Resultado que sustenta o crescimento."
 - Abertura de quatro palavras e cortina de quatro colunas nas cores do espectro (uma vez por sessão; desligadas com movimento reduzido).
 
 ## Regras que não mudam
@@ -64,12 +67,14 @@ Use este arquivo antes de criar qualquer coisa em nome da A-Players. Ele resume 
 ## Escrita
 
 - pt-BR consultivo, frases curtas e diretas, sem frase institucional para ocupar espaço.
+- Agressiva na clareza, prudente na promessa. Resultado no centro ("Menos tempo procurando informação"). A IA diz o que faz: encontra, responde, resume, executa tarefas, automatiza etapas, apoia decisões. IA como meio, não como fim. Sem "nunca mais", "100%" ou "qualquer integração".
 - Nenhum travessão, meia-risca ou hífen com espaços como pontuação. Use vírgula, dois-pontos, parênteses ou duas frases. Hífen de palavra composta e de nome continua (A-Players, AI-People, pós-venda).
-- Plataformas e aplicações, nunca ferramentas. "Três frentes", nunca "três plataformas"; "frente" só para Atlassian, CISP1 e monday.com.
+- Plataformas e aplicações, nunca ferramentas. Atlassian, CISP1 e monday.com juntas são as "plataformas de IA" ("Conhecer as plataformas de IA"), nunca "frentes" nem "nossas plataformas" (Atlassian e monday.com são parceiras).
+- Termos aposentados: AMS, Academy, Workpacks (use Sustentação e evolução, Capacitações e workshops), "potencializar", A-Hub (agora Portal do A-Player). "Jornada", "ecossistema", "transformar" e "eficiência" só onde são nome ou conceito. "Maturidade da empresa", não "porte". "Contexto" e "dados para decidir", não "sinais". CSM em espaço curto, com o nome completo no title.
 - Gráfico, nunca grafo (Teamwork Graph e Context Graph ficam em inglês). Camadas do Context Graph: Negócio, Processos, Plataformas, Agentes e Feedback.
 - "Tecnologia feita de gente movida por desafios." Nunca "gente acima da média".
 - Business Partner, nunca HRBP. "a CISP1", no feminino. monday.com sempre minúsculo.
 - A fórmula "Aceleração = Contexto × Inteligência" é da Atlassian; não apresentar como da A-Players.
-- Especialidades: Talent as a Service e Professional Services. Ofertas: Tech Recruiting, Managed Resources, Consulting Services, Managed Services, Academy & Learning. Assinatura: We Are AI-People Company.
+- Especialidades: Talent as a Service (Recrutamento e Seleção, Extensão de Equipe; em inglês Tech Recruiting, Managed Resources) e Professional Services (pilares: Consultoria especializada, Sustentação e evolução, Capacitações e workshops, Adoção de Inteligência Artificial; em inglês Consulting Services, Managed Services, Training & Workshops, AI Adoption). A-Players Intelligence reúne as três plataformas de IA; a CISP1 é a plataforma própria. Assinatura: We Are AI-People Company.
 - Não inventar números, preços, cases ou capacidades de produto. Separe fato com fonte, conteúdo interno, hipótese e rascunho.
-- Botões com verbo e resultado ("Vamos conversar", "Explorar Atlassian", "Enviar mensagem"); confirmação repete a ação ("Mensagem enviada."); erro diz como resolver.
+- Botões que dizem a ação ou o destino ("Vamos conversar", "Nossos serviços", "Explorar Atlassian", "Falar sobre o meu cenário", "Enviar mensagem"); confirmação repete a ação ("Mensagem enviada."); erro diz como resolver.

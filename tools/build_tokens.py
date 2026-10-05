@@ -115,11 +115,11 @@ TOKENS = {
     ],
 }
 
-# frentes e papéis: valores que apontam para outros tokens
+# plataformas de IA e papéis: valores que apontam para outros tokens
 ALIASES = [
-    ('front-atlassian', 'var(--ap-blue)', 'Tom da frente Atlassian.'),
-    ('front-cisp1', 'var(--ap-violet)', 'Tom da frente CISP1.'),
-    ('front-monday', 'var(--ap-red)', 'Tom da frente monday.com.'),
+    ('front-atlassian', 'var(--ap-blue)', 'Tom da plataforma Atlassian.'),
+    ('front-cisp1', 'var(--ap-violet)', 'Tom da plataforma CISP1.'),
+    ('front-monday', 'var(--ap-red)', 'Tom da plataforma monday.com.'),
     ('role-pessoas', 'var(--ap-blue)', 'Papel no Context Graph: pessoas.'),
     ('role-processo', 'var(--ap-green)', 'Papel no Context Graph: processo.'),
     ('role-conexao', 'var(--ap-red)', 'Papel no Context Graph: conexão.'),
@@ -137,7 +137,7 @@ TYPES = {'marca': 'color', 'superficie': 'color', 'tinta': 'color', 'lado-b': 'c
 
 def css():
     light = ['  /* ' + g + ' */\n' + ''.join('  --ap-%s: %s;\n' % (n, v) for n, v, _, _ in items) for g, items in TOKENS.items()]
-    light.append('  /* frentes, papéis e tom */\n' + ''.join('  --ap-%s: %s;\n' % (n, v) for n, v, _ in ALIASES))
+    light.append('  /* plataformas de IA, papéis e tom */\n' + ''.join('  --ap-%s: %s;\n' % (n, v) for n, v, _ in ALIASES))
     dark = ''.join('  --ap-%s: %s;\n' % (n, d) for items in TOKENS.values() for n, _, d, _ in items if d)
     return (':root {\n  color-scheme: light;\n' + '\n'.join(light) + '}\n'
             '/* tema escuro: segue o sistema até a pessoa escolher; data-theme vence nos dois sentidos */\n'

@@ -1,7 +1,7 @@
 {
- "versao": "2.0",
- "atualizado": "2026-10-04",
- "sobre": "Biblioteca de logos e ícones oficiais das três frentes da A-Players (Atlassian, CISP1 e monday.com). Arquivos originais, sem edição, salvo onde a nota diz o contrário.",
+ "versao": "2.1",
+ "atualizado": "2026-10-05",
+ "sobre": "Biblioteca de logos e ícones oficiais das três plataformas de IA da A-Players (Atlassian, CISP1 e monday.com). Arquivos originais, sem edição, salvo onde a nota diz o contrário.",
  "fontes": {
   "atlassian": {
    "url": "https://atlassian.design/foundations/logos",
@@ -33,7 +33,7 @@
    "url": "https://cisp1.io/",
    "lido": "2026-09-30",
    "regras": [
-    "Frente própria da A-Players: a CISP1, no feminino.",
+    "Plataforma própria da A-Players: a CISP1, no feminino.",
     "Use o PNG oficial no claro; a versão para o escuro é derivada e serve às peças da A-Players."
    ]
   }
@@ -96,15 +96,16 @@
    "colecoes": [
     "Teamwork Collection"
    ],
-   "rotulo": "Projetos e conhecimento",
+   "rotulo": "Negócio, projetos e conhecimento",
    "arquivos": {
-    "logo-fundo-claro": "assets/biblioteca/atlassian/collections/teamwork.svg"
+    "logo-fundo-claro": "assets/biblioteca/atlassian/collections/teamwork.svg",
+    "logo-fundo-escuro": "assets/parceiros/collections/teamwork-dark.svg"
    },
    "pacotes": [],
    "fonte": "https://www.atlassian.com/collections",
    "lido": "2026-09-28",
    "alt": "Teamwork Collection, Atlassian",
-   "nota": "Só para fundo claro: a palavra Collection vem em cinza escuro e some na noite."
+   "nota": "O arquivo oficial é só para fundo claro: a palavra Collection vem em cinza escuro e some na noite. A versão para fundo escuro foi derivada pela A-Players (nome em branco, bloco colorido intacto), no mesmo quadro de 466 x 164 que o site usa."
   },
   {
    "id": "atl-col-service",
@@ -117,13 +118,14 @@
    ],
    "rotulo": "Atendimento, TI e operações",
    "arquivos": {
-    "logo-fundo-claro": "assets/biblioteca/atlassian/collections/service.svg"
+    "logo-fundo-claro": "assets/biblioteca/atlassian/collections/service.svg",
+    "logo-fundo-escuro": "assets/parceiros/collections/service-dark.svg"
    },
    "pacotes": [],
    "fonte": "https://www.atlassian.com/collections",
    "lido": "2026-09-28",
    "alt": "Service Collection, Atlassian",
-   "nota": "Só para fundo claro: a palavra Collection vem em cinza escuro e some na noite."
+   "nota": "O arquivo oficial é só para fundo claro: a palavra Collection vem em cinza escuro e some na noite. A versão para fundo escuro foi derivada pela A-Players (nome em branco, bloco colorido intacto), no mesmo quadro de 466 x 164 que o site usa."
   },
   {
    "id": "atl-col-software",
@@ -134,15 +136,16 @@
    "colecoes": [
     "Software Collection"
    ],
-   "rotulo": "Engenharia e desenvolvimento",
+   "rotulo": "Engenharia",
    "arquivos": {
-    "logo-fundo-claro": "assets/biblioteca/atlassian/collections/software.svg"
+    "logo-fundo-claro": "assets/biblioteca/atlassian/collections/software.svg",
+    "logo-fundo-escuro": "assets/parceiros/collections/software-dark.svg"
    },
    "pacotes": [],
    "fonte": "https://www.atlassian.com/collections",
    "lido": "2026-09-28",
    "alt": "Software Collection, Atlassian",
-   "nota": "Só para fundo claro: a palavra Collection vem em cinza escuro e some na noite."
+   "nota": "O arquivo oficial é só para fundo claro: a palavra Collection vem em cinza escuro e some na noite. A versão para fundo escuro foi derivada pela A-Players (nome em branco, bloco colorido intacto), no mesmo quadro de 466 x 164 que o site usa."
   },
   {
    "id": "atl-col-product",
@@ -153,15 +156,16 @@
    "colecoes": [
     "Product Collection"
    ],
-   "rotulo": "Ideação, produto e feedback",
+   "rotulo": "Produto",
    "arquivos": {
-    "logo-fundo-claro": "assets/biblioteca/atlassian/collections/product.svg"
+    "logo-fundo-claro": "assets/biblioteca/atlassian/collections/product.svg",
+    "logo-fundo-escuro": "assets/parceiros/collections/product-dark.svg"
    },
    "pacotes": [],
    "fonte": "https://www.atlassian.com/collections",
    "lido": "2026-09-28",
    "alt": "Product Collection, Atlassian",
-   "nota": "Só para fundo claro: a palavra Collection vem em cinza escuro e some na noite."
+   "nota": "O arquivo oficial é só para fundo claro: a palavra Collection vem em cinza escuro e some na noite. A versão para fundo escuro foi derivada pela A-Players (nome em branco, bloco colorido intacto), no mesmo quadro de 466 x 164 que o site usa."
   },
   {
    "id": "atl-col-strategy",
@@ -174,13 +178,14 @@
    ],
    "rotulo": "Liderança e portfólio",
    "arquivos": {
-    "logo-fundo-claro": "assets/biblioteca/atlassian/collections/strategy.svg"
+    "logo-fundo-claro": "assets/biblioteca/atlassian/collections/strategy.svg",
+    "logo-fundo-escuro": "assets/parceiros/collections/strategy-dark.svg"
    },
    "pacotes": [],
    "fonte": "https://www.atlassian.com/collections",
    "lido": "2026-09-28",
    "alt": "Strategy Collection, Atlassian",
-   "nota": "Só para fundo claro: a palavra Collection vem em cinza escuro e some na noite."
+   "nota": "O arquivo oficial é só para fundo claro: a palavra Collection vem em cinza escuro e some na noite. A versão para fundo escuro foi derivada pela A-Players (nome em branco, bloco colorido intacto), no mesmo quadro de 466 x 164 que o site usa."
   },
   {
    "id": "atl-jira",
@@ -882,7 +887,7 @@
    "nome": "CISP1",
    "frente": "cisp1",
    "tipo": "marca",
-   "grupo": "Frente própria",
+   "grupo": "Plataforma própria",
    "colecoes": [],
    "arquivos": {
     "logo-fundo-claro": "assets/biblioteca/cisp1/logo-fundo-claro.png",

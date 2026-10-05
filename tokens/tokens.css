@@ -105,7 +105,7 @@
   --ap-focus: #f1e84e;
   --ap-focus-sheet: #3580c3;
 
-  /* frentes, papéis e tom */
+  /* plataformas de IA, papéis e tom */
   --ap-front-atlassian: var(--ap-blue);
   --ap-front-cisp1: var(--ap-violet);
   --ap-front-monday: var(--ap-red);

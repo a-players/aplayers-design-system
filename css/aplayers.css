@@ -5,7 +5,7 @@
    iguais ao site. A folha da peça cuida só da composição.
 
    Origem: site A-Players (versão Claude, 01/10/2026), entrada e Portal do A-Player
-   (02/10/2026). Versão 2.0 (04/10/2026). Cada componente diz de qual peça
+   (02/10/2026). Versão 2.1 (05/10/2026). Cada componente diz de qual peça
    veio, para conferência. Os componentes do lado B (o dia da marca, tons
    suaves) estão no bloco LADO B, antes do movimento.
    Tokens: gerados por tools/build_tokens.py entre os marcadores abaixo.
@@ -120,7 +120,7 @@
   --ap-focus: #f1e84e;
   --ap-focus-sheet: #3580c3;
 
-  /* frentes, papéis e tom */
+  /* plataformas de IA, papéis e tom */
   --ap-front-atlassian: var(--ap-blue);
   --ap-front-cisp1: var(--ap-violet);
   --ap-front-monday: var(--ap-red);
@@ -263,7 +263,7 @@
 
 /* ----------------------------------------------------------- ações
    O botão ganha a placa amarela deslocada no hover e afunda no clique.
-   Site: .btn, .btn--ghost, .btn--line, .btn--ink, .btn--sm. */
+   Site: .btn, .btn--ghost, .btn--line, .btn--ink, .btn--light, .btn--sm. */
 .ap-btn {
   --plate: var(--ap-yellow);
   display: inline-flex; align-items: center; justify-content: center; gap: 10px;
@@ -283,6 +283,8 @@
 .ap-btn--ink { background: var(--ap-ink); --plate: var(--ap-tone); }
 :root[data-theme="dark"] .ap-btn--ink { background: #fff; color: var(--ap-night); }
 @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .ap-btn--ink { background: #fff; color: var(--ap-night); } }
+/* sobre a noite, quando o azul já está no topo da página: branco com a placa amarela. Site: .btn--light (abertura da Home) */
+.ap-btn--light { background: #fff; color: var(--ap-night); --plate: var(--ap-yellow); }
 .ap-btn--sm { min-height: 40px; padding: 8px 16px; font-size: 15px; }
 .ap-btn--block { width: 100%; }
 .ap-btn[disabled], .ap-btn[aria-disabled="true"] { opacity: .45; cursor: not-allowed; transform: none; box-shadow: none; }
@@ -394,7 +396,7 @@ a.ap-plate:active, button.ap-plate:active { transform: translate(3px, 3px); box-
 .ap-stepline p { color: var(--ap-ink-2); font-size: 15.5px; }
 
 /* ----------------------------------------------------------- notas
-   Caixa no tom da frente, para o que a A-Players indica ou entrega.
+   Caixa no tom da plataforma, para o que a A-Players indica ou entrega.
    Site: .callout, .specialty__care, .front__fit, .fitlist, .map__out */
 .ap-note { padding: 14px 16px; border-radius: var(--ap-r-path); background: color-mix(in srgb, var(--ap-tone) 11%, var(--ap-card)); color: var(--ap-ink-2); font-size: 15px; }
 .ap-note strong, .ap-note__title { display: block; margin-bottom: 2px; font: 700 15px/1.3 var(--ap-text); color: var(--ap-ink); }
@@ -405,7 +407,8 @@ a.ap-plate:active, button.ap-plate:active { transform: translate(3px, 3px); box-
 .ap-fit li::before { content: ""; position: absolute; left: 0; top: .52em; width: 6px; height: 6px; border-radius: 2px 1px 2px 1px; background: var(--ap-tone); }
 
 /* ----------------------------------------------------------- cartões */
-/* frente (parceiro ou produto): kicker, logo, texto, lista, nota, ação. Site: .front */
+/* cartão de plataforma (plataforma de IA, parceiro ou produto): kicker, logo, texto, lista, nota, ação.
+   A classe mantém o nome .ap-front por compatibilidade. Site: .front */
 .ap-front { display: flex; flex-direction: column; gap: 14px; padding: 26px 26px 24px; }
 .ap-front__logo { display: flex; align-items: center; height: 44px; }
 .ap-front__text { font-size: 16px; color: var(--ap-ink); }
@@ -448,6 +451,53 @@ a.ap-offer:hover, a.ap-offer:focus-visible { transform: translate(-2px, -2px); b
 .ap-layer3 strong { font: 700 13px/1.35 var(--ap-text); color: var(--ap-ink); }
 .ap-layer3 span { font-size: 12.5px; line-height: 1.4; color: var(--ap-ink-2); }
 .ap-layer3 > .is-core { background: color-mix(in srgb, var(--ap-tone) 13%, var(--ap-card)); border-color: color-mix(in srgb, var(--ap-tone) 60%, transparent); box-shadow: 4px 4px 0 0 var(--ap-tone); }
+/* caixa viva: o desenho do núcleo mostra o que a plataforma faz e só se move enquanto está na tela
+   (docs.js e o site ligam .is-live com um IntersectionObserver em [data-weave]). Site: .layer3__art
+   Atlassian: cinco fios nas cores das Collections correm juntos (um só gráfico).
+   CISP1: pulsos saem dos modelos, passam pelo núcleo e chegam aos sistemas.
+   monday.com: um quadro de status que muda de cor como num quadro real. */
+.ap-layer3__art { display: block; width: 100%; height: auto; margin-top: 7px; overflow: hidden; }
+.ap-layer3__art path { fill: none; stroke-width: 1.7; stroke-linecap: round; }
+.ap-layer3__art .t-blue { stroke: var(--ap-blue); }
+.ap-layer3__art .t-yellow { stroke: var(--ap-yellow-line); }
+.ap-layer3__art .t-green { stroke: var(--ap-green); }
+.ap-layer3__art .t-violet { stroke: var(--ap-violet); }
+.ap-layer3__art .t-red { stroke: var(--ap-red); }
+.ap-layer3__art .b-item { fill: color-mix(in srgb, var(--ap-ink) 16%, transparent); }
+.ap-layer3__art .c-line { stroke: color-mix(in srgb, var(--ap-violet) 60%, transparent); stroke-width: 1.3; }
+.ap-layer3__art .c-in { fill: color-mix(in srgb, var(--ap-ink) 42%, transparent); }
+.ap-layer3__art .c-out { fill: color-mix(in srgb, var(--ap-ink) 30%, transparent); }
+.ap-layer3__art .c-ring { fill: none; stroke: color-mix(in srgb, var(--ap-violet) 55%, transparent); stroke-width: 1.2; transform-box: fill-box; transform-origin: center; }
+.ap-layer3__art .c-core { fill: var(--ap-violet); }
+.ap-layer3__art .w-strand { animation: ap-strand 13s linear infinite paused; }
+.ap-layer3__art .w-strand:nth-child(2) { animation-duration: 16s; }
+.ap-layer3__art .w-strand:nth-child(3) { animation-duration: 11s; }
+.ap-layer3__art .w-strand:nth-child(4) { animation-duration: 18s; }
+.ap-layer3__art .w-strand:nth-child(5) { animation-duration: 14.5s; }
+.ap-layer3__art .c-pulse { stroke: var(--ap-violet); stroke-width: 2.4; stroke-dasharray: 7 93; opacity: 0; }
+.ap-layer3__art.is-live .c-pulse { opacity: 1; animation: ap-c-flow 2.8s linear var(--d, 0s) infinite; }
+.ap-layer3__art.is-live .c-ring { animation: ap-c-breathe 2.8s ease-in-out infinite; }
+.ap-layer3__art .st { transform-box: fill-box; transform-origin: center; animation: 14s ease-in-out var(--d, 0s) infinite paused; animation-name: ap-st-g, ap-st-pop; }
+.ap-layer3__art .st--o { animation-name: ap-st-o, ap-st-pop; }
+.ap-layer3__art .st--b { animation-name: ap-st-b, ap-st-pop; }
+.ap-layer3__art .st--r { animation-name: ap-st-r, ap-st-pop; }
+.ap-layer3__art.is-live .w-strand, .ap-layer3__art.is-live .st { animation-play-state: running; }
+@keyframes ap-strand { to { transform: translateX(-220px); } }
+@keyframes ap-c-flow { from { stroke-dashoffset: 0; } to { stroke-dashoffset: -100; } }
+@keyframes ap-c-breathe { 50% { transform: scale(1.12); opacity: .55; } }
+/* as cores de status são as do quadro da monday.com: três trocas a cada 14s, com um pulo curto na troca */
+@keyframes ap-st-g { 0%, 31% { fill: #00c875; } 35%, 64% { fill: #fdab3d; } 68%, 97% { fill: #579bfc; } 100% { fill: #00c875; } }
+@keyframes ap-st-o { 0%, 31% { fill: #fdab3d; } 35%, 64% { fill: #00c875; } 68%, 97% { fill: #e2445c; } 100% { fill: #fdab3d; } }
+@keyframes ap-st-b { 0%, 31% { fill: #579bfc; } 35%, 64% { fill: #00c875; } 68%, 97% { fill: #fdab3d; } 100% { fill: #579bfc; } }
+@keyframes ap-st-r { 0%, 31% { fill: #e2445c; } 35%, 64% { fill: #fdab3d; } 68%, 97% { fill: #00c875; } 100% { fill: #e2445c; } }
+@keyframes ap-st-pop { 0%, 31%, 35%, 64%, 68%, 97%, 100% { transform: none; } 33%, 66%, 98.5% { transform: scale(1.1); } }
+.reduce-motion .ap-layer3__art * { animation: none !important; }
+@media (prefers-reduced-motion: reduce) { .ap-layer3__art * { animation: none !important; } }
+/* aplicações dentro da primeira camada: ícone oficial com o nome curto embaixo. Site: .layer3--brand .layer3__apps */
+.ap-layer3__apps { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(0, 1fr); justify-items: center; gap: 4px; margin-top: 8px; }
+.ap-layer3__apps > span { display: grid; justify-items: center; gap: 5px; min-width: 0; }
+.ap-layer3__apps img { width: 22px; height: 22px; object-fit: contain; }
+.ap-layer3__apps em { max-width: 100%; font: 700 11px/1.15 var(--ap-text); font-style: normal; color: var(--ap-ink-2); text-align: center; }
 
 /* ----------------------------------------------------------- abas e nós
    A escolha ativa ganha a placa do tom. Site: [role="tab"], .node */
@@ -544,7 +594,7 @@ a.ap-offer:hover, a.ap-offer:focus-visible { transform: translate(-2px, -2px); b
 .ap-nav__link:hover, .ap-nav__link[aria-expanded="true"] { background: rgba(255, 255, 255, .08); color: #fff; }
 .ap-nav__link[aria-current="page"], .ap-nav__link.is-current { color: #fff; }
 .ap-nav__link[aria-current="page"]::after, .ap-nav__link.is-current::after { content: ""; position: absolute; left: 12px; right: 12px; bottom: 3px; height: 2px; background: var(--ap-spectrum); }
-/* base de abertura: frentes ligadas por uma linha que cresce no hover. Site: .strata */
+/* base de abertura: especialidades ligadas por uma linha que cresce no hover. Site: .strata */
 .ap-strata { display: grid; grid-template-columns: repeat(var(--n, 3), minmax(0, 1fr)); }
 .ap-stratum { position: relative; display: block; padding: 20px 24px 6px 0; margin-right: 24px; color: inherit; text-decoration: none; border-top: 1px solid var(--ap-night-line); }
 .ap-stratum::before { content: ""; position: absolute; top: -1px; left: 0; height: 3px; width: 44px; background: var(--ap-tone); transition: width .45s var(--ap-ease-expo); }
@@ -566,7 +616,7 @@ a.ap-offer:hover, a.ap-offer:focus-visible { transform: translate(-2px, -2px); b
 .ap-toast { display: inline-flex; align-items: center; gap: 10px; max-width: min(440px, 100%); padding: 12px 16px; border-radius: var(--ap-r-path); background: rgba(17, 29, 50, .96); color: var(--ap-on-night); border: 1px solid var(--ap-night-line); font-size: 14px; box-shadow: 0 20px 50px -20px rgba(0, 0, 0, .8); }
 .ap-toast::before { content: ""; flex: none; width: 9px; height: 9px; border-radius: var(--ap-r-mark); background: var(--ap-tone); }
 
-/* ----------------------------------------------------------- logos das frentes
+/* ----------------------------------------------------------- logos das plataformas de IA
    Mesmo peso óptico: a altura compensa a proporção e a densidade de cada
    marca. Site: --k nos logos, .partner-mark */
 .ap-partner { width: auto; height: calc(var(--ap-logo-h, 26px) * var(--k, 1)); }
@@ -580,6 +630,35 @@ a.ap-offer:hover, a.ap-offer:focus-visible { transform: translate(-2px, -2px); b
 .ap-partner-mark .ap-partner[src$="cisp1.png"] { --k: 1.6429; }
 /* ícones de produto: proporção original e o mesmo azulejo nas duas marcas */
 .ap-app-icon { width: 22px; height: 22px; object-fit: contain; flex: none; }
+/* par de logos: a versão de fundo claro e a de fundo escuro no mesmo lugar; o tema escolhe. Site: .logo-on-light, .logo-on-dark */
+.ap-on-dark { display: none !important; }
+:root[data-theme="dark"] .ap-on-light { display: none !important; }
+:root[data-theme="dark"] .ap-on-dark { display: block !important; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .ap-on-light { display: none !important; }
+  :root:not([data-theme="light"]) .ap-on-dark { display: block !important; }
+}
+/* logo oficial de uma Collection da Atlassian no lugar do nome. Os cinco arquivos de assets/parceiros/collections
+   dividem o mesmo quadro (466 x 164), com "Collection" na mesma altura e na mesma linha de base. Site: .coll__logo */
+.ap-coll-logo { margin: 0; line-height: 0; }
+.ap-coll-logo img { display: block; width: 100%; max-width: 260px; height: auto; }
+/* a IA da plataforma em destaque: três aplicações com ícone oficial e, embaixo, as que completam. Site: .aiapps */
+.ap-aiapps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; max-width: 460px; margin: 0; padding: 0; list-style: none; }
+.ap-aiapps li {
+  display: flex; flex-direction: column; align-items: center; gap: 8px;
+  padding: 14px 8px 12px; border-radius: var(--ap-r-path);
+  background: var(--ap-card); border: 1px solid var(--ap-line);
+  box-shadow: 0 10px 24px -18px rgba(16, 18, 20, .35);
+  font: 700 15.5px/1.2 var(--ap-text); color: var(--ap-ink); text-align: center;
+}
+.ap-aiapps img { width: 30px; height: 30px; object-fit: contain; flex: none; }
+.ap-aiapps__more { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 0; margin: 12px 0 0; font: 500 13.5px/1.4 var(--ap-text); color: var(--ap-ink-2); }
+.ap-aiapps__more span + span::before { content: ""; display: inline-block; width: 4px; height: 4px; margin: 0 10px; border-radius: 50%; background: currentColor; opacity: .5; vertical-align: middle; }
+@media (max-width: 640px) {
+  .ap-aiapps { gap: 8px; }
+  .ap-aiapps li { gap: 7px; padding: 12px 8px 11px; font-size: 15px; }
+  .ap-aiapps img { width: 26px; height: 26px; }
+}
 
 /* ----------------------------------------------------------- geometria e stickers
    Geometrias são os SVGs oficiais (já trazem cor, opacidade e rotação):
@@ -695,7 +774,7 @@ a.ap-offer:hover, a.ap-offer:focus-visible { transform: translate(-2px, -2px); b
   .ap-event__date b { font-size: 40px; }
   .ap-event__actions { grid-column: 1 / -1; flex-direction: row; justify-content: flex-start; padding: 0 20px 16px; }
 }
-.ap-when { display: inline-flex; align-self: flex-start; align-items: center; gap: 7px; padding: 5px 10px; border-radius: var(--ap-r-badge); background: color-mix(in srgb, var(--ap-tone) 14%, var(--ap-card)); font: 700 13px/1.2 var(--ap-text); color: var(--ap-ink); }
+.ap-when { display: inline-flex; align-self: flex-start; justify-self: start; align-items: center; gap: 7px; padding: 5px 10px; border-radius: var(--ap-r-badge); background: color-mix(in srgb, var(--ap-tone) 14%, var(--ap-card)); font: 700 13px/1.2 var(--ap-text); color: var(--ap-ink); }
 .ap-when--now::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--ap-tone); box-shadow: 0 0 0 0 color-mix(in srgb, var(--ap-tone) 60%, transparent); animation: ap-pulse 2s var(--ap-ease) infinite; }
 
 /* ----------------------------------------------------------- termo do vocabulário
