@@ -22,9 +22,12 @@
      data-vivo-hole      "x y largura altura" (0 a 1): zona livre para texto
      data-vivo-dim       0 a 1: intensidade
      data-vivo-touch     o toque também funciona como cursor
+     data-vivo-theme     night (padrão) | day | auto (segue o data-theme do html)
+     .ap-vivo--page      fundo fixo da página: transparente, sem retícula
+                         própria; o brilho se alinha à retícula do body
 
    API
-     var g = APVivo.mount(el, { formation, layers, off, labels, nodes, area, hole, dim, touch })
+     var g = APVivo.mount(el, { formation, layers, off, labels, nodes, area, hole, dim, touch, theme, page })
      g.set(formação) · g.burst(x, y) · g.highlight(chave) · g.layer(nome, ligada)
      g.png(escala) · g.step(quadros) · g.state() · g.destroy()
      APVivo.formations · APVivo.palette · APVivo.mark(ctx, x, y, meia)
@@ -40,6 +43,15 @@
   var PAL = {
     blue: [53, 128, 195], blueL: [95, 166, 227], green: [110, 183, 81],
     red: [235, 89, 77], yellow: [241, 232, 78], violet: [161, 139, 232], ice: [183, 194, 211]
+  };
+  // o dia (lado B): tons sobre o claro. Amarelo vira o traço fino (--ap-yellow-line) e o gelo, um cinza azulado
+  var DAY = {
+    blue: PAL.blue, blueL: PAL.blueL, green: PAL.green, red: PAL.red,
+    yellow: [212, 177, 6], violet: PAL.violet, ice: [141, 155, 176]
+  };
+  var THEMES = {
+    night: { pal: PAL, bg: NIGHT, dot: 'rgba(183,194,211,0.09)', glow: [241, 232, 78], glowA: 0.32, ring: 'rgba(255,255,255,0.5)', core: null, blend: 'lighter', haloA: 0.34, hubLabel: [255, 255, 255], satLabel: [215, 224, 236] },
+    day: { pal: DAY, bg: [255, 255, 255], dot: 'rgba(23,35,58,0.075)', glow: [212, 177, 6], glowA: 0.5, ring: 'rgba(23,35,58,0.42)', core: 'tone', blend: 'source-over', haloA: 0.2, hubLabel: [23, 35, 58], satLabel: [79, 93, 115] }
   };
   var LAYERS = ['grid', 'glow', 'edges', 'pulses', 'halos', 'nodes', 'labels', 'cursor', 'attract', 'breathe', 'camera', 'depth'];
 
@@ -389,7 +401,10 @@
     var forcedCalm = /[?&]movimento=reduzido/.test(location.search) || document.documentElement.classList.contains('reduce-motion');
     var reduced = mqReduce.matches || forcedCalm;
     var LITE = root.matchMedia('(max-width: 760px), (pointer: coarse)').matches;
-    var N = Math.max(8, Math.min(160, o.nodes || (LITE ? 60 : 96)));
+    // página inteira: a mesma densidade do rodapé do site (cerca de 96 nós em 250 casas da retícula)
+    var isPage = o.page != null ? !!o.page : el.classList.contains('ap-vivo--page');
+    var cells = Math.floor((el.clientWidth || root.innerWidth) / GRID) * Math.floor((el.clientHeight || root.innerHeight) / GRID);
+    var N = Math.max(8, Math.min(160, o.nodes || (isPage ? Math.max(LITE ? 40 : 60, Math.min(LITE ? 60 : 150, Math.round(cells * 0.38))) : (LITE ? 60 : 96))));
     var glow = !LITE, dprCap = LITE ? 1.25 : 1.75;
     var perf = { n: 0, sum: 0, last: 0 };
 
@@ -402,6 +417,24 @@
     var holeOpt = o.hole || null;
     var labelOpt = o.labels || null;
     var dimOpt = o.dim == null ? 1 : +o.dim;
+    // página inteira: o canvas fica fixo atrás de tudo e o brilho acende os pontos da retícula do body
+    var page = isPage;
+    if (page && !(o.layers && o.layers.indexOf('grid') !== -1)) L.grid = false;
+    var themeOpt = o.theme || 'night', T = THEMES.night;
+    function themeNow() {
+      if (themeOpt !== 'auto') return THEMES[themeOpt] || THEMES.night;
+      var a = document.documentElement.getAttribute('data-theme');
+      if (a === 'dark') return THEMES.night;
+      if (a === 'light') return THEMES.day;
+      return root.matchMedia('(prefers-color-scheme: dark)').matches ? THEMES.night : THEMES.day;
+    }
+    T = themeNow();
+    var gridO = { x: 0, y: 0 };
+    function readGrid() {
+      // centro do ponto = posição do fundo do body + 1px (radial-gradient em 1px 1px)
+      var bp = (getComputedStyle(document.body).backgroundPosition || '0px 0px').split(',')[0].trim().split(/\s+/);
+      gridO.x = (parseFloat(bp[0]) || 0) + 1; gridO.y = (parseFloat(bp[1]) || 0) + 1;
+    }
 
     var W = 0, H = 0, DPR = 1, opaque = false;
     var P = { x: -9999, y: -9999, on: false };
@@ -413,7 +446,7 @@
 
     for (var i = 0; i < N; i++) {
       live.push({
-        x: 0, y: 0, z: 0, vx: 0, vy: 0, tx: 0, ty: 0, tz: 0, r: 2, tr: 2, c: PAL.ice.slice(), tc: PAL.ice,
+        x: 0, y: 0, z: 0, vx: 0, vy: 0, tx: 0, ty: 0, tz: 0, r: 2, tr: 2, c: T.pal.ice.slice(), tc: T.pal.ice, tk: 'ice',
         kind: 'dust', label: null, group: null, ph: Math.random() * 6.283, amp: 3 + Math.random() * 7, sp: 0.6 + Math.random() * 0.8,
         pend: null, lab: 0, px: 0, py: 0, ps: 1, pd: 1, seeded: false
       });
@@ -450,7 +483,7 @@
         var s = F.nodes[i], n = live[i];
         if (!n.seeded) { n.seeded = true; n.x = Math.random() * W; n.y = Math.random() * H; }
         var delay = reduced || instant ? 0 : (i % 16) * 16 + Math.random() * 160;
-        n.pend = { tx: s.x, ty: s.y, tz: s.z, tr: s.r, tc: PAL[s.tone] || PAL.ice, kind: s.kind, label: s.label, group: s.group, at: now + delay };
+        n.pend = { tx: s.x, ty: s.y, tz: s.z, tr: s.r, tc: T.pal[s.tone] || T.pal.ice, tk: T.pal[s.tone] ? s.tone : 'ice', kind: s.kind, label: s.label, group: s.group, at: now + delay };
         if (reduced || instant) commit(n);
       }
       for (var k in edgeMap) edgeMap[k].ta = 0;
@@ -469,7 +502,7 @@
 
     function commit(n) {
       var p = n.pend; if (!p) return;
-      n.tx = p.tx; n.ty = p.ty; n.tz = L.depth ? p.tz : 0; n.tr = p.tr; n.tc = p.tc; n.kind = p.kind; n.label = p.label; n.group = p.group;
+      n.tx = p.tx; n.ty = p.ty; n.tz = L.depth ? p.tz : 0; n.tr = p.tr; n.tc = p.tc; n.tk = p.tk; n.kind = p.kind; n.label = p.label; n.group = p.group;
       n.pend = null;
     }
 
@@ -579,11 +612,15 @@
       ctx.clearRect(0, 0, W, H);
       var dim = (current ? current.dim : 1) * dimOpt;
       var offX = (W % GRID) / 2, offY = (H % GRID) / 2;
+      if (page) {
+        var sx0 = root.scrollX || 0, sy0 = root.scrollY || 0;
+        offX = ((gridO.x - sx0) % GRID + GRID) % GRID; offY = ((gridO.y - sy0) % GRID + GRID) % GRID;
+      }
 
-      if (opaque) { ctx.fillStyle = rgba(NIGHT, 1); ctx.fillRect(0, 0, W, H); }
+      if (opaque) { ctx.fillStyle = rgba(T.bg, 1); ctx.fillRect(0, 0, W, H); }
       // retícula de 56px: pontos de 2px a 9%; no site ela vive no fundo do body (CSS)
       if (L.grid) {
-        ctx.fillStyle = 'rgba(183,194,211,0.09)';
+        ctx.fillStyle = T.dot;
         ctx.beginPath();
         for (var gy = offY; gy < H; gy += GRID) for (var gx = offX; gx < W; gx += GRID) { ctx.moveTo(gx + 1, gy); ctx.arc(gx, gy, 1, 0, 6.283); }
         ctx.fill();
@@ -594,7 +631,7 @@
           if (Math.abs(hy - P.y) > 220) continue;
           for (var hx = offX; hx < W; hx += GRID) {
             var dd = Math.hypot(hx - P.x, hy - P.y);
-            if (dd < 220) { ctx.fillStyle = 'rgba(241,232,78,' + (0.32 * (1 - dd / 220)).toFixed(3) + ')'; ctx.fillRect(hx - 1.5, hy - 1.5, 3, 3); }
+            if (dd < 220) { ctx.fillStyle = rgba(T.glow, T.glowA * (1 - dd / 220)); ctx.fillRect(hx - 1.5, hy - 1.5, 3, 3); }
           }
         }
       }
@@ -632,7 +669,7 @@
       }
 
       // brilho: halos dos polos e pulsos em mistura aditiva
-      ctx.globalCompositeOperation = 'lighter';
+      ctx.globalCompositeOperation = T.blend;
       for (var h = 0; L.halos && L.nodes && glow && h < N; h++) {
         var hn = live[h];
         if (hn.kind !== 'hub') continue;
@@ -640,7 +677,7 @@
         var pulse = reduced ? 0 : Math.sin(t * 0.002 + hn.ph) * 3;
         var gr = (hn.r + 26 + pulse) * hn.ps;
         var g = ctx.createRadialGradient(hn.px, hn.py, 0, hn.px, hn.py, gr);
-        g.addColorStop(0, rgba(hn.c, 0.34 * ha)); g.addColorStop(1, rgba(hn.c, 0));
+        g.addColorStop(0, rgba(hn.c, T.haloA * ha)); g.addColorStop(1, rgba(hn.c, 0));
         ctx.fillStyle = g; ctx.beginPath(); ctx.arc(hn.px, hn.py, gr, 0, 6.283); ctx.fill();
       }
       for (var p = 0; p < pulses.length; p++) {
@@ -650,7 +687,7 @@
         var x = iu * iu * PA.px + 2 * iu * u * cc.cx + u * u * PB.px, y = iu * iu * PA.py + 2 * iu * u * cc.cy + u * u * PB.py;
         var pa = Math.sin(Math.PI * u) * dim;
         ctx.fillStyle = rgba(PA.c, 0.35 * pa); ctx.beginPath(); ctx.arc(x, y, 6, 0, 6.283); ctx.fill();
-        ctx.fillStyle = 'rgba(255,255,255,' + (0.85 * pa).toFixed(3) + ')'; ctx.beginPath(); ctx.arc(x, y, 1.8, 0, 6.283); ctx.fill();
+        ctx.fillStyle = T.core ? rgba(PA.c, 0.9 * pa) : 'rgba(255,255,255,' + (0.85 * pa).toFixed(3) + ')'; ctx.beginPath(); ctx.arc(x, y, 1.8, 0, 6.283); ctx.fill();
       }
       ctx.globalCompositeOperation = 'source-over';
 
@@ -701,7 +738,7 @@
           ctx.beginPath(); ctx.moveTo(P.x, P.y); ctx.lineTo(nm.px, nm.py); ctx.stroke();
         }
         if (near.length) {
-          ctx.strokeStyle = 'rgba(255,255,255,0.5)'; ctx.lineWidth = 1.2;
+          ctx.strokeStyle = T.ring; ctx.lineWidth = 1.2;
           ctx.beginPath(); ctx.arc(P.x, P.y, 5, 0, 6.283); ctx.stroke();
         }
       }
@@ -721,9 +758,9 @@
         if (hub) { ctx.textAlign = 'center'; var tw = ctx.measureText(ln.label).width / 2 + 8; lx = clamp(ln.px, tw, W - tw); ly = ln.py + ln.r * ln.ps + 20; }
         else { ctx.textAlign = rightSide ? 'left' : 'right'; lx = rightSide ? ln.px + off : ln.px - off; }
         var la = ln.lab * (hl ? (isHl(ln) ? 1 : 0.35) : 1) * Math.max(dim, 0.85) * (hub ? 1 : Math.max(ln.pd, 0.75));
-        ctx.lineWidth = 4; ctx.strokeStyle = rgba(NIGHT, 0.85 * la);
+        ctx.lineWidth = 4; ctx.strokeStyle = rgba(T.bg, 0.85 * la);
         ctx.strokeText(ln.label, lx, ly);
-        ctx.fillStyle = hub ? 'rgba(255,255,255,' + (0.95 * la).toFixed(3) + ')' : 'rgba(215,224,236,' + (0.85 * la).toFixed(3) + ')';
+        ctx.fillStyle = hub ? rgba(T.hubLabel, 0.95 * la) : rgba(T.satLabel, 0.85 * la);
         ctx.fillText(ln.label, lx, ly);
       }
       ctx.globalAlpha = 1;
@@ -828,6 +865,7 @@
       destroy: function () {
         dead = true; running = false;
         if (io) io.disconnect();
+        if (mo) mo.disconnect();
         if (ro) ro.disconnect();
         all.splice(all.indexOf(api), 1);
         if (canvas.parentNode === el) el.removeChild(canvas);
@@ -861,6 +899,23 @@
       ro.observe(el);
     }
     document.addEventListener('visibilitychange', function () { if (!document.hidden) kick(); });
+    function retheme() {
+      var nt = themeNow(); if (nt === T) return;
+      T = nt;
+      for (var i = 0; i < N; i++) { var n = live[i]; n.tc = T.pal[n.tk] || T.pal.ice; if (n.pend) n.pend.tc = T.pal[n.pend.tk] || T.pal.ice; }
+      if (reduced) still(); else kick();
+    }
+    var mo = null;
+    if (themeOpt === 'auto') {
+      if ('MutationObserver' in root) { mo = new MutationObserver(retheme); mo.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] }); }
+      var mqDark = root.matchMedia('(prefers-color-scheme: dark)');
+      if (mqDark.addEventListener) mqDark.addEventListener('change', retheme);
+    }
+    if (page) {
+      readGrid();
+      root.addEventListener('resize', readGrid);
+      root.addEventListener('scroll', function () { if (reduced) still(); else kick(); }, { passive: true });
+    }
     if (mqReduce.addEventListener) mqReduce.addEventListener('change', function (e) { reduced = e.matches || forcedCalm; if (rect) { apply(true); if (reduced) still(); else kick(); } });
     if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { if (reduced && current) still(); });
 
@@ -880,6 +935,7 @@
       area: nums(d.vivoArea, 4), hole: nums(d.vivoHole, 4),
       dim: d.vivoDim ? parseFloat(d.vivoDim) : null,
       touch: d.vivoTouch != null,
+      theme: d.vivoTheme || null,
       instant: d.vivoInstant != null
     };
   }

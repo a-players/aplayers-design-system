@@ -23,8 +23,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500..800&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/aplayers.css?v=2.2.0">
-<link rel="stylesheet" href="css/docs.css?v=2.2.0">
+<link rel="stylesheet" href="css/aplayers.css?v=2.2.1">
+<link rel="stylesheet" href="css/docs.css?v=2.2.1">
 <script>
 (function (d, l) {
   d.documentElement.classList.remove('no-js'); d.documentElement.classList.add('js');
@@ -1134,7 +1134,8 @@
               <tr><td><strong>Tecido</strong></td><td class="muted">Atlassian</td><td class="muted">Pulsos brancos atravessam as linhas tracejadas em 3,9s</td><td class="muted">Só no site</td></tr>
               <tr><td><strong>Ciclo</strong></td><td class="muted">Talent as a Service</td><td class="muted">Um ponto percorre o anel até o momento lido</td><td class="muted">Só no site</td></tr>
               <tr><td><strong>Trilho e fio de leitura</strong></td><td class="muted">Nossos serviços, Professional Services</td><td class="muted">Itens acendem e a linha enche com a rolagem</td><td class="muted">Só no site</td></tr>
-              <tr><td><strong>Stickers</strong></td><td class="muted">Portal do <span class="ap-nw">A-Player</span></td><td class="muted"><code>ap-stick</code>, <code>ap-drop</code></td><td><a class="ap-link" href="#componentes/lado-b">Lado B</a></td></tr>
+              <tr><td><strong>Stickers</strong></td><td class="muted">Portal do <span class="ap-nw">A-Player</span></td><td class="muted"><code>ap-stick</code>, <code>ap-drop</code> e o balanço <code>ap-sway</code>: sobe 4px e gira 3 graus em 6,5s</td><td><a class="ap-link" href="#componentes/lado-b">Lado B</a></td></tr>
+              <tr><td><strong>Fundo vivo do Portal</strong></td><td class="muted">Portal do <span class="ap-nw">A-Player</span>, todas as vistas</td><td class="muted">Formação calma em página inteira, nas cores do dia ou da noite</td><td><a class="ap-link" href="#vivo/uso">Levar para uma peça</a></td></tr>
             </tbody>
           </table></div>
         </section>
@@ -1166,6 +1167,7 @@
               <tr><td><code>data-vivo-dim</code></td><td class="muted">0 a 1</td><td class="muted">Intensidade: <code>.55</code> atrás de texto longo.</td></tr>
               <tr><td><code>data-vivo-nodes</code></td><td class="muted">número</td><td class="muted">Quantidade de nós (96, ou 60 no celular).</td></tr>
               <tr><td><code>data-vivo-touch</code></td><td class="muted">sem valor</td><td class="muted">O toque vale como cursor.</td></tr>
+              <tr><td><code>data-vivo-theme</code></td><td class="muted">night, day, auto</td><td class="muted">Cores da noite (padrão) ou do dia, o lado B: amarelo em traço fino, gelo em cinza azulado, pulsos e anel na tinta. <code>auto</code> segue o tema da página, ao vivo.</td></tr>
             </tbody>
           </table></div>
           <div class="code"><div class="code__bar">Controle pelo script<button type="button" class="tool"><svg aria-hidden="true"><use href="#i-copy"/></svg>Copiar</button></div><pre><code>var g = APVivo.mount(document.querySelector('#palco'), { formation: 'cycle', off: ['labels'] });
@@ -1178,7 +1180,7 @@ var png = g.png(2);         // imagem parada em 2x, com noite e retícula</code>
           <ul class="ap-bars">
             <li style="--ap-tone:var(--ap-blue)"><strong>Slide ou tela de evento.</strong> Contêiner de 1920 por 1080 com <code>data-vivo-hole</code> em volta do título; para gravar vídeo, grave a tela com a peça aberta.</li>
             <li style="--ap-tone:var(--ap-green)"><strong>Post e impressão.</strong> Monte a formação, espere assentar e use <strong>Baixar PNG</strong> (ou <code>g.png(3)</code>). Para nós avulsos, <code>.ap-hub</code>, <code>.ap-sat</code> e <code>.ap-dust</code> com <code>--ap-size</code>.</li>
-            <li style="--ap-tone:var(--ap-red)"><strong>Página inteira.</strong> <code>&lt;div class="ap-vivo ap-vivo--page" data-vivo="calm"&gt;</code> no começo do <code>body</code>: o gráfico fica fixo atrás de tudo.</li>
+            <li style="--ap-tone:var(--ap-red)"><strong>Página inteira.</strong> <code>&lt;div class="ap-vivo ap-vivo--page" data-vivo="calm" data-vivo-theme="auto"&gt;</code> no começo do <code>body</code>: o gráfico fica fixo atrás de tudo, transparente, e o brilho acende os pontos da retícula do próprio <code>body</code>. A densidade é a do rodapé do site. É o fundo de todas as vistas do Portal do <span class="ap-nw">A-Player</span>.</li>
             <li style="--ap-tone:var(--ap-yellow)"><strong>E-mail e PDF.</strong> Sem script: use o PNG.</li>
           </ul>
           <h3 class="doc__sub">Desempenho e acessibilidade</h3>
@@ -2176,7 +2178,7 @@ Claro no que resolve, prudente no que promete; nada de "frentes", AMS, Academy o
           <div class="tbl-wrap"><table class="tbl">
             <thead><tr><th>Versão</th><th>Data</th><th>O que entrou</th></tr></thead>
             <tbody>
-              <tr><td class="num"><span class="ap-badge">2.2</span></td><td class="num">06/10/2026</td><td>Tudo o que é vivo no site ganhou a rota Vivo: retícula, nós, ligações e pulsos, respiração e câmera, cursor como agente, as 13 formações, troca e explosão, geometria em profundidade e o inventário do que se mexe. O motor do gráfico do site virou <code>js/ap-vivo.js</code>, portátil e com os mesmos números, com exportação em PNG. Novos: <code>ap-vivo</code>, <code>ap-vivo--page</code>, <code>ap-hub</code>, <code>ap-sat</code>, <code>ap-dust</code>, <code>ap-run</code> e <code>ap-geo[data-depth]</code>. A placa pequena (<code>ap-plate--sm</code>) acompanha o tamanho do elemento, como no site, e o exemplo da Home passou a usá-la.</td></tr>
+              <tr><td class="num"><span class="ap-badge">2.2</span></td><td class="num">06/10/2026</td><td>Tudo o que é vivo no site ganhou a rota Vivo: retícula, nós, ligações e pulsos, respiração e câmera, cursor como agente, as 13 formações, troca e explosão, geometria em profundidade e o inventário do que se mexe. O motor do gráfico do site virou <code>js/ap-vivo.js</code>, portátil e com os mesmos números, com exportação em PNG. Novos: <code>ap-vivo</code>, <code>ap-vivo--page</code>, <code>ap-hub</code>, <code>ap-sat</code>, <code>ap-dust</code>, <code>ap-run</code> e <code>ap-geo[data-depth]</code>. O motor ganhou as cores do dia (<code>data-vivo-theme</code>) e a página inteira (<code>ap-vivo--page</code>), que viraram o fundo vivo do Portal do <span class="ap-nw">A-Player</span>, e os stickers ganharam o balanço <code>ap-sway</code>. A placa pequena (<code>ap-plate--sm</code>) acompanha o tamanho do elemento, como no site, e o exemplo da Home passou a usá-la.</td></tr>
               <tr><td class="num"><span class="ap-badge" style="--ap-tone:var(--ap-violet)">2.1</span></td><td class="num">05/10/2026</td><td>Acompanha a revisão de posicionamento do site. "Frentes" vira "plataformas de IA" em todo o sistema (as classes <code>ap-front</code> e os tokens <code>--ap-front-*</code> mantêm o nome). Novos: botão claro (<code>ap-btn--light</code>), logos das cinco Collections com par claro e escuro (<code>ap-coll-logo</code>, <code>ap-on-light</code>, <code>ap-on-dark</code>), IA em destaque (<code>ap-aiapps</code>) e as caixas vivas das três camadas (<code>ap-layer3__art</code>, <code>ap-layer3__apps</code>). A Biblioteca e o lado B passam a aparecer na documentação. Voz com as regras do briefing: resultado no centro, a IA dizendo o que faz, clareza agressiva e promessa prudente, termos aposentados. O índice lateral não corta mais a placa do item atual.</td></tr>
               <tr><td class="num"><span class="ap-badge" style="--ap-tone:var(--ap-line-strong)">2.0</span></td><td class="num">04/10/2026</td><td>Lado B na folha: os componentes do Portal do <span class="ap-nw">A-Player</span> (tons suaves, selo da pessoa, crachá, foto, evento, termo, material, aplicação, salvar, progresso, busca, diálogo) e a Biblioteca com os logos e ícones oficiais da Atlassian, da CISP1 e da monday.com.</td></tr>
               <tr><td class="num"><span class="ap-badge" style="--ap-tone:var(--ap-line-strong)">1.1</span></td><td class="num">01/10/2026</td><td>Publicado junto com o site e o Portal do <span class="ap-nw">A-Player</span>, na mesma pasta: o Portal usa esta folha e estes assets direto. Um tema só nas três peças, com a regra de cookies do site. O gráfico vivo aceita polos próprios por página. A imagem do cartão de leitura mantém a proporção e o índice lateral marca a última seção.</td></tr>
@@ -2199,10 +2201,10 @@ Claro no que resolve, prudente no que promete; nada de "frentes", AMS, Academy o
 
 <p class="copied ap-toast" role="status" aria-live="polite" style="--ap-tone:var(--ap-green)"><span></span></p>
 
-<script src="tokens/tokens.js?v=2.2.0" defer></script>
-<script src="js/grafo.js?v=2.2.0" defer></script>
-<script src="js/ap-vivo.js?v=2.2.0" defer></script>
-<script src="assets/biblioteca/biblioteca.js?v=2.2.0" defer></script>
-<script src="js/docs.js?v=2.2.0" defer></script>
+<script src="tokens/tokens.js?v=2.2.1" defer></script>
+<script src="js/grafo.js?v=2.2.1" defer></script>
+<script src="js/ap-vivo.js?v=2.2.1" defer></script>
+<script src="assets/biblioteca/biblioteca.js?v=2.2.1" defer></script>
+<script src="js/docs.js?v=2.2.1" defer></script>
 </body>
 </html>

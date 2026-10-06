@@ -926,8 +926,8 @@ a.ap-app:hover { color: var(--ap-ink); }
    ===================================================================== */
 .ap-vivo { position: relative; isolation: isolate; overflow: hidden; background: var(--ap-night); color: var(--ap-on-night); }
 .ap-vivo > .ap-vivo__canvas { position: absolute; inset: 0; z-index: -1; display: block; width: 100%; height: 100%; pointer-events: none; }
-/* fundo da página inteira, atrás do conteúdo (como o site) */
-.ap-vivo--page { position: fixed; inset: 0; z-index: -1; }
+/* fundo da página inteira, atrás do conteúdo (como o site): transparente, o fundo e a retícula vêm do body */
+.ap-vivo--page { position: fixed; inset: 0; z-index: -1; background: transparent; pointer-events: none; }
 
 /* nós em HTML: o desenho do canvas. Tamanho por --ap-size, tom por --ap-tone */
 .ap-hub, .ap-sat, .ap-dust { --ap-tone: var(--ap-blue); position: relative; display: inline-block; flex: none; vertical-align: middle; background: var(--ap-tone); }
@@ -948,9 +948,13 @@ a.ap-app:hover { color: var(--ap-ink); }
 .ap-run::after { background: linear-gradient(90deg, transparent 44%, rgba(255, 255, 255, .95) 50%, transparent 56%) no-repeat 100% 0 / 300% 100%; animation: ap-run 4.4s cubic-bezier(.45, 0, .55, 1) .9s infinite; }
 @keyframes ap-run { from { background-position: 100% 0; } to { background-position: 0 0; } }
 .ap-geo[data-depth] { will-change: transform; }
-.reduce-motion .ap-hub--live, .reduce-motion .ap-run::after { animation: none; }
+/* sticker que balança: sobe 4px e gira 3 graus, devagar, como papel colado que respira.
+   Usa translate e rotate, então soma à rotação própria do sticker (transform). --i desencontra os vizinhos */
+@keyframes ap-sway { 0%, 100% { translate: 0 0; rotate: -1.4deg; } 50% { translate: 0 -4px; rotate: 1.6deg; } }
+.ap-sway { animation: ap-sway 6.5s ease-in-out calc(var(--i, 0) * -2.3s) infinite; }
+.reduce-motion .ap-hub--live, .reduce-motion .ap-run::after, .reduce-motion .ap-sway { animation: none; }
 .reduce-motion .ap-run::after { opacity: 0; }
-@media (prefers-reduced-motion: reduce) { .ap-hub--live, .ap-run::after { animation: none; } .ap-run::after { opacity: 0; } }
+@media (prefers-reduced-motion: reduce) { .ap-hub--live, .ap-run::after, .ap-sway { animation: none; } .ap-run::after { opacity: 0; } }
 
 /* ----------------------------------------------------------- movimento
    Um momento orquestrado por abertura; o resto responde à pessoa. */

@@ -35,7 +35,8 @@ Use este arquivo antes de criar qualquer coisa em nome da A-Players. Ele resume 
 - Cursor como agente: atrai satélites e poeira até 170px, liga-se aos sete nós mais próximos (150px) com anel branco de 5px, mostra nomes até 120px. No toque, o site não move o gráfico.
 - Troca de formação em ondas (16ms por grupo de 16 nós, até 160ms); na troca de página, explosão do ponto do clique e remontagem pela mola.
 - Geometria em profundidade: .ap-geo[data-depth] desliza na rolagem (deslocamento = (centro do pai - meio da tela) × profundidade × -0,012), só acima de 1000px.
-- Luz no espectro: .ap-run.
+- Luz no espectro: .ap-run. Sticker que balança: .ap-sway (sobe 4px e gira 3 graus em 6,5s; --i desencontra os vizinhos).
+- Cores: data-vivo-theme="night" (padrão), "day" (lado B: amarelo em traço fino #d4b106, gelo em cinza azulado, pulsos e anel na tinta) ou "auto" (segue o data-theme do html). Página inteira: .ap-vivo.ap-vivo--page, transparente, com o brilho alinhado à retícula do body; é o fundo de todas as vistas do Portal do A-Player.
 - Com prefers-reduced-motion ou ?movimento=reduzido: desenho parado e completo, sem cursor nem pulsos.
 - Não mude as constantes do motor; troque a formação e as camadas. Inventário completo na rota #vivo da documentação.
 

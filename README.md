@@ -60,11 +60,11 @@ assets/stickers       stickers da marca
 - O tema escuro segue o do site: a noite fica escura; folha e cartões viram camadas de azul noite.
 - A documentação usa o próprio sistema: os componentes mostrados vêm de `aplayers.css`, e o código de cada vitrine é gerado do exemplo renderizado.
 - Versão 2.1 (05/10/2026): acompanha a revisão de posicionamento do site. "Frentes" virou "plataformas de IA" (classes `ap-front` e tokens `--ap-front-*` mantêm o nome, para não quebrar peças); entraram `ap-btn--light`, `ap-coll-logo`, `ap-on-light`/`ap-on-dark`, `ap-aiapps` e as caixas vivas `ap-layer3__art`; a documentação passou a mostrar o lado B e a Biblioteca, que já estavam na folha e na pasta desde a 2.0; o índice lateral deixou de cortar a placa do item atual.
-- Versão 2.2 (06/10/2026): tudo o que é vivo no site ganhou lugar próprio, a rota Vivo. O motor do gráfico do site virou `js/ap-vivo.js`, portátil, com as mesmas formações e números; entraram `ap-vivo`, `ap-vivo--page`, os nós em HTML (`ap-hub`, `ap-sat`, `ap-dust`), `ap-run` e a profundidade das geometrias (`ap-geo[data-depth]`). A placa ganhou o tamanho pequeno (`ap-plate--sm`, 4px e 6px), para elementos do tamanho de um botão.
+- Versão 2.2 (06/10/2026): tudo o que é vivo no site ganhou lugar próprio, a rota Vivo. O motor do gráfico do site virou `js/ap-vivo.js`, portátil, com as mesmas formações e números; entraram `ap-vivo`, `ap-vivo--page`, os nós em HTML (`ap-hub`, `ap-sat`, `ap-dust`), `ap-run` e a profundidade das geometrias (`ap-geo[data-depth]`). O motor ganhou as cores do dia (`data-vivo-theme`) e a página inteira (`ap-vivo--page`), o fundo vivo do Portal, e os stickers ganharam o balanço `ap-sway`. A placa ganhou o tamanho pequeno (`ap-plate--sm`, 4px e 6px), para elementos do tamanho de um botão.
 
 ## Quem usa direto
 
-- O Portal do A-Player (`../portal/`) carrega `css/aplayers.css`, `js/grafo.js` (na entrada), os logos das plataformas de IA, as geometrias e os ícones de produto daqui. Ao renomear ou mover arquivo, confira o Portal.
+- O Portal do A-Player (`../portal/`) carrega `css/aplayers.css`, `js/grafo.js` (na entrada), `js/ap-vivo.js` (fundo vivo de todas as vistas), os logos das plataformas de IA, as geometrias e os ícones de produto daqui. Ao renomear ou mover arquivo, confira o Portal.
 - O tema é o mesmo das três peças da publicação (chave `ap-tema`, com a regra de cookies do site).
 - `js/grafo.js` aceita polos próprios: defina `window.APDS_GRAPH_GROUPS` (cinco polos) antes de carregar o arquivo, como faz a entrada do Portal.
 
