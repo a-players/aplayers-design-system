@@ -33,7 +33,7 @@ assets/parceiros      logos Atlassian, CISP1 e monday.com usados no site; collec
 assets/biblioteca     logos e ícones oficiais das três plataformas de IA, sem edição, com fonte e data em biblioteca.json
 assets/produtos       ícones oficiais de produto (Atlassian e monday.com)
 assets/geometria      as 15 geometrias oficiais em SVG
-assets/stickers       stickers da marca
+assets/stickers       stickers da marca (WebP para a web; em alta/, os PNG grandes com fundo transparente)
 ```
 
 ## Como mudar um valor

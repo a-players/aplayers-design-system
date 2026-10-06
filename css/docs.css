@@ -326,7 +326,7 @@ main { position: relative; z-index: 1; }
 .optical__item .ap-partner-mark { width: 100%; }
 .optical__item span { font-size: 13.5px; color: var(--ap-ink-2); text-align: center; }
 @media (max-width: 900px) { .optical { grid-template-columns: 1fr; } }
-.stickers { position: relative; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; }
+.stickers { position: relative; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
 .stickers figure { display: grid; justify-items: center; gap: 10px; padding: 22px 10px 16px; border-radius: var(--ap-r-path); background: var(--ap-card); border: 1px solid var(--ap-line); }
 .stickers img { width: min(120px, 80%); filter: drop-shadow(0 14px 18px rgba(13, 23, 40, .22)); }
 .stickers figure:nth-child(odd) img { transform: rotate(7deg); }
