@@ -191,6 +191,11 @@
   --ap-focus-sheet: #f1e84e;
 }
 /* @tokens:end */
+/* notebook (1001 a 1799px): H1 e H2 um degrau abaixo, para os títulos de duas frases (.ap-ln2)
+   ficarem em duas linhas, como no site (2.5) */
+@media (min-width: 1001px) and (max-width: 1799px) {
+  :root { --ap-t-h1: clamp(44px, 4.5vw, 66px); --ap-t-h2: clamp(36px, 3.6vw, 55px); }
+}
 
 /* ---------------------------------------------------------------- base
    Opcional: aplique .ap-base no body (ou num contêiner) para herdar a

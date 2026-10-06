@@ -23,7 +23,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500..800&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/aplayers.css?v=2.2.1">
+<link rel="stylesheet" href="css/aplayers.css?v=2.5.0">
 <link rel="stylesheet" href="css/docs.css?v=2.2.2">
 <script>
 (function (d, l) {
@@ -415,8 +415,8 @@
           <h3 class="doc__sub">Escala</h3>
           <div class="scale">
             <div class="scale__row"><p class="scale__name">Display<code>--ap-t-display</code></p><p class="scale__sample ap-display" style="font-size:clamp(40px,5vw,72px)"><span class="ap-nw">AI<span class="ap-hy">-</span>People</span></p><p class="scale__spec">54 a 120px · Manrope 780<br>entrelinha .9 · -0,05em</p></div>
-            <div class="scale__row"><p class="scale__name">H1<code>--ap-t-h1</code></p><p class="scale__sample ap-h1" style="font-size:clamp(34px,3.6vw,56px)">Trabalho conectado.</p><p class="scale__spec">44 a 88px · Manrope 800<br>entrelinha 1 · -0,038em</p></div>
-            <div class="scale__row"><p class="scale__name">H2<code>--ap-t-h2</code></p><p class="scale__sample ap-h2" style="font-size:clamp(30px,3vw,46px)">Três plataformas.</p><p class="scale__spec">36 a 70px · Manrope 800<br>entrelinha 1,02 · -0,035em</p></div>
+            <div class="scale__row"><p class="scale__name">H1<code>--ap-t-h1</code></p><p class="scale__sample ap-h1" style="font-size:clamp(34px,3.6vw,56px)">Trabalho conectado.</p><p class="scale__spec">44 a 88px (44 a 66px no notebook) · Manrope 800<br>entrelinha 1 · -0,038em</p></div>
+            <div class="scale__row"><p class="scale__name">H2<code>--ap-t-h2</code></p><p class="scale__sample ap-h2" style="font-size:clamp(30px,3vw,46px)">Três plataformas.</p><p class="scale__spec">36 a 70px (36 a 55px no notebook) · Manrope 800<br>entrelinha 1,02 · -0,035em</p></div>
             <div class="scale__row"><p class="scale__name">Intermediário<code>--ap-t-mid</code></p><p class="scale__sample ap-mid" style="font-size:clamp(24px,2.4vw,36px)">Cinco Collections, um só gráfico</p><p class="scale__spec">28 a 44px · Manrope 800<br>entrelinha 1,06 · -0,03em</p></div>
             <div class="scale__row"><p class="scale__name">H3<code>--ap-t-h3</code></p><p class="scale__sample ap-h3">Teamwork Graph</p><p class="scale__spec">24px · Manrope 700<br>entrelinha 1,2 · -0,015em</p></div>
             <div class="scale__row"><p class="scale__name">H4<code>--ap-t-h4</code></p><p class="scale__sample ap-h4">Indicamos quando</p><p class="scale__spec">17px · Manrope 700<br>entrelinha 1,3</p></div>
@@ -1914,6 +1914,8 @@ var png = g.png(2);         // imagem parada em 2x, com noite e retícula</code>
               <tr><td><strong>gráfico</strong></td><td class="muted">grafo</td><td class="muted">"Um só gráfico". Nomes de produto e método ficam em inglês: Teamwork Graph, Context Graph.</td></tr>
               <tr><td><strong>gente movida por desafios</strong></td><td class="muted">gente acima da média</td><td class="muted">Atitude e compromisso, não superioridade.</td></tr>
               <tr><td><strong>Business Partner</strong></td><td class="muted">HRBP, HR Business Partner</td><td class="muted">O papel que acompanha os profissionais alocados, em português e em inglês.</td></tr>
+              <tr><td><strong>acompanhados por especialistas</strong></td><td class="muted">supervisão, supervisionados</td><td class="muted">Os AI-Players apoiam a equipe; especialistas da <span class="ap-nw">A-Players</span> acompanham e validam cada entrega.</td></tr>
+              <tr><td><strong>visibilidade</strong> (FinOps)</td><td class="muted">inventário</td><td class="muted">A primeira etapa do FinOps de SaaS e IA mostra tudo o que se contrata, por fornecedor e por área. "Inventário" é genérico.</td></tr>
               <tr><td><strong>a CISP1</strong></td><td class="muted">o CISP1</td><td class="muted">No feminino, como no site da própria CISP1.</td></tr>
               <tr><td><strong>monday.com</strong></td><td class="muted">com M maiúsculo ou sem o .com</td><td class="muted">Sempre minúsculo, como o fabricante escreve.</td></tr>
               <tr><td><strong>Camadas do Context Graph</strong></td><td class="muted">outras listas de camadas</td><td class="muted">Negócio, Processos, Plataformas, Agentes e Feedback.</td></tr>
@@ -2184,6 +2186,7 @@ Claro no que resolve, prudente no que promete; nada de "frentes", AMS, Academy o
           <div class="tbl-wrap"><table class="tbl">
             <thead><tr><th>Versão</th><th>Data</th><th>O que entrou</th></tr></thead>
             <tbody>
+              <tr><td class="num"><span class="ap-badge">2.5</span></td><td class="num">06/10/2026</td><td>Terceira rodada de 2027, validada no notebook: H1 e H2 um degrau abaixo entre 1001 e 1799px, para os títulos de duas frases ficarem em duas linhas; "acompanhados por especialistas" no lugar de "supervisão"; "visibilidade" no lugar de "inventário" no FinOps.</td></tr>
               <tr><td class="num"><span class="ap-badge">2.4</span></td><td class="num">06/10/2026</td><td>Segunda rodada de 2027 no site: home e aberturas falam de impacto e o plano de assinatura fica nas páginas internas; em Talent as a Service, o tradicional vem primeiro e os AI-Players entram como apoio, com a gestão e o conhecimento sempre humanos; o plano de assinatura reúne gestão de ambientes, suporte, melhorias contínuas e evolução estratégica da plataforma.</td></tr>
               <tr><td class="num"><span class="ap-badge">2.3</span></td><td class="num">06/10/2026</td><td>Vocabulário de 2027: AI-Players (os agentes de IA da <span class="ap-nw">A-Players</span>, terceira forma de Talent as a Service), planos de assinatura Essential, Growth e Enterprise, FinOps de SaaS e IA e a CISP1 como parceira estratégica. Títulos de oferta com a dor, o que muda, a condição real e o primeiro passo.</td></tr>
               <tr><td class="num"><span class="ap-badge">2.2</span></td><td class="num">06/10/2026</td><td>Tudo o que é vivo no site ganhou a rota Vivo: retícula, nós, ligações e pulsos, respiração e câmera, cursor como agente, as 13 formações, troca e explosão, geometria em profundidade e o inventário do que se mexe. O motor do gráfico do site virou <code>js/ap-vivo.js</code>, portátil e com os mesmos números, com exportação em PNG. Novos: <code>ap-vivo</code>, <code>ap-vivo--page</code>, <code>ap-hub</code>, <code>ap-sat</code>, <code>ap-dust</code>, <code>ap-run</code> e <code>ap-geo[data-depth]</code>. O motor ganhou as cores do dia (<code>data-vivo-theme</code>) e a página inteira (<code>ap-vivo--page</code>), que viraram o fundo vivo do Portal do <span class="ap-nw">A-Player</span>, e os stickers ganharam o balanço <code>ap-sway</code>. A placa pequena (<code>ap-plate--sm</code>) acompanha o tamanho do elemento, como no site, e o exemplo da Home passou a usá-la.</td></tr>
@@ -2202,7 +2205,7 @@ Claro no que resolve, prudente no que promete; nada de "frentes", AMS, Academy o
 
 <footer class="foot-global ap-wrap">
   <div class="foot">
-  <span><span class="ap-nw">A-Players</span> Design System, versão 2.4, outubro de 2026</span>
+  <span><span class="ap-nw">A-Players</span> Design System, versão 2.5, outubro de 2026</span>
   <span class="foot__links"><a href="../index.html">Site <span class="ap-nw">A-Players</span></a><a href="../portal/index.html">Portal do <span class="ap-nw">A-Player</span></a><a href="#vivo">Gráfico vivo</a><a href="#biblioteca">Biblioteca</a><a href="#recursos/downloads">Arquivos</a><a href="#voz">Voz da marca</a></span>
   </div>
 </footer>
