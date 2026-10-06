@@ -575,3 +575,47 @@ main { position: relative; z-index: 1; }
 @media (prefers-reduced-motion: reduce) { .lib-mosaic__i { animation: none; } }
 .reduce-motion .lib-mosaic__i { animation: none; }
 .lib-bar .ap-filter .ap-mark { margin-right: 7px; vertical-align: 1px; }
+
+/* ----------------------------------------------------------- vivo (versão 2.2) */
+/* abertura: o gráfico vivo de verdade, atrás do título */
+.vivo-top { overflow: hidden; }
+.vivo-top .hero { min-height: min(760px, 92svh); display: flex; align-items: center; }
+.vivo-top .hero__inner { max-width: 600px; }
+/* palcos: o contêiner ocupa o palco inteiro, sem a retícula de 28px por baixo */
+.vivo-stage-wrap { display: block; padding: 0; background: var(--ap-night); }
+.vivo-stage { height: clamp(300px, 34vw, 400px); touch-action: pan-y; }
+.vivo-stage--xl { height: clamp(380px, 46vw, 580px); }
+.vivo-stage[data-vivo-burst-click] { cursor: crosshair; }
+.vivo-hint { position: absolute; left: 16px; bottom: 12px; margin: 0; font: 600 12.5px/1.2 var(--ap-text); color: var(--ap-on-night-2); pointer-events: none; opacity: .8; }
+.vivo-ctrl { display: grid; gap: 10px; padding: 14px 16px; border-top: 1px solid var(--ap-line); background: var(--ap-card); }
+.vivo-ctrl__row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.vivo-ctrl__row:has(> .vivo-ctrl__label) { display: grid; grid-template-columns: 96px minmax(0, 1fr); align-items: start; gap: 8px 12px; }
+.vivo-ctrl__label { padding-top: 9px; font: 700 13px/1.2 var(--ap-text); color: var(--ap-ink-2); }
+.vivo-ctrl__opts { display: flex; flex-wrap: wrap; gap: 8px; }
+.vivo-ctrl .ap-filter { padding: 7px 13px; font-size: 14px; }
+.vivo-ctrl .tool { min-height: 32px; padding: 5px 11px; font-size: 13.5px; }
+@media (max-width: 640px) { .vivo-ctrl__row:has(> .vivo-ctrl__label) { grid-template-columns: minmax(0, 1fr); } .vivo-ctrl__label { padding-top: 0; } }
+/* nós em tamanho grande */
+.vivo-nodes { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr)); gap: 26px; align-items: start; }
+.vivo-node { display: grid; gap: 14px; margin: 0; }
+.vivo-node__art { display: flex; align-items: center; justify-content: center; gap: 18px; height: 120px; }
+.vivo-node figcaption { display: grid; gap: 4px; }
+.vivo-node figcaption strong { font: 800 18px/1.2 var(--ap-title); color: #fff; }
+.vivo-node figcaption span { font-size: 14.5px; color: var(--ap-on-night-2); }
+/* papéis de cor */
+.vivo-roles { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 150px), 1fr)); gap: 10px; }
+.vivo-roles li { display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: center; column-gap: 16px; padding: 16px 16px 14px 20px; border: 1px solid var(--ap-line); border-radius: var(--ap-r-path); background: var(--ap-card); }
+.vivo-roles .ap-hub { grid-row: span 2; }
+.vivo-roles strong { font: 800 17px/1.2 var(--ap-title); color: var(--ap-ink); }
+.vivo-roles li > span:last-child { font-size: 13.5px; color: var(--ap-ink-2); }
+/* geometria em profundidade */
+.vivo-depth { position: relative; min-height: 300px; display: grid; align-content: center; }
+.vivo-depth .ap-kicker { position: relative; z-index: 1; color: var(--ap-on-night-2); }
+.vivo-depth__title { position: relative; z-index: 1; max-width: 12ch; margin: 10px 0 0; font: 800 clamp(30px, 3.6vw, 48px)/1.02 var(--ap-title); letter-spacing: -.04em; color: #fff; }
+.vivo-depth .ap-geo { transition: transform .1s linear; }
+/* luz no espectro */
+.vivo-run-demo { display: grid; align-content: center; min-height: 120px; padding-inline: clamp(24px, 6vw, 80px); }
+.vivo-inv td:first-child { min-width: 170px; }
+.vivo-inv td:last-child { white-space: nowrap; }
+/* sete estratos na Home: em telas médias, quatro por linha */
+@media (min-width: 641px) and (max-width: 1300px) { .hero--home .ap-strata { grid-template-columns: repeat(4, minmax(0, 1fr)); row-gap: 8px; } }

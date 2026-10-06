@@ -5,9 +5,10 @@
    iguais ao site. A folha da peça cuida só da composição.
 
    Origem: site A-Players (versão Claude, 01/10/2026), entrada e Portal do A-Player
-   (02/10/2026). Versão 2.1 (05/10/2026). Cada componente diz de qual peça
+   (02/10/2026). Versão 2.2 (06/10/2026). Cada componente diz de qual peça
    veio, para conferência. Os componentes do lado B (o dia da marca, tons
-   suaves) estão no bloco LADO B, antes do movimento.
+   suaves) estão no bloco LADO B; o gráfico vivo e o que se mexe, no bloco
+   VIVO, antes do movimento.
    Tokens: gerados por tools/build_tokens.py entre os marcadores abaixo.
    Fontes: Manrope (títulos) e DM Sans (texto), pelo Google Fonts:
    https://fonts.googleapis.com/css2?family=Manrope:wght@500..800&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap
@@ -907,6 +908,43 @@ a.ap-app:hover { color: var(--ap-ink); }
   .ap-stick-in, .ap-drop-in, .ap-when--now::before, .ap-search:hover::before { animation: none; }
   .ap-snap, .ap-idcard, .ap-event, .ap-term, .ap-material, .ap-app__tile, .ap-save { transition: none; }
 }
+
+/* =====================================================================
+   VIVO (versão 2.2, 06/10/2026)
+   O gráfico vivo do site (js/graph.js, canvas #grafo) em qualquer peça:
+   .ap-vivo recebe o canvas de js/ap-vivo.js, com a mesma retícula, os
+   mesmos nós, ligações, pulsos, respiração, câmera e cursor. Os nós também
+   existem em HTML (.ap-hub, .ap-sat, .ap-dust) para slides, cartões e
+   peças paradas, e a luz que corre no espectro (.ap-run) vem do bloco de
+   parceiros da Intelligence. Site: #grafo, .allies__list::after
+   ===================================================================== */
+.ap-vivo { position: relative; isolation: isolate; overflow: hidden; background: var(--ap-night); color: var(--ap-on-night); }
+.ap-vivo > .ap-vivo__canvas { position: absolute; inset: 0; z-index: -1; display: block; width: 100%; height: 100%; pointer-events: none; }
+/* fundo da página inteira, atrás do conteúdo (como o site) */
+.ap-vivo--page { position: fixed; inset: 0; z-index: -1; }
+
+/* nós em HTML: o desenho do canvas. Tamanho por --ap-size, tom por --ap-tone */
+.ap-hub, .ap-sat, .ap-dust { --ap-tone: var(--ap-blue); position: relative; display: inline-block; flex: none; vertical-align: middle; background: var(--ap-tone); }
+.ap-hub { --ap-size: 14px; width: var(--ap-size); height: var(--ap-size); border-radius: 39% 13% 39% 13%; box-shadow: 0 0 calc(var(--ap-size) * 1.4) calc(var(--ap-size) * .45) color-mix(in srgb, var(--ap-tone) 32%, transparent); }
+.ap-hub::before { content: ""; position: absolute; inset: calc(var(--ap-size) * -.43); border: max(1px, calc(var(--ap-size) * .086)) solid color-mix(in srgb, var(--ap-tone) 50%, transparent); border-radius: inherit; }
+.ap-hub::after { content: ""; position: absolute; left: 21.5%; top: 21.5%; width: 33%; height: 33%; border-radius: inherit; background: rgba(255, 255, 255, .5); }
+.ap-sat { --ap-size: 8.4px; width: var(--ap-size); height: var(--ap-size); border-radius: 50%; }
+.ap-sat::before { content: ""; position: absolute; inset: calc(var(--ap-size) * -.42); border: max(1px, calc(var(--ap-size) * .12)) solid color-mix(in srgb, var(--ap-tone) 42%, transparent); border-radius: 50%; }
+.ap-dust { --ap-size: 4px; width: var(--ap-size); height: var(--ap-size); border-radius: 50%; opacity: .94; }
+/* o halo do polo respira (período de 3,14s, como no canvas) */
+.ap-hub--live { animation: ap-halo 3.14s ease-in-out infinite; }
+@keyframes ap-halo { 50% { box-shadow: 0 0 calc(var(--ap-size) * 1.8) calc(var(--ap-size) * .65) color-mix(in srgb, var(--ap-tone) 32%, transparent); } }
+
+/* luz que corre no espectro: a linha que liga as plataformas de IA */
+.ap-run { position: relative; display: block; height: 2px; border-radius: 2px; }
+.ap-run::before, .ap-run::after { content: ""; position: absolute; inset: 0; border-radius: inherit; }
+.ap-run::before { background: var(--ap-spectrum-flow); opacity: .6; }
+.ap-run::after { background: linear-gradient(90deg, transparent 44%, rgba(255, 255, 255, .95) 50%, transparent 56%) no-repeat 100% 0 / 300% 100%; animation: ap-run 4.4s cubic-bezier(.45, 0, .55, 1) .9s infinite; }
+@keyframes ap-run { from { background-position: 100% 0; } to { background-position: 0 0; } }
+.ap-geo[data-depth] { will-change: transform; }
+.reduce-motion .ap-hub--live, .reduce-motion .ap-run::after { animation: none; }
+.reduce-motion .ap-run::after { opacity: 0; }
+@media (prefers-reduced-motion: reduce) { .ap-hub--live, .ap-run::after { animation: none; } .ap-run::after { opacity: 0; } }
 
 /* ----------------------------------------------------------- movimento
    Um momento orquestrado por abertura; o resto responde à pessoa. */

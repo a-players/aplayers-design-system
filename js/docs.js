@@ -5,13 +5,14 @@
    código das vitrines gerado do próprio exemplo, cópia, seletor de tom,
    demos de movimento, abas, mapa de escolha, tema, tabelas vivas
    (contraste calculado e tokens lidos de tokens/tokens.json), caixas
-   vivas das três camadas e a Biblioteca (busca, filtros e arquivos).
+   vivas das três camadas, a Biblioteca (busca, filtros e arquivos) e os
+   controles do gráfico vivo (motor em js/ap-vivo.js).
    ===================================================================== */
 (function () {
   'use strict';
   var d = document, root = d.documentElement;
   var reduced = matchMedia('(prefers-reduced-motion: reduce)').matches || root.classList.contains('reduce-motion');
-  var ROUTES = { inicio: 'Início', fundamentos: 'Fundamentos', componentes: 'Componentes', padroes: 'Padrões', voz: 'Voz e escrita', biblioteca: 'Biblioteca', recursos: 'Recursos' };
+  var ROUTES = { inicio: 'Início', fundamentos: 'Fundamentos', vivo: 'Vivo', componentes: 'Componentes', padroes: 'Padrões', voz: 'Voz e escrita', biblioteca: 'Biblioteca', recursos: 'Recursos' };
   var BASE_TITLE = 'A-Players Design System';
   function $(s, c) { return (c || d).querySelector(s); }
   function $$(s, c) { return Array.prototype.slice.call((c || d).querySelectorAll(s)); }
@@ -55,6 +56,7 @@
     if (rota === 'inicio') charge();
     spy();
     if (window.apdsGraph) window.apdsGraph.refresh();
+    if (window.APVivo) window.APVivo.depth();
   }
   function go() {
     var p = parse();
@@ -274,6 +276,56 @@
       en.forEach(function (x) { el.classList.toggle('is-live', x.isIntersecting); });
     }, { threshold: 0.2 }).observe(el);
   });
+
+  /* ------------------------------------------------------------ vivo */
+  // a abertura com o gráfico de verdade e os controles das vitrines: cada controle age no .ap-vivo da sua vitrine
+  (function () {
+    var V = window.APVivo;
+    if (!V) return;
+    var hero = d.getElementById('vivo-hero');
+    if (hero) {
+      var narrow = matchMedia('(max-width: 900px)');
+      var mountHero = function () {
+        if (hero.apVivo) hero.apVivo.destroy();
+        // tela larga: a constelação da Home ao lado do título; celular: a formação calma atrás do texto
+        V.mount(hero, narrow.matches ? { formation: 'calm', dim: 0.7 } : { formation: 'constellation', area: [0.46, 0.1, 0.54, 0.8] });
+      };
+      mountHero();
+      if (narrow.addEventListener) narrow.addEventListener('change', mountHero);
+    }
+    function stageOf(el) { var s = el.closest('.spec'); return s ? s.querySelector('.ap-vivo') : null; }
+    function graphOf(el) { var st = stageOf(el); return st && st.apVivo; }
+    $$('[data-vivo-set]').forEach(function (b) {
+      b.addEventListener('click', function () {
+        var g = graphOf(b); if (!g) return;
+        g.set(b.dataset.vivoSet);
+        $$('[data-vivo-set]', b.parentElement).forEach(function (x) { x.setAttribute('aria-pressed', String(x === b)); });
+      });
+    });
+    $$('[data-vivo-toggle]').forEach(function (b) {
+      b.addEventListener('click', function () {
+        var g = graphOf(b); if (!g) return;
+        var on = b.getAttribute('aria-pressed') !== 'true';
+        g.layer(b.dataset.vivoToggle, on);
+        b.setAttribute('aria-pressed', String(on));
+      });
+    });
+    $$('[data-vivo-burst]').forEach(function (b) {
+      b.addEventListener('click', function () { var g = graphOf(b); if (g) g.burst(); });
+    });
+    $$('[data-vivo-burst-click]').forEach(function (st) {
+      st.addEventListener('click', function (e) { if (!st.apVivo) return; var r = st.getBoundingClientRect(); st.apVivo.burst(e.clientX - r.left, e.clientY - r.top); });
+    });
+    $$('[data-vivo-png]').forEach(function (b) {
+      b.addEventListener('click', function () {
+        var g = graphOf(b); if (!g) return;
+        var url = g.png(2); if (!url) return;
+        var a = d.createElement('a'); a.href = url; a.download = 'aplayers-grafico-vivo-' + g.state().formation + '.png';
+        d.body.appendChild(a); a.click(); a.remove();
+        say('PNG baixado');
+      });
+    });
+  })();
 
   /* ------------------------------------------------------------ biblioteca */
   // dados em assets/biblioteca/biblioteca.js (gerado por tools/build_biblioteca.py)

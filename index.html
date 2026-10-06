@@ -23,8 +23,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500..800&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/aplayers.css?v=2.1.0">
-<link rel="stylesheet" href="css/docs.css?v=2.1.0">
+<link rel="stylesheet" href="css/aplayers.css?v=2.2.0">
+<link rel="stylesheet" href="css/docs.css?v=2.2.0">
 <script>
 (function (d, l) {
   d.documentElement.classList.remove('no-js'); d.documentElement.classList.add('js');
@@ -82,6 +82,7 @@
     <nav aria-label="Seções do Design System" style="margin-left:auto">
       <ul class="ap-nav">
         <li><a class="ap-nav__link" data-nav="fundamentos" href="#fundamentos">Fundamentos</a></li>
+        <li><a class="ap-nav__link" data-nav="vivo" href="#vivo">Vivo</a></li>
         <li><a class="ap-nav__link" data-nav="componentes" href="#componentes">Componentes</a></li>
         <li><a class="ap-nav__link" data-nav="padroes" href="#padroes">Padrões</a></li>
         <li><a class="ap-nav__link" data-nav="voz" href="#voz">Voz</a></li>
@@ -103,6 +104,7 @@
   <ul>
     <li><a href="#inicio" style="--ap-tone:var(--ap-blue)">Início<span>Visão geral</span></a></li>
     <li><a href="#fundamentos" style="--ap-tone:var(--ap-blue)">Fundamentos<span>Cor, tipo, forma</span></a></li>
+    <li><a href="#vivo" style="--ap-tone:var(--ap-yellow)">Vivo<span>Gráfico e movimento</span></a></li>
     <li><a href="#componentes" style="--ap-tone:var(--ap-green)">Componentes<span>Peças prontas</span></a></li>
     <li><a href="#padroes" style="--ap-tone:var(--ap-red)">Padrões<span>Composições</span></a></li>
     <li><a href="#voz" style="--ap-tone:var(--ap-yellow)">Voz<span>Escrita</span></a></li>
@@ -116,8 +118,8 @@
 <!-- =================================================================== INÍCIO -->
 <article class="rota" data-rota="inicio" id="inicio" aria-label="Início">
   <section class="hero hero--home ap-wrap" aria-labelledby="h-inicio">
-    <div class="ap-geo geo-a" aria-hidden="true"><img src="assets/geometria/home-triangle-up.svg" alt=""></div>
-    <div class="ap-geo geo-b" aria-hidden="true"><img src="assets/geometria/home-triangle-down.svg" alt=""></div>
+    <div class="ap-geo geo-a" data-depth="16" aria-hidden="true"><img src="assets/geometria/home-triangle-up.svg" alt=""></div>
+    <div class="ap-geo geo-b" data-depth="-10" aria-hidden="true"><img src="assets/geometria/home-triangle-down.svg" alt=""></div>
     <div data-graph id="g-inicio" style="position:absolute;top:12%;right:0;width:56%;height:70%;pointer-events:none" aria-hidden="true"></div>
     <div class="hero__inner">
       <p class="ap-pill"><svg class="ap-tri" aria-hidden="true"><use href="#tris"/></svg>Design System</p>
@@ -128,8 +130,9 @@
         <a class="ap-btn ap-btn--ghost" href="#recursos/uso">Usar na minha peça</a>
       </div>
     </div>
-    <div class="ap-strata" style="--n:6">
+    <div class="ap-strata" style="--n:7">
       <a class="ap-stratum" href="#fundamentos" style="--ap-tone:var(--ap-blue)"><strong>Fundamentos</strong><span>Cor, tipo, forma, espaço e movimento</span></a>
+      <a class="ap-stratum" href="#vivo" style="--ap-tone:var(--ap-yellow)"><strong>Vivo</strong><span>O gráfico e tudo o que se mexe</span></a>
       <a class="ap-stratum" href="#componentes" style="--ap-tone:var(--ap-green)"><strong>Componentes</strong><span>Peças prontas, com estados e código</span></a>
       <a class="ap-stratum" href="#padroes" style="--ap-tone:var(--ap-red)"><strong>Padrões</strong><span>Composições que já funcionam</span></a>
       <a class="ap-stratum" href="#voz" style="--ap-tone:var(--ap-yellow)"><strong>Voz</strong><span>Como a <span class="ap-nw">A-Players</span> escreve</span></a>
@@ -725,6 +728,476 @@
           </table></div>
           <p class="doc__note">O tema segue o sistema até a pessoa escolher. A escolha fica guardada e a troca abre a nova paleta em círculo, a partir do botão. Experimente no cabeçalho.</p>
         </section>
+      </div>
+    </div>
+  </div>
+</article>
+
+<!-- =================================================================== VIVO -->
+<article class="rota" data-rota="vivo" id="vivo" aria-label="Vivo">
+  <div class="ap-vivo vivo-top" id="vivo-hero">
+  <section class="hero hero--split ap-wrap" aria-labelledby="h-vivo">
+    <div class="hero__inner">
+      <p class="ap-pill"><svg class="ap-tri" aria-hidden="true"><use href="#tris"/></svg>Vivo</p>
+      <h1 class="ap-h1" id="h-vivo"><span class="ap-ln2">O gráfico vivo</span> <span class="ap-ln2">e tudo o que se mexe.</span></h1>
+      <p class="ap-lead">Atrás do site, pessoas, processos, plataformas, agentes e feedback viram nós que respiram, se ligam, trocam pulsos e respondem ao cursor. É o Context Graph da <span class="ap-nw">A-Players</span> em movimento e a base da marca. Aqui estão as peças, os números e o código para levar isso a qualquer peça.</p>
+      <nav class="hero__index" aria-label="Vivo">
+        <a href="#vivo/grafico" style="--ap-tone:var(--ap-blue)">Gráfico</a><a href="#vivo/reticula" style="--ap-tone:var(--ap-green)">Retícula</a><a href="#vivo/nos" style="--ap-tone:var(--ap-red)">Nós</a><a href="#vivo/ligacoes" style="--ap-tone:var(--ap-yellow)">Ligações</a><a href="#vivo/cursor" style="--ap-tone:var(--ap-blue)">Cursor</a><a href="#vivo/formacoes" style="--ap-tone:var(--ap-green)">Formações</a><a href="#vivo/uso" style="--ap-tone:var(--ap-violet)">Usar</a>
+      </nav>
+    </div>
+  </section>
+  </div>
+
+  <div class="ap-sheet page">
+    <div class="ap-wrap page__grid">
+      <aside class="side" aria-label="Nesta página">
+        <p class="side__title">Vivo</p>
+        <ol>
+          <li><a href="#vivo/grafico" style="--ap-tone:var(--ap-blue)">Gráfico vivo</a></li>
+          <li><a href="#vivo/reticula" style="--ap-tone:var(--ap-green)">Retícula</a></li>
+          <li><a href="#vivo/nos" style="--ap-tone:var(--ap-red)">Nós</a></li>
+          <li><a href="#vivo/ligacoes" style="--ap-tone:var(--ap-yellow)">Ligações e pulsos</a></li>
+          <li><a href="#vivo/respiracao" style="--ap-tone:var(--ap-violet)">Respiração e câmera</a></li>
+          <li><a href="#vivo/cursor" style="--ap-tone:var(--ap-blue)">Cursor como agente</a></li>
+          <li><a href="#vivo/formacoes" style="--ap-tone:var(--ap-green)">Formações</a></li>
+          <li><a href="#vivo/transicoes" style="--ap-tone:var(--ap-red)">Trocar e explodir</a></li>
+          <li><a href="#vivo/geometria" style="--ap-tone:var(--ap-yellow)">Geometria em profundidade</a></li>
+          <li><a href="#vivo/inventario" style="--ap-tone:var(--ap-violet)">Tudo o que se mexe</a></li>
+          <li><a href="#vivo/uso" style="--ap-tone:var(--ap-blue)">Levar para uma peça</a></li>
+        </ol>
+      </aside>
+      <div class="content">
+
+        <!-- ------------------------------------------------ gráfico vivo -->
+        <section class="doc" id="vivo-grafico" style="--ap-tone:var(--ap-blue)">
+          <header class="doc__head">
+            <p class="ap-kicker">Vivo</p>
+            <h2>Gráfico vivo</h2>
+            <p class="ap-lead">Um só gráfico vive atrás do site inteiro. Cada área escura pede uma formação e os mesmos 96 nós se reorganizam para ela. Mexa o cursor, troque a formação e ligue ou desligue cada camada.</p>
+          </header>
+          <div class="spec" data-nocode>
+            <div class="spec__stage spec__stage--night vivo-stage-wrap">
+              <div class="ap-vivo vivo-stage vivo-stage--xl" data-vivo="constellation" data-vivo-touch></div>
+            </div>
+            <div class="vivo-ctrl">
+              <div class="vivo-ctrl__row" role="group" aria-label="Formação">
+                <span class="vivo-ctrl__label">Formação</span><span class="vivo-ctrl__opts">                <button type="button" class="ap-filter" data-vivo-set="constellation" aria-pressed="true">Home</button>
+                <button type="button" class="ap-filter" data-vivo-set="ecosystem" aria-pressed="false">Plataformas de IA</button>
+                <button type="button" class="ap-filter" data-vivo-set="context" aria-pressed="false">Context Graph</button>
+                <button type="button" class="ap-filter" data-vivo-set="fronts" aria-pressed="false">Serviços</button>
+                <button type="button" class="ap-filter" data-vivo-set="cycle" aria-pressed="false">Ciclo</button>
+                <button type="button" class="ap-filter" data-vivo-set="teamwork" aria-pressed="false">Atlassian</button>
+                <button type="button" class="ap-filter" data-vivo-set="cisp" aria-pressed="false">CISP1</button>
+                <button type="button" class="ap-filter" data-vivo-set="operation" aria-pressed="false">monday.com</button>
+                <button type="button" class="ap-filter" data-vivo-set="calm" aria-pressed="false">Calma</button></span>
+              </div>
+              <div class="vivo-ctrl__row" role="group" aria-label="Camadas">
+                <span class="vivo-ctrl__label">Camadas</span><span class="vivo-ctrl__opts">                <button type="button" class="tool" data-vivo-toggle="grid" aria-pressed="true">Retícula</button>
+                <button type="button" class="tool" data-vivo-toggle="glow" aria-pressed="true">Brilho</button>
+                <button type="button" class="tool" data-vivo-toggle="edges" aria-pressed="true">Ligações</button>
+                <button type="button" class="tool" data-vivo-toggle="pulses" aria-pressed="true">Pulsos</button>
+                <button type="button" class="tool" data-vivo-toggle="halos" aria-pressed="true">Halos</button>
+                <button type="button" class="tool" data-vivo-toggle="nodes" aria-pressed="true">Nós</button>
+                <button type="button" class="tool" data-vivo-toggle="labels" aria-pressed="true">Rótulos</button>
+                <button type="button" class="tool" data-vivo-toggle="cursor" aria-pressed="true">Cursor</button>
+                <button type="button" class="tool" data-vivo-toggle="attract" aria-pressed="true">Atração</button>
+                <button type="button" class="tool" data-vivo-toggle="breathe" aria-pressed="true">Respiração</button>
+                <button type="button" class="tool" data-vivo-toggle="camera" aria-pressed="true">Câmera</button>
+                <button type="button" class="tool" data-vivo-toggle="depth" aria-pressed="true">Profundidade</button></span>
+              </div>
+              <div class="vivo-ctrl__row">
+                <span class="vivo-ctrl__label">Ações</span><span class="vivo-ctrl__opts">                <button type="button" class="tool" data-vivo-burst>Explodir e remontar</button>
+                <button type="button" class="tool" data-vivo-png>Baixar PNG</button></span>
+              </div>
+            </div>
+            <div class="spec__bar"><strong>Gráfico vivo</strong><code>.ap-vivo · data-vivo · js/ap-vivo.js</code><span>O mesmo motor do site (<code>js/graph.js</code>), dentro de um contêiner.</span></div>
+          </div>
+          <h3 class="doc__sub">As camadas</h3>
+          <div class="tbl-wrap"><table class="tbl">
+            <thead><tr><th>Camada</th><th>Nome no código</th><th>O que faz</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Retícula</strong></td><td><code>grid</code></td><td class="muted">Pontos de 2px a cada 56px, a 9%. O chão da noite.</td></tr>
+              <tr><td><strong>Brilho</strong></td><td><code>glow</code></td><td class="muted">Os pontos da retícula acendem em amarelo até 220px do cursor.</td></tr>
+              <tr><td><strong>Ligações</strong></td><td><code>edges</code></td><td class="muted">Cinco tipos, na cor do nó de origem, em curva suave.</td></tr>
+              <tr><td><strong>Pulsos</strong></td><td><code>pulses</code></td><td class="muted">Uma luz branca com halo de cor corre a ligação de ponta a ponta.</td></tr>
+              <tr><td><strong>Halos</strong></td><td><code>halos</code></td><td class="muted">Brilho radial dos polos, que respira.</td></tr>
+              <tr><td><strong>Nós</strong></td><td><code>nodes</code></td><td class="muted">Polos, satélites e poeira.</td></tr>
+              <tr><td><strong>Rótulos</strong></td><td><code>labels</code></td><td class="muted">Polos sempre; satélites perto do cursor ou em formações que pedem todos.</td></tr>
+              <tr><td><strong>Cursor</strong></td><td><code>cursor</code></td><td class="muted">Liga o cursor aos sete nós mais próximos, com um anel branco.</td></tr>
+              <tr><td><strong>Atração</strong></td><td><code>attract</code></td><td class="muted">Satélites e poeira até 170px vêm atrás do cursor.</td></tr>
+              <tr><td><strong>Respiração</strong></td><td><code>breathe</code></td><td class="muted">Cada nó orbita o seu lugar, mesmo sem ninguém por perto.</td></tr>
+              <tr><td><strong>Câmera</strong></td><td><code>camera</code></td><td class="muted">Giro lento da cena e inclinação que segue o cursor.</td></tr>
+              <tr><td><strong>Profundidade</strong></td><td><code>depth</code></td><td class="muted">O que está longe encolhe e esmaece até 42%.</td></tr>
+            </tbody>
+          </table></div>
+          <div class="rules">
+            <div class="rule"><p class="rule__title">Faça</p><ul><li>Um gráfico por tela, atrás do conteúdo, na noite.</li><li>Formação que diz o assunto da área: plataformas, serviços, ciclo, Context Graph.</li><li>Zona livre (<code>data-vivo-hole</code>) quando o texto fica no meio do gráfico.</li></ul></div>
+            <div class="rule rule--evite"><p class="rule__title">Evite</p><ul><li>Dois gráficos vivos na mesma tela.</li><li>Gráfico sobre a folha clara ou o dia: ele foi feito para a noite.</li><li>Mudar as constantes do motor para "dar mais movimento". Troque a formação ou as camadas.</li></ul></div>
+          </div>
+        </section>
+
+        <!-- ------------------------------------------------ retícula -->
+        <section class="doc" id="vivo-reticula" style="--ap-tone:var(--ap-green)">
+          <header class="doc__head">
+            <p class="ap-kicker">Vivo</p>
+            <h2>Retícula</h2>
+            <p class="ap-lead">A noite da marca tem uma retícula de pontos a cada 56px. Ela é o chão do gráfico: a formação calma assenta os nós nela, e o cursor acende os pontos por perto em amarelo, o tom do sinal.</p>
+          </header>
+          <div class="spec" data-nocode>
+            <div class="spec__stage spec__stage--night vivo-stage-wrap">
+              <div class="ap-vivo vivo-stage" data-vivo="calm" data-vivo-layers="grid glow" data-vivo-touch><p class="vivo-hint">Passe o cursor aqui</p></div>
+            </div>
+            <div class="spec__bar"><strong>Retícula e brilho</strong><code>grid · glow</code><span>Pontos de 2px a 9%; brilho de 3px até 220px, amarelo a 32% no centro.</span></div>
+          </div>
+          <div class="code"><div class="code__bar">A retícula da noite em CSS<button type="button" class="tool"><svg aria-hidden="true"><use href="#i-copy"/></svg>Copiar</button></div><pre><code>background:
+  radial-gradient(circle at 1px 1px, rgba(183, 194, 211, .09) 0 1px, transparent 1.3px) 0 0 / 56px 56px,
+  var(--ap-night);</code></pre></div>
+          <div class="tbl-wrap"><table class="tbl">
+            <thead><tr><th>Retícula</th><th>Passo</th><th>Uso</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Da noite</strong></td><td class="num">56px · 9%</td><td class="muted">Fundo do site e de toda peça na noite. O gráfico vivo se alinha a ela.</td></tr>
+              <tr><td><strong>De palco</strong></td><td class="num">28px · 10%</td><td class="muted">Cartões e quadros na noite (o bloco de parceiros, os palcos deste sistema).</td></tr>
+              <tr><td><strong>Do dia</strong></td><td class="num">28px · <code>--ap-day-dots</code></td><td class="muted">O fundo do lado B.</td></tr>
+            </tbody>
+          </table></div>
+        </section>
+
+        <!-- ------------------------------------------------ nós -->
+        <section class="doc" id="vivo-nos" style="--ap-tone:var(--ap-red)">
+          <header class="doc__head">
+            <p class="ap-kicker">Vivo</p>
+            <h2>Nós</h2>
+            <p class="ap-lead">Três tipos de nó, em ordem de importância. O polo usa o selo da marca, o mesmo dos marcadores de tom: cantos grandes no alto à esquerda e embaixo à direita.</p>
+          </header>
+          <div class="spec">
+            <div class="spec__stage spec__stage--night vivo-nodes">
+              <figure class="vivo-node"><div class="vivo-node__art"><span class="ap-hub ap-hub--live" style="--ap-tone:var(--ap-blue);--ap-size:44px" data-snippet></span></div><figcaption><strong>Polo</strong><span>Um por grupo, com o nome sempre visível. Selo de 14px, contorno a 6px, brilho no alto e halo que respira.</span></figcaption></figure>
+              <figure class="vivo-node"><div class="vivo-node__art"><span class="ap-sat" style="--ap-tone:var(--ap-green);--ap-size:24px" data-snippet></span></div><figcaption><strong>Satélite</strong><span>Um item com nome: Jira, Consultoria, Dados. Círculo de 8,4px com anel a 3,5px.</span></figcaption></figure>
+              <figure class="vivo-node"><div class="vivo-node__art vivo-node__art--dust"><span class="ap-dust" style="--ap-tone:var(--ap-red);--ap-size:10px" data-snippet></span><span class="ap-dust" style="--ap-tone:var(--ap-yellow);--ap-size:7px"></span><span class="ap-dust" style="--ap-tone:var(--ap-violet);--ap-size:5px"></span><span class="ap-dust" style="--ap-tone:var(--ap-blue);--ap-size:8px"></span></div><figcaption><strong>Poeira</strong><span>O contexto em volta, sem nome: de 1,6 a 3,6px. É a maior parte dos nós.</span></figcaption></figure>
+            </div>
+            <div class="spec__bar"><strong>Nós em HTML</strong><code>.ap-hub · .ap-hub--live · .ap-sat · .ap-dust · --ap-size · --ap-tone</code><span>Para slides, cartões e peças paradas. No canvas, o desenho é o mesmo.</span></div>
+          </div>
+          <h3 class="doc__sub">Papéis de cor</h3>
+          <ul class="vivo-roles">
+            <li style="--ap-tone:var(--ap-blue)"><span class="ap-hub" style="--ap-tone:var(--ap-blue)"></span><strong>Pessoas</strong><span>Azul</span></li>
+            <li style="--ap-tone:var(--ap-green)"><span class="ap-hub" style="--ap-tone:var(--ap-green)"></span><strong>Processo</strong><span>Verde</span></li>
+            <li style="--ap-tone:var(--ap-red)"><span class="ap-hub" style="--ap-tone:var(--ap-red)"></span><strong>Conexão</strong><span>Vermelho</span></li>
+            <li style="--ap-tone:var(--ap-yellow)"><span class="ap-hub" style="--ap-tone:var(--ap-yellow)"></span><strong>Sinal</strong><span>Amarelo</span></li>
+            <li style="--ap-tone:var(--ap-violet)"><span class="ap-hub" style="--ap-tone:var(--ap-violet)"></span><strong>Feedback</strong><span>Violeta</span></li>
+          </ul>
+          <p class="doc__note">Os polos seguem o papel quando a formação fala de papéis (Context Graph). Nas outras, cada grupo leva a cor da sua plataforma ou do seu momento: Atlassian azul, CISP1 violeta, monday.com vermelho, <span class="ap-nw">A-Players</span> Intelligence amarelo. A poeira sem grupo, na formação calma, mistura os cinco tons e o gelo (<code>#b7c2d3</code>).</p>
+          <div class="tbl-wrap"><table class="tbl">
+            <thead><tr><th>Nó</th><th>Tamanho</th><th>Profundidade</th><th>Rótulo</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Polo</strong></td><td class="num">raio 7,5 · selo 14px</td><td class="muted">no plano (z 0)</td><td class="muted">Sempre, 13,5px em 700, centrado embaixo</td></tr>
+              <tr><td><strong>Satélite</strong></td><td class="num">raio 4,2</td><td class="muted">perto (z ±45)</td><td class="muted">Perto do cursor (120px), 12px em 500, ao lado</td></tr>
+              <tr><td><strong>Poeira</strong></td><td class="num">raio 1,6 a 3,6</td><td class="muted">espalhada (z ±170)</td><td class="muted">Nunca</td></tr>
+            </tbody>
+          </table></div>
+        </section>
+
+        <!-- ------------------------------------------------ ligações -->
+        <section class="doc" id="vivo-ligacoes" style="--ap-tone:var(--ap-yellow)">
+          <header class="doc__head">
+            <p class="ap-kicker">Vivo</p>
+            <h2>Ligações e pulsos</h2>
+            <p class="ap-lead">As ligações dizem o que está conectado e com que força. Os pulsos mostram que a conexão está em uso: uma luz branca com halo da cor de origem corre a ligação de ponta a ponta, nascendo e sumindo nas pontas.</p>
+          </header>
+          <div class="spec" data-nocode>
+            <div class="spec__stage spec__stage--night vivo-stage-wrap">
+              <div class="ap-vivo vivo-stage" data-vivo="flow" data-vivo-labels="sats" data-vivo-off="glow cursor attract"></div>
+            </div>
+            <div class="spec__bar"><strong>Formação de fluxo</strong><code>data-vivo="flow"</code><span>Professional Services: entender, desenhar, capacitar; o retorno tracejado fecha o ciclo. Como no site, só os satélites têm nome.</span></div>
+          </div>
+          <div class="tbl-wrap"><table class="tbl">
+            <thead><tr><th>Ligação</th><th>Liga</th><th>Opacidade</th><th>Traço</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Ponte</strong> <code>bridge</code></td><td class="muted">Polo a polo: os grupos que conversam</td><td class="num">55%</td><td class="muted">1,7px, curva</td></tr>
+              <tr><td><strong>Retorno</strong> <code>back</code></td><td class="muted">O que volta ao começo do ciclo</td><td class="num">55%</td><td class="muted">1,7px, curva maior, tracejado 4 e 6</td></tr>
+              <tr><td><strong>Polo</strong> <code>hub</code></td><td class="muted">Polo ao satélite</td><td class="num">42%</td><td class="muted">1,2px</td></tr>
+              <tr><td><strong>Árvore</strong> <code>tree</code></td><td class="muted">Poeira ao nó mais próximo</td><td class="num">22%</td><td class="muted">1px</td></tr>
+              <tr><td><strong>Malha</strong> <code>mesh</code></td><td class="muted">Segunda ligação da poeira e poeira entre grupos</td><td class="num">13%</td><td class="muted">1px</td></tr>
+            </tbody>
+          </table></div>
+          <ol class="ap-steps" style="margin-top:24px;--ap-tone:var(--ap-yellow)">
+            <li><strong>Cor</strong><span>A ligação e o halo do pulso levam a cor do nó de origem.</span></li>
+            <li><strong>Ritmo</strong><span>Um pulso novo a cada 300ms, até 12 ao mesmo tempo. Nas formações de fluxo (ciclo, fluxo, monday.com, CISP1), a cada 140ms e até 20.</span></li>
+            <li><strong>Velocidade</strong><span>De 1,2 a 2,8s de ponta a ponta. O brilho segue um seno: nasce na origem, é máximo no meio e some no destino.</span></li>
+            <li><strong>Luz</strong><span>Núcleo branco de 1,8px a 85% e halo de 6px a 35%, em mistura aditiva: onde dois pulsos se cruzam, a luz soma.</span></li>
+          </ol>
+        </section>
+
+        <!-- ------------------------------------------------ respiração e câmera -->
+        <section class="doc" id="vivo-respiracao" style="--ap-tone:var(--ap-violet)">
+          <header class="doc__head">
+            <p class="ap-kicker">Vivo</p>
+            <h2>Respiração e câmera</h2>
+            <p class="ap-lead">Sem ninguém por perto, o gráfico continua vivo. Cada nó orbita o seu lugar, a câmera gira devagar e o que está longe encolhe e esmaece. É o que faz as bolinhas se mexerem sozinhas.</p>
+          </header>
+          <div class="spec" data-nocode>
+            <div class="spec__stage spec__stage--night vivo-stage-wrap">
+              <div class="ap-vivo vivo-stage" data-vivo="context" data-vivo-off="glow cursor attract"></div>
+            </div>
+            <div class="vivo-ctrl">
+              <div class="vivo-ctrl__row" role="group" aria-label="Movimento sem cursor">
+                <button type="button" class="tool" data-vivo-toggle="breathe" aria-pressed="true">Respiração</button>
+                <button type="button" class="tool" data-vivo-toggle="camera" aria-pressed="true">Câmera</button>
+                <button type="button" class="tool" data-vivo-toggle="depth" aria-pressed="true">Profundidade</button>
+                <button type="button" class="tool" data-vivo-toggle="halos" aria-pressed="true">Halos</button>
+              </div>
+            </div>
+            <div class="spec__bar"><strong>Context Graph em repouso</strong><code>breathe · camera · depth · halos</code><span>Desligue uma por vez para ver o que cada uma faz.</span></div>
+          </div>
+          <div class="tbl-wrap"><table class="tbl">
+            <thead><tr><th>Movimento</th><th>Valor</th><th>Efeito</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Órbita</strong></td><td class="num">3 a 10px</td><td class="muted">Cada nó desenha uma figura de Lissajous em volta do seu lugar, com velocidade própria (0,6 a 1,4).</td></tr>
+              <tr><td><strong>Mola</strong></td><td class="num">0,014 · 0,84</td><td class="muted">Força de volta ao lugar e amortecimento. Dá o assentar macio, sem quique.</td></tr>
+              <tr><td><strong>Distância mínima</strong></td><td class="num">8px</td><td class="muted">Dois nós nunca se sobrepõem: se encostam, se afastam.</td></tr>
+              <tr><td><strong>Giro da câmera</strong></td><td class="num">±0,2 rad · 57s</td><td class="muted">A cena gira para os lados num ciclo lento.</td></tr>
+              <tr><td><strong>Inclinação</strong></td><td class="num">±0,07 rad · 70s</td><td class="muted">A cena balança para cima e para baixo, fora de fase com o giro.</td></tr>
+              <tr><td><strong>Profundidade</strong></td><td class="num">foco 900 · até 42%</td><td class="muted">Perspectiva real: o que está longe fica menor e mais apagado.</td></tr>
+              <tr><td><strong>Halo</strong></td><td class="num">±3px · 3,14s</td><td class="muted">O brilho dos polos cresce e encolhe, cada polo no seu tempo.</td></tr>
+            </tbody>
+          </table></div>
+        </section>
+
+        <!-- ------------------------------------------------ cursor -->
+        <section class="doc" id="vivo-cursor" style="--ap-tone:var(--ap-blue)">
+          <header class="doc__head">
+            <p class="ap-kicker">Vivo</p>
+            <h2>Cursor como agente</h2>
+            <p class="ap-lead">O cursor entra no gráfico como mais um agente: puxa os nós próximos, liga-se aos sete mais perto, acende a retícula e revela os nomes. No rodapé e nas áreas de leitura, é ele que faz os pontos seguirem o mouse e se conectarem a ele.</p>
+          </header>
+          <div class="spec" data-nocode>
+            <div class="spec__stage spec__stage--night vivo-stage-wrap">
+              <div class="ap-vivo vivo-stage" data-vivo="calm" data-vivo-touch><p class="vivo-hint">Passe o cursor aqui</p></div>
+            </div>
+            <div class="vivo-ctrl">
+              <div class="vivo-ctrl__row" role="group" aria-label="Formação">
+                <button type="button" class="ap-filter" data-vivo-set="calm" aria-pressed="true">Rodapé e leitura</button>
+                <button type="button" class="ap-filter" data-vivo-set="ecosystem" aria-pressed="false">Plataformas de IA</button>
+              </div>
+            </div>
+            <div class="spec__bar"><strong>Formação calma</strong><code>data-vivo="calm"</code><span>Nós na retícula, ligados aos vizinhos, a 50% de intensidade.</span></div>
+          </div>
+          <div class="tbl-wrap"><table class="tbl">
+            <thead><tr><th>Resposta</th><th>Alcance</th><th>Como</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Atração</strong></td><td class="num">170px</td><td class="muted">Satélites e poeira vêm até o cursor, mais forte quanto mais perto (até 0,22 por quadro). Os polos ficam.</td></tr>
+              <tr><td><strong>Ligações do cursor</strong></td><td class="num">150px · 7 nós</td><td class="muted">Linhas de 1px na cor de cada nó, de 55% a zero com a distância, e um anel branco de 5px no cursor.</td></tr>
+              <tr><td><strong>Nomes</strong></td><td class="num">120px</td><td class="muted">Os satélites por perto mostram o nome.</td></tr>
+              <tr><td><strong>Retícula</strong></td><td class="num">220px</td><td class="muted">Os pontos acendem em amarelo.</td></tr>
+              <tr><td><strong>Inclinação</strong></td><td class="num">±0,16 · ±0,1 rad</td><td class="muted">A cena gira na direção do cursor.</td></tr>
+            </tbody>
+          </table></div>
+          <p class="doc__note">No site, o toque não move o gráfico: no celular, ele só respira. Em peças interativas (totem, tela de evento), <code>data-vivo-touch</code> faz o dedo valer como cursor.</p>
+        </section>
+
+        <!-- ------------------------------------------------ formações -->
+        <section class="doc" id="vivo-formacoes" style="--ap-tone:var(--ap-green)">
+          <header class="doc__head">
+            <p class="ap-kicker">Vivo</p>
+            <h2>Formações</h2>
+            <p class="ap-lead">Cada área escura do site declara uma formação. O desenho é orgânico: grupos por cor, com nomes e ligações reais, e uma relaxação curta que afasta sobreposições e libera a zona do texto.</p>
+          </header>
+          <div class="tbl-wrap"><table class="tbl">
+            <thead><tr><th>Formação</th><th>Onde no site</th><th>Grupos</th></tr></thead>
+            <tbody>
+              <tr><td><code>constellation</code></td><td class="muted">Home: abertura e última cena do filme</td><td class="muted">Talentos e desenvolvimento, Gestão de pessoas, Plataformas e aplicações, Processos e estratégia, Inteligência artificial</td></tr>
+              <tr><td><code>people</code></td><td class="muted">Home: primeira cena do filme</td><td class="muted">Pessoas certas, Contexto claro, Evolução acompanhada</td></tr>
+              <tr><td><code>people-wide</code></td><td class="muted">Quem somos: abertura</td><td class="muted">Os mesmos, com Times <span class="ap-nw">A-Player</span>, em volta do título</td></tr>
+              <tr><td><code>fronts</code></td><td class="muted">Nossos serviços</td><td class="muted">Talent as a Service, Professional Services, O seu desafio</td></tr>
+              <tr><td><code>cycle</code></td><td class="muted">Talent as a Service</td><td class="muted">Recrutamento, Seleção, Desenvolvimento, Gestão, Performance, Inteligência Artificial</td></tr>
+              <tr><td><code>flow</code></td><td class="muted">Professional Services e o filme da Home</td><td class="muted">Entender a operação, Desenhar e implementar, Capacitar e evoluir</td></tr>
+              <tr><td><code>context-wide</code></td><td class="muted">Intelligence: abertura</td><td class="muted">Negócio, Processos, Plataformas, Agentes, Feedback, em volta do título</td></tr>
+              <tr><td><code>ecosystem</code></td><td class="muted">Intelligence e o filme da Home</td><td class="muted"><span class="ap-nw">A-Players</span> Intelligence no centro, ligada a Atlassian, CISP1 e monday.com, nessa ordem e sem ligação direta entre parceiros</td></tr>
+              <tr><td><code>context</code></td><td class="muted">Filme da Home</td><td class="muted">As cinco camadas do Context Graph</td></tr>
+              <tr><td><code>teamwork</code></td><td class="muted">Atlassian</td><td class="muted">Teamwork Graph, Jira, Confluence, Loom, Rovo</td></tr>
+              <tr><td><code>operation</code></td><td class="muted">monday.com</td><td class="muted">Planejar, Executar, Aprender, Sidekick e Agents</td></tr>
+              <tr><td><code>cisp</code></td><td class="muted">CISP1</td><td class="muted">CISP1, Dados, Processos, Sistemas, Objetivos</td></tr>
+              <tr><td><code>calm</code></td><td class="muted">Blog, Fale Conosco, Seja um <span class="ap-nw">A-Player</span>, fechamentos e rodapé</td><td class="muted">Sem grupos: nós na retícula, ligados aos vizinhos</td></tr>
+            </tbody>
+          </table></div>
+          <h3 class="doc__sub">Uma formação nova</h3>
+          <p class="doc__note">Uma peça pode trazer os seus grupos: até cinco polos, cada um com nome, tom, posição (0 a 1) e peso, e satélites opcionais. As ligações entre grupos dizem o tipo: ponte por padrão, <code>'back'</code> para o retorno.</p>
+          <div class="code"><div class="code__bar">Formação de um evento<button type="button" class="tool"><svg aria-hidden="true"><use href="#i-copy"/></svg>Copiar</button></div><pre><code>APVivo.mount(document.querySelector('#palco'), {
+  formation: {
+    seed: 61, spread: 0.16, labels: 'hubs', flow: true,
+    groups: [
+      { label: 'Atlassian', tone: 'blue', at: [0.20, 0.30], w: 1, sats: ['Jira', 'Confluence', 'Rovo'] },
+      { label: 'A-Players Intelligence', tone: 'yellow', at: [0.50, 0.62], w: 0.8 },
+      { label: 'monday.com', tone: 'red', at: [0.80, 0.30], w: 1, sats: ['Sidekick', 'Agents'] }
+    ],
+    links: [[0, 1], [2, 1]]
+  }
+});</code></pre></div>
+          <div class="rules">
+            <div class="rule"><p class="rule__title">Faça</p><ul><li>Grupos com nomes reais da área: plataformas, momentos, papéis.</li><li>Ligações que existem: quem se conecta a quem.</li><li>Atlassian, CISP1 e monday.com ligadas pela <span class="ap-nw">A-Players</span> Intelligence, nunca direto entre si.</li></ul></div>
+            <div class="rule rule--evite"><p class="rule__title">Evite</p><ul><li>Mais de seis polos: o gráfico vira ruído.</li><li>Números, metas ou nomes de clientes nos rótulos.</li><li>Rótulos que repetem o título da área.</li></ul></div>
+          </div>
+        </section>
+
+        <!-- ------------------------------------------------ transições -->
+        <section class="doc" id="vivo-transicoes" style="--ap-tone:var(--ap-red)">
+          <header class="doc__head">
+            <p class="ap-kicker">Vivo</p>
+            <h2>Trocar e explodir</h2>
+            <p class="ap-lead">Trocar de formação não apaga o gráfico: os mesmos nós viajam para o novo desenho, em ondas, enquanto as ligações antigas se apagam e as novas acendem. Na troca de página, o gráfico explode do ponto do clique e se monta de novo.</p>
+          </header>
+          <div class="spec" data-nocode>
+            <div class="spec__stage spec__stage--night vivo-stage-wrap">
+              <div class="ap-vivo vivo-stage" data-vivo="people" data-vivo-off="glow" data-vivo-burst-click><p class="vivo-hint">Clique para explodir</p></div>
+            </div>
+            <div class="vivo-ctrl">
+              <div class="vivo-ctrl__row" role="group" aria-label="Cenas do filme da Home">
+                <span class="vivo-ctrl__label">Filme da Home</span><span class="vivo-ctrl__opts">                <button type="button" class="ap-filter" data-vivo-set="people" aria-pressed="true">01 Pessoas</button>
+                <button type="button" class="ap-filter" data-vivo-set="flow" aria-pressed="false">02 Método</button>
+                <button type="button" class="ap-filter" data-vivo-set="ecosystem" aria-pressed="false">03 Inteligência</button>
+                <button type="button" class="ap-filter" data-vivo-set="context" aria-pressed="false">04 Contexto</button>
+                <button type="button" class="ap-filter" data-vivo-set="constellation" aria-pressed="false">05 Entrega</button></span>
+              </div>
+            </div>
+            <div class="spec__bar"><strong>As cinco cenas do filme</strong><code>g.set('flow') · g.burst(x, y)</code><span>Na Home, cada cena presa à rolagem troca a formação.</span></div>
+          </div>
+          <div class="tbl-wrap"><table class="tbl">
+            <thead><tr><th>Momento</th><th>Valor</th><th>Como</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Ondas</strong></td><td class="num">16ms · até 160ms</td><td class="muted">Os nós saem em grupos de 16, com um atraso aleatório: o desenho se refaz em cascata.</td></tr>
+              <tr><td><strong>Cor e tamanho</strong></td><td class="num">7% e 12% por quadro</td><td class="muted">Cada nó troca de cor e de tamanho aos poucos, a caminho do novo lugar.</td></tr>
+              <tr><td><strong>Ligações</strong></td><td class="num">7% por quadro</td><td class="muted">As que ficam continuam; as que saem se apagam; as novas acendem.</td></tr>
+              <tr><td><strong>Explosão</strong></td><td class="num">2 a 9px por quadro</td><td class="muted">Todos os nós partem do ponto do clique em direções aleatórias e voltam pela mola.</td></tr>
+              <tr><td><strong>Espera</strong></td><td class="num">até 3s</td><td class="muted">Durante a cortina, o gráfico fica apagado; se a página não liberar, ele volta sozinho.</td></tr>
+            </tbody>
+          </table></div>
+        </section>
+
+        <!-- ------------------------------------------------ geometria -->
+        <section class="doc" id="vivo-geometria" style="--ap-tone:var(--ap-yellow)">
+          <header class="doc__head">
+            <p class="ap-kicker">Vivo</p>
+            <h2>Geometria em profundidade</h2>
+            <p class="ap-lead">As formas oficiais flutuam em camadas: na rolagem, cada uma desliza conforme a sua profundidade, umas mais devagar que o texto e outras ao contrário. Role a página para ver.</p>
+          </header>
+          <div class="spec" data-nocode>
+            <div class="spec__stage spec__stage--night spec__stage--block vivo-depth">
+              <div class="ap-geo" data-depth="16" style="width:clamp(150px,22vw,260px);right:-4%;bottom:-24%" aria-hidden="true"><img src="assets/geometria/home-triangle-up.svg" alt=""></div>
+              <div class="ap-geo" data-depth="-10" style="width:clamp(70px,8vw,110px);left:46%;bottom:14%" aria-hidden="true"><img src="assets/geometria/home-triangle-down.svg" alt=""></div>
+              <div class="ap-geo" data-depth="12" style="width:clamp(70px,8vw,120px);left:60%;top:8%" aria-hidden="true"><img src="assets/geometria/about-diamond.svg" alt=""></div>
+              <p class="ap-kicker">Home</p>
+              <p class="vivo-depth__title">We Are <span class="ap-nw">AI-People</span> Company.</p>
+            </div>
+            <div class="spec__bar"><strong>Profundidade</strong><code>.ap-geo[data-depth]</code><span>Positivo sobe mais rápido que a página; negativo vai ao contrário.</span></div>
+          </div>
+          <div class="code"><div class="code__bar">Uma forma em profundidade<button type="button" class="tool"><svg aria-hidden="true"><use href="#i-copy"/></svg>Copiar</button></div><pre><code>&lt;div class="ap-geo" data-depth="16" style="width:260px;right:-3%;bottom:-4%"&gt;
+  &lt;img src="assets/geometria/home-triangle-up.svg" alt=""&gt;
+&lt;/div&gt;
+&lt;!-- deslocamento = (centro do pai - meio da tela) × profundidade × -0,012 --&gt;
+&lt;script src="js/ap-vivo.js" defer&gt;&lt;/script&gt;</code></pre></div>
+          <div class="tbl-wrap"><table class="tbl">
+            <thead><tr><th>Forma no site</th><th>Profundidade</th></tr></thead>
+            <tbody>
+              <tr><td class="muted">Home: triângulo para cima</td><td class="num">16</td></tr>
+              <tr><td class="muted">Home: triângulo para baixo</td><td class="num">-10</td></tr>
+              <tr><td class="muted">Quem somos: losango</td><td class="num">12</td></tr>
+              <tr><td class="muted">Fechamento e promessa</td><td class="num">10</td></tr>
+              <tr><td class="muted">Rodapé: triângulo e arco</td><td class="num">8</td></tr>
+            </tbody>
+          </table></div>
+          <p class="doc__note">Só em telas acima de 1000px e com movimento. No celular e com <code>?movimento=reduzido</code>, as formas ficam paradas no lugar.</p>
+        </section>
+
+        <!-- ------------------------------------------------ inventário -->
+        <section class="doc" id="vivo-inventario" style="--ap-tone:var(--ap-violet)">
+          <header class="doc__head">
+            <p class="ap-kicker">Vivo</p>
+            <h2>Tudo o que se mexe</h2>
+            <p class="ap-lead">O inventário de tudo o que é vivo no site, de onde vem e onde está documentado. Se algo novo começar a se mexer no site, entra aqui.</p>
+          </header>
+          <div class="spec">
+            <div class="spec__stage spec__stage--night spec__stage--block vivo-run-demo">
+              <span class="ap-run" data-snippet></span>
+            </div>
+            <div class="spec__bar"><strong>Luz no espectro</strong><code>.ap-run</code><span>A linha que liga as três plataformas de IA na Intelligence: uma luz branca corre a cada 4,4s.</span></div>
+          </div>
+          <div class="tbl-wrap"><table class="tbl vivo-inv">
+            <thead><tr><th>O que se mexe</th><th>Onde no site</th><th>Como</th><th>Aqui</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Gráfico vivo</strong></td><td class="muted">Atrás de todas as páginas</td><td class="muted">Canvas, 96 nós, <code>js/graph.js</code></td><td><a class="ap-link" href="#vivo/grafico">Gráfico vivo</a></td></tr>
+              <tr><td><strong>Retícula e brilho</strong></td><td class="muted">Toda a noite</td><td class="muted">CSS e canvas</td><td><a class="ap-link" href="#vivo/reticula">Retícula</a></td></tr>
+              <tr><td><strong>Pontos que seguem o mouse</strong></td><td class="muted">Rodapé, fechamentos, leitura</td><td class="muted">Formação calma e cursor</td><td><a class="ap-link" href="#vivo/cursor">Cursor</a></td></tr>
+              <tr><td><strong>Filme da Home</strong></td><td class="muted">Home, cinco cenas</td><td class="muted">Rolagem troca a formação</td><td><a class="ap-link" href="#vivo/transicoes">Trocar e explodir</a></td></tr>
+              <tr><td><strong>Formas flutuantes</strong></td><td class="muted">Home, Quem somos, fechamentos, rodapé</td><td class="muted">Deslocamento na rolagem</td><td><a class="ap-link" href="#vivo/geometria">Geometria</a></td></tr>
+              <tr><td><strong>Abertura</strong></td><td class="muted">Primeira visita</td><td class="muted">Palavras e linha espectral, até 2,3s</td><td><a class="ap-link" href="#padroes/cinema">Abertura e cortina</a></td></tr>
+              <tr><td><strong>Cortina</strong></td><td class="muted">Troca de página</td><td class="muted">Quatro colunas nas cores do espectro</td><td><a class="ap-link" href="#fundamentos/movimento">Movimento</a></td></tr>
+              <tr><td><strong>Entrada, linha do display, hífen, divisor, pulso no trilho</strong></td><td class="muted">Aberturas, submenus, fluxos</td><td class="muted">CSS, <code>ap-rise</code>, <code>ap-line-up</code>, <code>ap-charge</code>, <code>ap-grow-x</code>, <code>ap-travel</code></td><td><a class="ap-link" href="#fundamentos/movimento">Movimento</a></td></tr>
+              <tr><td><strong>Mapa de escolha</strong></td><td class="muted">Home</td><td class="muted">Fios que se desenham em 1s e acendem o caminho</td><td><a class="ap-link" href="#padroes/mapa">Mapa de escolha</a></td></tr>
+              <tr><td><strong>Três camadas</strong></td><td class="muted">Intelligence</td><td class="muted">Fios que correm, pulsos no núcleo, quadro de status</td><td><a class="ap-link" href="#componentes/camadas">Três camadas</a></td></tr>
+              <tr><td><strong>Luz no espectro</strong></td><td class="muted">Intelligence, parceiros</td><td class="muted">Brilho que corre a linha em 4,4s</td><td><a class="ap-link" href="#vivo/inventario">Acima</a></td></tr>
+              <tr><td><strong>Tecido</strong></td><td class="muted">Atlassian</td><td class="muted">Pulsos brancos atravessam as linhas tracejadas em 3,9s</td><td class="muted">Só no site</td></tr>
+              <tr><td><strong>Ciclo</strong></td><td class="muted">Talent as a Service</td><td class="muted">Um ponto percorre o anel até o momento lido</td><td class="muted">Só no site</td></tr>
+              <tr><td><strong>Trilho e fio de leitura</strong></td><td class="muted">Nossos serviços, Professional Services</td><td class="muted">Itens acendem e a linha enche com a rolagem</td><td class="muted">Só no site</td></tr>
+              <tr><td><strong>Stickers</strong></td><td class="muted">Portal do <span class="ap-nw">A-Player</span></td><td class="muted"><code>ap-stick</code>, <code>ap-drop</code></td><td><a class="ap-link" href="#componentes/lado-b">Lado B</a></td></tr>
+            </tbody>
+          </table></div>
+        </section>
+
+        <!-- ------------------------------------------------ uso -->
+        <section class="doc" id="vivo-uso" style="--ap-tone:var(--ap-blue)">
+          <header class="doc__head">
+            <p class="ap-kicker">Vivo</p>
+            <h2>Levar para uma peça</h2>
+            <p class="ap-lead">Um contêiner, um script, uma formação. O motor é o mesmo do site, com os mesmos números: o que muda de peça para peça é a formação e as camadas.</p>
+          </header>
+          <div class="code"><div class="code__bar">Abertura com o gráfico vivo<button type="button" class="tool"><svg aria-hidden="true"><use href="#i-copy"/></svg>Copiar</button></div><pre><code>&lt;link rel="stylesheet" href="css/aplayers.css"&gt;
+
+&lt;section class="ap-vivo" data-vivo="ecosystem" data-vivo-hole="0.05 0.2 0.45 0.6" style="min-height:640px"&gt;
+  &lt;!-- o conteúdo fica por cima; o canvas entra sozinho, atrás --&gt;
+  &lt;h1 class="ap-h1"&gt;Faça a IA trabalhar onde o trabalho acontece.&lt;/h1&gt;
+&lt;/section&gt;
+
+&lt;script src="js/ap-vivo.js" defer&gt;&lt;/script&gt;</code></pre></div>
+          <div class="tbl-wrap"><table class="tbl">
+            <thead><tr><th>Atributo</th><th>Valores</th><th>Para quê</th></tr></thead>
+            <tbody>
+              <tr><td><code>data-vivo</code></td><td class="muted">nome da formação</td><td class="muted">Liga o gráfico no contêiner.</td></tr>
+              <tr><td><code>data-vivo-off</code></td><td class="muted">camadas, com espaço</td><td class="muted">Desliga camadas: <code>"cursor attract"</code> numa tela sem mouse.</td></tr>
+              <tr><td><code>data-vivo-layers</code></td><td class="muted">camadas, com espaço</td><td class="muted">Só estas camadas: <code>"grid glow"</code> para a retícula viva.</td></tr>
+              <tr><td><code>data-vivo-area</code></td><td class="muted">x y largura altura</td><td class="muted">Onde a formação vive, de 0 a 1. Ao lado do texto: <code>"0.45 0.1 0.55 0.8"</code>.</td></tr>
+              <tr><td><code>data-vivo-hole</code></td><td class="muted">x y largura altura</td><td class="muted">Zona livre: os nós saem de cima do texto.</td></tr>
+              <tr><td><code>data-vivo-labels</code></td><td class="muted">hubs, sats, all, none</td><td class="muted">Quais nomes aparecem.</td></tr>
+              <tr><td><code>data-vivo-dim</code></td><td class="muted">0 a 1</td><td class="muted">Intensidade: <code>.55</code> atrás de texto longo.</td></tr>
+              <tr><td><code>data-vivo-nodes</code></td><td class="muted">número</td><td class="muted">Quantidade de nós (96, ou 60 no celular).</td></tr>
+              <tr><td><code>data-vivo-touch</code></td><td class="muted">sem valor</td><td class="muted">O toque vale como cursor.</td></tr>
+            </tbody>
+          </table></div>
+          <div class="code"><div class="code__bar">Controle pelo script<button type="button" class="tool"><svg aria-hidden="true"><use href="#i-copy"/></svg>Copiar</button></div><pre><code>var g = APVivo.mount(document.querySelector('#palco'), { formation: 'cycle', off: ['labels'] });
+g.set('flow');              // reorganiza para outra formação
+g.burst(x, y);              // explode do ponto e remonta
+g.highlight('atlassian');   // acende um grupo, apaga o resto
+g.layer('pulses', false);   // liga ou desliga uma camada
+var png = g.png(2);         // imagem parada em 2x, com noite e retícula</code></pre></div>
+          <h3 class="doc__sub">Receitas</h3>
+          <ul class="ap-bars">
+            <li style="--ap-tone:var(--ap-blue)"><strong>Slide ou tela de evento.</strong> Contêiner de 1920 por 1080 com <code>data-vivo-hole</code> em volta do título; para gravar vídeo, grave a tela com a peça aberta.</li>
+            <li style="--ap-tone:var(--ap-green)"><strong>Post e impressão.</strong> Monte a formação, espere assentar e use <strong>Baixar PNG</strong> (ou <code>g.png(3)</code>). Para nós avulsos, <code>.ap-hub</code>, <code>.ap-sat</code> e <code>.ap-dust</code> com <code>--ap-size</code>.</li>
+            <li style="--ap-tone:var(--ap-red)"><strong>Página inteira.</strong> <code>&lt;div class="ap-vivo ap-vivo--page" data-vivo="calm"&gt;</code> no começo do <code>body</code>: o gráfico fica fixo atrás de tudo.</li>
+            <li style="--ap-tone:var(--ap-yellow)"><strong>E-mail e PDF.</strong> Sem script: use o PNG.</li>
+          </ul>
+          <h3 class="doc__sub">Desempenho e acessibilidade</h3>
+          <div class="tbl-wrap"><table class="tbl">
+            <thead><tr><th>Situação</th><th>O que o motor faz</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Celular ou toque</strong></td><td class="muted">60 nós, resolução até 1,25x e sem halos.</td></tr>
+              <tr><td><strong>Tela larga</strong></td><td class="muted">96 nós e resolução até 1,75x.</td></tr>
+              <tr><td><strong>Aparelho lento</strong></td><td class="muted">Se a média de 60 quadros passar de 24ms, tira os halos; se continuar lenta, baixa a resolução para 1x.</td></tr>
+              <tr><td><strong>Fora da tela ou aba oculta</strong></td><td class="muted">Para de desenhar e volta quando aparece.</td></tr>
+              <tr><td><strong>Menos movimento</strong></td><td class="muted">Com <code>prefers-reduced-motion</code> ou <code>?movimento=reduzido</code>, o gráfico é desenhado uma vez, já montado, sem cursor nem pulsos.</td></tr>
+              <tr><td><strong>Leitores de tela</strong></td><td class="muted">O canvas é decorativo (<code>aria-hidden</code>) e não recebe cliques. Tudo o que o gráfico diz também está no texto.</td></tr>
+            </tbody>
+          </table></div>
+        </section>
+
       </div>
     </div>
   </div>
@@ -1695,8 +2168,9 @@ Claro no que resolve, prudente no que promete; nada de "frentes", AMS, Academy o
           <div class="tbl-wrap"><table class="tbl">
             <thead><tr><th>Versão</th><th>Data</th><th>O que entrou</th></tr></thead>
             <tbody>
-              <tr><td class="num"><span class="ap-badge">2.1</span></td><td class="num">05/10/2026</td><td>Acompanha a revisão de posicionamento do site. "Frentes" vira "plataformas de IA" em todo o sistema (as classes <code>ap-front</code> e os tokens <code>--ap-front-*</code> mantêm o nome). Novos: botão claro (<code>ap-btn--light</code>), logos das cinco Collections com par claro e escuro (<code>ap-coll-logo</code>, <code>ap-on-light</code>, <code>ap-on-dark</code>), IA em destaque (<code>ap-aiapps</code>) e as caixas vivas das três camadas (<code>ap-layer3__art</code>, <code>ap-layer3__apps</code>). A Biblioteca e o lado B passam a aparecer na documentação. Voz com as regras do briefing: resultado no centro, a IA dizendo o que faz, clareza agressiva e promessa prudente, termos aposentados. O índice lateral não corta mais a placa do item atual.</td></tr>
-              <tr><td class="num"><span class="ap-badge" style="--ap-tone:var(--ap-violet)">2.0</span></td><td class="num">04/10/2026</td><td>Lado B na folha: os componentes do Portal do <span class="ap-nw">A-Player</span> (tons suaves, selo da pessoa, crachá, foto, evento, termo, material, aplicação, salvar, progresso, busca, diálogo) e a Biblioteca com os logos e ícones oficiais da Atlassian, da CISP1 e da monday.com.</td></tr>
+              <tr><td class="num"><span class="ap-badge">2.2</span></td><td class="num">06/10/2026</td><td>Tudo o que é vivo no site ganhou a rota Vivo: retícula, nós, ligações e pulsos, respiração e câmera, cursor como agente, as 13 formações, troca e explosão, geometria em profundidade e o inventário do que se mexe. O motor do gráfico do site virou <code>js/ap-vivo.js</code>, portátil e com os mesmos números, com exportação em PNG. Novos: <code>ap-vivo</code>, <code>ap-vivo--page</code>, <code>ap-hub</code>, <code>ap-sat</code>, <code>ap-dust</code>, <code>ap-run</code> e <code>ap-geo[data-depth]</code>.</td></tr>
+              <tr><td class="num"><span class="ap-badge" style="--ap-tone:var(--ap-violet)">2.1</span></td><td class="num">05/10/2026</td><td>Acompanha a revisão de posicionamento do site. "Frentes" vira "plataformas de IA" em todo o sistema (as classes <code>ap-front</code> e os tokens <code>--ap-front-*</code> mantêm o nome). Novos: botão claro (<code>ap-btn--light</code>), logos das cinco Collections com par claro e escuro (<code>ap-coll-logo</code>, <code>ap-on-light</code>, <code>ap-on-dark</code>), IA em destaque (<code>ap-aiapps</code>) e as caixas vivas das três camadas (<code>ap-layer3__art</code>, <code>ap-layer3__apps</code>). A Biblioteca e o lado B passam a aparecer na documentação. Voz com as regras do briefing: resultado no centro, a IA dizendo o que faz, clareza agressiva e promessa prudente, termos aposentados. O índice lateral não corta mais a placa do item atual.</td></tr>
+              <tr><td class="num"><span class="ap-badge" style="--ap-tone:var(--ap-line-strong)">2.0</span></td><td class="num">04/10/2026</td><td>Lado B na folha: os componentes do Portal do <span class="ap-nw">A-Player</span> (tons suaves, selo da pessoa, crachá, foto, evento, termo, material, aplicação, salvar, progresso, busca, diálogo) e a Biblioteca com os logos e ícones oficiais da Atlassian, da CISP1 e da monday.com.</td></tr>
               <tr><td class="num"><span class="ap-badge" style="--ap-tone:var(--ap-line-strong)">1.1</span></td><td class="num">01/10/2026</td><td>Publicado junto com o site e o Portal do <span class="ap-nw">A-Player</span>, na mesma pasta: o Portal usa esta folha e estes assets direto. Um tema só nas três peças, com a regra de cookies do site. O gráfico vivo aceita polos próprios por página. A imagem do cartão de leitura mantém a proporção e o índice lateral marca a última seção.</td></tr>
               <tr><td class="num"><span class="ap-badge" style="--ap-tone:var(--ap-line-strong)">1.0</span></td><td class="num">01/10/2026</td><td>Primeira versão, extraída do site <span class="ap-nw">A-Players</span> (versão Claude): tokens, 36 componentes, padrões de página, voz e recursos para IA.</td></tr>
             </tbody>
@@ -1710,16 +2184,17 @@ Claro no que resolve, prudente no que promete; nada de "frentes", AMS, Academy o
 
 <footer class="foot-global ap-wrap">
   <div class="foot">
-  <span><span class="ap-nw">A-Players</span> Design System, versão 2.1, outubro de 2026</span>
-  <span class="foot__links"><a href="../index.html">Site <span class="ap-nw">A-Players</span></a><a href="../portal/index.html">Portal do <span class="ap-nw">A-Player</span></a><a href="#biblioteca">Biblioteca</a><a href="#recursos/downloads">Arquivos</a><a href="#voz">Voz da marca</a></span>
+  <span><span class="ap-nw">A-Players</span> Design System, versão 2.2, outubro de 2026</span>
+  <span class="foot__links"><a href="../index.html">Site <span class="ap-nw">A-Players</span></a><a href="../portal/index.html">Portal do <span class="ap-nw">A-Player</span></a><a href="#vivo">Gráfico vivo</a><a href="#biblioteca">Biblioteca</a><a href="#recursos/downloads">Arquivos</a><a href="#voz">Voz da marca</a></span>
   </div>
 </footer>
 
 <p class="copied ap-toast" role="status" aria-live="polite" style="--ap-tone:var(--ap-green)"><span></span></p>
 
-<script src="tokens/tokens.js?v=2.1.0" defer></script>
-<script src="js/grafo.js?v=2.1.0" defer></script>
-<script src="assets/biblioteca/biblioteca.js?v=2.1.0" defer></script>
-<script src="js/docs.js?v=2.1.0" defer></script>
+<script src="tokens/tokens.js?v=2.2.0" defer></script>
+<script src="js/grafo.js?v=2.2.0" defer></script>
+<script src="js/ap-vivo.js?v=2.2.0" defer></script>
+<script src="assets/biblioteca/biblioteca.js?v=2.2.0" defer></script>
+<script src="js/docs.js?v=2.2.0" defer></script>
 </body>
 </html>
