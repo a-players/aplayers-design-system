@@ -1,6 +1,6 @@
 # A-Players Design System
 
-> O padrão da marca A-Players para qualquer peça: site, landing page, apresentação, material, produto ou campanha. Extraído do site A-Players (versão Claude, outubro de 2026). Versão 2.2, 06/10/2026.
+> O padrão da marca A-Players para qualquer peça: site, landing page, apresentação, material, produto ou campanha. Extraído do site A-Players (versão Claude, outubro de 2026). Versão 2.3, 06/10/2026.
 
 Use este arquivo antes de criar qualquer coisa em nome da A-Players. Ele resume tokens, classes, padrões e regras de escrita. A referência visual completa está em index.html, publicada em /design-system/ junto com o site (/) e o Portal do A-Player (/portal/).
 
@@ -81,14 +81,14 @@ Use este arquivo antes de criar qualquer coisa em nome da A-Players. Ele resume 
 ## Escrita
 
 - pt-BR consultivo, frases curtas e diretas, sem frase institucional para ocupar espaço.
-- Agressiva na clareza, prudente na promessa. Resultado no centro ("Menos tempo procurando informação"). A IA diz o que faz: encontra, responde, resume, executa tarefas, automatiza etapas, apoia decisões. IA como meio, não como fim. Sem "nunca mais", "100%" ou "qualquer integração".
+- Agressiva na clareza, prudente na promessa. Título de oferta: a dor com nome, o que muda, a condição real e o primeiro passo ("Sua empresa já paga por uma IA. Falta ela conhecer a empresa."). Resultado no centro ("Menos tempo procurando informação"). A IA diz o que faz: encontra, responde, resume, executa tarefas, automatiza etapas, apoia decisões. IA como meio, não como fim. Sem "nunca mais", "100%" ou "qualquer integração".
 - Nenhum travessão, meia-risca ou hífen com espaços como pontuação. Use vírgula, dois-pontos, parênteses ou duas frases. Hífen de palavra composta e de nome continua (A-Players, AI-People, pós-venda).
-- Plataformas e aplicações, nunca ferramentas. Atlassian, CISP1 e monday.com juntas são as "plataformas de IA" ("Conhecer as plataformas de IA"), nunca "frentes" nem "nossas plataformas" (Atlassian e monday.com são parceiras).
+- Plataformas e aplicações, nunca ferramentas. Atlassian, CISP1 e monday.com juntas são as "plataformas de IA" ("Conhecer as plataformas de IA"), nunca "frentes" nem "nossas plataformas" (as três são parceiras estratégicas).
 - Termos aposentados: AMS, Academy, Workpacks (use Sustentação e evolução, Capacitações e workshops), "potencializar", A-Hub (agora Portal do A-Player). "Jornada", "ecossistema", "transformar" e "eficiência" só onde são nome ou conceito. "Maturidade da empresa", não "porte". "Contexto" e "dados para decidir", não "sinais". CSM em espaço curto, com o nome completo no title.
 - Gráfico, nunca grafo (Teamwork Graph e Context Graph ficam em inglês). Camadas do Context Graph: Negócio, Processos, Plataformas, Agentes e Feedback.
 - "Tecnologia feita de gente movida por desafios." Nunca "gente acima da média".
 - Business Partner, nunca HRBP. "a CISP1", no feminino. monday.com sempre minúsculo.
 - A fórmula "Aceleração = Contexto × Inteligência" é da Atlassian; não apresentar como da A-Players.
-- Especialidades: Talent as a Service (Recrutamento e Seleção, Extensão de Equipe; em inglês Tech Recruiting, Managed Resources) e Professional Services (pilares: Consultoria especializada, Sustentação e evolução, Capacitações e workshops, Adoção de Inteligência Artificial; em inglês Consulting Services, Managed Services, Training & Workshops, AI Adoption). A-Players Intelligence reúne as três plataformas de IA; a CISP1 é a plataforma própria. Assinatura: We Are AI-People Company.
+- Especialidades: Talent as a Service (Recrutamento e Seleção, Extensão de Equipe, AI-Players; em inglês Tech Recruiting, Managed Resources, AI-Players) e Professional Services (pilares: Consultoria especializada, Sustentação e evolução, Capacitações e workshops, Adoção de Inteligência Artificial; em inglês Consulting Services, Managed Services, Training & Workshops, AI Adoption). A sustentação é vendida em planos de assinatura (Essential, Growth, Enterprise), e o FinOps de SaaS e IA entra avulso ou no Enterprise. A-Players Intelligence reúne as três plataformas de IA, as três de parceiros estratégicos (com a CISP1, a A-Players conduz venda, marketing e gestão do cliente; a CISP1 desenvolve). Assinatura: We Are AI-People Company. AI-Players são os agentes de IA da A-Players; nunca "agentes AI-People".
 - Não inventar números, preços, cases ou capacidades de produto. Separe fato com fonte, conteúdo interno, hipótese e rascunho.
 - Botões que dizem a ação ou o destino ("Vamos conversar", "Nossos serviços", "Explorar Atlassian", "Falar sobre o meu cenário", "Enviar mensagem"); confirmação repete a ação ("Mensagem enviada."); erro diz como resolver.

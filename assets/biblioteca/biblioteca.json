@@ -33,7 +33,7 @@
    "url": "https://cisp1.io/",
    "lido": "2026-09-30",
    "regras": [
-    "Plataforma própria da A-Players: a CISP1, no feminino.",
+    "Parceira estratégica da A-Players: a A-Players conduz a venda, o marketing e a gestão do cliente; a CISP1 desenvolve a solução. No texto, a CISP1, no feminino.",
     "Use o PNG oficial no claro; a versão para o escuro é derivada e serve às peças da A-Players."
    ]
   }
@@ -887,7 +887,7 @@
    "nome": "CISP1",
    "frente": "cisp1",
    "tipo": "marca",
-   "grupo": "Plataforma própria",
+   "grupo": "Parceira estratégica",
    "colecoes": [],
    "arquivos": {
     "logo-fundo-claro": "assets/biblioteca/cisp1/logo-fundo-claro.png",
