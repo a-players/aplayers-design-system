@@ -5,7 +5,7 @@ O padrão da marca A-Players, extraído do site A-Players (versão Claude, a pas
 | Campo | Valor |
 | --- | --- |
 | Dono | Fernando Horn (A-Players) |
-| Status | ativo, versão 2.1 (05/10/2026) |
+| Status | ativo, versão 2.4 (06/10/2026) |
 | Fonte de verdade | O site A-Players versão Claude para decisões visuais; `tools/build_tokens.py` para os valores dos tokens; `css/aplayers.css` para os componentes |
 | Local | `A-Players/site-aplayers/site-alternativo-claude/design-system/` (desde 01/10/2026; antes em `A-Players/aplayers-design-system`) |
 | Publicação | junto com o site e o Portal do A-Player, em `/design-system/` da mesma publicação no Netlify (ver o README da pasta acima) |
@@ -60,6 +60,7 @@ assets/stickers       stickers da marca (WebP para a web; em alta/, os PNG grand
 - O tema escuro segue o do site: a noite fica escura; folha e cartões viram camadas de azul noite.
 - A documentação usa o próprio sistema: os componentes mostrados vêm de `aplayers.css`, e o código de cada vitrine é gerado do exemplo renderizado.
 - Versão 2.1 (05/10/2026): acompanha a revisão de posicionamento do site. "Frentes" virou "plataformas de IA" (classes `ap-front` e tokens `--ap-front-*` mantêm o nome, para não quebrar peças); entraram `ap-btn--light`, `ap-coll-logo`, `ap-on-light`/`ap-on-dark`, `ap-aiapps` e as caixas vivas `ap-layer3__art`; a documentação passou a mostrar o lado B e a Biblioteca, que já estavam na folha e na pasta desde a 2.0; o índice lateral deixou de cortar a placa do item atual.
+- Versão 2.4 (06/10/2026): segunda rodada de 2027 no site. Home e aberturas falam de impacto; o plano de assinatura fica nas páginas de Professional Services, Atlassian e monday.com e reúne gestão de ambientes, suporte, melhorias contínuas e evolução estratégica da plataforma (Essential, Growth e Enterprise, cada um somando ao anterior). Em Talent as a Service, o tradicional vem primeiro e os AI-Players entram como apoio, com a gestão e o conhecimento sempre humanos.
 - Versão 2.3 (06/10/2026): vocabulário de 2027, da revisão de posicionamento do site. AI-Players são os agentes de IA da A-Players (terceira forma de Talent as a Service; "agentes AI-People" saiu), a sustentação é vendida em planos de assinatura (Essential, Growth, Enterprise), o FinOps de SaaS e IA entra avulso ou no Enterprise, e a CISP1 é parceira estratégica, como Atlassian e monday.com. Títulos de oferta: a dor com nome, o que muda, a condição real e o primeiro passo.
 - Versão 2.2 (06/10/2026): tudo o que é vivo no site ganhou lugar próprio, a rota Vivo. O motor do gráfico do site virou `js/ap-vivo.js`, portátil, com as mesmas formações e números; entraram `ap-vivo`, `ap-vivo--page`, os nós em HTML (`ap-hub`, `ap-sat`, `ap-dust`), `ap-run` e a profundidade das geometrias (`ap-geo[data-depth]`). O motor ganhou as cores do dia (`data-vivo-theme`) e a página inteira (`ap-vivo--page`), o fundo vivo do Portal, e os stickers ganharam o balanço `ap-sway`. A placa ganhou o tamanho pequeno (`ap-plate--sm`, 4px e 6px), para elementos do tamanho de um botão.
 
