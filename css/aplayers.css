@@ -315,6 +315,12 @@ a.ap-plate, button.ap-plate { text-decoration: none; text-align: left; font: inh
 a.ap-plate:hover, button.ap-plate:hover, a.ap-plate:focus-visible { transform: translate(-3px, -3px); box-shadow: var(--ap-plate-lg) var(--ap-plate-lg) 0 0 var(--ap-tone); }
 a.ap-plate:active, button.ap-plate:active { transform: translate(3px, 3px); box-shadow: 6px 6px 0 0 var(--ap-tone); }
 .ap-plate--flat { box-shadow: none; }
+/* placa pequena: a placa acompanha o tamanho. Aba, nó do mapa, atalho e ação
+   curta ficam perto do fundo (4px em repouso, 6px na interação), como no site:
+   .node.is-on, .hero__jumps a, .entry__options a */
+.ap-plate--sm { border-radius: var(--ap-r-path); box-shadow: var(--ap-plate-sm) var(--ap-plate-sm) 0 0 var(--ap-tone); }
+a.ap-plate--sm:hover, button.ap-plate--sm:hover, a.ap-plate--sm:focus-visible, .ap-plate--sm.is-on { transform: translate(-2px, -2px); box-shadow: var(--ap-plate-md) var(--ap-plate-md) 0 0 var(--ap-tone); }
+a.ap-plate--sm:active, button.ap-plate--sm:active { transform: translate(1px, 1px); box-shadow: 2px 2px 0 0 var(--ap-tone); }
 .ap-plate--flat:is(a, button):hover { box-shadow: var(--ap-plate-md) var(--ap-plate-md) 0 0 var(--ap-tone); transform: translate(-2px, -2px); }
 
 /* ----------------------------------------------------------- selo numerado

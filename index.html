@@ -167,7 +167,7 @@
         <div class="principle" style="--ap-tone:var(--ap-red)">
           <h3>O destaque é uma placa.</h3>
           <p>O cartão carrega uma placa do seu tom, deslocada. Ela cresce quando a pessoa interage. Nenhuma barra lateral colorida.</p>
-          <div class="principle__eg"><a class="ap-plate" href="#fundamentos/elevacao" style="--ap-tone:var(--ap-red);padding:10px 16px;font-weight:700">Passe o mouse aqui</a></div>
+          <div class="principle__eg"><a class="ap-plate ap-plate--sm" href="#fundamentos/elevacao" style="--ap-tone:var(--ap-red);padding:10px 16px;font-weight:700">Passe o mouse aqui</a></div>
         </div>
         <div class="principle" style="--ap-tone:var(--ap-yellow)">
           <h3>O espectro liga as partes.</h3>
@@ -266,9 +266,6 @@
       <div>
         <p class="closing__sign" id="h-fim">We Are <span class="ap-nw">AI<span class="ap-hy">-</span>People</span> Company.</p>
         <p class="ap-lead">Feito a partir do <a class="ap-link" href="../index.html" style="--ap-tone:var(--ap-yellow)">site <span class="ap-nw">A-Players</span></a>. Cada decisão aqui tem origem numa peça que já está no ar. Estratégia que gera resultado. Resultado que sustenta o crescimento.</p>
-      </div>
-      <div class="ap-actions" style="justify-content:flex-end">
-        <a class="ap-btn" href="#recursos/versoes">Ver a versão atual</a>
       </div>
     </div>
   </section>
@@ -498,8 +495,8 @@
           <div class="spec" data-nocode>
             <div class="spec__stage spec__stage--block">
               <div class="plates">
-                <div class="ap-plate" style="--ap-tone:var(--ap-yellow);box-shadow:4px 4px 0 0 var(--ap-yellow)"><strong>4px</strong><code>--ap-plate-sm</code><span>Botão no hover</span></div>
-                <div class="ap-plate" style="--ap-tone:var(--ap-green);box-shadow:6px 6px 0 0 var(--ap-green)"><strong>6px</strong><code>--ap-plate-md</code><span>Aba ativa, porta, logo de parceiro</span></div>
+                <div class="ap-plate" style="--ap-tone:var(--ap-yellow);box-shadow:4px 4px 0 0 var(--ap-yellow)"><strong>4px</strong><code>--ap-plate-sm</code><span>Botão no hover; placa pequena em repouso</span></div>
+                <div class="ap-plate" style="--ap-tone:var(--ap-green);box-shadow:6px 6px 0 0 var(--ap-green)"><strong>6px</strong><code>--ap-plate-md</code><span>Aba ativa, porta, logo de parceiro; placa pequena na interação</span></div>
                 <div class="ap-plate" style="--ap-tone:var(--ap-blue)"><strong>10px</strong><code>--ap-plate</code><span>Cartão em repouso</span></div>
                 <a class="ap-plate" href="#fundamentos/elevacao" style="--ap-tone:var(--ap-red)"><strong>14px</strong><code>--ap-plate-lg</code><span>Cartão no hover (passe o mouse)</span></a>
               </div>
@@ -1358,6 +1355,17 @@ var png = g.png(2);         // imagem parada em 2x, com noite e retícula</code>
             </div>
             <div class="spec__bar"><strong>Placa</strong><code>.ap-plate · a.ap-plate · --flat</code></div>
           </div>
+          <div class="spec">
+            <div class="spec__stage">
+              <a class="ap-plate ap-plate--sm" href="#componentes/placa" style="padding:12px 16px;font-weight:700">Passe o mouse</a>
+              <a class="ap-plate ap-plate--sm is-on" href="#componentes/placa" style="--ap-tone:var(--ap-green);padding:12px 16px;font-weight:700">Escolhida</a>
+            </div>
+            <div class="spec__bar"><strong>Placa pequena</strong><code>.ap-plate--sm · .is-on</code><span>4px em repouso, 6px na interação.</span></div>
+          </div>
+          <div class="rules">
+            <div class="rule"><p class="rule__title">Faça</p><ul><li>Placa proporcional ao tamanho: 10px e 14px só em cartão; aba, nó, atalho e ação curta com 4 a 6px.</li><li>Na interação, o elemento sobe 2px (pequeno) ou 3px (cartão) enquanto a placa cresce.</li></ul></div>
+            <div class="rule rule--evite"><p class="rule__title">Evite</p><ul><li>Placa de cartão num elemento do tamanho de um botão: ela fica longe do fundo e pesa mais que o texto.</li></ul></div>
+          </div>
         </section>
 
         <section class="doc" id="componentes-plataforma">
@@ -2168,7 +2176,7 @@ Claro no que resolve, prudente no que promete; nada de "frentes", AMS, Academy o
           <div class="tbl-wrap"><table class="tbl">
             <thead><tr><th>Versão</th><th>Data</th><th>O que entrou</th></tr></thead>
             <tbody>
-              <tr><td class="num"><span class="ap-badge">2.2</span></td><td class="num">06/10/2026</td><td>Tudo o que é vivo no site ganhou a rota Vivo: retícula, nós, ligações e pulsos, respiração e câmera, cursor como agente, as 13 formações, troca e explosão, geometria em profundidade e o inventário do que se mexe. O motor do gráfico do site virou <code>js/ap-vivo.js</code>, portátil e com os mesmos números, com exportação em PNG. Novos: <code>ap-vivo</code>, <code>ap-vivo--page</code>, <code>ap-hub</code>, <code>ap-sat</code>, <code>ap-dust</code>, <code>ap-run</code> e <code>ap-geo[data-depth]</code>.</td></tr>
+              <tr><td class="num"><span class="ap-badge">2.2</span></td><td class="num">06/10/2026</td><td>Tudo o que é vivo no site ganhou a rota Vivo: retícula, nós, ligações e pulsos, respiração e câmera, cursor como agente, as 13 formações, troca e explosão, geometria em profundidade e o inventário do que se mexe. O motor do gráfico do site virou <code>js/ap-vivo.js</code>, portátil e com os mesmos números, com exportação em PNG. Novos: <code>ap-vivo</code>, <code>ap-vivo--page</code>, <code>ap-hub</code>, <code>ap-sat</code>, <code>ap-dust</code>, <code>ap-run</code> e <code>ap-geo[data-depth]</code>. A placa pequena (<code>ap-plate--sm</code>) acompanha o tamanho do elemento, como no site, e o exemplo da Home passou a usá-la.</td></tr>
               <tr><td class="num"><span class="ap-badge" style="--ap-tone:var(--ap-violet)">2.1</span></td><td class="num">05/10/2026</td><td>Acompanha a revisão de posicionamento do site. "Frentes" vira "plataformas de IA" em todo o sistema (as classes <code>ap-front</code> e os tokens <code>--ap-front-*</code> mantêm o nome). Novos: botão claro (<code>ap-btn--light</code>), logos das cinco Collections com par claro e escuro (<code>ap-coll-logo</code>, <code>ap-on-light</code>, <code>ap-on-dark</code>), IA em destaque (<code>ap-aiapps</code>) e as caixas vivas das três camadas (<code>ap-layer3__art</code>, <code>ap-layer3__apps</code>). A Biblioteca e o lado B passam a aparecer na documentação. Voz com as regras do briefing: resultado no centro, a IA dizendo o que faz, clareza agressiva e promessa prudente, termos aposentados. O índice lateral não corta mais a placa do item atual.</td></tr>
               <tr><td class="num"><span class="ap-badge" style="--ap-tone:var(--ap-line-strong)">2.0</span></td><td class="num">04/10/2026</td><td>Lado B na folha: os componentes do Portal do <span class="ap-nw">A-Player</span> (tons suaves, selo da pessoa, crachá, foto, evento, termo, material, aplicação, salvar, progresso, busca, diálogo) e a Biblioteca com os logos e ícones oficiais da Atlassian, da CISP1 e da monday.com.</td></tr>
               <tr><td class="num"><span class="ap-badge" style="--ap-tone:var(--ap-line-strong)">1.1</span></td><td class="num">01/10/2026</td><td>Publicado junto com o site e o Portal do <span class="ap-nw">A-Player</span>, na mesma pasta: o Portal usa esta folha e estes assets direto. Um tema só nas três peças, com a regra de cookies do site. O gráfico vivo aceita polos próprios por página. A imagem do cartão de leitura mantém a proporção e o índice lateral marca a última seção.</td></tr>
