@@ -23,7 +23,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500..800&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/aplayers.css?v=2.5.0">
+<link rel="stylesheet" href="css/aplayers.css?v=2.6.0">
 <link rel="stylesheet" href="css/docs.css?v=2.2.2">
 <script>
 (function (d, l) {
@@ -415,8 +415,8 @@
           <h3 class="doc__sub">Escala</h3>
           <div class="scale">
             <div class="scale__row"><p class="scale__name">Display<code>--ap-t-display</code></p><p class="scale__sample ap-display" style="font-size:clamp(40px,5vw,72px)"><span class="ap-nw">AI<span class="ap-hy">-</span>People</span></p><p class="scale__spec">54 a 120px · Manrope 780<br>entrelinha .9 · -0,05em</p></div>
-            <div class="scale__row"><p class="scale__name">H1<code>--ap-t-h1</code></p><p class="scale__sample ap-h1" style="font-size:clamp(34px,3.6vw,56px)">Trabalho conectado.</p><p class="scale__spec">44 a 88px (44 a 66px no notebook) · Manrope 800<br>entrelinha 1 · -0,038em</p></div>
-            <div class="scale__row"><p class="scale__name">H2<code>--ap-t-h2</code></p><p class="scale__sample ap-h2" style="font-size:clamp(30px,3vw,46px)">Três plataformas.</p><p class="scale__spec">36 a 70px (36 a 55px no notebook) · Manrope 800<br>entrelinha 1,02 · -0,035em</p></div>
+            <div class="scale__row"><p class="scale__name">H1<code>--ap-t-h1</code></p><p class="scale__sample ap-h1" style="font-size:clamp(34px,3.6vw,56px)">Trabalho conectado.</p><p class="scale__spec">44 a 88px · Manrope 800<br>entrelinha 1 · -0,038em</p></div>
+            <div class="scale__row"><p class="scale__name">H2<code>--ap-t-h2</code></p><p class="scale__sample ap-h2" style="font-size:clamp(30px,3vw,46px)">Três plataformas.</p><p class="scale__spec">36 a 70px · Manrope 800<br>entrelinha 1,02 · -0,035em</p></div>
             <div class="scale__row"><p class="scale__name">Intermediário<code>--ap-t-mid</code></p><p class="scale__sample ap-mid" style="font-size:clamp(24px,2.4vw,36px)">Cinco Collections, um só gráfico</p><p class="scale__spec">28 a 44px · Manrope 800<br>entrelinha 1,06 · -0,03em</p></div>
             <div class="scale__row"><p class="scale__name">H3<code>--ap-t-h3</code></p><p class="scale__sample ap-h3">Teamwork Graph</p><p class="scale__spec">24px · Manrope 700<br>entrelinha 1,2 · -0,015em</p></div>
             <div class="scale__row"><p class="scale__name">H4<code>--ap-t-h4</code></p><p class="scale__sample ap-h4">Indicamos quando</p><p class="scale__spec">17px · Manrope 700<br>entrelinha 1,3</p></div>
@@ -425,9 +425,24 @@
             <div class="scale__row"><p class="scale__name">Rótulo<code>--ap-t-label</code></p><p class="scale__sample ap-label">Contexto corporativo</p><p class="scale__spec">14px · DM Sans 700<br>caixa normal, nunca caixa alta</p></div>
             <div class="scale__row"><p class="scale__name">Número<code>--ap-t-num</code></p><p class="scale__sample"><span class="ap-badge">01</span> <span class="ap-badge" style="--ap-tone:var(--ap-green)">02</span> <span class="ap-badge" style="--ap-tone:var(--ap-red)">03</span></p><p class="scale__spec">12px · DM Sans 700<br>algarismos tabulares</p></div>
           </div>
+          <h3 class="doc__sub">Medidas do texto</h3>
+          <p class="ap-lead">A escala não muda para caber um texto. O texto é que cabe na escala: cada elemento tem um tamanho de frase, medido no notebook e no monitor grande.</p>
+          <div class="tbl-wrap"><table class="tbl">
+            <thead><tr><th>Elemento</th><th>Medida</th><th>Linhas</th></tr></thead>
+            <tbody>
+              <tr><td>Abertura (H1)</td><td>uma frase de até 40 caracteres</td><td class="num">até 3</td></tr>
+              <tr><td>Texto da abertura</td><td>até 250 caracteres</td><td class="num">até 4</td></tr>
+              <tr><td>Título de seção (H2)</td><td>duas frases de até 21 caracteres, uma por linha (<code>.ap-ln2</code>), ou uma frase de até 45</td><td class="num">2, no máximo 3</td></tr>
+              <tr><td>Frase de destaque do apoio</td><td>até 36 caracteres</td><td class="num">1</td></tr>
+              <tr><td>Texto de apoio do título</td><td>até 140 caracteres, sem passar da altura do título ao lado</td><td class="num">até 3</td></tr>
+              <tr><td>Cena da Home</td><td>título de até 26 caracteres; texto de até 175</td><td class="num">2 e 3</td></tr>
+              <tr><td>Fechamento</td><td>uma frase de até 40 caracteres</td><td class="num">até 2</td></tr>
+              <tr><td>Item de lista em cartão</td><td>até 55 caracteres</td><td class="num">1</td></tr>
+            </tbody>
+          </table></div>
           <div class="rules">
             <div class="rule"><p class="rule__title">Faça</p><ul><li>Quebre títulos de abertura em linhas de sentido (<code>.ap-ln2</code>) e deixe o navegador equilibrar o resto.</li><li>Use o hífen espectral em <span class="ap-nw">A-Players</span> e <span class="ap-nw">AI-People</span> quando o nome for o título.</li><li>Rótulo curto em caixa normal, acima do título.</li></ul></div>
-            <div class="rule rule--evite"><p class="rule__title">Evite</p><ul><li>Rótulos em caixa alta espaçada (recusado em 25/09/2026).</li><li>Uma palavra do título em outra cor ou em itálico.</li><li>Manrope em texto corrido ou DM Sans em títulos grandes.</li></ul></div>
+            <div class="rule rule--evite"><p class="rule__title">Evite</p><ul><li>Rótulos em caixa alta espaçada (recusado em 25/09/2026).</li><li>Uma palavra do título em outra cor ou em itálico.</li><li>Manrope em texto corrido ou DM Sans em títulos grandes.</li><li>Diminuir a fonte de um título para caber um texto longo: encurte o texto.</li></ul></div>
           </div>
         </section>
 
@@ -2186,6 +2201,7 @@ Claro no que resolve, prudente no que promete; nada de "frentes", AMS, Academy o
           <div class="tbl-wrap"><table class="tbl">
             <thead><tr><th>Versão</th><th>Data</th><th>O que entrou</th></tr></thead>
             <tbody>
+              <tr><td class="num"><span class="ap-badge">2.6</span></td><td class="num">07/10/2026</td><td>Quinta rodada de 2027, revista no notebook e no monitor grande: a escala dos títulos volta à original em todas as telas e o texto passa a caber nela, com as medidas de cada elemento (abertura, título de seção, apoio, cena, fechamento e item de lista).</td></tr>
               <tr><td class="num"><span class="ap-badge">2.5</span></td><td class="num">06/10/2026</td><td>Terceira rodada de 2027, validada no notebook: H1 e H2 um degrau abaixo entre 1001 e 1799px, para os títulos de duas frases ficarem em duas linhas; "acompanhados por especialistas" no lugar de "supervisão"; "visibilidade" no lugar de "inventário" no FinOps.</td></tr>
               <tr><td class="num"><span class="ap-badge">2.4</span></td><td class="num">06/10/2026</td><td>Segunda rodada de 2027 no site: home e aberturas falam de impacto e o plano de assinatura fica nas páginas internas; em Talent as a Service, o tradicional vem primeiro e os AI-Players entram como apoio, com a gestão e o conhecimento sempre humanos; o plano de assinatura reúne gestão de ambientes, suporte, melhorias contínuas e evolução estratégica da plataforma.</td></tr>
               <tr><td class="num"><span class="ap-badge">2.3</span></td><td class="num">06/10/2026</td><td>Vocabulário de 2027: AI-Players (os agentes de IA da <span class="ap-nw">A-Players</span>, terceira forma de Talent as a Service), planos de assinatura Essential, Growth e Enterprise, FinOps de SaaS e IA e a CISP1 como parceira estratégica. Títulos de oferta com a dor, o que muda, a condição real e o primeiro passo.</td></tr>
