@@ -345,7 +345,7 @@ a.ap-plate--sm:active, button.ap-plate--sm:active { transform: translate(1px, 1p
 .ap-kicker { display: inline-flex; align-items: baseline; gap: 9px; font: 700 13px/1.3 var(--ap-text); color: var(--ap-ink-2); }
 .ap-kicker::before, .ap-mark { content: ""; display: inline-block; flex: none; width: 9px; height: 9px; border-radius: var(--ap-r-mark); background: var(--ap-tone); }
 .ap-kicker::before { transform: translateY(-.02em); }
-.ap-night .ap-kicker { color: var(--ap-on-night-2); }
+.ap-night .ap-kicker, .ap-door--night .ap-kicker { color: var(--ap-on-night-2); }
 
 /* ----------------------------------------------------------- chips
    Aplicações e produtos com o ícone oficial. Site: .chips, .front__list */

@@ -12,7 +12,7 @@
   'use strict';
   var d = document, root = d.documentElement;
   var reduced = matchMedia('(prefers-reduced-motion: reduce)').matches || root.classList.contains('reduce-motion');
-  var ROUTES = { inicio: 'Início', fundamentos: 'Fundamentos', vivo: 'Vivo', componentes: 'Componentes', padroes: 'Padrões', voz: 'Voz e escrita', biblioteca: 'Biblioteca', recursos: 'Recursos' };
+  var ROUTES = { inicio: 'Início', fundamentos: 'Fundamentos', graph: 'Graph', componentes: 'Componentes', padroes: 'Padrões', voz: 'Voz e escrita', biblioteca: 'Biblioteca', recursos: 'Recursos' };
   var BASE_TITLE = 'A-Players Design System';
   function $(s, c) { return (c || d).querySelector(s); }
   function $$(s, c) { return Array.prototype.slice.call((c || d).querySelectorAll(s)); }
@@ -41,6 +41,8 @@
   var curtain = $('.curtain'), curtainLabel = $('.curtain__label');
   function parse() {
     var h = (location.hash || '').replace('#', ''), parts = h.split('/');
+    // a rota Vivo virou Graph: links antigos (#vivo, #vivo/secao) continuam valendo
+    if (parts[0] === 'vivo') { parts[0] = 'graph'; history.replaceState(null, '', '#' + parts.join('/')); }
     var r = ROUTES[parts[0]] ? parts[0] : 'inicio';
     return { rota: r, secao: parts[1] || null };
   }
@@ -277,12 +279,12 @@
     }, { threshold: 0.2 }).observe(el);
   });
 
-  /* ------------------------------------------------------------ vivo */
+  /* ------------------------------------------------------------ graph */
   // a abertura com o gráfico de verdade e os controles das vitrines: cada controle age no .ap-vivo da sua vitrine
   (function () {
     var V = window.APVivo;
     if (!V) return;
-    var hero = d.getElementById('vivo-hero');
+    var hero = d.getElementById('graph-hero');
     if (hero) {
       var narrow = matchMedia('(max-width: 900px)');
       var mountHero = function () {
@@ -320,7 +322,7 @@
       b.addEventListener('click', function () {
         var g = graphOf(b); if (!g) return;
         var url = g.png(2); if (!url) return;
-        var a = d.createElement('a'); a.href = url; a.download = 'aplayers-grafico-vivo-' + g.state().formation + '.png';
+        var a = d.createElement('a'); a.href = url; a.download = 'aplayers-graph-' + g.state().formation + '.png';
         d.body.appendChild(a); a.click(); a.remove();
         say('PNG baixado');
       });

@@ -47,11 +47,11 @@ assets/stickers       stickers da marca (WebP para a web; em alta/, os PNG grand
 1. Ponha o arquivo oficial em `assets/biblioteca/<plataforma>/<aplicação>/` e registre no `biblioteca.json`, com fonte e data.
 2. Rode `python tools/build_biblioteca.py` dentro desta pasta: ele reescreve o trecho entre `@biblioteca:start` e `@biblioteca:end` do `index.html` e o `assets/biblioteca/biblioteca.js`.
 
-## Como mudar o gráfico vivo
+## Como mudar o Graph (o gráfico do site)
 
 1. O site é a fonte: formações, números e desenho nascem em `../js/graph.js`.
 2. Leve a mesma mudança para `js/ap-vivo.js` (formações em `FORMATIONS`, o resto na mesma ordem do arquivo do site) e rode `python tools/check_vivo.py` dentro desta pasta.
-3. Atualize a rota Vivo do `index.html` (tabelas de números e formações) e registre em Recursos, Versões.
+3. Atualize a rota Graph do `index.html` (tabelas de números e formações) e registre em Recursos, Versões.
 
 ## Decisões desta versão
 
@@ -60,6 +60,7 @@ assets/stickers       stickers da marca (WebP para a web; em alta/, os PNG grand
 - O tema escuro segue o do site: a noite fica escura; folha e cartões viram camadas de azul noite.
 - A documentação usa o próprio sistema: os componentes mostrados vêm de `aplayers.css`, e o código de cada vitrine é gerado do exemplo renderizado.
 - Versão 2.1 (05/10/2026): acompanha a revisão de posicionamento do site. "Frentes" virou "plataformas de IA" (classes `ap-front` e tokens `--ap-front-*` mantêm o nome, para não quebrar peças); entraram `ap-btn--light`, `ap-coll-logo`, `ap-on-light`/`ap-on-dark`, `ap-aiapps` e as caixas vivas `ap-layer3__art`; a documentação passou a mostrar o lado B e a Biblioteca, que já estavam na folha e na pasta desde a 2.0; o índice lateral deixou de cortar a placa do item atual.
+- Versão 2.7 (08/10/2026): a rota Vivo passa a se chamar Graph (`#vivo` leva para `#graph`). O motor `js/ap-vivo.js` (APVivo 1.1) acompanha o site: todas as formações com satélites, o grupo sob o cursor revela o que reúne e os nomes não se sobrepõem. Medidas novas: título de cartão numa linha, cartões lado a lado com as mesmas linhas, aplicativos em chips numa linha. Fechamento com duas portas; fios das etapas em movimento; FinOps SaaS e IA.
 - Versão 2.6 (07/10/2026): quinta rodada de 2027, revista no notebook e no monitor grande. A escala dos títulos volta à original em todas as telas e o texto passa a caber nela: abertura com uma frase de até 40 caracteres (até 3 linhas), título de seção com duas frases de até 21 caracteres ou uma de até 45, apoio de até 140 caracteres sem passar da altura do título, cena da Home com título de até 26, fechamento de até 40 e item de lista de até 55.
 - Versão 2.5 (06/10/2026): terceira rodada de 2027, validada no notebook. H1 e H2 descem um degrau entre 1001 e 1799px (44 a 66px e 36 a 55px) para os títulos de duas frases ficarem em duas linhas; "acompanhados por especialistas" no lugar de "supervisão"; "visibilidade" no lugar de "inventário" no FinOps.
 - Versão 2.4 (06/10/2026): segunda rodada de 2027 no site. Home e aberturas falam de impacto; o plano de assinatura fica nas páginas de Professional Services, Atlassian e monday.com e reúne gestão de ambientes, suporte, melhorias contínuas e evolução estratégica da plataforma (Essential, Growth e Enterprise, cada um somando ao anterior). Em Talent as a Service, o tradicional vem primeiro e os AI-Players entram como apoio, com a gestão e o conhecimento sempre humanos.

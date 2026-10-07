@@ -1,5 +1,5 @@
 /* =====================================================================
-   A-Players · Gráfico vivo (APVivo) 1.0
+   A-Players · Graph, o gráfico do site (APVivo) 1.1
    O mesmo motor do canvas do site (js/graph.js), empacotado para qualquer
    peça: um contêiner, um canvas, uma formação. Os números são os do site;
    mude a formação e as camadas, não as constantes.
@@ -50,7 +50,7 @@
     yellow: [212, 177, 6], violet: PAL.violet, ice: [141, 155, 176]
   };
   var THEMES = {
-    night: { pal: PAL, bg: NIGHT, dot: 'rgba(183,194,211,0.09)', glow: [241, 232, 78], glowA: 0.32, ring: 'rgba(255,255,255,0.5)', core: null, blend: 'lighter', haloA: 0.34, hubLabel: [255, 255, 255], satLabel: [215, 224, 236] },
+    night: { pal: PAL, bg: NIGHT, dot: 'rgba(183,194,211,0.09)', glow: [241, 232, 78], glowA: 0.32, ring: 'rgba(255,255,255,0.5)', core: null, blend: 'lighter', haloA: 0.34, hubLabel: [255, 255, 255], satLabel: [228, 235, 245] },
     day: { pal: DAY, bg: [255, 255, 255], dot: 'rgba(23,35,58,0.075)', glow: [212, 177, 6], glowA: 0.5, ring: 'rgba(23,35,58,0.42)', core: 'tone', blend: 'source-over', haloA: 0.2, hubLabel: [23, 35, 58], satLabel: [79, 93, 115] }
   };
   var LAYERS = ['grid', 'glow', 'edges', 'pulses', 'halos', 'nodes', 'labels', 'cursor', 'attract', 'breathe', 'camera', 'depth'];
@@ -58,28 +58,37 @@
   /* ------------------------------------------------------------ formações do site */
   // cópia fiel de js/graph.js (SPECS); rótulos em português
   var FORMATIONS = {
+    // Home: o que a A-Players conecta, nas palavras da própria abertura
     constellation: {
       seed: 7, spread: 0.135, labels: 'hubs',
       groups: [
-        { key: 'g-talentos', tags: ['taas'], label: 'Talentos e desenvolvimento', tone: 'blue', at: [0.30, 0.28], w: 1.35 },
-        { key: 'g-pessoas', tags: ['taas'], label: 'Gestão de pessoas', tone: 'violet', at: [0.14, 0.70], w: 0.9 },
-        { key: 'g-plataformas', tags: ['ps'], label: 'Plataformas e aplicações', tone: 'green', at: [0.66, 0.16], w: 1 },
-        { key: 'g-processos', tags: ['ps'], label: 'Processos e estratégia', tone: 'red', at: [0.86, 0.56], w: 1 },
-        { key: 'g-ia', tags: ['intel'], label: 'Inteligência artificial', tone: 'yellow', at: [0.50, 0.80], w: 1.15 }
+        { key: 'g-talentos', tags: ['taas'], label: 'Talentos e desenvolvimento', tone: 'blue', at: [0.30, 0.28], w: 1.35,
+          sats: ['Recrutamento e Seleção', 'Extensão de Equipe', 'Desenvolvimento'] },
+        { key: 'g-pessoas', tags: ['taas'], label: 'Gestão de pessoas', tone: 'violet', at: [0.14, 0.70], w: 0.9,
+          sats: ['Business Partner', 'PDI'] },
+        { key: 'g-plataformas', tags: ['ps'], label: 'Plataformas e aplicações', tone: 'green', at: [0.66, 0.16], w: 1,
+          sats: ['Atlassian', 'CISP1', 'monday.com'] },
+        { key: 'g-processos', tags: ['ps'], label: 'Processos e estratégia', tone: 'red', at: [0.86, 0.56], w: 1,
+          sats: ['Consultoria', 'Planos de assinatura', 'FinOps'] },
+        { key: 'g-ia', tags: ['intel'], label: 'Inteligência artificial', tone: 'yellow', at: [0.50, 0.80], w: 1.15,
+          sats: ['AI-Players', 'Adoção de IA', 'Agentes'] }
       ],
       links: [[0, 1], [0, 2], [2, 3], [3, 4], [4, 1], [0, 4, 'bridge'], [2, 4]]
     },
+    // Nossos serviços: duas especialidades a partir do desafio
     fronts: {
-      seed: 21, spread: 0.2, labels: 'all',
+      seed: 21, spread: 0.14, labels: 'hubs',
       groups: [
-        { key: 'g-taas', tags: ['taas', 'g0'], label: 'Talent as a Service', tone: 'blue', at: [0.22, 0.42], w: 1.1,
-          sats: ['Recrutamento e Seleção', 'Extensão de Equipe'] },
-        { key: 'g-ps', tags: ['ps', 'g1'], label: 'Professional Services', tone: 'green', at: [0.78, 0.40], w: 1.3,
-          sats: ['Consultoria', 'Sustentação', 'Capacitações', 'Adoção de IA'] },
-        { key: 'g-desafio', tags: ['need'], label: 'O seu desafio', tone: 'red', at: [0.50, 0.70], w: 0.55 }
+        { key: 'g-taas', tags: ['taas', 'g0'], label: 'Talent as a Service', tone: 'blue', at: [0.20, 0.34], w: 1.1,
+          sats: ['Recrutamento e Seleção', 'Extensão de Equipe', 'AI-Players'] },
+        { key: 'g-ps', tags: ['ps', 'g1'], label: 'Professional Services', tone: 'green', at: [0.80, 0.32], w: 1.3,
+          sats: ['Consultoria', 'Planos de assinatura', 'Capacitações', 'Adoção de IA', 'FinOps'] },
+        { key: 'g-desafio', tags: ['need'], label: 'O seu desafio', tone: 'red', at: [0.50, 0.90], w: 0.55, sats: ['Objetivos', 'Contexto'] }
       ],
       links: [[0, 2, 'bridge'], [1, 2, 'bridge'], [0, 1]]
     },
+    // Intelligence e Home: as três frentes conectadas pela A-Players Intelligence,
+    // na ordem Atlassian, CISP1, monday.com (sem aresta direta entre parceiros)
     ecosystem: {
       seed: 5, spread: 0.19, labels: 'hubs',
       groups: [
@@ -93,43 +102,47 @@
       ],
       links: [[0, 1, 'bridge'], [0, 2, 'bridge'], [0, 3, 'bridge']]
     },
+    // Intelligence (cena lateral): o Context Graph em cinco camadas
     context: {
       seed: 13, spread: 0.15, labels: 'hubs',
       groups: [
-        { key: 'g0', tags: ['negocio'], label: 'Negócio', tone: 'blue', at: [0.14, 0.52], w: 1.2 },
-        { key: 'g1', tags: ['processos'], label: 'Processos', tone: 'green', at: [0.36, 0.22], w: 1 },
-        { key: 'g2', tags: ['plataformas'], label: 'Plataformas', tone: 'red', at: [0.56, 0.60], w: 1 },
-        { key: 'g3', tags: ['agentes'], label: 'Agentes', tone: 'yellow', at: [0.82, 0.26], w: 0.95 },
-        { key: 'g4', tags: ['feedback'], label: 'Feedback', tone: 'violet', at: [0.80, 0.84], w: 0.85 }
+        { key: 'g0', tags: ['negocio'], label: 'Negócio', tone: 'blue', at: [0.14, 0.52], w: 1.2, sats: ['Objetivos', 'Vocabulário'] },
+        { key: 'g1', tags: ['processos'], label: 'Processos', tone: 'green', at: [0.36, 0.22], w: 1, sats: ['Fluxos', 'Papéis'] },
+        { key: 'g2', tags: ['plataformas'], label: 'Plataformas', tone: 'red', at: [0.56, 0.60], w: 1, sats: ['Atlassian', 'CISP1', 'monday.com'] },
+        { key: 'g3', tags: ['agentes'], label: 'Agentes', tone: 'yellow', at: [0.82, 0.26], w: 0.95, sats: ['AI-Players', 'Rovo', 'Sidekick'] },
+        { key: 'g4', tags: ['feedback'], label: 'Feedback', tone: 'violet', at: [0.80, 0.84], w: 0.85, sats: ['Uso', 'Melhoria'] }
       ],
       links: [[0, 1], [1, 2], [2, 3], [3, 4], [4, 0, 'back'], [0, 2]]
     },
+    // Intelligence (abertura em tela cheia): as camadas envolvem o título
     'context-wide': {
       seed: 19, spread: 0.14, labels: 'hubs',
       groups: [
-        { key: 'g0', tags: ['negocio'], label: 'Negócio', tone: 'blue', at: [0.09, 0.50], w: 1.2 },
-        { key: 'g1', tags: ['processos'], label: 'Processos', tone: 'green', at: [0.24, 0.12], w: 1 },
-        { key: 'g2', tags: ['plataformas'], label: 'Plataformas', tone: 'red', at: [0.52, 0.93], w: 1 },
-        { key: 'g3', tags: ['agentes'], label: 'Agentes', tone: 'yellow', at: [0.78, 0.12], w: 0.95 },
-        { key: 'g4', tags: ['feedback'], label: 'Feedback', tone: 'violet', at: [0.92, 0.55], w: 0.85 }
+        { key: 'g0', tags: ['negocio'], label: 'Negócio', tone: 'blue', at: [0.09, 0.50], w: 1.2, sats: ['Objetivos', 'Vocabulário'] },
+        { key: 'g1', tags: ['processos'], label: 'Processos', tone: 'green', at: [0.24, 0.12], w: 1, sats: ['Fluxos', 'Papéis'] },
+        { key: 'g2', tags: ['plataformas'], label: 'Plataformas', tone: 'red', at: [0.52, 0.93], w: 1, sats: ['Atlassian', 'CISP1', 'monday.com'] },
+        { key: 'g3', tags: ['agentes'], label: 'Agentes', tone: 'yellow', at: [0.78, 0.12], w: 0.95, sats: ['AI-Players', 'Rovo', 'Sidekick'] },
+        { key: 'g4', tags: ['feedback'], label: 'Feedback', tone: 'violet', at: [0.92, 0.55], w: 0.85, sats: ['Uso', 'Melhoria'] }
       ],
       links: [[0, 1], [1, 2], [2, 3], [3, 4], [4, 0, 'back']]
     },
+    // Talent as a Service: seis momentos; o que se aprende volta ao desenvolvimento
     cycle: {
       seed: 3, spread: 0.1, labels: 'hubs',
       groups: [
-        { key: 'c0', label: 'Recrutamento', tone: 'blue', at: [0.50, 0.10], w: 1 },
-        { key: 'c1', label: 'Seleção', tone: 'blueL', at: [0.86, 0.32], w: 1 },
-        { key: 'c2', label: 'Desenvolvimento', tone: 'green', at: [0.80, 0.76], w: 1 },
-        { key: 'c3', label: 'Gestão', tone: 'red', at: [0.46, 0.90], w: 1 },
-        { key: 'c4', label: 'Performance', tone: 'yellow', at: [0.14, 0.70], w: 1 },
-        { key: 'c5', label: 'Inteligência Artificial', tone: 'violet', at: [0.16, 0.28], w: 1 }
+        { key: 'c0', label: 'Recrutamento', tone: 'blue', at: [0.50, 0.10], w: 1, sats: ['Busca especializada'] },
+        { key: 'c1', label: 'Seleção', tone: 'blueL', at: [0.86, 0.32], w: 1, sats: ['Aderência técnica', 'Aderência cultural'] },
+        { key: 'c2', label: 'Desenvolvimento', tone: 'green', at: [0.80, 0.76], w: 1, sats: ['PDI'] },
+        { key: 'c3', label: 'Gestão', tone: 'red', at: [0.46, 0.90], w: 1, sats: ['Business Partner'] },
+        { key: 'c4', label: 'Performance', tone: 'yellow', at: [0.14, 0.70], w: 1, sats: ['Feedback contínuo'] },
+        { key: 'c5', label: 'Inteligência Artificial', tone: 'violet', at: [0.16, 0.28], w: 1, sats: ['AI-Players', 'Capacitação em IA'] }
       ],
       links: [[0, 1, 'bridge'], [1, 2, 'bridge'], [2, 3, 'bridge'], [3, 4, 'bridge'], [4, 5, 'bridge'], [5, 2, 'back']],
       flow: true
     },
+    // Professional Services: entender, desenhar, capacitar; o uso alimenta o próximo ciclo
     flow: {
-      seed: 17, spread: 0.19, labels: 'all',
+      seed: 17, spread: 0.19, labels: 'hubs',
       groups: [
         { key: 'g0', label: 'Entender a operação', tone: 'blue', at: [0.167, 0.48], w: 1, sats: ['Objetivos', 'Processos', 'Plataformas'] },
         { key: 'g1', label: 'Desenhar e implementar', tone: 'green', at: [0.50, 0.40], w: 1, sats: ['Arquitetura', 'Fluxos', 'Conexões'] },
@@ -138,59 +151,70 @@
       links: [[0, 1, 'bridge'], [1, 2, 'bridge'], [2, 0, 'back']],
       flow: true
     },
+    // Quem somos (cena lateral): gente no centro
     people: {
       seed: 29, spread: 0.2, labels: 'hubs',
       groups: [
-        { key: 'g-certas', tags: ['taas'], label: 'Pessoas certas', tone: 'blue', at: [0.30, 0.32], w: 1.5, mix: 'violet' },
-        { key: 'g-contexto', label: 'Contexto claro', tone: 'green', at: [0.76, 0.28], w: 0.9 },
-        { key: 'g-evolucao', label: 'Evolução acompanhada', tone: 'red', at: [0.58, 0.80], w: 0.9 }
+        { key: 'g-certas', tags: ['taas'], label: 'Pessoas certas', tone: 'blue', at: [0.30, 0.32], w: 1.5, mix: 'violet', sats: ['Recrutamento', 'Seleção'] },
+        { key: 'g-contexto', label: 'Contexto claro', tone: 'green', at: [0.76, 0.28], w: 0.9, sats: ['Objetivos', 'Processos'] },
+        { key: 'g-evolucao', label: 'Evolução acompanhada', tone: 'red', at: [0.58, 0.80], w: 0.9, sats: ['PDI', 'Capacitação em IA'] }
       ],
       links: [[0, 1], [1, 2], [2, 0]]
     },
+    // Quem somos (abertura em tela cheia): as pessoas cercam o título
     'people-wide': {
       seed: 31, spread: 0.14, labels: 'hubs',
       groups: [
-        { key: 'g-certas', label: 'Pessoas certas', tone: 'blue', at: [0.10, 0.30], w: 1.3, mix: 'violet' },
-        { key: 'g-times', label: 'Times A-Player', tone: 'violet', at: [0.18, 0.86], w: 1, mix: 'blue' },
-        { key: 'g-contexto', label: 'Contexto claro', tone: 'green', at: [0.88, 0.22], w: 1 },
-        { key: 'g-evolucao', label: 'Evolução acompanhada', tone: 'red', at: [0.84, 0.84], w: 1 }
+        { key: 'g-certas', label: 'Pessoas certas', tone: 'blue', at: [0.19, 0.32], w: 1.3, mix: 'violet', sats: ['Recrutamento e Seleção', 'Aderência cultural'] },
+        { key: 'g-times', label: 'Times A-Player', tone: 'violet', at: [0.23, 0.78], w: 1, mix: 'blue', sats: ['Business Partner', 'Comunidade'] },
+        { key: 'g-contexto', label: 'Contexto claro', tone: 'green', at: [0.81, 0.28], w: 1, sats: ['Objetivos', 'Processos', 'Plataformas'] },
+        { key: 'g-evolucao', label: 'Evolução acompanhada', tone: 'red', at: [0.77, 0.78], w: 1, sats: ['PDI', 'Capacitação em IA', 'Feedback'] }
       ],
       links: [[0, 1], [0, 2], [2, 3], [3, 1]]
     },
+    // Atlassian: superfícies conectadas pelo Teamwork Graph
     teamwork: {
       seed: 41, spread: 0.13, labels: 'hubs',
       groups: [
-        { key: 'g-tg', label: 'Teamwork Graph', tone: 'green', at: [0.50, 0.52], w: 1.3 },
-        { key: 'g-jira', label: 'Jira', tone: 'blue', at: [0.18, 0.24], w: 0.9 },
-        { key: 'g-conf', label: 'Confluence', tone: 'blueL', at: [0.82, 0.22], w: 0.9 },
-        { key: 'g-loom', label: 'Loom', tone: 'violet', at: [0.16, 0.82], w: 0.7 },
-        { key: 'g-rovo', label: 'Rovo', tone: 'yellow', at: [0.84, 0.80], w: 0.9 }
+        { key: 'g-tg', label: 'Teamwork Graph', tone: 'green', at: [0.50, 0.50], w: 1.3, sats: ['Pessoas', 'Objetivos', 'Trabalho', 'Conhecimento'] },
+        { key: 'g-jira', label: 'Jira', tone: 'blue', at: [0.16, 0.16], w: 0.9, sats: ['Planejamento'] },
+        { key: 'g-conf', label: 'Confluence', tone: 'blueL', at: [0.84, 0.14], w: 0.9, sats: ['Documentação'] },
+        { key: 'g-loom', label: 'Loom', tone: 'violet', at: [0.12, 0.62], w: 0.6, sats: ['Vídeo assíncrono'] },
+        { key: 'g-rovo', label: 'Rovo', tone: 'yellow', at: [0.86, 0.60], w: 0.9, sats: ['Search', 'Chat', 'Agents'] },
+        { key: 'g-jpd', label: 'Jira Product Discovery', tone: 'violet', at: [0.50, 0.24], w: 0.6, sats: ['Ideias'] },
+        { key: 'g-jsm', label: 'Jira Service Management', tone: 'yellow', at: [0.26, 0.86], w: 0.7, sats: ['Atendimento'] },
+        { key: 'g-assets', label: 'Assets', tone: 'red', at: [0.14, 0.40], w: 0.5, sats: ['Ativos'] },
+        { key: 'g-bb', label: 'Bitbucket', tone: 'blue', at: [0.86, 0.38], w: 0.6, sats: ['Código'] },
+        { key: 'g-rovodev', label: 'Rovo Dev', tone: 'green', at: [0.74, 0.84], w: 0.6, sats: ['Código com IA'] }
       ],
-      links: [[0, 1, 'bridge'], [0, 2, 'bridge'], [0, 3, 'bridge'], [0, 4, 'bridge'], [1, 2]]
+      links: [[0, 1, 'bridge'], [0, 2, 'bridge'], [0, 3, 'bridge'], [0, 4, 'bridge'], [0, 5, 'bridge'], [0, 6, 'bridge'], [0, 7, 'bridge'], [0, 8, 'bridge'], [0, 9, 'bridge'], [1, 2], [1, 5], [6, 7], [8, 9], [4, 9]]
     },
+    // monday.com: planejar, executar, aprender, com pessoas e agentes
     operation: {
-      seed: 43, spread: 0.2, labels: 'all',
+      seed: 43, spread: 0.2, labels: 'hubs',
       groups: [
-        { key: 'g-plan', label: 'Planejar', tone: 'blue', at: [0.18, 0.34], w: 1, sats: ['Prioridades visíveis'] },
-        { key: 'g-exec', label: 'Executar', tone: 'green', at: [0.52, 0.66], w: 1.2, sats: ['Fluxos em movimento'] },
-        { key: 'g-learn', label: 'Aprender', tone: 'yellow', at: [0.84, 0.30], w: 1, sats: ['Dados para decidir'] },
-        { key: 'g-agents', label: 'Sidekick e Agents', tone: 'red', at: [0.58, 0.10], w: 0.6 }
+        { key: 'g-plan', label: 'Planejar', tone: 'blue', at: [0.18, 0.34], w: 1, sats: ['Prioridades visíveis', 'Portfólios'] },
+        { key: 'g-exec', label: 'Executar', tone: 'green', at: [0.52, 0.66], w: 1.2, sats: ['Fluxos em movimento', 'Automações'] },
+        { key: 'g-learn', label: 'Aprender', tone: 'yellow', at: [0.84, 0.30], w: 1, sats: ['Dados para decidir', 'Dashboards'] },
+        { key: 'g-agents', label: 'Sidekick e Agents', tone: 'red', at: [0.58, 0.10], w: 0.6, sats: ['Vibe'] }
       ],
       links: [[0, 1, 'bridge'], [1, 2, 'bridge'], [2, 0, 'back'], [3, 1], [3, 2]],
       flow: true
     },
+    // CISP1: dados, processos, sistemas e objetivos em torno da plataforma; a faixa à esquerda, na altura do título, fica livre
     cisp: {
       seed: 47, spread: 0.13, labels: 'hubs',
       groups: [
-        { key: 'g-cisp', label: 'CISP1', tone: 'violet', at: [0.50, 0.50], w: 1.2 },
-        { key: 'g-dados', label: 'Dados', tone: 'blue', at: [0.16, 0.22], w: 0.9 },
-        { key: 'g-proc', label: 'Processos', tone: 'green', at: [0.84, 0.22], w: 0.9 },
-        { key: 'g-sist', label: 'Sistemas', tone: 'red', at: [0.16, 0.82], w: 0.9 },
-        { key: 'g-obj', label: 'Objetivos', tone: 'yellow', at: [0.84, 0.82], w: 0.9 }
+        { key: 'g-cisp', label: 'CISP1', tone: 'violet', at: [0.58, 0.50], w: 1.2 },
+        { key: 'g-dados', label: 'Dados', tone: 'blue', at: [0.34, 0.15], w: 0.9, sats: ['Fontes', 'Contexto'] },
+        { key: 'g-proc', label: 'Processos', tone: 'green', at: [0.86, 0.22], w: 0.9, sats: ['Fluxos', 'Agentes'] },
+        { key: 'g-sist', label: 'Sistemas', tone: 'red', at: [0.32, 0.84], w: 0.9, sats: ['ERP', 'CRM', 'APIs'] },
+        { key: 'g-obj', label: 'Objetivos', tone: 'yellow', at: [0.86, 0.80], w: 0.9, sats: ['Indicadores', 'Impacto'] }
       ],
       links: [[1, 0, 'bridge'], [2, 0, 'bridge'], [3, 0, 'bridge'], [4, 0, 'bridge']],
       flow: true
     },
+    // áreas de leitura e formulários: o grafo descansa na retícula de 56px
     calm: { seed: 53, calm: true, labels: 'none' }
   };
 
@@ -440,7 +464,7 @@
     var P = { x: -9999, y: -9999, on: false };
     var live = [], edgeMap = {}, pulses = [];
     var current = null, spec = null, specKey = null, rect = null;
-    var hl = null, running = false, visible = false, dead = false;
+    var hl = null, hoverG = null, running = false, visible = false, dead = false;
     var lastPulse = 0, fade = 1, fadeT = 1;
     var cam = { yaw: 0, pitch: 0 };
 
@@ -566,6 +590,7 @@
         if (pulses[p].t >= 1 || pulses[p].e.ta === 0 || !L.pulses) pulses.splice(p, 1);
       }
       project();
+      hoverG = groupNear();
       for (var q = 0; q < N; q++) { var ln = live[q]; ln.lab += ((labelWanted(ln) ? 1 : 0) - ln.lab) * 0.12; }
     }
 
@@ -584,7 +609,20 @@
     }
 
     function labelMode() { return labelOpt || null; }
-    function labelWanted(n) {
+    // o grupo mais perto do cursor: polo a até 150px, satélite a até 90px ou poeira a até 50px
+    function groupNear() {
+      if (!P.on || reduced || rect.width < 560) return null;
+      var best = null, bd = 1e12;
+      for (var i = 0; i < N; i++) {
+        var n = live[i]; if (!n.group) continue;
+        var lim = n.kind === 'hub' ? 150 : n.kind === 'sat' ? 90 : 50;
+        var dx = P.x - n.px, dy = P.y - n.py, d2 = dx * dx + dy * dy;
+        if (d2 < lim * lim && d2 / (lim * lim) < bd) { bd = d2 / (lim * lim); best = n.group; }
+      }
+      return best;
+    }
+    function labelWanted(n) { return wantLabel(n) && !n.blk; }
+    function wantLabel(n) {
       if (!L.labels || !n.label || !current) return false;
       var compact = rect.width < 560, mode = labelMode();
       if (mode === 'none') return false;
@@ -593,6 +631,7 @@
       if (isHl(n)) return true;
       if (compact) return false;
       if (mode === 'all' || current.labels === 'all') return true;
+      if (hoverG && n.group === hoverG) return true;
       if (P.on) { var dx = P.x - n.px, dy = P.y - n.py; if (dx * dx + dy * dy < 120 * 120) return true; }
       return false;
     }
@@ -648,6 +687,7 @@
           var base = e.kind === 'bridge' ? 0.55 : e.kind === 'back' ? 0.55 : e.kind === 'hub' ? 0.42 : e.kind === 'mesh' ? 0.13 : 0.22;
           var emph = hl ? (isHl(A) || isHl(B) ? 1.9 : 0.3) : 1;
           var alpha = e.a * base * emph * dim * Math.min(A.pd, B.pd);
+          if (hoverG && A.group === hoverG && B.group === hoverG) alpha = Math.min(alpha * 1.6, 0.9);
           if (inHole((A.px + B.px) / 2, (A.py + B.py) / 2)) alpha *= 0.25;
           if (alpha < 0.01) continue;
           var bend = e.kind === 'bridge' || e.kind === 'back' ? e.bend + (e.kind === 'back' ? 0.28 : 0.12) : e.bend * 0.5;
@@ -673,7 +713,7 @@
       for (var h = 0; L.halos && L.nodes && glow && h < N; h++) {
         var hn = live[h];
         if (hn.kind !== 'hub') continue;
-        var ha = (hl ? (isHl(hn) ? 1 : 0.25) : 0.8) * dim * hn.pd;
+        var ha = (hl ? (isHl(hn) ? 1 : 0.25) : 0.8) * dim * hn.pd * (hoverG && hn.group === hoverG ? 1.3 : 1);
         var pulse = reduced ? 0 : Math.sin(t * 0.002 + hn.ph) * 3;
         var gr = (hn.r + 26 + pulse) * hn.ps;
         var g = ctx.createRadialGradient(hn.px, hn.py, 0, hn.px, hn.py, gr);
@@ -743,25 +783,58 @@
         }
       }
 
-      // rótulos: texto não esmaece com a profundidade
+      // rótulos: os polos primeiro, depois o grupo sob o cursor; um satélite que bateria em outro rótulo
+      // troca de lado, tenta acima e abaixo e, se ainda bater, espera a vez (esmaece em vez de sobrepor)
       var compact = rect.width < 560;
       ctx.textBaseline = 'middle';
       ctx.lineJoin = 'round';
-      for (var Li = 0; Li < N; Li++) {
-        var ln = live[Li];
-        if (!ln.label || ln.lab < 0.03) continue;
-        var hub = ln.kind === 'hub';
-        ctx.font = (hub ? '700 ' : '500 ') + (compact ? (hub ? 11.5 : 11) : (hub ? 13.5 : 12)) + 'px "DM Sans", system-ui, sans-serif';
-        var rightSide = (ln.px - rect.left) < rect.width * 0.62;
-        var off = ln.r * ln.ps + (hub ? 12 : 8);
-        var lx, ly = ln.py;
-        if (hub) { ctx.textAlign = 'center'; var tw = ctx.measureText(ln.label).width / 2 + 8; lx = clamp(ln.px, tw, W - tw); ly = ln.py + ln.r * ln.ps + 20; }
-        else { ctx.textAlign = rightSide ? 'left' : 'right'; lx = rightSide ? ln.px + off : ln.px - off; }
-        var la = ln.lab * (hl ? (isHl(ln) ? 1 : 0.35) : 1) * Math.max(dim, 0.85) * (hub ? 1 : Math.max(ln.pd, 0.75));
-        ctx.lineWidth = 4; ctx.strokeStyle = rgba(T.bg, 0.85 * la);
-        ctx.strokeText(ln.label, lx, ly);
-        ctx.fillStyle = hub ? rgba(T.hubLabel, 0.95 * la) : rgba(T.satLabel, 0.85 * la);
-        ctx.fillText(ln.label, lx, ly);
+      var edgePad = 8, boxes = [], order = [];
+      for (var Li = 0; Li < N; Li++) { var c0 = live[Li]; if (c0.label && (c0.lab > 0.03 || wantLabel(c0))) order.push(c0); }
+      order.sort(function (a, b) { return rank(a) - rank(b); });
+      function rank(n) { return n.kind === 'hub' ? 0 : hoverG && n.group === hoverG ? 1 : 2; }
+      function fontOf(hub) { return (hub ? '700 ' : '600 ') + (compact ? (hub ? 11.5 : 11) : (hub ? 13.5 : 12.5)) + 'px "DM Sans", system-ui, sans-serif'; }
+      function hits(x0, y0, x1, y1) {
+        for (var q2 = 0; q2 < boxes.length; q2++) { var bx = boxes[q2]; if (x0 < bx[2] && x1 > bx[0] && y0 < bx[3] && y1 > bx[1]) return true; }
+        return false;
+      }
+      for (var o2 = 0; o2 < order.length; o2++) {
+        var ln = order[o2], hub = ln.kind === 'hub';
+        ctx.font = fontOf(hub);
+        var tw = ctx.measureText(ln.label).width, th = hub ? 17 : 15;
+        if (hub) {
+          ln.lx = clamp(ln.px, tw / 2 + edgePad, W - tw / 2 - edgePad); ln.ly = ln.py + ln.r * ln.ps + 20; ln.la = 'center';
+          boxes.push([ln.lx - tw / 2 - 3, ln.ly - th / 2, ln.lx + tw / 2 + 3, ln.ly + th / 2]);
+          ln.blk = false;
+          continue;
+        }
+        var off = ln.r * ln.ps + 8, first = (ln.px - rect.left) < rect.width * 0.62;
+        var placedL = false, vy = ln.r * ln.ps + 13;
+        var spots = [first ? 'r' : 'l', first ? 'l' : 'r', 'u', 'd'];
+        for (var si2 = 0; si2 < spots.length && !placedL; si2++) {
+          var sp2 = spots[si2], x0, cy0 = ln.py;
+          if (sp2 === 'r') x0 = ln.px + off; else if (sp2 === 'l') x0 = ln.px - off - tw;
+          else { x0 = clamp(ln.px - tw / 2, edgePad, W - edgePad - tw); cy0 = sp2 === 'u' ? ln.py - vy : ln.py + vy; }
+          if (x0 < edgePad || x0 + tw > W - edgePad) continue;
+          if (!hits(x0 - 3, cy0 - th / 2, x0 + tw + 3, cy0 + th / 2)) {
+            boxes.push([x0 - 3, cy0 - th / 2, x0 + tw + 3, cy0 + th / 2]);
+            ln.lx = sp2 === 'r' ? ln.px + off : sp2 === 'l' ? ln.px - off : x0 + tw / 2; ln.ly = cy0;
+            ln.la = sp2 === 'r' ? 'left' : sp2 === 'l' ? 'right' : 'center';
+            placedL = true;
+          }
+        }
+        ln.blk = !placedL;
+      }
+      for (var D = 0; D < order.length; D++) {
+        var dn = order[D];
+        if (dn.lab < 0.03 || dn.lx === undefined) continue;
+        var dh = dn.kind === 'hub';
+        ctx.font = fontOf(dh); ctx.textAlign = dn.la;
+        // texto não esmaece com a profundidade: rótulo é leitura, não cenário
+        var la = dn.lab * (hl ? (isHl(dn) ? 1 : 0.35) : 1) * Math.max(dim, 0.85) * (dh ? 1 : Math.max(dn.pd, 0.9));
+        ctx.lineWidth = 4; ctx.strokeStyle = rgba(T.bg, 0.88 * la);
+        ctx.strokeText(dn.label, dn.lx, dn.ly);
+        ctx.fillStyle = dh ? rgba(T.hubLabel, 0.96 * la) : rgba(T.satLabel, 0.92 * la);
+        ctx.fillText(dn.label, dn.lx, dn.ly);
       }
       ctx.globalAlpha = 1;
     }
