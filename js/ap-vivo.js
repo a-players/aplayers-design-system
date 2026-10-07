@@ -50,7 +50,7 @@
     yellow: [212, 177, 6], violet: PAL.violet, ice: [141, 155, 176]
   };
   var THEMES = {
-    night: { pal: PAL, bg: NIGHT, dot: 'rgba(183,194,211,0.09)', glow: [241, 232, 78], glowA: 0.32, ring: 'rgba(255,255,255,0.5)', core: null, blend: 'lighter', haloA: 0.34, hubLabel: [255, 255, 255], satLabel: [228, 235, 245] },
+    night: { pal: PAL, bg: NIGHT, dot: 'rgba(183,194,211,0.09)', glow: [241, 232, 78], glowA: 0.32, ring: 'rgba(255,255,255,0.5)', core: null, blend: 'lighter', haloA: 0.34, hubLabel: [255, 255, 255], satLabel: [214, 224, 238] },
     day: { pal: DAY, bg: [255, 255, 255], dot: 'rgba(23,35,58,0.075)', glow: [212, 177, 6], glowA: 0.5, ring: 'rgba(23,35,58,0.42)', core: 'tone', blend: 'source-over', haloA: 0.2, hubLabel: [23, 35, 58], satLabel: [79, 93, 115] }
   };
   var LAYERS = ['grid', 'glow', 'edges', 'pulses', 'halos', 'nodes', 'labels', 'cursor', 'attract', 'breathe', 'camera', 'depth'];
@@ -58,20 +58,21 @@
   /* ------------------------------------------------------------ formações do site */
   // cópia fiel de js/graph.js (SPECS); rótulos em português
   var FORMATIONS = {
-    // Home: o que a A-Players conecta, nas palavras da própria abertura
+    // Home: o que a A-Players conecta, nas palavras da própria abertura; satélites em palavras soltas, quatro por grupo
+    // (Processos e estratégia um pouco para dentro, longe da borda direita)
     constellation: {
       seed: 7, spread: 0.135, labels: 'hubs',
       groups: [
         { key: 'g-talentos', tags: ['taas'], label: 'Talentos e desenvolvimento', tone: 'blue', at: [0.30, 0.28], w: 1.35,
-          sats: ['Recrutamento e Seleção', 'Extensão de Equipe', 'Desenvolvimento'] },
+          sats: ['Recrutamento', 'Seleção', 'Carreira', 'Evolução'] },
         { key: 'g-pessoas', tags: ['taas'], label: 'Gestão de pessoas', tone: 'violet', at: [0.14, 0.70], w: 0.9,
-          sats: ['Business Partner', 'PDI'] },
+          sats: ['Acompanhamento', 'Mentoria', 'Feedback', 'Engajamento'] },
         { key: 'g-plataformas', tags: ['ps'], label: 'Plataformas e aplicações', tone: 'green', at: [0.66, 0.16], w: 1,
           sats: ['Atlassian', 'CISP1', 'monday.com'] },
-        { key: 'g-processos', tags: ['ps'], label: 'Processos e estratégia', tone: 'red', at: [0.86, 0.56], w: 1,
-          sats: ['Consultoria', 'Planos de assinatura', 'FinOps'] },
+        { key: 'g-processos', tags: ['ps'], label: 'Processos e estratégia', tone: 'red', at: [0.81, 0.58], w: 1,
+          sats: ['Consultoria', 'Assinaturas', 'Arquitetura', 'Workshops'] },
         { key: 'g-ia', tags: ['intel'], label: 'Inteligência artificial', tone: 'yellow', at: [0.50, 0.80], w: 1.15,
-          sats: ['AI-Players', 'Adoção de IA', 'Agentes'] }
+          sats: ['AI-Player', 'Context Graph', 'Adoção de IA', 'FinOps'] }
       ],
       links: [[0, 1], [0, 2], [2, 3], [3, 4], [4, 1], [0, 4, 'bridge'], [2, 4]]
     },
@@ -792,7 +793,7 @@
       for (var Li = 0; Li < N; Li++) { var c0 = live[Li]; if (c0.label && (c0.lab > 0.03 || wantLabel(c0))) order.push(c0); }
       order.sort(function (a, b) { return rank(a) - rank(b); });
       function rank(n) { return n.kind === 'hub' ? 0 : hoverG && n.group === hoverG ? 1 : 2; }
-      function fontOf(hub) { return (hub ? '700 ' : '600 ') + (compact ? (hub ? 11.5 : 11) : (hub ? 13.5 : 12.5)) + 'px "DM Sans", system-ui, sans-serif'; }
+      function fontOf(hub) { return (hub ? '700 ' : '500 ') + (compact ? (hub ? 11.5 : 10.5) : (hub ? 13.5 : 11.5)) + 'px "DM Sans", system-ui, sans-serif'; }
       function hits(x0, y0, x1, y1) {
         for (var q2 = 0; q2 < boxes.length; q2++) { var bx = boxes[q2]; if (x0 < bx[2] && x1 > bx[0] && y0 < bx[3] && y1 > bx[1]) return true; }
         return false;
@@ -800,7 +801,7 @@
       for (var o2 = 0; o2 < order.length; o2++) {
         var ln = order[o2], hub = ln.kind === 'hub';
         ctx.font = fontOf(hub);
-        var tw = ctx.measureText(ln.label).width, th = hub ? 17 : 15;
+        var tw = ctx.measureText(ln.label).width, th = hub ? 17 : 14;
         if (hub) {
           ln.lx = clamp(ln.px, tw / 2 + edgePad, W - tw / 2 - edgePad); ln.ly = ln.py + ln.r * ln.ps + 20; ln.la = 'center';
           boxes.push([ln.lx - tw / 2 - 3, ln.ly - th / 2, ln.lx + tw / 2 + 3, ln.ly + th / 2]);
@@ -831,9 +832,9 @@
         ctx.font = fontOf(dh); ctx.textAlign = dn.la;
         // texto não esmaece com a profundidade: rótulo é leitura, não cenário
         var la = dn.lab * (hl ? (isHl(dn) ? 1 : 0.35) : 1) * Math.max(dim, 0.85) * (dh ? 1 : Math.max(dn.pd, 0.9));
-        ctx.lineWidth = 4; ctx.strokeStyle = rgba(T.bg, 0.88 * la);
+        ctx.lineWidth = dh ? 4 : 3.5; ctx.strokeStyle = rgba(T.bg, (dh ? 0.88 : 0.8) * la);
         ctx.strokeText(dn.label, dn.lx, dn.ly);
-        ctx.fillStyle = dh ? rgba(T.hubLabel, 0.96 * la) : rgba(T.satLabel, 0.92 * la);
+        ctx.fillStyle = dh ? rgba(T.hubLabel, 0.96 * la) : rgba(T.satLabel, 0.74 * la);
         ctx.fillText(dn.label, dn.lx, dn.ly);
       }
       ctx.globalAlpha = 1;
