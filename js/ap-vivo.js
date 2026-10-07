@@ -81,7 +81,7 @@
       seed: 21, spread: 0.14, labels: 'hubs',
       groups: [
         { key: 'g-taas', tags: ['taas', 'g0'], label: 'Talent as a Service', tone: 'blue', at: [0.20, 0.34], w: 1.1,
-          sats: ['Recrutamento e Seleção', 'Extensão de Equipe', 'AI-Players'] },
+          sats: ['Recrutamento e Seleção', 'Extensão de Equipe', 'AI-Player'] },
         { key: 'g-ps', tags: ['ps', 'g1'], label: 'Professional Services', tone: 'green', at: [0.80, 0.32], w: 1.3,
           sats: ['Consultoria', 'Planos de assinatura', 'Capacitações', 'Adoção de IA', 'FinOps'] },
         { key: 'g-desafio', tags: ['need'], label: 'O seu desafio', tone: 'red', at: [0.50, 0.90], w: 0.55, sats: ['Objetivos', 'Contexto'] }
@@ -110,7 +110,7 @@
         { key: 'g0', tags: ['negocio'], label: 'Negócio', tone: 'blue', at: [0.14, 0.52], w: 1.2, sats: ['Objetivos', 'Vocabulário'] },
         { key: 'g1', tags: ['processos'], label: 'Processos', tone: 'green', at: [0.36, 0.22], w: 1, sats: ['Fluxos', 'Papéis'] },
         { key: 'g2', tags: ['plataformas'], label: 'Plataformas', tone: 'red', at: [0.56, 0.60], w: 1, sats: ['Atlassian', 'CISP1', 'monday.com'] },
-        { key: 'g3', tags: ['agentes'], label: 'Agentes', tone: 'yellow', at: [0.82, 0.26], w: 0.95, sats: ['AI-Players', 'Rovo', 'Sidekick'] },
+        { key: 'g3', tags: ['agentes'], label: 'Agentes', tone: 'yellow', at: [0.82, 0.26], w: 0.95, sats: ['AI-Player', 'Rovo', 'Sidekick'] },
         { key: 'g4', tags: ['feedback'], label: 'Feedback', tone: 'violet', at: [0.80, 0.84], w: 0.85, sats: ['Uso', 'Melhoria'] }
       ],
       links: [[0, 1], [1, 2], [2, 3], [3, 4], [4, 0, 'back'], [0, 2]]
@@ -122,7 +122,7 @@
         { key: 'g0', tags: ['negocio'], label: 'Negócio', tone: 'blue', at: [0.09, 0.50], w: 1.2, sats: ['Objetivos', 'Vocabulário'] },
         { key: 'g1', tags: ['processos'], label: 'Processos', tone: 'green', at: [0.24, 0.12], w: 1, sats: ['Fluxos', 'Papéis'] },
         { key: 'g2', tags: ['plataformas'], label: 'Plataformas', tone: 'red', at: [0.52, 0.93], w: 1, sats: ['Atlassian', 'CISP1', 'monday.com'] },
-        { key: 'g3', tags: ['agentes'], label: 'Agentes', tone: 'yellow', at: [0.78, 0.12], w: 0.95, sats: ['AI-Players', 'Rovo', 'Sidekick'] },
+        { key: 'g3', tags: ['agentes'], label: 'Agentes', tone: 'yellow', at: [0.78, 0.12], w: 0.95, sats: ['AI-Player', 'Rovo', 'Sidekick'] },
         { key: 'g4', tags: ['feedback'], label: 'Feedback', tone: 'violet', at: [0.92, 0.55], w: 0.85, sats: ['Uso', 'Melhoria'] }
       ],
       links: [[0, 1], [1, 2], [2, 3], [3, 4], [4, 0, 'back']]
@@ -133,10 +133,10 @@
       groups: [
         { key: 'c0', label: 'Recrutamento', tone: 'blue', at: [0.50, 0.10], w: 1, sats: ['Busca especializada'] },
         { key: 'c1', label: 'Seleção', tone: 'blueL', at: [0.86, 0.32], w: 1, sats: ['Aderência técnica', 'Aderência cultural'] },
-        { key: 'c2', label: 'Desenvolvimento', tone: 'green', at: [0.80, 0.76], w: 1, sats: ['PDI'] },
+        { key: 'c2', label: 'Desenvolvimento', tone: 'green', at: [0.80, 0.76], w: 1, sats: ['Plano de desenvolvimento'] },
         { key: 'c3', label: 'Gestão', tone: 'red', at: [0.46, 0.90], w: 1, sats: ['Business Partner'] },
         { key: 'c4', label: 'Performance', tone: 'yellow', at: [0.14, 0.70], w: 1, sats: ['Feedback contínuo'] },
-        { key: 'c5', label: 'Inteligência Artificial', tone: 'violet', at: [0.16, 0.28], w: 1, sats: ['AI-Players', 'Capacitação em IA'] }
+        { key: 'c5', label: 'Inteligência Artificial', tone: 'violet', at: [0.16, 0.28], w: 1, sats: ['AI-Player', 'Capacitação em IA'] }
       ],
       links: [[0, 1, 'bridge'], [1, 2, 'bridge'], [2, 3, 'bridge'], [3, 4, 'bridge'], [4, 5, 'bridge'], [5, 2, 'back']],
       flow: true
@@ -158,7 +158,7 @@
       groups: [
         { key: 'g-certas', tags: ['taas'], label: 'Pessoas certas', tone: 'blue', at: [0.30, 0.32], w: 1.5, mix: 'violet', sats: ['Recrutamento', 'Seleção'] },
         { key: 'g-contexto', label: 'Contexto claro', tone: 'green', at: [0.76, 0.28], w: 0.9, sats: ['Objetivos', 'Processos'] },
-        { key: 'g-evolucao', label: 'Evolução acompanhada', tone: 'red', at: [0.58, 0.80], w: 0.9, sats: ['PDI', 'Capacitação em IA'] }
+        { key: 'g-evolucao', label: 'Evolução acompanhada', tone: 'red', at: [0.58, 0.80], w: 0.9, sats: ['Plano de desenvolvimento', 'Capacitação em IA'] }
       ],
       links: [[0, 1], [1, 2], [2, 0]]
     },
@@ -169,7 +169,7 @@
         { key: 'g-certas', label: 'Pessoas certas', tone: 'blue', at: [0.19, 0.32], w: 1.3, mix: 'violet', sats: ['Recrutamento e Seleção', 'Aderência cultural'] },
         { key: 'g-times', label: 'Times A-Player', tone: 'violet', at: [0.23, 0.78], w: 1, mix: 'blue', sats: ['Business Partner', 'Comunidade'] },
         { key: 'g-contexto', label: 'Contexto claro', tone: 'green', at: [0.81, 0.28], w: 1, sats: ['Objetivos', 'Processos', 'Plataformas'] },
-        { key: 'g-evolucao', label: 'Evolução acompanhada', tone: 'red', at: [0.77, 0.78], w: 1, sats: ['PDI', 'Capacitação em IA', 'Feedback'] }
+        { key: 'g-evolucao', label: 'Evolução acompanhada', tone: 'red', at: [0.77, 0.78], w: 1, sats: ['Plano de desenvolvimento', 'Capacitação em IA', 'Feedback'] }
       ],
       links: [[0, 1], [0, 2], [2, 3], [3, 1]]
     },
