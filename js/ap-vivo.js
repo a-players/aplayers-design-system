@@ -65,7 +65,7 @@
       groups: [
         { key: 'g-talentos', tags: ['taas'], label: 'Talentos e desenvolvimento', tone: 'blue', at: [0.30, 0.28], w: 1.35,
           sats: ['Recrutamento', 'Seleção', 'Carreira', 'Evolução'] },
-        { key: 'g-pessoas', tags: ['taas'], label: 'Gestão de pessoas', tone: 'violet', at: [0.14, 0.70], w: 0.9,
+        { key: 'g-pessoas', tags: ['taas'], label: 'Gestão de pessoas', tone: 'violet', at: [0.19, 0.69], w: 0.9,
           sats: ['Acompanhamento', 'Mentoria', 'Feedback', 'Engajamento'] },
         { key: 'g-plataformas', tags: ['ps'], label: 'Plataformas e aplicações', tone: 'green', at: [0.66, 0.16], w: 1,
           sats: ['Atlassian', 'CISP1', 'monday.com'] },
@@ -91,14 +91,14 @@
     // Intelligence e Home: as três frentes conectadas pela A-Players Intelligence,
     // na ordem Atlassian, CISP1, monday.com (sem aresta direta entre parceiros)
     ecosystem: {
-      seed: 5, spread: 0.19, labels: 'hubs',
+      seed: 5, spread: 0.18, labels: 'hubs',
       groups: [
         { key: 'g-core', tags: ['core'], label: 'A-Players Intelligence', tone: 'yellow', at: [0.50, 0.50], w: 0.8 },
-        { key: 'atlassian', tags: ['atlassian'], label: 'Atlassian', tone: 'blue', at: [0.18, 0.28], w: 1.05,
+        { key: 'atlassian', tags: ['atlassian'], label: 'Atlassian', tone: 'blue', at: [0.23, 0.24], w: 1.05,
           sats: ['Jira', 'Confluence', 'Loom', 'Jira Service Management', 'Assets', 'Bitbucket', 'Rovo', 'Rovo Dev'] },
         { key: 'cisp1', tags: ['cisp1'], label: 'CISP1', tone: 'violet', at: [0.83, 0.28], w: 0.95,
           sats: ['Estratégia', 'Arquitetura', 'Engenharia', 'Infraestrutura', 'Operação', 'Governança'] },
-        { key: 'monday', tags: ['monday'], label: 'monday.com', tone: 'red', at: [0.56, 0.86], w: 1.05,
+        { key: 'monday', tags: ['monday'], label: 'monday.com', tone: 'red', at: [0.56, 0.82], w: 1.05,
           sats: ['work management', 'monday CRM', 'monday dev', 'monday service', 'Sidekick', 'Agents', 'Vibe'] }
       ],
       links: [[0, 1, 'bridge'], [0, 2, 'bridge'], [0, 3, 'bridge']]
@@ -135,7 +135,7 @@
         { key: 'c1', label: 'Seleção', tone: 'blueL', at: [0.86, 0.32], w: 1, sats: ['Aderência técnica', 'Aderência cultural'] },
         { key: 'c2', label: 'Desenvolvimento', tone: 'green', at: [0.80, 0.76], w: 1, sats: ['Plano de desenvolvimento'] },
         { key: 'c3', label: 'Gestão', tone: 'red', at: [0.46, 0.90], w: 1, sats: ['Business Partner'] },
-        { key: 'c4', label: 'Performance', tone: 'yellow', at: [0.14, 0.70], w: 1, sats: ['Feedback contínuo'] },
+        { key: 'c4', label: 'Performance', tone: 'yellow', at: [0.19, 0.70], w: 1, sats: ['Feedback contínuo'] },
         { key: 'c5', label: 'Inteligência Artificial', tone: 'violet', at: [0.16, 0.28], w: 1, sats: ['AI-Player', 'Capacitação em IA'] }
       ],
       links: [[0, 1, 'bridge'], [1, 2, 'bridge'], [2, 3, 'bridge'], [3, 4, 'bridge'], [4, 5, 'bridge'], [5, 2, 'back']],
@@ -194,10 +194,10 @@
     operation: {
       seed: 43, spread: 0.2, labels: 'hubs',
       groups: [
-        { key: 'g-plan', label: 'Planejar', tone: 'blue', at: [0.18, 0.34], w: 1, sats: ['Prioridades visíveis', 'Portfólios'] },
-        { key: 'g-exec', label: 'Executar', tone: 'green', at: [0.52, 0.66], w: 1.2, sats: ['Fluxos em movimento', 'Automações'] },
-        { key: 'g-learn', label: 'Aprender', tone: 'yellow', at: [0.84, 0.30], w: 1, sats: ['Dados para decidir', 'Dashboards'] },
-        { key: 'g-agents', label: 'Sidekick e Agents', tone: 'red', at: [0.58, 0.10], w: 0.6, sats: ['Vibe'] }
+        { key: 'g-plan', label: 'Planejar', tone: 'blue', at: [0.18, 0.46], w: 1, sats: ['Prioridades visíveis', 'Portfólios'] },
+        { key: 'g-exec', label: 'Executar', tone: 'green', at: [0.52, 0.75], w: 1.2, sats: ['Fluxos em movimento', 'Automações'] },
+        { key: 'g-learn', label: 'Aprender', tone: 'yellow', at: [0.84, 0.42], w: 1, sats: ['Dados para decidir', 'Dashboards'] },
+        { key: 'g-agents', label: 'Sidekick e Agents', tone: 'red', at: [0.58, 0.22], w: 0.6, sats: ['Vibe'] }
       ],
       links: [[0, 1, 'bridge'], [1, 2, 'bridge'], [2, 0, 'back'], [3, 1], [3, 2]],
       flow: true
