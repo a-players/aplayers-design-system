@@ -70,8 +70,8 @@
         { key: 'g-plataformas', tags: ['ps'], label: 'Plataformas e aplicações', tone: 'green', at: [0.66, 0.16], w: 1,
           sats: ['Atlassian', 'CISP1', 'monday.com'] },
         { key: 'g-processos', tags: ['ps'], label: 'Processos e estratégia', tone: 'red', at: [0.81, 0.58], w: 1,
-          sats: ['Consultoria', 'Assinaturas', 'Arquitetura', 'Workshops'] },
-        { key: 'g-ia', tags: ['intel'], label: 'Inteligência artificial', tone: 'yellow', at: [0.50, 0.80], w: 1.15,
+          sats: ['Consultoria especializada', 'Planos de assinatura', 'Arquitetura', 'Capacitações e workshops'] },
+        { key: 'g-ia', tags: ['intel'], label: 'Inteligência Artificial', tone: 'yellow', at: [0.50, 0.80], w: 1.15,
           sats: ['AI-Player', 'Context Graph', 'Adoção de IA', 'FinOps IA'] }
       ],
       links: [[0, 1], [0, 2], [2, 3], [3, 4], [4, 1], [0, 4, 'bridge'], [2, 4]]
@@ -83,7 +83,7 @@
         { key: 'g-taas', tags: ['taas', 'g0'], label: 'Talent as a Service', tone: 'blue', at: [0.20, 0.34], w: 1.1,
           sats: ['Recrutamento e Seleção', 'Extensão de Equipe', 'AI-Player'] },
         { key: 'g-ps', tags: ['ps', 'g1'], label: 'Professional Services', tone: 'green', at: [0.80, 0.32], w: 1.3,
-          sats: ['Consultoria', 'Planos de assinatura', 'Capacitações', 'Adoção de IA', 'FinOps SaaS', 'FinOps IA'] },
+          sats: ['Consultoria especializada', 'Planos de assinatura', 'Capacitações e workshops', 'Adoção de IA', 'FinOps SaaS', 'FinOps IA'] },
         { key: 'g-desafio', tags: ['need'], label: 'O seu desafio', tone: 'red', at: [0.50, 0.90], w: 0.55, sats: ['Objetivos', 'Contexto'] }
       ],
       links: [[0, 2, 'bridge'], [1, 2, 'bridge'], [0, 1]]
