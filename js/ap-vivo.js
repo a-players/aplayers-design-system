@@ -58,21 +58,22 @@
   /* ------------------------------------------------------------ formações do site */
   // cópia fiel de js/graph.js (SPECS); rótulos em português
   var FORMATIONS = {
-    // Home: o que a A-Players conecta, nas palavras da própria abertura; satélites em palavras soltas, quatro por grupo
+    // Home: o que a A-Players conecta, nas palavras da própria abertura; satélites em uma palavra só, quatro por grupo,
+    // do vocabulário do posicionamento e sem repetir sentido entre os grupos
     // (Processos e estratégia um pouco para dentro, longe da borda direita)
     constellation: {
       seed: 7, spread: 0.135, labels: 'hubs',
       groups: [
         { key: 'g-talentos', tags: ['taas'], label: 'Talentos e desenvolvimento', tone: 'blue', at: [0.30, 0.28], w: 1.35,
-          sats: ['Recrutamento', 'Seleção', 'Carreira', 'Evolução'] },
+          sats: ['Seleção', 'Cultura', 'Desafios', 'Carreira'] },
         { key: 'g-pessoas', tags: ['taas'], label: 'Gestão de pessoas', tone: 'violet', at: [0.19, 0.69], w: 0.9,
-          sats: ['Acompanhamento', 'Mentoria', 'Feedback', 'Engajamento'] },
+          sats: ['Proximidade', 'Mentoria', 'Feedback', 'Engajamento'] },
         { key: 'g-plataformas', tags: ['intel'], label: 'Plataformas e aplicações', tone: 'green', at: [0.66, 0.16], w: 1,
           sats: ['Atlassian', 'CISP1', 'monday.com'] },
         { key: 'g-processos', tags: ['ps'], label: 'Processos e estratégia', tone: 'red', at: [0.81, 0.58], w: 1,
-          sats: ['Consultoria especializada', 'Planos de assinatura', 'Arquitetura', 'Capacitações e workshops'] },
+          sats: ['Consultoria', 'Arquitetura', 'Sustentação', 'Capacitação'] },
         { key: 'g-ia', tags: ['taas', 'ps', 'intel'], label: 'Inteligência Artificial', tone: 'yellow', at: [0.50, 0.80], w: 1.15,
-          sats: ['AI-Player', 'Context Graph', 'Adoção de IA', 'FinOps IA'], satTags: ['taas', 'intel', 'ps', 'ps'] }
+          sats: ['AI-Player', 'Contexto', 'Adoção', 'FinOps'], satTags: ['taas', 'intel', 'ps', 'ps'] }
       ],
       links: [[0, 1], [0, 2], [2, 3], [3, 4], [4, 1], [0, 4, 'bridge'], [2, 4]]
     },
