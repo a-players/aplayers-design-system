@@ -67,12 +67,12 @@
           sats: ['Recrutamento', 'Seleção', 'Carreira', 'Evolução'] },
         { key: 'g-pessoas', tags: ['taas'], label: 'Gestão de pessoas', tone: 'violet', at: [0.19, 0.69], w: 0.9,
           sats: ['Acompanhamento', 'Mentoria', 'Feedback', 'Engajamento'] },
-        { key: 'g-plataformas', tags: ['ps'], label: 'Plataformas e aplicações', tone: 'green', at: [0.66, 0.16], w: 1,
+        { key: 'g-plataformas', tags: ['intel'], label: 'Plataformas e aplicações', tone: 'green', at: [0.66, 0.16], w: 1,
           sats: ['Atlassian', 'CISP1', 'monday.com'] },
         { key: 'g-processos', tags: ['ps'], label: 'Processos e estratégia', tone: 'red', at: [0.81, 0.58], w: 1,
           sats: ['Consultoria especializada', 'Planos de assinatura', 'Arquitetura', 'Capacitações e workshops'] },
-        { key: 'g-ia', tags: ['intel'], label: 'Inteligência Artificial', tone: 'yellow', at: [0.50, 0.80], w: 1.15,
-          sats: ['AI-Player', 'Context Graph', 'Adoção de IA', 'FinOps IA'] }
+        { key: 'g-ia', tags: ['taas', 'ps', 'intel'], label: 'Inteligência Artificial', tone: 'yellow', at: [0.50, 0.80], w: 1.15,
+          sats: ['AI-Player', 'Context Graph', 'Adoção de IA', 'FinOps IA'], satTags: ['taas', 'intel', 'ps', 'ps'] }
       ],
       links: [[0, 1], [0, 2], [2, 3], [3, 4], [4, 1], [0, 4, 'bridge'], [2, 4]]
     },
@@ -88,14 +88,15 @@
       ],
       links: [[0, 2, 'bridge'], [1, 2, 'bridge'], [0, 1]]
     },
-    // Intelligence e Home: as três frentes conectadas pela A-Players Intelligence,
-    // na ordem Atlassian, CISP1, monday.com (sem aresta direta entre parceiros)
+    // Intelligence e Home: as três plataformas conectadas pela A-Players Intelligence (o método no centro),
+    // na ordem Atlassian (pelas Collections), CISP1, monday.com (sem aresta direta entre parceiros)
     ecosystem: {
       seed: 5, spread: 0.18, labels: 'hubs',
       groups: [
-        { key: 'g-core', tags: ['core'], label: 'A-Players Intelligence', tone: 'yellow', at: [0.50, 0.50], w: 0.8 },
+        { key: 'g-core', tags: ['core'], label: 'A-Players Intelligence', tone: 'yellow', at: [0.50, 0.50], w: 0.8,
+          sats: ['Context Graph', 'Conhecimento', 'Integrações'] },
         { key: 'atlassian', tags: ['atlassian'], label: 'Atlassian', tone: 'blue', at: [0.23, 0.24], w: 1.05,
-          sats: ['Jira', 'Confluence', 'Loom', 'Jira Service Management', 'Assets', 'Bitbucket', 'Rovo', 'Rovo Dev'] },
+          sats: ['Teamwork Collection', 'Service Collection', 'Software Collection', 'Product Collection', 'Strategy Collection', 'Rovo'] },
         { key: 'cisp1', tags: ['cisp1'], label: 'CISP1', tone: 'violet', at: [0.83, 0.28], w: 0.95,
           sats: ['Estratégia', 'Arquitetura', 'Engenharia', 'Infraestrutura', 'Operação', 'Governança'] },
         { key: 'monday', tags: ['monday'], label: 'monday.com', tone: 'red', at: [0.56, 0.82], w: 1.05,
@@ -141,24 +142,24 @@
       links: [[0, 1, 'bridge'], [1, 2, 'bridge'], [2, 3, 'bridge'], [3, 4, 'bridge'], [4, 5, 'bridge'], [5, 2, 'back']],
       flow: true
     },
-    // Professional Services: entender, desenhar, capacitar; o uso alimenta o próximo ciclo
+    // Professional Services: entender, desenhar, capacitar; cada pilar aparece na fase em que entra
     flow: {
       seed: 17, spread: 0.19, labels: 'hubs',
       groups: [
-        { key: 'g0', label: 'Entender a operação', tone: 'blue', at: [0.167, 0.48], w: 1, sats: ['Objetivos', 'Processos', 'Plataformas'] },
-        { key: 'g1', label: 'Desenhar e implementar', tone: 'green', at: [0.50, 0.40], w: 1, sats: ['Arquitetura', 'Fluxos', 'Conexões'] },
-        { key: 'g2', label: 'Capacitar e evoluir', tone: 'red', at: [0.833, 0.52], w: 1, sats: ['Uso', 'Feedback', 'Melhoria'] }
+        { key: 'g0', label: 'Entender a operação', tone: 'blue', at: [0.167, 0.48], w: 1, sats: ['Objetivos', 'Processos', 'Consultoria especializada'] },
+        { key: 'g1', label: 'Desenhar e implementar', tone: 'green', at: [0.50, 0.40], w: 1, sats: ['Arquitetura', 'Conexões', 'Adoção de IA'] },
+        { key: 'g2', label: 'Capacitar e evoluir', tone: 'red', at: [0.833, 0.52], w: 1, sats: ['Capacitações e workshops', 'Planos de assinatura', 'FinOps SaaS', 'FinOps IA'] }
       ],
       links: [[0, 1, 'bridge'], [1, 2, 'bridge'], [2, 0, 'back']],
       flow: true
     },
-    // Quem somos (cena lateral): gente no centro
+    // Home (cena de Talent as a Service): as três formas, contratar, ampliar a equipe e agentes de IA
     people: {
       seed: 29, spread: 0.2, labels: 'hubs',
       groups: [
-        { key: 'g-certas', tags: ['taas'], label: 'Pessoas certas', tone: 'blue', at: [0.30, 0.32], w: 1.5, mix: 'violet', sats: ['Recrutamento', 'Seleção'] },
-        { key: 'g-contexto', label: 'Contexto claro', tone: 'green', at: [0.76, 0.28], w: 0.9, sats: ['Objetivos', 'Processos'] },
-        { key: 'g-evolucao', label: 'Evolução acompanhada', tone: 'red', at: [0.58, 0.80], w: 0.9, sats: ['Plano de desenvolvimento', 'Capacitação em IA'] }
+        { key: 'g-rs', tags: ['taas'], label: 'Recrutamento e Seleção', tone: 'blue', at: [0.28, 0.30], w: 1.3, sats: ['Busca especializada', 'Aderência técnica', 'Aderência cultural'] },
+        { key: 'g-ext', tags: ['taas'], label: 'Extensão de Equipe', tone: 'green', at: [0.76, 0.30], w: 1.1, sats: ['Business Partner', 'Plano de desenvolvimento', 'Capacitação em IA'] },
+        { key: 'g-aip', tags: ['taas'], label: 'AI-Player', tone: 'yellow', at: [0.56, 0.80], w: 0.9, sats: ['Agentes de IA', 'Trabalho repetitivo'] }
       ],
       links: [[0, 1], [1, 2], [2, 0]]
     },
@@ -173,22 +174,18 @@
       ],
       links: [[0, 1], [0, 2], [2, 3], [3, 1]]
     },
-    // Atlassian: superfícies conectadas pelo Teamwork Graph
+    // Atlassian: as cinco Collections da página em volta do Teamwork Graph, com o Rovo no centro
     teamwork: {
-      seed: 41, spread: 0.13, labels: 'hubs',
+      seed: 41, spread: 0.14, labels: 'hubs',
       groups: [
-        { key: 'g-tg', label: 'Teamwork Graph', tone: 'green', at: [0.50, 0.50], w: 1.3, sats: ['Pessoas', 'Objetivos', 'Trabalho', 'Conhecimento'] },
-        { key: 'g-jira', label: 'Jira', tone: 'blue', at: [0.16, 0.16], w: 0.9, sats: ['Planejamento'] },
-        { key: 'g-conf', label: 'Confluence', tone: 'blueL', at: [0.84, 0.14], w: 0.9, sats: ['Documentação'] },
-        { key: 'g-loom', label: 'Loom', tone: 'violet', at: [0.12, 0.62], w: 0.6, sats: ['Vídeo assíncrono'] },
-        { key: 'g-rovo', label: 'Rovo', tone: 'yellow', at: [0.86, 0.60], w: 0.9, sats: ['Search', 'Chat', 'Agents'] },
-        { key: 'g-jpd', label: 'Jira Product Discovery', tone: 'violet', at: [0.50, 0.24], w: 0.6, sats: ['Ideias'] },
-        { key: 'g-jsm', label: 'Jira Service Management', tone: 'yellow', at: [0.26, 0.86], w: 0.7, sats: ['Atendimento'] },
-        { key: 'g-assets', label: 'Assets', tone: 'red', at: [0.14, 0.40], w: 0.5, sats: ['Ativos'] },
-        { key: 'g-bb', label: 'Bitbucket', tone: 'blue', at: [0.86, 0.38], w: 0.6, sats: ['Código'] },
-        { key: 'g-rovodev', label: 'Rovo Dev', tone: 'green', at: [0.74, 0.84], w: 0.6, sats: ['Código com IA'] }
+        { key: 'g-tg', label: 'Teamwork Graph', tone: 'green', at: [0.50, 0.50], w: 1.3, sats: ['Rovo', 'Pessoas', 'Trabalho', 'Conhecimento'] },
+        { key: 'g-teamwork', label: 'Teamwork Collection', tone: 'blue', at: [0.20, 0.18], w: 1, sats: ['Jira', 'Confluence', 'Loom'] },
+        { key: 'g-service', label: 'Service Collection', tone: 'yellow', at: [0.82, 0.18], w: 0.95, sats: ['Jira Service Management', 'CSM', 'Assets'] },
+        { key: 'g-software', label: 'Software Collection', tone: 'green', at: [0.86, 0.64], w: 0.95, sats: ['Bitbucket', 'Pipelines', 'DX', 'Rovo Dev'] },
+        { key: 'g-product', label: 'Product Collection', tone: 'violet', at: [0.54, 0.90], w: 0.8, sats: ['Jira Product Discovery', 'Feedback'] },
+        { key: 'g-strategy', label: 'Strategy Collection', tone: 'red', at: [0.15, 0.66], w: 0.8, sats: ['Focus', 'Talent'] }
       ],
-      links: [[0, 1, 'bridge'], [0, 2, 'bridge'], [0, 3, 'bridge'], [0, 4, 'bridge'], [0, 5, 'bridge'], [0, 6, 'bridge'], [0, 7, 'bridge'], [0, 8, 'bridge'], [0, 9, 'bridge'], [1, 2], [1, 5], [6, 7], [8, 9], [4, 9]]
+      links: [[0, 1, 'bridge'], [0, 2, 'bridge'], [0, 3, 'bridge'], [0, 4, 'bridge'], [0, 5, 'bridge'], [1, 2], [1, 5], [3, 4]]
     },
     // monday.com: planejar, executar, aprender, com pessoas e agentes
     operation: {
