@@ -1029,7 +1029,7 @@
               <tr><td><code>fronts</code></td><td class="muted">Nossos serviços</td><td class="muted">Talent as a Service, Professional Services, O seu desafio</td></tr>
               <tr><td><code>cycle</code></td><td class="muted">Talent as a Service</td><td class="muted">Recrutamento, Seleção, Desenvolvimento, Gestão, Performance, Inteligência Artificial</td></tr>
               <tr><td><code>flow</code></td><td class="muted">Professional Services e o filme da Home</td><td class="muted">Entender a operação, Desenhar e implementar, Capacitar e evoluir, com cada pilar na fase em que entra</td></tr>
-              <tr><td><code>context-wide</code></td><td class="muted">Intelligence: abertura</td><td class="muted">Negócio, Processos, Plataformas, Agentes, Feedback, em volta do título</td></tr>
+              <tr><td><code>context-wide</code></td><td class="muted">Intelligence: abertura</td><td class="muted">Negócio, Processos, Plataformas, Agentes e Feedback contornam o título, sem cruzar o texto, na largura do menu</td></tr>
               <tr><td><code>ecosystem</code></td><td class="muted">Intelligence e o filme da Home</td><td class="muted"><span class="ap-nw">A-Players</span> Intelligence no centro (contexto, conhecimento e integração), ligada a Atlassian (pelas Collections), CISP1 e monday.com, nessa ordem e sem ligação direta entre parceiros</td></tr>
               <tr><td><code>context</code></td><td class="muted">Filme da Home</td><td class="muted">As cinco camadas do Context Graph</td></tr>
               <tr><td><code>teamwork</code></td><td class="muted">Atlassian</td><td class="muted">Teamwork Graph e Rovo no centro, com as cinco Collections: Teamwork, Service, Software, Product e Strategy</td></tr>
@@ -1040,7 +1040,7 @@
           </table></div>
           <p class="doc__note">Toda formação tem satélites: o que define cada polo, em uma palavra estratégica e sem repetir sentido no mesmo gráfico (na Home, Contexto, Adoção e FinOps na Inteligência Artificial; na CISP1, ERP, CRM e APIs em Sistemas). Nome de produto ou de oferta (Jira, Rovo, Planos de assinatura) entra como é. Eles aparecem quando o cursor chega perto do grupo. A lista completa, em português e inglês, está em <code>js/graph.js</code> (<code>SPECS</code> e <code>EN_LABEL</code>); <code>python tools/check_vivo.py</code> confere se o motor do Design System tem as mesmas formações.</p>
           <h3 class="doc__sub">Uma formação nova</h3>
-          <p class="doc__note">Uma peça pode trazer os seus grupos: até cinco polos, cada um com nome, tom, posição (0 a 1) e peso, e satélites opcionais. As ligações entre grupos dizem o tipo: ponte por padrão, <code>'back'</code> para o retorno.</p>
+          <p class="doc__note">Uma peça pode trazer os seus grupos: até cinco polos, cada um com nome, tom, posição (0 a 1) e peso, e satélites opcionais. As ligações entre grupos dizem o tipo: ponte por padrão, <code>'back'</code> para o retorno. Um quarto item opcional fixa a curva da ligação (negativo curva para fora num anel em sentido horário), para o arco contornar o texto em vez de cruzá-lo.</p>
           <div class="code"><div class="code__bar">Formação de um evento<button type="button" class="tool"><svg aria-hidden="true"><use href="#i-copy"/></svg>Copiar</button></div><pre><code>APVivo.mount(document.querySelector('#palco'), {
   formation: {
     seed: 61, spread: 0.16, labels: 'hubs', flow: true,
@@ -2242,7 +2242,7 @@ Claro no que resolve, prudente no que promete; nada de "frentes", AMS, Academy o
 
 <script src="tokens/tokens.js?v=2.2.1" defer></script>
 <script src="js/grafo.js?v=2.2.1" defer></script>
-<script src="js/ap-vivo.js?v=2.7.8" defer></script>
+<script src="js/ap-vivo.js?v=2.7.9" defer></script>
 <script src="assets/biblioteca/biblioteca.js?v=2.2.1" defer></script>
 <script src="js/docs.js?v=2.7.0" defer></script>
 </body>

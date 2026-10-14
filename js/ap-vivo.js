@@ -117,17 +117,18 @@
       ],
       links: [[0, 1], [1, 2], [2, 3], [3, 4], [4, 0, 'back'], [0, 2]]
     },
-    // Intelligence (abertura em tela cheia): as camadas envolvem o título
+    // Intelligence (abertura em tela cheia): as camadas contornam o título em sentido horário, do Negócio ao
+    // Feedback, que volta ao Negócio; a curva fixa (4º item da ligação) mantém cada arco por fora do texto
     'context-wide': {
       seed: 19, spread: 0.14, labels: 'hubs',
       groups: [
-        { key: 'g0', tags: ['negocio'], label: 'Negócio', tone: 'blue', at: [0.09, 0.50], w: 1.2, sats: ['Objetivos', 'Vocabulário'] },
-        { key: 'g1', tags: ['processos'], label: 'Processos', tone: 'green', at: [0.24, 0.12], w: 1, sats: ['Fluxos', 'Papéis'] },
-        { key: 'g2', tags: ['plataformas'], label: 'Plataformas', tone: 'red', at: [0.52, 0.93], w: 1, sats: ['Atlassian', 'CISP1', 'monday.com'] },
-        { key: 'g3', tags: ['agentes'], label: 'Agentes', tone: 'yellow', at: [0.78, 0.12], w: 0.95, sats: ['AI-Player', 'Rovo', 'Sidekick'] },
-        { key: 'g4', tags: ['feedback'], label: 'Feedback', tone: 'violet', at: [0.92, 0.55], w: 0.85, sats: ['Uso', 'Melhoria'] }
+        { key: 'g0', tags: ['negocio'], label: 'Negócio', tone: 'blue', at: [0.20, 0.13], w: 1.2, sats: ['Objetivos', 'Vocabulário'] },
+        { key: 'g1', tags: ['processos'], label: 'Processos', tone: 'green', at: [0.80, 0.13], w: 1, sats: ['Fluxos', 'Papéis'] },
+        { key: 'g2', tags: ['plataformas'], label: 'Plataformas', tone: 'red', at: [0.92, 0.80], w: 1, sats: ['Atlassian', 'CISP1', 'monday.com'] },
+        { key: 'g3', tags: ['agentes'], label: 'Agentes', tone: 'yellow', at: [0.50, 0.95], w: 0.95, sats: ['AI-Player', 'Rovo', 'Sidekick'] },
+        { key: 'g4', tags: ['feedback'], label: 'Feedback', tone: 'violet', at: [0.08, 0.80], w: 0.85, sats: ['Uso', 'Melhoria'] }
       ],
-      links: [[0, 1], [1, 2], [2, 3], [3, 4], [4, 0, 'back']]
+      links: [[0, 1, 'bridge', -0.04], [1, 2, 'bridge', -0.12], [2, 3, 'bridge', -0.08], [3, 4, 'bridge', -0.08], [4, 0, 'back', -0.2]]
     },
     // Talent as a Service: seis momentos; o que se aprende volta ao desenvolvimento
     cycle: {
@@ -326,7 +327,7 @@
     (spec.links || []).forEach(function (l) {
       var A = groups[l[0]], B = groups[l[1]];
       if (!A || !B) return;
-      edges.push([A.nodes[0], B.nodes[0], l[2] || 'bridge']);
+      edges.push([A.nodes[0], B.nodes[0], l[2] || 'bridge', l[3]]);
       var best = null, bd = 1e12;
       for (var i = 1; i < A.nodes.length; i++) for (var j = 1; j < B.nodes.length; j++) {
         var a = nodes[A.nodes[i]], b = nodes[B.nodes[j]], dx = a.x - b.x, dy = a.y - b.y, dd = dx * dx + dy * dy;
@@ -514,7 +515,7 @@
         var key = e[0] < e[1] ? e[0] + '-' + e[1] : e[1] + '-' + e[0];
         var ex = edgeMap[key];
         if (!ex) ex = edgeMap[key] = { i: e[0], j: e[1], a: 0, ta: 1, kind: e[2], bend: (Math.random() - 0.5) * 0.3 };
-        ex.i = e[0]; ex.j = e[1]; ex.kind = e[2]; ex.ta = 1;
+        ex.i = e[0]; ex.j = e[1]; ex.kind = e[2]; ex.fix = e[3] == null ? null : e[3]; ex.ta = 1;
         if (reduced || instant) ex.a = 1;
       });
       if (reduced || instant) {
@@ -689,7 +690,7 @@
           if (hoverG && A.group === hoverG && B.group === hoverG) alpha = Math.min(alpha * 1.6, 0.9);
           if (inHole((A.px + B.px) / 2, (A.py + B.py) / 2)) alpha *= 0.25;
           if (alpha < 0.01) continue;
-          var bend = e.kind === 'bridge' || e.kind === 'back' ? e.bend + (e.kind === 'back' ? 0.28 : 0.12) : e.bend * 0.5;
+          var bend = e.fix != null ? e.fix : e.kind === 'bridge' || e.kind === 'back' ? e.bend + (e.kind === 'back' ? 0.28 : 0.12) : e.bend * 0.5;
           var c = bez(A, B, bend);
           var lw = Math.round((e.kind === 'bridge' || e.kind === 'back' ? 1.7 : e.kind === 'hub' ? 1.2 : 1) * Math.min(A.ps, B.ps) * 5) / 5;
           var aq = Math.round(Math.min(alpha, 0.9) * 40) / 40;
@@ -721,7 +722,7 @@
       }
       for (var p = 0; p < pulses.length; p++) {
         var pu = pulses[p], PA = live[pu.e.i], PB = live[pu.e.j];
-        var bb = pu.e.kind === 'bridge' || pu.e.kind === 'back' ? pu.e.bend + (pu.e.kind === 'back' ? 0.28 : 0.12) : pu.e.bend * 0.5;
+        var bb = pu.e.fix != null ? pu.e.fix : pu.e.kind === 'bridge' || pu.e.kind === 'back' ? pu.e.bend + (pu.e.kind === 'back' ? 0.28 : 0.12) : pu.e.bend * 0.5;
         var cc = bez(PA, PB, bb), u = pu.t, iu = 1 - u;
         var x = iu * iu * PA.px + 2 * iu * u * cc.cx + u * u * PB.px, y = iu * iu * PA.py + 2 * iu * u * cc.cy + u * u * PB.py;
         var pa = Math.sin(Math.PI * u) * dim;
