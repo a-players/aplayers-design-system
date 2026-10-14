@@ -124,9 +124,9 @@
       groups: [
         { key: 'g0', tags: ['negocio'], label: 'Negócio', tone: 'blue', at: [0.20, 0.13], w: 1.2, sats: ['Objetivos', 'Vocabulário'] },
         { key: 'g1', tags: ['processos'], label: 'Processos', tone: 'green', at: [0.80, 0.13], w: 1, sats: ['Fluxos', 'Papéis'] },
-        { key: 'g2', tags: ['plataformas'], label: 'Plataformas', tone: 'red', at: [0.92, 0.80], w: 1, sats: ['Atlassian', 'CISP1', 'monday.com'] },
+        { key: 'g2', tags: ['plataformas'], label: 'Plataformas', tone: 'red', at: [0.92, 0.84], w: 1, sats: ['Atlassian', 'CISP1', 'monday.com'] },
         { key: 'g3', tags: ['agentes'], label: 'Agentes', tone: 'yellow', at: [0.50, 0.95], w: 0.95, sats: ['AI-Player', 'Rovo', 'Sidekick'] },
-        { key: 'g4', tags: ['feedback'], label: 'Feedback', tone: 'violet', at: [0.08, 0.80], w: 0.85, sats: ['Uso', 'Melhoria'] }
+        { key: 'g4', tags: ['feedback'], label: 'Feedback', tone: 'violet', at: [0.08, 0.84], w: 0.85, sats: ['Uso', 'Melhoria'] }
       ],
       links: [[0, 1, 'bridge', -0.04], [1, 2, 'bridge', -0.12], [2, 3, 'bridge', -0.08], [3, 4, 'bridge', -0.08], [4, 0, 'back', -0.2]]
     },
