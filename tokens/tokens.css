@@ -10,7 +10,8 @@
   --ap-violet: #a18be8;
   --ap-yellow-line: #d4b106;
   --ap-logo-gray: #706b69;
-  --ap-logo-black: #1d1d1b;
+  --ap-logo-gray-2: #625e5c;
+  --ap-logo-black: #000000;
 
   /* superficie */
   --ap-night: #0d1728;
@@ -51,6 +52,13 @@
   --ap-soft-yellow-2: #f4eba1;
   --ap-soft-violet: #efebfc;
   --ap-soft-violet-2: #ddd4f8;
+
+  /* logo */
+  --ap-logo-ratio-h: 1195.055 / 280;
+  --ap-logo-ratio-v: 834.043 / 634;
+  --ap-logo-clear-h: .5;
+  --ap-logo-clear-v: .3155;
+  --ap-logo-h-header: 36px;
 
   /* texto-sobre-tom */
   --ap-on-blue: #ffffff;

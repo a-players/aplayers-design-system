@@ -677,3 +677,24 @@ main { position: relative; z-index: 1; }
 .theme figcaption code { justify-self: start; }
 @media (max-width: 860px) { .themes { grid-template-columns: minmax(0, 1fr); } }
 @media (max-width: 900px) { .ladob-nav { display: none; } }
+
+/* ----------------------------------------------------------- logos: as 16 assinaturas, construção e medidas */
+.logos + .doc__sub, .logos + .doc__note { margin-top: 28px; }
+.logos--4 { grid-template-columns: repeat(auto-fill, minmax(min(100%, 220px), 1fr)); }
+.logos--4 .logo-card { grid-template-rows: 150px auto; }
+.logos--4 .logo-card__art { padding: 22px; }
+.logos--4 .logo-card__art img { max-height: 54px; max-width: 100%; }
+.logos--4 .logo-card__art--tall img { max-height: 104px; }
+.logo-card__info > span { display: block; margin-top: 2px; }
+.logo-card__files { display: flex !important; flex-wrap: wrap; gap: 6px 12px; margin-top: 10px !important; }
+.logo-card__files a { font: 700 13px/1.3 var(--ap-text); color: var(--ap-ink); text-decoration: underline; text-decoration-color: var(--ap-tone); text-decoration-thickness: 2px; text-underline-offset: 4px; }
+.logo-build { display: grid; grid-template-columns: 1.45fr 1fr; gap: 16px; margin-bottom: 28px; }
+.logo-build__fig { margin: 0; display: grid; gap: 10px; align-content: start; padding: 18px; border-radius: var(--ap-r-card); border: 1px solid var(--ap-line); background: #fff; }
+.logo-build__fig figcaption { font: 600 13.5px/1.4 var(--ap-text); color: #4f5d73; }
+.logo-build__svg { display: block; width: 100%; height: auto; overflow: visible; font: 600 26px var(--ap-text); }
+.logo-build__clear { fill: none; stroke: #3580c3; stroke-width: 2; stroke-dasharray: 8 7; opacity: .55; }
+.logo-build__box { fill: none; stroke: #3580c3; stroke-width: 1.5; stroke-dasharray: 4 5; }
+.logo-build__guide line { stroke: #3580c3; stroke-width: 1.2; stroke-dasharray: 3 5; opacity: .6; }
+.logo-build__dim line { stroke: #3580c3; stroke-width: 2; }
+.logo-build__dim text { fill: #3580c3; }
+@media (max-width: 860px) { .logo-build { grid-template-columns: minmax(0, 1fr); } }

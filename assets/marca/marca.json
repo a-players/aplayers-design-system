@@ -7,13 +7,19 @@
   "vermelho": "#EB594D",
   "amarelo": "#F1E84E",
   "nome-cinza": "#706B69",
-  "preto": "#1D1D1B",
+  "preto": "#000000",
   "branco": "#FFFFFF",
   "descritor-cinza": "#625E5C"
  },
  "simbolo": "Oito triângulos, dois de cada cor do espectro, formam a letra A; o vazio no centro da base é a abertura do A.",
  "assinatura": "Logo de 14/10/2026: o símbolo não mudou; o nome e o descritor TECH KNOWLEDGE foram refinados (letras do descritor 8% maiores, espaços 20% menores). Horizontal: nome h, símbolo 2,8h, distância 0,4h. Vertical: nome h, símbolo 4h, distância 0,65h. No site, o logo mantém a altura de antes: 36px no cabeçalho (152px de largura; 136px no celular).",
  "protecao": "Metade da altura do símbolo, livre nos quatro lados (horizontal: 1,4 vez a altura do nome; vertical: 2 vezes).",
+ "construcao": {
+  "unidade": "h = altura visível do nome A-PLAYERS, medida pelo contorno (não o tamanho da fonte).",
+  "horizontal": "Símbolo 2,80h de altura e 3,20h de largura; distância de 0,40h até o nome; nome com 8,34h de largura; descritor TECH KNOWLEDGE com 0,36h de altura, 0,32h abaixo do nome e centralizado nele. Caixa: 11,95h × 2,80h.",
+  "vertical": "Símbolo 4,00h de altura e 4,59h de largura; distância de 0,65h até o nome; o mesmo bloco de nome e descritor da horizontal, tudo no mesmo eixo. Caixa: 8,34h × 6,34h.",
+  "descritor": "Refinamento de 14/10/2026: letras 8% maiores, espaços entre letras 20% menores e leve reforço de traço, mantendo a largura."
+ },
  "tamanho-minimo": {
   "tela": {
    "horizontal": "112px de largura",
@@ -25,6 +31,11 @@
    "vertical": "18 mm",
    "simbolo": "6 mm"
   }
+ },
+ "leitura-do-descritor": {
+  "horizontal": "320px de largura",
+  "vertical": "240px de largura",
+  "nota": "Referências para quando TECH KNOWLEDGE precisa ser lido; abaixo disso a assinatura continua valendo até o tamanho mínimo."
  },
  "pdf": {
   "horizontal": "assets/marca/pdf/aplayers-horizontal.pdf",
@@ -139,6 +150,42 @@
    "fundos": "Verde, amarelo, violeta e impressão em uma cor",
    "svg": "assets/marca/aplayers-vertical-04.svg",
    "png": "assets/marca/png/aplayers-vertical-preto.png",
+   "origem": "Kit consolidado do logo A-Players, 14/10/2026"
+  },
+  {
+   "id": "aplayers-vertical-azul",
+   "layout": "Vertical",
+   "versao": "Uma cor, azul",
+   "fundos": "Branco, folha, tons suaves e noite",
+   "svg": "assets/marca/aplayers-vertical-azul.svg",
+   "png": "assets/marca/png/aplayers-vertical-azul.png",
+   "origem": "Kit consolidado do logo A-Players, 14/10/2026"
+  },
+  {
+   "id": "aplayers-vertical-verde",
+   "layout": "Vertical",
+   "versao": "Uma cor, verde",
+   "fundos": "Noite",
+   "svg": "assets/marca/aplayers-vertical-verde.svg",
+   "png": "assets/marca/png/aplayers-vertical-verde.png",
+   "origem": "Kit consolidado do logo A-Players, 14/10/2026"
+  },
+  {
+   "id": "aplayers-vertical-vermelho",
+   "layout": "Vertical",
+   "versao": "Uma cor, vermelho",
+   "fundos": "Noite, branco e folha",
+   "svg": "assets/marca/aplayers-vertical-vermelho.svg",
+   "png": "assets/marca/png/aplayers-vertical-vermelho.png",
+   "origem": "Kit consolidado do logo A-Players, 14/10/2026"
+  },
+  {
+   "id": "aplayers-vertical-amarelo",
+   "layout": "Vertical",
+   "versao": "Uma cor, amarelo",
+   "fundos": "Noite e fotos escuras",
+   "svg": "assets/marca/aplayers-vertical-amarelo.svg",
+   "png": "assets/marca/png/aplayers-vertical-amarelo.png",
    "origem": "Kit consolidado do logo A-Players, 14/10/2026"
   },
   {

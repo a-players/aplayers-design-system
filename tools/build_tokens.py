@@ -17,8 +17,9 @@ TOKENS = {
         ('yellow', '#f1e84e', None, 'Amarelo A-Players. Último quarto do espectro; sinal, foco sobre a noite, placa dos botões.'),
         ('violet', '#a18be8', None, 'Violeta de apoio. Feedback, CISP1, tema escuro. Não faz parte do espectro do logo.'),
         ('yellow-line', '#d4b106', '#f1e84e', 'Amarelo para traço fino sobre fundo claro (o amarelo da marca some em linha de 2px).'),
-        ('logo-gray', '#706b69', None, 'Cinza do nome no logo colorido para fundo claro. Só existe no arquivo do logo: nunca em texto ou interface.'),
-        ('logo-black', '#1d1d1b', None, 'Preto do logo de uma cor. Só existe no arquivo do logo.'),
+        ('logo-gray', '#706b69', None, 'Cinza do nome A-PLAYERS no logo colorido para fundo claro. Só existe no arquivo do logo: nunca em texto ou interface.'),
+        ('logo-gray-2', '#625e5c', None, 'Cinza do descritor TECH KNOWLEDGE no logo colorido (logo de 14/10/2026). Só existe no arquivo do logo.'),
+        ('logo-black', '#000000', None, 'Preto do logo de uma cor (logo de 14/10/2026). Só existe no arquivo do logo.'),
     ],
     'superficie': [
         ('night', '#0d1728', None, 'A noite: fundo da marca, sempre escuro nos dois temas.'),
@@ -59,6 +60,13 @@ TOKENS = {
         ('soft-yellow-2', '#f4eba1', '#444d3e', 'Amarelo suave mais forte.'),
         ('soft-violet', '#efebfc', '#2f365d', 'Violeta suave.'),
         ('soft-violet-2', '#ddd4f8', '#404372', 'Violeta suave mais forte.'),
+    ],
+    'logo': [
+        ('logo-ratio-h', '1195.055 / 280', None, 'Proporção da assinatura horizontal (largura / altura), para aspect-ratio. O símbolo ocupa a altura toda: 2,80h, com h = altura do nome A-PLAYERS.'),
+        ('logo-ratio-v', '834.043 / 634', None, 'Proporção da assinatura vertical (largura / altura): caixa de 8,34h × 6,34h.'),
+        ('logo-clear-h', '.5', None, 'Área de proteção da horizontal, em fração da altura da assinatura: metade da altura do símbolo (1,40h) em todo o contorno.'),
+        ('logo-clear-v', '.3155', None, 'Área de proteção da vertical, em fração da altura da assinatura: metade da altura do símbolo (2,00h) em todo o contorno.'),
+        ('logo-h-header', '36px', None, 'Altura do logo horizontal no cabeçalho do site e do Design System (152px de largura; no celular, 32px e 136px).'),
     ],
     'texto-sobre-tom': [
         ('on-blue', '#ffffff', None, 'Texto grande sobre o azul (iniciais, selo da pessoa): branco.'),
@@ -134,7 +142,7 @@ ALIASES = [
     ('on-tone', 'var(--ap-on-blue)', 'Cor do texto sobre o tom do componente.'),
 ]
 
-TYPES = {'marca': 'color', 'superficie': 'color', 'tinta': 'color', 'lado-b': 'color', 'texto-sobre-tom': 'color', 'espectro': 'gradient', 'tipo': 'typography',
+TYPES = {'logo': 'number', 'marca': 'color', 'superficie': 'color', 'tinta': 'color', 'lado-b': 'color', 'texto-sobre-tom': 'color', 'espectro': 'gradient', 'tipo': 'typography',
          'forma': 'borderRadius', 'espaco': 'dimension', 'movimento': 'transition', 'foco': 'color'}
 
 
