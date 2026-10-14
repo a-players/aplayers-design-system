@@ -71,7 +71,7 @@
         { key: 'g-plataformas', tags: ['intel'], label: 'Plataformas e aplicações', tone: 'green', at: [0.66, 0.16], w: 1,
           sats: ['Atlassian', 'CISP1', 'monday.com'] },
         { key: 'g-processos', tags: ['ps'], label: 'Processos e estratégia', tone: 'red', at: [0.81, 0.58], w: 1,
-          sats: ['Consultoria', 'Arquitetura', 'Sustentação', 'Capacitação'] },
+          sats: ['Consultoria', 'Arquitetura', 'Evolução', 'Capacitação'] },
         { key: 'g-ia', tags: ['taas', 'ps', 'intel'], label: 'Inteligência Artificial', tone: 'yellow', at: [0.50, 0.80], w: 1.15,
           sats: ['AI-Player', 'Contexto', 'Adoção', 'FinOps'], satTags: ['taas', 'intel', 'ps', 'ps'] }
       ],
@@ -95,7 +95,7 @@
       seed: 5, spread: 0.18, labels: 'hubs',
       groups: [
         { key: 'g-core', tags: ['core'], label: 'A-Players Intelligence', tone: 'yellow', at: [0.50, 0.50], w: 0.8,
-          sats: ['Context Graph', 'Conhecimento', 'Integrações'] },
+          sats: ['Contexto', 'Conhecimento', 'Integração'] },
         { key: 'atlassian', tags: ['atlassian'], label: 'Atlassian', tone: 'blue', at: [0.23, 0.24], w: 1.05,
           sats: ['Teamwork Collection', 'Service Collection', 'Software Collection', 'Product Collection', 'Strategy Collection', 'Rovo'] },
         { key: 'cisp1', tags: ['cisp1'], label: 'CISP1', tone: 'violet', at: [0.83, 0.28], w: 0.95,
@@ -133,12 +133,12 @@
     cycle: {
       seed: 3, spread: 0.1, labels: 'hubs',
       groups: [
-        { key: 'c0', label: 'Recrutamento', tone: 'blue', at: [0.50, 0.10], w: 1, sats: ['Busca especializada'] },
-        { key: 'c1', label: 'Seleção', tone: 'blueL', at: [0.86, 0.32], w: 1, sats: ['Aderência técnica', 'Aderência cultural'] },
-        { key: 'c2', label: 'Desenvolvimento', tone: 'green', at: [0.80, 0.76], w: 1, sats: ['Plano de desenvolvimento'] },
-        { key: 'c3', label: 'Gestão', tone: 'red', at: [0.46, 0.90], w: 1, sats: ['Business Partner'] },
-        { key: 'c4', label: 'Performance', tone: 'yellow', at: [0.19, 0.70], w: 1, sats: ['Feedback contínuo'] },
-        { key: 'c5', label: 'Inteligência Artificial', tone: 'violet', at: [0.16, 0.28], w: 1, sats: ['AI-Player', 'Capacitação em IA'] }
+        { key: 'c0', label: 'Recrutamento', tone: 'blue', at: [0.50, 0.10], w: 1, sats: ['Atração', 'Curadoria'] },
+        { key: 'c1', label: 'Seleção', tone: 'blueL', at: [0.86, 0.32], w: 1, sats: ['Competência', 'Cultura'] },
+        { key: 'c2', label: 'Desenvolvimento', tone: 'green', at: [0.80, 0.76], w: 1, sats: ['Trilha', 'Potencial'] },
+        { key: 'c3', label: 'Gestão', tone: 'red', at: [0.46, 0.90], w: 1, sats: ['Proximidade', 'Parceria'] },
+        { key: 'c4', label: 'Performance', tone: 'yellow', at: [0.19, 0.70], w: 1, sats: ['Feedback', 'Resultado'] },
+        { key: 'c5', label: 'Inteligência Artificial', tone: 'violet', at: [0.16, 0.28], w: 1, sats: ['AI-Player', 'Capacitação'] }
       ],
       links: [[0, 1, 'bridge'], [1, 2, 'bridge'], [2, 3, 'bridge'], [3, 4, 'bridge'], [4, 5, 'bridge'], [5, 2, 'back']],
       flow: true
@@ -147,9 +147,9 @@
     flow: {
       seed: 17, spread: 0.19, labels: 'hubs',
       groups: [
-        { key: 'g0', label: 'Entender a operação', tone: 'blue', at: [0.167, 0.48], w: 1, sats: ['Objetivos', 'Processos', 'Consultoria especializada'] },
-        { key: 'g1', label: 'Desenhar e implementar', tone: 'green', at: [0.50, 0.40], w: 1, sats: ['Arquitetura', 'Conexões', 'Adoção de IA'] },
-        { key: 'g2', label: 'Capacitar e evoluir', tone: 'red', at: [0.833, 0.52], w: 1, sats: ['Capacitações e workshops', 'Planos de assinatura', 'FinOps SaaS', 'FinOps IA'] }
+        { key: 'g0', label: 'Entender a operação', tone: 'blue', at: [0.167, 0.48], w: 1, sats: ['Consultoria', 'Diagnóstico'] },
+        { key: 'g1', label: 'Desenhar e implementar', tone: 'green', at: [0.50, 0.40], w: 1, sats: ['Arquitetura', 'Adoção'] },
+        { key: 'g2', label: 'Capacitar e evoluir', tone: 'red', at: [0.833, 0.52], w: 1, sats: ['Capacitação', 'Evolução', 'FinOps'] }
       ],
       links: [[0, 1, 'bridge'], [1, 2, 'bridge'], [2, 0, 'back']],
       flow: true
@@ -158,20 +158,20 @@
     people: {
       seed: 29, spread: 0.2, labels: 'hubs',
       groups: [
-        { key: 'g-rs', tags: ['taas'], label: 'Recrutamento e Seleção', tone: 'blue', at: [0.28, 0.30], w: 1.3, sats: ['Busca especializada', 'Aderência técnica', 'Aderência cultural'] },
-        { key: 'g-ext', tags: ['taas'], label: 'Extensão de Equipe', tone: 'green', at: [0.76, 0.30], w: 1.1, sats: ['Business Partner', 'Plano de desenvolvimento', 'Capacitação em IA'] },
-        { key: 'g-aip', tags: ['taas'], label: 'AI-Player', tone: 'yellow', at: [0.56, 0.80], w: 0.9, sats: ['Agentes de IA', 'Trabalho repetitivo'] }
+        { key: 'g-rs', tags: ['taas'], label: 'Recrutamento e Seleção', tone: 'blue', at: [0.28, 0.30], w: 1.3, sats: ['Curadoria', 'Competência', 'Cultura'] },
+        { key: 'g-ext', tags: ['taas'], label: 'Extensão de Equipe', tone: 'green', at: [0.76, 0.30], w: 1.1, sats: ['Parceria', 'Desenvolvimento', 'Engajamento'] },
+        { key: 'g-aip', tags: ['taas'], label: 'AI-Player', tone: 'yellow', at: [0.56, 0.80], w: 0.9, sats: ['Agentes', 'Agilidade'] }
       ],
       links: [[0, 1], [1, 2], [2, 0]]
     },
-    // Quem somos (abertura em tela cheia): as pessoas cercam o título
+    // Quem somos (abertura em tela cheia): as ideias da página cercam o título, cada uma definida em palavras soltas
     'people-wide': {
       seed: 31, spread: 0.14, labels: 'hubs',
       groups: [
-        { key: 'g-certas', label: 'Pessoas certas', tone: 'blue', at: [0.19, 0.32], w: 1.3, mix: 'violet', sats: ['Recrutamento e Seleção', 'Aderência cultural'] },
-        { key: 'g-times', label: 'Times A-Player', tone: 'violet', at: [0.23, 0.78], w: 1, mix: 'blue', sats: ['Business Partner', 'Comunidade'] },
-        { key: 'g-contexto', label: 'Contexto claro', tone: 'green', at: [0.81, 0.28], w: 1, sats: ['Objetivos', 'Processos', 'Plataformas'] },
-        { key: 'g-evolucao', label: 'Evolução acompanhada', tone: 'red', at: [0.77, 0.78], w: 1, sats: ['Plano de desenvolvimento', 'Capacitação em IA', 'Feedback'] }
+        { key: 'g-certas', label: 'Pessoas certas', tone: 'blue', at: [0.19, 0.32], w: 1.3, mix: 'violet', sats: ['Desafios', 'Cultura', 'Especialização'] },
+        { key: 'g-compromisso', label: 'Compromisso', tone: 'violet', at: [0.23, 0.78], w: 1, mix: 'blue', sats: ['Confiança', 'Comunicação', 'Consistência', 'Personalização'] },
+        { key: 'g-contexto', label: 'Contexto claro', tone: 'green', at: [0.81, 0.28], w: 1, sats: ['Problema', 'Objetivos', 'Realidade'] },
+        { key: 'g-evolucao', label: 'Evolução acompanhada', tone: 'red', at: [0.77, 0.78], w: 1, sats: ['Método', 'Proximidade', 'Parceria'] }
       ],
       links: [[0, 1], [0, 2], [2, 3], [3, 1]]
     },
@@ -192,9 +192,9 @@
     operation: {
       seed: 43, spread: 0.2, labels: 'hubs',
       groups: [
-        { key: 'g-plan', label: 'Planejar', tone: 'blue', at: [0.18, 0.46], w: 1, sats: ['Prioridades visíveis', 'Portfólios'] },
-        { key: 'g-exec', label: 'Executar', tone: 'green', at: [0.52, 0.75], w: 1.2, sats: ['Fluxos em movimento', 'Automações'] },
-        { key: 'g-learn', label: 'Aprender', tone: 'yellow', at: [0.84, 0.42], w: 1, sats: ['Dados para decidir', 'Dashboards'] },
+        { key: 'g-plan', label: 'Planejar', tone: 'blue', at: [0.18, 0.46], w: 1, sats: ['Prioridades', 'Portfólios'] },
+        { key: 'g-exec', label: 'Executar', tone: 'green', at: [0.52, 0.75], w: 1.2, sats: ['Fluxos', 'Automações'] },
+        { key: 'g-learn', label: 'Aprender', tone: 'yellow', at: [0.84, 0.42], w: 1, sats: ['Dados', 'Dashboards'] },
         { key: 'g-agents', label: 'Sidekick e Agents', tone: 'red', at: [0.58, 0.22], w: 0.6, sats: ['Vibe'] }
       ],
       links: [[0, 1, 'bridge'], [1, 2, 'bridge'], [2, 0, 'back'], [3, 1], [3, 2]],
