@@ -619,3 +619,25 @@ main { position: relative; z-index: 1; }
 .vivo-inv td:last-child { white-space: nowrap; }
 /* sete estratos na Home: em telas médias, quatro por linha */
 @media (min-width: 641px) and (max-width: 1300px) { .hero--home .ap-strata { grid-template-columns: repeat(4, minmax(0, 1fr)); row-gap: 8px; } }
+
+/* Home do Design System no mesmo nível da Home do site: o mesmo respiro do topo, o mesmo título
+   (que cede em tela baixa para as seções caberem na primeira tela) e a mesma largura nas telas grandes */
+@media (min-width: 1800px) { :root { --ap-wrap-w: 1480px; --ap-t-display: clamp(54px, 6.4vw, 140px); } }
+@media (min-width: 2300px) { :root { --ap-wrap-w: 1680px; --ap-t-display: clamp(54px, 6vw, 164px); } }
+@media (min-width: 1001px) {
+  .hero--home { padding-top: clamp(88px, 7vw, 104px); }
+  .hero--home .hero__inner { padding-top: clamp(8px, 2vw, 24px); }
+  .hero--home .ap-actions { margin-top: 24px; }
+  .hero--home .ap-strata { margin-top: 24px; }
+  .hero--home .ap-display { font-size: max(54px, min(var(--ap-t-display), calc((100svh - 544px - 3.3vw) / 2.7))); }
+}
+@media (min-width: 1001px) and (max-height: 860px) {
+  .hero--home { padding-top: 72px; }
+  .hero--home .ap-pill { margin-bottom: 18px; }
+  .hero--home .ap-strata { margin-top: 20px; }
+  .hero--home .ap-display { font-size: max(54px, min(clamp(54px, 5.9vw, 96px), calc((100svh - 476px - 3.4vw) / 2.7))); }
+}
+@media (min-width: 1001px) and (max-height: 740px) {
+  .hero--home { padding-top: 76px; }
+  .hero--home .ap-display { font-size: max(50px, min(clamp(50px, 5vw, 76px), calc((100svh - 430px - 3.7vw) / 2.7))); }
+}
