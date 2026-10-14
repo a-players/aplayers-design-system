@@ -23,8 +23,8 @@
   var GROUPS = window.APDS_GRAPH_GROUPS || [
     { label: 'Fundamentos', tone: 'blue', at: [0.30, 0.26], sats: ['Cor', 'Tipografia', 'Forma', 'Movimento'] },
     { label: 'Componentes', tone: 'green', at: [0.74, 0.20], sats: ['Placa', 'Selo', 'Pill', 'Botão'] },
-    { label: 'Padrões', tone: 'red', at: [0.86, 0.64], sats: ['Abertura', 'Folha', 'Jornada'] },
-    { label: 'Voz', tone: 'yellow', at: [0.50, 0.84], sats: ['Escrita', 'Vocabulário'] },
+    { label: 'Padrões', tone: 'red', at: [0.86, 0.64], sats: ['Abertura', 'Folha', 'Escrita'] },
+    { label: 'Graph', tone: 'yellow', at: [0.50, 0.84], sats: ['Nós', 'Formações'] },
     { label: 'Recursos', tone: 'violet', at: [0.14, 0.68], sats: ['Tokens', 'Logos', 'IA'] }
   ];
   var LINKS = [[0, 1], [1, 2], [2, 3], [3, 4], [4, 0], [0, 2], [1, 3]];

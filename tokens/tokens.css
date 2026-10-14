@@ -36,8 +36,11 @@
   --ap-spectrum-flow: linear-gradient(90deg, #5fa6e3 0%, #6eb751 34%, #eb594d 67%, #f1e84e 100%);
 
   /* lado-b */
-  --ap-day: #ffffff;
-  --ap-day-dots: rgba(23, 35, 58, .075);
+  --ap-day: #f5f2eb;
+  --ap-day-dots: rgba(46, 40, 30, .085);
+  --ap-paper: #fffdf8;
+  --ap-paper-2: #f9f6f0;
+  --ap-glass: rgba(250, 248, 242, .84);
   --ap-soft-blue: #e4eef9;
   --ap-soft-blue-2: #cfe1f4;
   --ap-soft-green: #e7f3e1;
@@ -135,6 +138,9 @@
     --ap-error: #ff9a8f;
     --ap-day: #0f1a2e;
     --ap-day-dots: rgba(183, 194, 211, .075);
+    --ap-paper: #172741;
+    --ap-paper-2: #1b2d4a;
+    --ap-glass: rgba(17, 29, 50, .84);
     --ap-soft-blue: #1a3455;
     --ap-soft-blue-2: #1e3f66;
     --ap-soft-green: #22393e;
@@ -162,6 +168,9 @@
   --ap-error: #ff9a8f;
   --ap-day: #0f1a2e;
   --ap-day-dots: rgba(183, 194, 211, .075);
+  --ap-paper: #172741;
+  --ap-paper-2: #1b2d4a;
+  --ap-glass: rgba(17, 29, 50, .84);
   --ap-soft-blue: #1a3455;
   --ap-soft-blue-2: #1e3f66;
   --ap-soft-green: #22393e;

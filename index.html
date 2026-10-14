@@ -23,8 +23,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500..800&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/aplayers.css?v=2.7.2">
-<link rel="stylesheet" href="css/docs.css?v=2.2.3">
+<link rel="stylesheet" href="css/aplayers.css?v=2.8.0">
+<link rel="stylesheet" href="css/docs.css?v=2.8.0">
 <script>
 (function (d, l) {
   d.documentElement.classList.remove('no-js'); d.documentElement.classList.add('js');
@@ -82,10 +82,9 @@
     <nav aria-label="Seções do Design System" style="margin-left:auto">
       <ul class="ap-nav">
         <li><a class="ap-nav__link" data-nav="fundamentos" href="#fundamentos">Fundamentos</a></li>
-        <li><a class="ap-nav__link" data-nav="graph" href="#graph">Graph</a></li>
         <li><a class="ap-nav__link" data-nav="componentes" href="#componentes">Componentes</a></li>
+        <li><a class="ap-nav__link" data-nav="graph" href="#graph">Graph</a></li>
         <li><a class="ap-nav__link" data-nav="padroes" href="#padroes">Padrões</a></li>
-        <li><a class="ap-nav__link" data-nav="voz" href="#voz">Voz</a></li>
         <li><a class="ap-nav__link" data-nav="biblioteca" href="#biblioteca">Biblioteca</a></li>
         <li><a class="ap-nav__link" data-nav="recursos" href="#recursos">Recursos</a></li>
       </ul>
@@ -104,10 +103,9 @@
   <ul>
     <li><a href="#inicio" style="--ap-tone:var(--ap-blue)">Início<span>Visão geral</span></a></li>
     <li><a href="#fundamentos" style="--ap-tone:var(--ap-blue)">Fundamentos<span>Cor, tipo, forma</span></a></li>
-    <li><a href="#graph" style="--ap-tone:var(--ap-yellow)">Graph<span>Gráfico e movimento</span></a></li>
     <li><a href="#componentes" style="--ap-tone:var(--ap-green)">Componentes<span>Peças prontas</span></a></li>
-    <li><a href="#padroes" style="--ap-tone:var(--ap-red)">Padrões<span>Composições</span></a></li>
-    <li><a href="#voz" style="--ap-tone:var(--ap-yellow)">Voz<span>Escrita</span></a></li>
+    <li><a href="#graph" style="--ap-tone:var(--ap-yellow)">Graph<span>Gráfico e movimento</span></a></li>
+    <li><a href="#padroes" style="--ap-tone:var(--ap-red)">Padrões<span>Composições e escrita</span></a></li>
     <li><a href="#biblioteca" style="--ap-tone:var(--ap-violet)">Biblioteca<span>Logos oficiais</span></a></li>
     <li><a href="#recursos" style="--ap-tone:var(--ap-blue)">Recursos<span>Tokens e arquivos</span></a></li>
   </ul>
@@ -130,14 +128,13 @@
         <a class="ap-btn ap-btn--ghost" href="#recursos/uso">Usar na minha peça</a>
       </div>
     </div>
-    <div class="ap-strata" style="--n:7">
-      <a class="ap-stratum" href="#fundamentos" style="--ap-tone:var(--ap-blue)"><strong>Fundamentos</strong><span>Cor, tipo, forma, espaço e movimento</span></a>
-      <a class="ap-stratum" href="#graph" style="--ap-tone:var(--ap-yellow)"><strong>Graph</strong><span>O gráfico e tudo o que se mexe</span></a>
+    <div class="ap-strata" style="--n:6">
+      <a class="ap-stratum" href="#fundamentos" style="--ap-tone:var(--ap-blue)"><strong>Fundamentos</strong><span>Cor, tipo, forma, espaço e os temas</span></a>
       <a class="ap-stratum" href="#componentes" style="--ap-tone:var(--ap-green)"><strong>Componentes</strong><span>Peças prontas, com estados e código</span></a>
-      <a class="ap-stratum" href="#padroes" style="--ap-tone:var(--ap-red)"><strong>Padrões</strong><span>Composições que já funcionam</span></a>
-      <a class="ap-stratum" href="#voz" style="--ap-tone:var(--ap-yellow)"><strong>Voz</strong><span>Como a <span class="ap-nw">A-Players</span> escreve</span></a>
-      <a class="ap-stratum" href="#biblioteca" style="--ap-tone:var(--ap-violet)"><strong>Biblioteca</strong><span>Logos e ícones oficiais das plataformas</span></a>
-      <a class="ap-stratum" href="#recursos" style="--ap-tone:var(--ap-blue)"><strong>Recursos</strong><span>Tokens, arquivos e IA</span></a>
+      <a class="ap-stratum" href="#graph" style="--ap-tone:var(--ap-yellow)"><strong>Graph</strong><span>O gráfico vivo e tudo o que se mexe</span></a>
+      <a class="ap-stratum" href="#padroes" style="--ap-tone:var(--ap-red)"><strong>Padrões</strong><span>Páginas prontas e a escrita da marca</span></a>
+      <a class="ap-stratum" href="#biblioteca" style="--ap-tone:var(--ap-violet)"><strong>Biblioteca</strong><span>Logos e ícones oficiais das parceiras</span></a>
+      <a class="ap-stratum" href="#recursos" style="--ap-tone:var(--ap-blue)"><strong>Recursos</strong><span>Tokens, arquivos e o guia que a IA lê</span></a>
     </div>
   </section>
 
@@ -182,7 +179,7 @@
         <div class="principle" style="--ap-tone:var(--ap-blue)">
           <h3>Clara no que resolve. Prudente no que promete.</h3>
           <p>Cada frase diz o resultado e o que a IA faz, em pt-BR curto e sem travessão. Nada inventado: número, case e capacidade apenas com fonte.</p>
-          <div class="principle__eg"><a class="ap-link" href="#voz">Ver as regras de escrita</a></div>
+          <div class="principle__eg"><a class="ap-link" href="#padroes/principios">Ver as regras de escrita</a></div>
         </div>
       </div>
 
@@ -253,7 +250,7 @@
         <div class="doors4">
           <a class="ap-plate ap-door" href="#fundamentos" style="--ap-tone:var(--ap-blue)"><span class="ap-kicker">Vou desenhar</span><strong>Fundamentos e padrões de página</strong><span>Cor, tipo, forma, placa, geometria e as composições que já funcionam.</span><span class="ap-door__cta">Abrir os fundamentos</span></a>
           <a class="ap-plate ap-door" href="#recursos/uso" style="--ap-tone:var(--ap-green)"><span class="ap-kicker">Vou desenvolver</span><strong>Uma folha com a marca inteira</strong><span>Importe aplayers.css, use as classes e o tema escuro vem junto.</span><span class="ap-door__cta">Ver como usar</span></a>
-          <a class="ap-plate ap-door" href="#voz" style="--ap-tone:var(--ap-yellow)"><span class="ap-kicker">Vou escrever</span><strong>Voz, vocabulário e pontuação</strong><span>As palavras da marca, o que evitar e como dar nome às coisas.</span><span class="ap-door__cta">Ler a voz</span></a>
+          <a class="ap-plate ap-door" href="#padroes/principios" style="--ap-tone:var(--ap-yellow)"><span class="ap-kicker">Vou escrever</span><strong>Voz, vocabulário e pontuação</strong><span>As palavras da marca, o que evitar e como dar nome às coisas.</span><span class="ap-door__cta">Ler a voz</span></a>
           <a class="ap-plate ap-door" href="#recursos/ia" style="--ap-tone:var(--ap-violet)"><span class="ap-kicker">Vou pedir para a IA</span><strong>Um guia que a IA lê</strong><span>O arquivo llms.txt resume o sistema para agentes que criam peças.</span><span class="ap-door__cta">Usar com IA</span></a>
         </div>
       </div>
@@ -280,7 +277,7 @@
       <h1 class="ap-h1">A base de tudo.</h1>
       <p class="ap-lead">Os valores que dão à <span class="ap-nw">A-Players</span> a sua cara. Cada um vira um token com nome, valor e uso, nos temas claro e escuro.</p>
       <nav class="hero__index" aria-label="Fundamentos">
-        <a href="#fundamentos/cor" style="--ap-tone:var(--ap-blue)">Cor</a><a href="#fundamentos/tipografia" style="--ap-tone:var(--ap-green)">Tipografia</a><a href="#fundamentos/forma" style="--ap-tone:var(--ap-red)">Forma</a><a href="#fundamentos/espaco" style="--ap-tone:var(--ap-yellow)">Espaço e grade</a><a href="#fundamentos/elevacao" style="--ap-tone:var(--ap-violet)">Placa e elevação</a><a href="#fundamentos/movimento" style="--ap-tone:var(--ap-blue)">Movimento</a><a href="#fundamentos/geometria" style="--ap-tone:var(--ap-green)">Geometria</a><a href="#fundamentos/icones" style="--ap-tone:var(--ap-red)">Ícones</a><a href="#fundamentos/logos" style="--ap-tone:var(--ap-yellow)">Logos</a><a href="#fundamentos/imagem" style="--ap-tone:var(--ap-violet)">Imagem</a><a href="#fundamentos/tema" style="--ap-tone:var(--ap-blue)">Tema escuro</a>
+        <a href="#fundamentos/cor" style="--ap-tone:var(--ap-blue)">Cor</a><a href="#fundamentos/tipografia" style="--ap-tone:var(--ap-green)">Tipografia</a><a href="#fundamentos/forma" style="--ap-tone:var(--ap-red)">Forma</a><a href="#fundamentos/espaco" style="--ap-tone:var(--ap-yellow)">Espaço e grade</a><a href="#fundamentos/elevacao" style="--ap-tone:var(--ap-violet)">Placa e elevação</a><a href="#fundamentos/movimento" style="--ap-tone:var(--ap-blue)">Movimento</a><a href="#fundamentos/geometria" style="--ap-tone:var(--ap-green)">Geometria</a><a href="#fundamentos/icones" style="--ap-tone:var(--ap-red)">Ícones</a><a href="#fundamentos/logos" style="--ap-tone:var(--ap-yellow)">Logos</a><a href="#fundamentos/imagem" style="--ap-tone:var(--ap-violet)">Imagem</a><a href="#fundamentos/temas" style="--ap-tone:var(--ap-blue)">Temas</a>
       </nav>
     </div>
   </section>
@@ -300,7 +297,7 @@
           <li><a href="#fundamentos/icones" style="--ap-tone:var(--ap-red)">Ícones</a></li>
           <li><a href="#fundamentos/logos" style="--ap-tone:var(--ap-yellow)">Logos</a></li>
           <li><a href="#fundamentos/imagem" style="--ap-tone:var(--ap-violet)">Imagem</a></li>
-          <li><a href="#fundamentos/tema" style="--ap-tone:var(--ap-blue)">Tema escuro</a></li>
+          <li><a href="#fundamentos/temas" style="--ap-tone:var(--ap-blue)">Temas</a></li>
         </ol>
         <p class="side__foot">Valores em <a href="#recursos/tokens">tokens</a>, gerados de uma fonte única.</p>
       </aside>
@@ -726,24 +723,45 @@
         </section>
 
         <!-- ------------------------------------------------ tema -->
-        <section class="doc" id="fundamentos-tema" style="--ap-tone:var(--ap-blue)">
+        <section class="doc" id="fundamentos-temas" style="--ap-tone:var(--ap-blue)">
           <header class="doc__head">
             <p class="ap-kicker">Fundamentos</p>
-            <h2>Tema escuro</h2>
-            <p class="ap-lead">A noite já é escura nos dois temas. No tema escuro, a folha e os cartões viram camadas de azul noite: quanto mais alto, mais claro. As cores da marca não mudam.</p>
+            <h2>Temas</h2>
+            <p class="ap-lead">Três temas, uma marca. Original é o padrão do site, Dark é a opção noite do site e Light é o dia do Portal do <span class="ap-nw">A-Player</span>. As cores da marca, a forma e a tipografia não mudam: muda a superfície.</p>
           </header>
+          <div class="themes">
+            <figure class="theme theme--original">
+              <div class="theme__shot" aria-hidden="true"><span class="theme__bar"><i></i><i></i></span><span class="theme__hero"><i></i><i></i></span><span class="theme__sheet"><span class="theme__card"></span><span class="theme__card"></span></span></div>
+              <figcaption><span class="ap-kicker" style="--ap-tone:var(--ap-blue)">Original</span><strong>O padrão do site</strong><span>Abertura na noite, conteúdo na folha clara que sobe sobre ela. É o tema de qualquer peça para o mercado.</span><code>data-theme="light"</code></figcaption>
+            </figure>
+            <figure class="theme theme--dark">
+              <div class="theme__shot" aria-hidden="true"><span class="theme__bar"><i></i><i></i></span><span class="theme__hero"><i></i><i></i></span><span class="theme__sheet"><span class="theme__card"></span><span class="theme__card"></span></span></div>
+              <figcaption><span class="ap-kicker" style="--ap-tone:var(--ap-violet)">Dark</span><strong>A opção noite do site</strong><span>A mesma página com a folha e os cartões em camadas de azul noite: quanto mais alto, mais claro. A pessoa escolhe no cabeçalho.</span><code>data-theme="dark"</code></figcaption>
+            </figure>
+            <figure class="theme theme--light">
+              <div class="theme__shot" aria-hidden="true"><span class="theme__bar"><i></i><i></i></span><span class="theme__hero"><i></i><i></i></span><span class="theme__sheet"><span class="theme__card"></span><span class="theme__card"></span></span></div>
+              <figcaption><span class="ap-kicker" style="--ap-tone:var(--ap-yellow)">Light</span><strong>O dia do Portal</strong><span>Fundo off-white quente, cartões de papel, painéis nos tons suaves, stickers e fotos do time. Para o Portal do <span class="ap-nw">A-Player</span> e peças internas.</span><code>class="ap-day"</code></figcaption>
+            </figure>
+          </div>
           <div class="tbl-wrap"><table class="tbl">
-            <thead><tr><th>Token</th><th>Claro</th><th>Escuro</th></tr></thead>
+            <thead><tr><th>Papel</th><th>Token</th><th>Original</th><th>Dark</th><th>Light</th></tr></thead>
             <tbody>
-              <tr><td><code>--ap-sheet</code></td><td><span class="ap-kicker" style="--ap-tone:#f2f6fb">#f2f6fb</span></td><td><span class="ap-kicker" style="--ap-tone:#111d32">#111d32</span></td></tr>
-              <tr><td><code>--ap-card</code></td><td><span class="ap-kicker" style="--ap-tone:#ffffff">#ffffff</span></td><td><span class="ap-kicker" style="--ap-tone:#172741">#172741</span></td></tr>
-              <tr><td><code>--ap-card-2</code></td><td><span class="ap-kicker" style="--ap-tone:#f7f9fc">#f7f9fc</span></td><td><span class="ap-kicker" style="--ap-tone:#1d2f4d">#1d2f4d</span></td></tr>
-              <tr><td><code>--ap-ink</code></td><td><span class="ap-kicker" style="--ap-tone:#17233a">#17233a</span></td><td><span class="ap-kicker" style="--ap-tone:#eaf0f8">#eaf0f8</span></td></tr>
-              <tr><td><code>--ap-ink-2</code></td><td><span class="ap-kicker" style="--ap-tone:#4f5d73">#4f5d73</span></td><td><span class="ap-kicker" style="--ap-tone:#a9b6ca">#a9b6ca</span></td></tr>
-              <tr><td><code>--ap-yellow-line</code></td><td><span class="ap-kicker" style="--ap-tone:#d4b106">#d4b106</span></td><td><span class="ap-kicker" style="--ap-tone:#f1e84e">#f1e84e</span></td></tr>
+              <tr><td>Fundo da página</td><td><code>--ap-night</code></td><td><span class="ap-kicker" style="--ap-tone:#0d1728">#0d1728</span></td><td><span class="ap-kicker" style="--ap-tone:#0d1728">#0d1728</span></td><td><code>--ap-day</code> <span class="ap-kicker" style="--ap-tone:#f5f2eb">#f5f2eb</span></td></tr>
+              <tr><td>Folha de leitura</td><td><code>--ap-sheet</code></td><td><span class="ap-kicker" style="--ap-tone:#f2f6fb">#f2f6fb</span></td><td><span class="ap-kicker" style="--ap-tone:#111d32">#111d32</span></td><td>painel suave <code>--ap-soft-*</code> <span class="ap-kicker" style="--ap-tone:#e4eef9">#e4eef9</span></td></tr>
+              <tr><td>Cartão</td><td><code>--ap-card</code></td><td><span class="ap-kicker" style="--ap-tone:#ffffff">#ffffff</span></td><td><span class="ap-kicker" style="--ap-tone:#172741">#172741</span></td><td><code>--ap-paper</code> <span class="ap-kicker" style="--ap-tone:#fffdf8">#fffdf8</span></td></tr>
+              <tr><td>Cartão secundário</td><td><code>--ap-card-2</code></td><td><span class="ap-kicker" style="--ap-tone:#f7f9fc">#f7f9fc</span></td><td><span class="ap-kicker" style="--ap-tone:#1d2f4d">#1d2f4d</span></td><td><code>--ap-paper-2</code> <span class="ap-kicker" style="--ap-tone:#f9f6f0">#f9f6f0</span></td></tr>
+              <tr><td>Texto</td><td><code>--ap-ink</code></td><td><span class="ap-kicker" style="--ap-tone:#17233a">#17233a</span></td><td><span class="ap-kicker" style="--ap-tone:#eaf0f8">#eaf0f8</span></td><td><span class="ap-kicker" style="--ap-tone:#17233a">#17233a</span></td></tr>
+              <tr><td>Texto de apoio</td><td><code>--ap-ink-2</code></td><td><span class="ap-kicker" style="--ap-tone:#4f5d73">#4f5d73</span></td><td><span class="ap-kicker" style="--ap-tone:#a9b6ca">#a9b6ca</span></td><td><span class="ap-kicker" style="--ap-tone:#4f5d73">#4f5d73</span></td></tr>
+              <tr><td>Traço amarelo fino</td><td><code>--ap-yellow-line</code></td><td><span class="ap-kicker" style="--ap-tone:#d4b106">#d4b106</span></td><td><span class="ap-kicker" style="--ap-tone:#f1e84e">#f1e84e</span></td><td><span class="ap-kicker" style="--ap-tone:#d4b106">#d4b106</span></td></tr>
+              <tr><td>Cabeçalho</td><td><code>.ap-island</code></td><td>vidro da noite</td><td>vidro da noite</td><td><code>.ap-island--day</code>, vidro <code>--ap-glass</code></td></tr>
+              <tr><td>Retícula de 56px</td><td>pontos</td><td>sobre a noite</td><td>sobre a noite</td><td><code>--ap-day-dots</code> sobre o dia</td></tr>
             </tbody>
           </table></div>
-          <p class="doc__note">O tema segue o sistema até a pessoa escolher. A escolha fica guardada e a troca abre a nova paleta em círculo, a partir do botão. Experimente no cabeçalho.</p>
+          <div class="rules">
+            <div class="rule"><p class="rule__title">Faça</p><ul><li>Original em tudo o que o mercado vê: site, apresentações, propostas, campanhas.</li><li>Dark quando a pessoa escolhe a noite: o tema segue o sistema até ela escolher, e a escolha fica guardada.</li><li>Light no Portal e nas peças para quem é da casa. Os componentes do Portal estão em <a class="ap-link" href="#componentes/lado-b">Componentes, Portal</a>.</li></ul></div>
+            <div class="rule rule--evite"><p class="rule__title">Evite</p><ul><li>Tons suaves, stickers e o fundo off-white numa peça para o mercado.</li><li>Misturar dois temas na mesma tela, fora de uma prévia.</li></ul></div>
+          </div>
+          <p class="doc__note">O botão do cabeçalho troca entre Original e Dark, e a nova paleta abre em círculo a partir dele. O Light tem a sua própria versão noite: dentro de <code>.ap-day</code>, <code>data-theme="dark"</code> leva o Portal para a noite com os mesmos tokens.</p>
         </section>
       </div>
     </div>
@@ -1029,7 +1047,7 @@
               <tr><td><code>fronts</code></td><td class="muted">Nossos serviços</td><td class="muted">Talent as a Service, Professional Services, O seu desafio</td></tr>
               <tr><td><code>cycle</code></td><td class="muted">Talent as a Service</td><td class="muted">Recrutamento, Seleção, Desenvolvimento, Gestão, Performance, Inteligência Artificial</td></tr>
               <tr><td><code>flow</code></td><td class="muted">Professional Services e o filme da Home</td><td class="muted">Entender a operação, Desenhar e implementar, Capacitar e evoluir, com cada pilar na fase em que entra</td></tr>
-              <tr><td><code>context-wide</code></td><td class="muted">Intelligence: abertura</td><td class="muted">Negócio, Processos, Plataformas, Agentes e Feedback contornam o título, sem cruzar o texto, na largura do menu</td></tr>
+              <tr><td><code>context-wide</code></td><td class="muted">Intelligence: abertura</td><td class="muted">Negócio, Processos, Plataformas, Agentes e Feedback contornam o título, sem cruzar o texto, numa área da largura do título com folga fixa dos lados</td></tr>
               <tr><td><code>ecosystem</code></td><td class="muted">Intelligence e o filme da Home</td><td class="muted"><span class="ap-nw">A-Players</span> Intelligence no centro (contexto, conhecimento e integração), ligada a Atlassian (pelas Collections), CISP1 e monday.com, nessa ordem e sem ligação direta entre parceiros</td></tr>
               <tr><td><code>context</code></td><td class="muted">Filme da Home</td><td class="muted">As cinco camadas do Context Graph</td></tr>
               <tr><td><code>teamwork</code></td><td class="muted">Atlassian</td><td class="muted">Teamwork Graph e Rovo no centro, com as cinco Collections: Teamwork, Service, Software, Product e Strategy</td></tr>
@@ -1233,7 +1251,7 @@ var png = g.png(2);         // imagem parada em 2x, com noite e retícula</code>
     <div class="hero__inner">
       <p class="ap-pill"><svg class="ap-tri" aria-hidden="true"><use href="#tris"/></svg>Componentes</p>
       <h1 class="ap-h1">Peças prontas para montar.</h1>
-      <p class="ap-lead">Cada componente com exemplo vivo, código para copiar e as regras de uso. Os nomes de classe começam com <code style="color:#fff">ap-</code>; o tom vem de <code style="color:#fff">--ap-tone</code>.</p>
+      <p class="ap-lead">Cada componente com exemplo vivo, código para copiar e as regras de uso, em dois grupos: os do site (temas Original e Dark) e os do Portal (tema Light). Os nomes de classe começam com <code style="color:#fff">ap-</code>; o tom vem de <code style="color:#fff">--ap-tone</code>.</p>
       <div class="toner" data-toner="#componentes .page" role="group" aria-label="Tom das vitrines" style="margin-top:28px">Tom das vitrines
         <button type="button" style="--sw:#3580c3" data-tone="var(--ap-blue)" aria-pressed="true" aria-label="Azul"></button>
         <button type="button" style="--sw:#6eb751" data-tone="var(--ap-green)" aria-pressed="false" aria-label="Verde"></button>
@@ -1247,27 +1265,35 @@ var png = g.png(2);         // imagem parada em 2x, com noite e retícula</code>
   <div class="ap-sheet page">
     <div class="ap-wrap page__grid">
       <aside class="side" aria-label="Nesta página">
-        <p class="side__title">Componentes</p>
+        <p class="side__title">Site · Original e Dark</p>
         <ol>
-          <li><a href="#componentes/botoes">Botões</a></li>
-          <li><a href="#componentes/links">Links</a></li>
-          <li><a href="#componentes/pill">Pill</a></li>
-          <li><a href="#componentes/selos">Selo e marca de tom</a></li>
-          <li><a href="#componentes/chips">Chips</a></li>
-          <li><a href="#componentes/placa">Placa</a></li>
-          <li><a href="#componentes/plataforma">Cartão de plataforma</a></li>
-          <li><a href="#componentes/portas">Porta e oferta</a></li>
-          <li><a href="#componentes/camadas">Três camadas</a></li>
-          <li><a href="#componentes/ia">IA em destaque</a></li>
-          <li><a href="#componentes/abas">Abas e nós</a></li>
-          <li><a href="#componentes/listas">Listas</a></li>
-          <li><a href="#componentes/notas">Notas</a></li>
-          <li><a href="#componentes/formularios">Formulários</a></li>
-          <li><a href="#componentes/preferencias">Tema e idioma</a></li>
-          <li><a href="#componentes/navegacao">Navegação</a></li>
-          <li><a href="#componentes/avisos">Avisos</a></li>
-          <li><a href="#componentes/leituras">Leituras</a></li>
-          <li><a href="#componentes/lado-b">Lado B</a></li>
+          <li><a href="#componentes/botoes" style="--ap-tone:var(--ap-blue)">Botões</a></li>
+          <li><a href="#componentes/links" style="--ap-tone:var(--ap-green)">Links</a></li>
+          <li><a href="#componentes/pill" style="--ap-tone:var(--ap-red)">Pill</a></li>
+          <li><a href="#componentes/selos" style="--ap-tone:var(--ap-yellow)">Selo e marca de tom</a></li>
+          <li><a href="#componentes/chips" style="--ap-tone:var(--ap-violet)">Chips</a></li>
+          <li><a href="#componentes/placa" style="--ap-tone:var(--ap-blue)">Placa</a></li>
+          <li><a href="#componentes/plataforma" style="--ap-tone:var(--ap-green)">Cartão de plataforma</a></li>
+          <li><a href="#componentes/portas" style="--ap-tone:var(--ap-red)">Porta e oferta</a></li>
+          <li><a href="#componentes/camadas" style="--ap-tone:var(--ap-yellow)">Três camadas</a></li>
+          <li><a href="#componentes/ia" style="--ap-tone:var(--ap-violet)">IA em destaque</a></li>
+          <li><a href="#componentes/abas" style="--ap-tone:var(--ap-blue)">Abas e nós</a></li>
+          <li><a href="#componentes/listas" style="--ap-tone:var(--ap-green)">Listas</a></li>
+          <li><a href="#componentes/notas" style="--ap-tone:var(--ap-red)">Notas</a></li>
+          <li><a href="#componentes/formularios" style="--ap-tone:var(--ap-yellow)">Formulários</a></li>
+          <li><a href="#componentes/preferencias" style="--ap-tone:var(--ap-violet)">Tema e idioma</a></li>
+          <li><a href="#componentes/navegacao" style="--ap-tone:var(--ap-blue)">Navegação</a></li>
+          <li><a href="#componentes/avisos" style="--ap-tone:var(--ap-green)">Avisos</a></li>
+          <li><a href="#componentes/leituras" style="--ap-tone:var(--ap-red)">Leituras</a></li>
+        </ol>
+        <p class="side__title side__title--group">Portal · Light</p>
+        <ol>
+          <li><a href="#componentes/lado-b" style="--ap-tone:var(--ap-blue)">Dia e painel suave</a></li>
+          <li><a href="#componentes/ilha-dia" style="--ap-tone:var(--ap-green)">Cabeçalho do Portal</a></li>
+          <li><a href="#componentes/cracha" style="--ap-tone:var(--ap-red)">Crachá, selo e foto</a></li>
+          <li><a href="#componentes/agenda" style="--ap-tone:var(--ap-yellow)">Evento e termo</a></li>
+          <li><a href="#componentes/materiais" style="--ap-tone:var(--ap-violet)">Material, busca e trilha</a></li>
+          <li><a href="#componentes/dialogo" style="--ap-tone:var(--ap-blue)">Diálogo e confirmação</a></li>
         </ol>
         <p class="side__foot">Tudo vem de <a href="#recursos/uso">aplayers.css</a>.</p>
       </aside>
@@ -1594,7 +1620,7 @@ var png = g.png(2);         // imagem parada em 2x, com noite e retícula</code>
               <div class="ap-consent" role="region" aria-label="Exemplo de aviso de cookies">
                 <div class="ap-consent__head"><svg class="ap-tri" aria-hidden="true"><use href="#tris"/></svg><p class="ap-consent__title">Cookies, do seu jeito</p></div>
                 <p class="ap-consent__text">Usamos cookies necessários para o site funcionar. Os de preferência guardam escolhas como o tema. Você decide.</p>
-                <div class="ap-consent__actions"><button type="button" class="ap-btn ap-btn--sm">Aceitar todos</button><button type="button" class="ap-btn ap-btn--sm ap-btn--ghost">Apenas os necessários</button></div>
+                <div class="ap-consent__actions"><button type="button" class="ap-btn ap-btn--sm">Aceitar todos</button><button type="button" class="ap-btn ap-btn--sm ap-btn--ghost">Recusar opcionais</button></div>
               </div>
               <p class="ap-toast" style="--ap-tone:var(--ap-green)">Preferências salvas.</p>
             </div>
@@ -1620,7 +1646,7 @@ var png = g.png(2);         // imagem parada em 2x, com noite e retícula</code>
         </section>
 
         <section class="doc" id="componentes-lado-b">
-          <header class="doc__head"><p class="ap-kicker">Componentes</p><h2>Lado B</h2><p class="ap-lead">O lado A é o que o mercado vê: a noite do site. O lado B somos nós: o dia da marca, os cinco tons em versão suave, as fotos do time e os stickers. Nasceram no Portal do <span class="ap-nw">A-Player</span> e servem a qualquer peça interna.</p></header>
+          <header class="doc__head"><p class="ap-kicker">Componentes · Portal</p><h2>Dia e painel suave</h2><p class="ap-lead">O tema Light. O lado A é o que o mercado vê: a noite do site. O lado B somos nós: o dia da marca, os cinco tons em versão suave, as fotos do time e os stickers. Nasceram no Portal do <span class="ap-nw">A-Player</span> e servem a qualquer peça interna.</p></header>
           <div class="spec">
             <div class="spec__stage spec__stage--day spec__stage--block">
               <div class="ap-panel ap-tone--yellow ladob-panel">
@@ -1632,6 +1658,28 @@ var png = g.png(2);         // imagem parada em 2x, com noite e retícula</code>
             </div>
             <div class="spec__bar"><strong>Dia e painel suave</strong><code>.ap-day · .ap-panel · .ap-tone--blue, --green, --red, --yellow, --violet</code><span>O tom completo troca o tom, o tom suave e o texto sobre o tom de uma vez.</span></div>
           </div>
+          <div class="rules">
+            <div class="rule"><p class="rule__title">Faça</p><ul><li>Lado B nas peças internas: Portal, materiais do time, campanhas para quem é da casa.</li><li>Um tom completo por bloco (<code>.ap-tone--*</code>) e gente de verdade nas fotos.</li></ul></div>
+            <div class="rule rule--evite"><p class="rule__title">Evite</p><ul><li>Tons suaves no lado A: no site, a noite e as cores da marca.</li><li>Sticker em cima de rosto ou de texto.</li></ul></div>
+          </div>
+        </section>
+
+        <section class="doc" id="componentes-ilha-dia">
+          <header class="doc__head"><p class="ap-kicker">Componentes · Portal</p><h2>Cabeçalho do Portal</h2><p class="ap-lead">A ilha do Portal tem o formato da ilha do site: marca com o nome da peça, abas de texto com o espectro embaixo da atual e a ação de topo. Muda o vidro, que fica claro sobre o dia.</p></header>
+          <div class="spec">
+            <div class="spec__stage spec__stage--day spec__stage--block">
+              <div class="ap-island ap-island--day">
+                <a class="ap-island__brand" href="#componentes/ilha-dia" style="display:flex;align-items:center;gap:12px;text-decoration:none"><img src="assets/marca/aplayers-horizontal-claro.svg" alt="A-Players" width="132" height="36"><span style="padding-left:12px;border-left:1px solid var(--ap-line-strong);font:700 14px/1.15 var(--ap-text);color:var(--ap-ink-2);white-space:nowrap">Portal do <span class="ap-nw">A-Player</span></span></a>
+                <ul class="ap-nav ladob-nav"><li><a class="ap-nav__link" aria-current="page" href="#componentes/ilha-dia">Início</a></li><li><a class="ap-nav__link" href="#componentes/ilha-dia">Favoritos</a></li><li><a class="ap-nav__link" href="#componentes/ilha-dia">Agenda</a></li><li><a class="ap-nav__link" href="#componentes/ilha-dia">Materiais</a></li></ul>
+                <a class="ap-btn ap-btn--sm" href="#componentes/ilha-dia">Design System</a>
+              </div>
+            </div>
+            <div class="spec__bar"><strong>Ilha do dia</strong><code>.ap-island.ap-island--day · .ap-nav__link[aria-current]</code><span>O mesmo formato da ilha do site, com o vidro claro (<code>--ap-glass</code>), logo claro e o nome da peça.</span></div>
+          </div>
+        </section>
+
+        <section class="doc" id="componentes-cracha">
+          <header class="doc__head"><p class="ap-kicker">Componentes · Portal</p><h2>Crachá, selo e foto</h2><p class="ap-lead">A pessoa no Portal: o crachá com o tom escolhido e um sticker, o selo com as iniciais em quatro tamanhos e a foto do time com legenda, levemente girada.</p></header>
           <div class="spec">
             <div class="spec__stage spec__stage--day spec__stage--grid ladob-grid">
               <div class="ladob-badge">
@@ -1654,6 +1702,10 @@ var png = g.png(2);         // imagem parada em 2x, com noite e retícula</code>
             </div>
             <div class="spec__bar"><strong>Crachá, selo e foto</strong><code>.ap-lanyard · .ap-idcard · .ap-avatar (--sm, --lg, --xl) · .ap-snap</code></div>
           </div>
+        </section>
+
+        <section class="doc" id="componentes-agenda">
+          <header class="doc__head"><p class="ap-kicker">Componentes · Portal</p><h2>Evento e termo</h2><p class="ap-lead">O evento da Agenda, com a data em destaque e a ação de levar ao calendário, e o termo do Vocabulário, com o uso certo e o que evitar.</p></header>
           <div class="spec">
             <div class="spec__stage spec__stage--day spec__stage--block">
               <div class="ladob-cols">
@@ -1671,6 +1723,10 @@ var png = g.png(2);         // imagem parada em 2x, com noite e retícula</code>
             </div>
             <div class="spec__bar"><strong>Evento e termo</strong><code>.ap-event · .ap-when · .ap-term · .ap-uses · .ap-use--avoid</code><span>Evento da agenda do Portal.</span></div>
           </div>
+        </section>
+
+        <section class="doc" id="componentes-materiais">
+          <header class="doc__head"><p class="ap-kicker">Componentes · Portal</p><h2>Material, busca, atalhos e trilha</h2><p class="ap-lead">As peças do dia a dia do Portal: o material com capa, a busca com atalho de teclado, as aplicações salvas, o quadrado "Salvar", os relacionados e a trilha do A-Learning com progresso.</p></header>
           <div class="spec">
             <div class="spec__stage spec__stage--day spec__stage--grid ladob-grid">
               <a class="ap-material ap-tone--blue" href="../index.html"><img src="assets/capas/site.jpg" alt="" loading="lazy"><span class="ap-material__text"><strong>Site <span class="ap-nw">A-Players</span></strong><span>We Are <span class="ap-nw">AI-People</span> Company.</span><em>Marca</em></span></a>
@@ -1693,6 +1749,10 @@ var png = g.png(2);         // imagem parada em 2x, com noite e retícula</code>
             </div>
             <div class="spec__bar"><strong>Material, busca, aplicações e trilha</strong><code>.ap-material · .ap-search · .ap-kbd · .ap-apps · .ap-app (--bare, --add) · .ap-save · .ap-related · .ap-progress · .ap-ministeps</code><span>Ícone da Atlassian sem outro azulejo: <code>.ap-app--bare</code>.</span></div>
           </div>
+        </section>
+
+        <section class="doc" id="componentes-dialogo">
+          <header class="doc__head"><p class="ap-kicker">Componentes · Portal</p><h2>Diálogo e confirmação</h2><p class="ap-lead">O diálogo pergunta com clareza e dá duas saídas; a confirmação é curta, some sozinha e oferece desfazer.</p></header>
           <div class="spec">
             <div class="spec__stage spec__stage--day spec__stage--grid ladob-grid">
               <div class="ap-dialog ap-tone--yellow" role="group" aria-label="Exemplo de diálogo">
@@ -1703,10 +1763,6 @@ var png = g.png(2);         // imagem parada em 2x, com noite e retícula</code>
               <div class="ladob-night"><p class="ap-toast" style="--ap-tone:var(--ap-green)">Aplicação removida.<button type="button" class="ap-toast__action">Desfazer</button></p></div>
             </div>
             <div class="spec__bar"><strong>Diálogo e confirmação</strong><code>.ap-dialog · .ap-close · .ap-btn-quiet · .ap-toast__action</code></div>
-          </div>
-          <div class="rules">
-            <div class="rule"><p class="rule__title">Faça</p><ul><li>Lado B nas peças internas: Portal, materiais do time, campanhas para quem é da casa.</li><li>Um tom completo por bloco (<code>.ap-tone--*</code>) e gente de verdade nas fotos.</li></ul></div>
-            <div class="rule rule--evite"><p class="rule__title">Evite</p><ul><li>Tons suaves no lado A: no site, a noite e as cores da marca.</li><li>Sticker em cima de rosto ou de texto.</li></ul></div>
           </div>
         </section>
       </div>
@@ -1721,14 +1777,14 @@ var png = g.png(2);         // imagem parada em 2x, com noite e retícula</code>
     <div class="hero__inner">
       <p class="ap-pill"><svg class="ap-tri" aria-hidden="true"><use href="#tris"/></svg>Padrões</p>
       <h1 class="ap-h1">Composições que já funcionam.</h1>
-      <p class="ap-lead">Como os componentes se juntam numa página <span class="ap-nw">A-Players</span>: aberturas, folhas, plataformas, mapas e fechamentos. Reaproveite a composição inteira, com proporções e estados.</p>
+      <p class="ap-lead">Como os componentes se juntam numa página <span class="ap-nw">A-Players</span> e como a marca escreve: aberturas, folhas, plataformas, mapas, fechamentos, voz, vocabulário e nomes. Reaproveite a composição inteira e o texto no tom certo.</p>
     </div>
   </section>
 
   <div class="ap-sheet page">
     <div class="ap-wrap page__grid">
       <aside class="side" aria-label="Nesta página">
-        <p class="side__title">Padrões</p>
+        <p class="side__title">Páginas</p>
         <ol>
           <li><a href="#padroes/abertura" style="--ap-tone:var(--ap-blue)">Abertura</a></li>
           <li><a href="#padroes/folha" style="--ap-tone:var(--ap-green)">Folha sobre a noite</a></li>
@@ -1736,6 +1792,14 @@ var png = g.png(2);         // imagem parada em 2x, com noite e retícula</code>
           <li><a href="#padroes/mapa" style="--ap-tone:var(--ap-yellow)">Mapa de escolha</a></li>
           <li><a href="#padroes/fechamento" style="--ap-tone:var(--ap-violet)">Fechamento</a></li>
           <li><a href="#padroes/cinema" style="--ap-tone:var(--ap-blue)">Abertura e cortina</a></li>
+        </ol>
+        <p class="side__title side__title--group">Escrita</p>
+        <ol>
+          <li><a href="#padroes/principios" style="--ap-tone:var(--ap-blue)">Voz e princípios</a></li>
+          <li><a href="#padroes/pontuacao" style="--ap-tone:var(--ap-green)">Pontuação</a></li>
+          <li><a href="#padroes/vocabulario" style="--ap-tone:var(--ap-red)">Vocabulário</a></li>
+          <li><a href="#padroes/nomes" style="--ap-tone:var(--ap-yellow)">Nomes e ofertas</a></li>
+          <li><a href="#padroes/interface" style="--ap-tone:var(--ap-violet)">Texto de interface</a></li>
         </ol>
       </aside>
       <div class="content">
@@ -1820,20 +1884,21 @@ var png = g.png(2);         // imagem parada em 2x, com noite e retícula</code>
             <div class="spec__stage spec__stage--block">
               <div class="mapdemo" data-map>
                 <div class="ap-tabs" role="tablist" aria-label="Desafios" data-tabs>
-                  <button type="button" class="ap-tab" role="tab" aria-selected="true" style="--ap-tone:var(--ap-blue)" data-tone="var(--ap-blue)" data-path="taas rs" data-out="Talent as a Service com Recrutamento e Seleção."><span class="ap-badge">01</span>Contratar talentos</button>
-                  <button type="button" class="ap-tab" role="tab" aria-selected="false" tabindex="-1" style="--ap-tone:var(--ap-green)" data-tone="var(--ap-green)" data-path="taas ext" data-out="Talent as a Service com Extensão de Equipe."><span class="ap-badge">02</span>Ampliar a equipe</button>
-                  <button type="button" class="ap-tab" role="tab" aria-selected="false" tabindex="-1" style="--ap-tone:var(--ap-red)" data-tone="var(--ap-red)" data-path="ps cons sust cap" data-out="Professional Services: consultoria, sustentação e capacitações."><span class="ap-badge">03</span>Evoluir plataformas</button>
-                  <button type="button" class="ap-tab" role="tab" aria-selected="false" tabindex="-1" style="--ap-tone:var(--ap-yellow)" data-tone="var(--ap-yellow)" data-path="intel ia" data-out="A-Players Intelligence com adoção de Inteligência Artificial."><span class="ap-badge">04</span>Colocar a IA em prática</button>
+                  <button type="button" class="ap-tab" role="tab" aria-selected="true" style="--ap-tone:var(--ap-blue)" data-tone="var(--ap-blue)" data-path="taas rs" data-out="Talent as a Service com Recrutamento e Seleção, no seu time."><span class="ap-badge">01</span>Contratar talentos</button>
+                  <button type="button" class="ap-tab" role="tab" aria-selected="false" tabindex="-1" style="--ap-tone:var(--ap-green)" data-tone="var(--ap-green)" data-path="taas ext aip" data-out="Talent as a Service com Extensão de Equipe e AI-Player, na sua operação."><span class="ap-badge">02</span>Ampliar a equipe</button>
+                  <button type="button" class="ap-tab" role="tab" aria-selected="false" tabindex="-1" style="--ap-tone:var(--ap-red)" data-tone="var(--ap-red)" data-path="ps cons sust cap fins" data-out="Professional Services: consultoria, planos de assinatura, capacitações e FinOps SaaS, em Atlassian e monday.com."><span class="ap-badge">03</span>Evoluir plataformas</button>
+                  <button type="button" class="ap-tab" role="tab" aria-selected="false" tabindex="-1" style="--ap-tone:var(--ap-yellow)" data-tone="var(--ap-yellow)" data-path="ps intel ia fini cg sob" data-out="Professional Services e A-Players Intelligence: Adoção de IA, FinOps IA, Context Graph e Software e IA sob medida."><span class="ap-badge">04</span>Colocar a IA em prática</button>
                 </div>
                 <div class="mapdemo__cols">
                   <div><p class="ap-label"><span class="ap-nw">A-Players</span></p><span class="ap-node" data-k="taas">Talent as a Service</span><span class="ap-node" data-k="ps">Professional Services</span><span class="ap-node" data-k="intel"><span><span class="ap-nw">A-Players</span> Intelligence</span></span></div>
-                  <div><p class="ap-label">Como atuamos</p><span class="ap-node" data-k="rs">Recrutamento e Seleção</span><span class="ap-node" data-k="ext">Extensão de Equipe</span><span class="ap-node" data-k="cons">Consultoria especializada</span><span class="ap-node" data-k="sust">Sustentação e evolução</span><span class="ap-node" data-k="cap">Capacitações e workshops</span><span class="ap-node" data-k="ia">Adoção de Inteligência Artificial</span></div>
+                  <div><p class="ap-label">Como atuamos</p><span class="ap-node" data-k="rs">Recrutamento e Seleção</span><span class="ap-node" data-k="ext">Extensão de Equipe</span><span class="ap-node" data-k="aip">AI-Player</span><span class="ap-node" data-k="cons">Consultoria especializada</span><span class="ap-node" data-k="sust">Planos de assinatura</span><span class="ap-node" data-k="cap">Capacitações e workshops</span><span class="ap-node" data-k="fins">FinOps SaaS</span><span class="ap-node" data-k="fini">FinOps IA</span><span class="ap-node" data-k="ia">Adoção de IA</span><span class="ap-node" data-k="cg">Context Graph</span><span class="ap-node" data-k="sob">Software e IA sob medida</span></div>
                 </div>
                 <p class="ap-note mapdemo__out"><strong>Caminho</strong><span data-map-out></span></p>
               </div>
             </div>
             <div class="spec__bar"><strong>Mapa de escolha</strong><span>Abas com setas do teclado; nós com <code>.is-on</code> e <code>.is-dim</code>.</span></div>
           </div>
+          <p class="doc__note">No site, as ligações têm a cor de quem as origina: tudo o que sai de Professional Services é vermelho e tudo o que sai da <span class="ap-nw">A-Players</span> Intelligence é amarelo, na entrada e na saída de cada nó. Os caminhos de Talent as a Service usam o tom do desafio (azul em Contratar talentos, verde em Ampliar a equipe).</p>
         </section>
 
         <section class="doc" id="padroes-fechamento" style="--ap-tone:var(--ap-violet)">
@@ -1864,38 +1929,11 @@ var png = g.png(2);         // imagem parada em 2x, com noite e retícula</code>
             <div class="rule rule--evite"><p class="rule__title">Evite</p><ul><li>Abertura em toda visita ou que bloqueia a leitura.</li><li>Cortina com menos de quatro colunas ou fora da ordem das cores.</li></ul></div>
           </div>
         </section>
-      </div>
-    </div>
-  </div>
-</article>
 
-<!-- =================================================================== VOZ -->
-<article class="rota" data-rota="voz" id="voz" aria-label="Voz e escrita">
-  <section class="hero ap-wrap" aria-labelledby="h-voz">
-    <div data-graph id="g-voz" data-graph-dim=".55" data-graph-labels="none" style="position:absolute;top:80px;right:0;width:48%;height:100%;pointer-events:none" aria-hidden="true"></div>
-    <div class="hero__inner">
-      <p class="ap-pill"><svg class="ap-tri" aria-hidden="true"><use href="#tris"/></svg>Voz e escrita</p>
-      <h1 class="ap-h1">Como a <span class="ap-nw">A-Players</span> fala.</h1>
-      <p class="ap-lead">Consultiva, direta e humana. Agressiva na clareza, prudente na promessa: frases curtas em pt-BR, nomes oficiais preservados e nada que não possa ser comprovado.</p>
-    </div>
-  </section>
+        <!-- ------------------------------------------------ escrita (antes era a rota Voz) -->
 
-  <div class="ap-sheet page">
-    <div class="ap-wrap page__grid">
-      <aside class="side" aria-label="Nesta página">
-        <p class="side__title">Voz e escrita</p>
-        <ol>
-          <li><a href="#voz/principios" style="--ap-tone:var(--ap-blue)">Princípios</a></li>
-          <li><a href="#voz/pontuacao" style="--ap-tone:var(--ap-green)">Pontuação</a></li>
-          <li><a href="#voz/vocabulario" style="--ap-tone:var(--ap-red)">Vocabulário</a></li>
-          <li><a href="#voz/nomes" style="--ap-tone:var(--ap-yellow)">Nomes e ofertas</a></li>
-          <li><a href="#voz/interface" style="--ap-tone:var(--ap-violet)">Texto de interface</a></li>
-        </ol>
-      </aside>
-      <div class="content">
-
-        <section class="doc" id="voz-principios" style="--ap-tone:var(--ap-blue)">
-          <header class="doc__head"><p class="ap-kicker">Voz</p><h2>Princípios</h2><p class="ap-lead">Quem lê a <span class="ap-nw">A-Players</span> deve sentir que fala com alguém que entende o negócio dela, sem pressa e sem exagero.</p></header>
+        <section class="doc" id="padroes-principios" style="--ap-tone:var(--ap-blue)">
+          <header class="doc__head"><p class="ap-kicker">Padrões · Escrita</p><h2>Voz e princípios</h2><p class="ap-lead">Quem lê a <span class="ap-nw">A-Players</span> deve sentir que fala com alguém que entende o negócio dela, sem pressa e sem exagero.</p></header>
           <ul class="ap-bars">
             <li><strong>Consultiva antes de comercial</strong><span>Comece pelo desafio de quem lê, não pela lista do que vendemos.</span></li>
             <li><strong>Resultado no centro</strong><span>Cada trecho diz o resultado concreto: "Menos pedidos repetidos chegando ao especialista", "Menos tempo procurando informação". Resultado é o fim; não vire muleta.</span></li>
@@ -1910,8 +1948,8 @@ var png = g.png(2);         // imagem parada em 2x, com noite e retícula</code>
           </ul>
         </section>
 
-        <section class="doc" id="voz-pontuacao" style="--ap-tone:var(--ap-green)">
-          <header class="doc__head"><p class="ap-kicker">Voz</p><h2>Pontuação</h2><p class="ap-lead">Nenhum travessão, meia-risca ou hífen com espaços como pontuação. Hífen de palavra composta e de nome continua: <span class="ap-nw">A-Players</span>, <span class="ap-nw">AI-People</span>, pós-venda, pt-BR.</p></header>
+        <section class="doc" id="padroes-pontuacao" style="--ap-tone:var(--ap-green)">
+          <header class="doc__head"><p class="ap-kicker">Padrões · Escrita</p><h2>Pontuação</h2><p class="ap-lead">Nenhum travessão, meia-risca ou hífen com espaços como pontuação. Hífen de palavra composta e de nome continua: <span class="ap-nw">A-Players</span>, <span class="ap-nw">AI-People</span>, pós-venda, pt-BR.</p></header>
           <div class="tbl-wrap"><table class="tbl">
             <thead><tr><th>Em vez de</th><th>Escreva</th></tr></thead>
             <tbody>
@@ -1923,8 +1961,8 @@ var png = g.png(2);         // imagem parada em 2x, com noite e retícula</code>
           <p class="doc__note">O verificador <code>tools/check-peca.py</code> confere isso em toda peça. Intervalo numérico e o traço isolado de "não disponível" em tabela são aceitos.</p>
         </section>
 
-        <section class="doc" id="voz-vocabulario" style="--ap-tone:var(--ap-red)">
-          <header class="doc__head"><p class="ap-kicker">Voz</p><h2>Vocabulário</h2><p class="ap-lead">As palavras que a marca usa e as que ela evita, com o porquê. Decisões de setembro e outubro de 2026.</p></header>
+        <section class="doc" id="padroes-vocabulario" style="--ap-tone:var(--ap-red)">
+          <header class="doc__head"><p class="ap-kicker">Padrões · Escrita</p><h2>Vocabulário</h2><p class="ap-lead">As palavras que a marca usa e as que ela evita, com o porquê. Decisões de setembro e outubro de 2026.</p></header>
           <div class="tbl-wrap"><table class="tbl">
             <thead><tr><th>Use</th><th>Evite</th><th>Por quê</th></tr></thead>
             <tbody>
@@ -1950,8 +1988,8 @@ var png = g.png(2);         // imagem parada em 2x, com noite e retícula</code>
           </table></div>
         </section>
 
-        <section class="doc" id="voz-nomes" style="--ap-tone:var(--ap-yellow)">
-          <header class="doc__head"><p class="ap-kicker">Voz</p><h2>Nomes e ofertas</h2><p class="ap-lead">Especialidade não é oferta, pilar não é produto, parceiro não é produto da <span class="ap-nw">A-Players</span>. Cada nome no seu nível.</p></header>
+        <section class="doc" id="padroes-nomes" style="--ap-tone:var(--ap-yellow)">
+          <header class="doc__head"><p class="ap-kicker">Padrões · Escrita</p><h2>Nomes e ofertas</h2><p class="ap-lead">Especialidade não é oferta, pilar não é produto, parceiro não é produto da <span class="ap-nw">A-Players</span>. Cada nome no seu nível.</p></header>
           <div class="tbl-wrap"><table class="tbl">
             <thead><tr><th>Nível</th><th>Nomes</th></tr></thead>
             <tbody>
@@ -1970,8 +2008,8 @@ var png = g.png(2);         // imagem parada em 2x, com noite e retícula</code>
           <p class="doc__note">Pill, título e rodapé de uma mesma peça falam no mesmo nível. Distinga sempre produto <span class="ap-nw">A-Players</span>, oferta de adoção, parceiro, cliente e campanha.</p>
         </section>
 
-        <section class="doc" id="voz-interface" style="--ap-tone:var(--ap-violet)">
-          <header class="doc__head"><p class="ap-kicker">Voz</p><h2>Texto de interface</h2><p class="ap-lead">O botão diz o que acontece, a confirmação repete o nome da ação e o erro explica como resolver.</p></header>
+        <section class="doc" id="padroes-interface" style="--ap-tone:var(--ap-violet)">
+          <header class="doc__head"><p class="ap-kicker">Padrões · Escrita</p><h2>Texto de interface</h2><p class="ap-lead">O botão diz o que acontece, a confirmação repete o nome da ação e o erro explica como resolver.</p></header>
           <div class="tbl-wrap"><table class="tbl">
             <thead><tr><th>Situação</th><th>Exemplo do site</th><th>Regra</th></tr></thead>
             <tbody>
@@ -1980,9 +2018,9 @@ var png = g.png(2);         // imagem parada em 2x, com noite e retícula</code>
               <tr><td>Fechamento</td><td><strong>Conte seu desafio</strong>, em porta, ao lado de um próximo destino</td><td class="muted">A pessoa começa pelo contexto dela, não por um produto. A segunda porta leva ao passo natural da página (Professional Services, Nossos serviços).</td></tr>
               <tr><td>Link para as plataformas</td><td><strong>Conhecer as plataformas de IA</strong></td><td class="muted">Sem "frentes" e sem "nossas".</td></tr>
               <tr><td>Chamada de cartão</td><td><strong>Explorar Atlassian</strong> · <strong>Conhecer CISP1</strong></td><td class="muted">Verbo e destino.</td></tr>
-              <tr><td>Atalho</td><td><strong>Pular a jornada</strong></td><td class="muted">Diz o que será pulado.</td></tr>
-              <tr><td>Formulário</td><td><strong>Enviar mensagem</strong></td><td class="muted">A confirmação usa o mesmo verbo: "Mensagem enviada."</td></tr>
-              <tr><td>Cookies</td><td><strong>Aceitar todos</strong> · <strong>Apenas os necessários</strong></td><td class="muted">Aceitar e recusar com o mesmo peso.</td></tr>
+              <tr><td>Atalho</td><td><strong>Pular abertura</strong> · <strong>Pular para o conteúdo</strong></td><td class="muted">Diz o que será pulado.</td></tr>
+              <tr><td>Formulário</td><td><strong>Enviar mensagem</strong></td><td class="muted">A confirmação diz o que aconteceu e qual é o próximo passo, sem prometer o que ainda não existe.</td></tr>
+              <tr><td>Cookies</td><td><strong>Aceitar todos</strong> · <strong>Recusar opcionais</strong></td><td class="muted">Aceitar e recusar com o mesmo peso.</td></tr>
             </tbody>
           </table></div>
         </section>
@@ -2187,10 +2225,11 @@ var png = g.png(2);         // imagem parada em 2x, com noite e retícula</code>
         </section>
 
         <section class="doc" id="recursos-ia" style="--ap-tone:var(--ap-yellow)">
-          <header class="doc__head"><p class="ap-kicker">Recursos</p><h2>Com IA</h2><p class="ap-lead">O arquivo <code>llms.txt</code> resume o sistema para agentes: tokens, classes, padrões e as regras de escrita. Entregue o arquivo junto do pedido.</p></header>
+          <header class="doc__head"><p class="ap-kicker">Recursos</p><h2>Com IA</h2><p class="ap-lead">O arquivo <code>llms.txt</code> resume o sistema inteiro para agentes: o mapa desta documentação, os três temas, tokens, classes do site e do Portal, padrões, regras de escrita e a lista do que conferir antes de entregar. Os valores exatos estão em <code>tokens/tokens.json</code>. Entregue os dois arquivos junto do pedido.</p></header>
           <div class="code"><div class="code__bar">Pedido de exemplo<button type="button" class="tool"><svg aria-hidden="true"><use href="#i-copy"/></svg>Copiar</button></div><pre><code>Crie uma página de evento da <span class="ap-nw">A-Players</span> seguindo o <span class="ap-nw">A-Players</span> Design System.
 Leia design-system/llms.txt antes de começar.
 Use css/aplayers.css e as classes ap-*; não escreva componentes novos.
+Tema Original (o padrão do site); se a peça for interna, o tema Light do Portal.
 Abertura com pill, H1, apoio e um botão; programação numa folha com .ap-stepline.
 Texto em pt-BR, sem travessão, sem números que eu não tenha passado.
 Claro no que resolve, prudente no que promete; nada de "frentes", AMS, Academy ou Workpacks.</code></pre></div>
@@ -2212,6 +2251,7 @@ Claro no que resolve, prudente no que promete; nada de "frentes", AMS, Academy o
           <div class="tbl-wrap"><table class="tbl">
             <thead><tr><th>Versão</th><th>Data</th><th>O que entrou</th></tr></thead>
             <tbody>
+              <tr><td class="num"><span class="ap-badge">2.8</span></td><td class="num">14/10/2026</td><td>Três temas organizados em Fundamentos, Temas: Original (o padrão do site), Dark (a opção noite) e Light (o dia do Portal do <span class="ap-nw">A-Player</span>), com tokens novos para o Light (<code>--ap-day</code> no off-white quente do Portal, <code>--ap-paper</code>, <code>--ap-paper-2</code>, <code>--ap-glass</code>) e a ilha do dia (<code>.ap-island--day</code>). Componentes em dois grupos, Site e Portal, com o Portal em seis seções. A Voz entrou em Padrões, no grupo Escrita, e o Graph veio depois de Componentes. Índice lateral com mais respiro e logo do cabeçalho no tamanho do site. O mapa de escolha acompanha o site (FinOps SaaS, FinOps IA, Adoção de IA e as cores das ligações).</td></tr>
               <tr><td class="num"><span class="ap-badge">2.7</span></td><td class="num">08/10/2026</td><td>A rota Vivo passa a se chamar Graph (o endereço antigo <code>#vivo</code> leva para <code>#graph</code>). O motor <code>js/ap-vivo.js</code> acompanha o site: todas as formações com satélites, o grupo sob o cursor revela o que reúne e os nomes não se sobrepõem. Medidas novas: título de cartão numa linha, cartões lado a lado com as mesmas linhas, aplicativos em chips numa linha. Fechamento com duas portas em todas as páginas; fios das etapas em movimento; FinOps SaaS e IA.</td></tr>
               <tr><td class="num"><span class="ap-badge">2.6</span></td><td class="num">07/10/2026</td><td>Quinta rodada de 2027, revista no notebook e no monitor grande: a escala dos títulos volta à original em todas as telas e o texto passa a caber nela, com as medidas de cada elemento (abertura, título de seção, apoio, cena, fechamento e item de lista).</td></tr>
               <tr><td class="num"><span class="ap-badge">2.5</span></td><td class="num">06/10/2026</td><td>Terceira rodada de 2027, validada no notebook: H1 e H2 um degrau abaixo entre 1001 e 1799px, para os títulos de duas frases ficarem em duas linhas; "acompanhados por especialistas" no lugar de "supervisão"; "visibilidade" no lugar de "inventário" no FinOps.</td></tr>
@@ -2233,17 +2273,17 @@ Claro no que resolve, prudente no que promete; nada de "frentes", AMS, Academy o
 
 <footer class="foot-global ap-wrap">
   <div class="foot">
-  <span><span class="ap-nw">A-Players</span> Design System, versão 2.7, outubro de 2026</span>
-  <span class="foot__links"><a href="../index.html">Site <span class="ap-nw">A-Players</span></a><a href="../portal/index.html">Portal do <span class="ap-nw">A-Player</span></a><a href="#graph">Graph</a><a href="#biblioteca">Biblioteca</a><a href="#recursos/downloads">Arquivos</a><a href="#voz">Voz da marca</a></span>
+  <span><span class="ap-nw">A-Players</span> Design System, versão 2.8, outubro de 2026</span>
+  <span class="foot__links"><a href="../index.html">Site <span class="ap-nw">A-Players</span></a><a href="../portal/index.html">Portal do <span class="ap-nw">A-Player</span></a><a href="#graph">Graph</a><a href="#biblioteca">Biblioteca</a><a href="#recursos/downloads">Arquivos</a><a href="#padroes/principios">Voz da marca</a></span>
   </div>
 </footer>
 
 <p class="copied ap-toast" role="status" aria-live="polite" style="--ap-tone:var(--ap-green)"><span></span></p>
 
-<script src="tokens/tokens.js?v=2.2.1" defer></script>
-<script src="js/grafo.js?v=2.2.1" defer></script>
+<script src="tokens/tokens.js?v=2.8.0" defer></script>
+<script src="js/grafo.js?v=2.8.0" defer></script>
 <script src="js/ap-vivo.js?v=2.8.0" defer></script>
 <script src="assets/biblioteca/biblioteca.js?v=2.2.1" defer></script>
-<script src="js/docs.js?v=2.7.0" defer></script>
+<script src="js/docs.js?v=2.8.0" defer></script>
 </body>
 </html>

@@ -12,7 +12,7 @@
   'use strict';
   var d = document, root = d.documentElement;
   var reduced = matchMedia('(prefers-reduced-motion: reduce)').matches || root.classList.contains('reduce-motion');
-  var ROUTES = { inicio: 'Início', fundamentos: 'Fundamentos', graph: 'Graph', componentes: 'Componentes', padroes: 'Padrões', voz: 'Voz e escrita', biblioteca: 'Biblioteca', recursos: 'Recursos' };
+  var ROUTES = { inicio: 'Início', fundamentos: 'Fundamentos', graph: 'Graph', componentes: 'Componentes', padroes: 'Padrões', biblioteca: 'Biblioteca', recursos: 'Recursos' };
   var BASE_TITLE = 'A-Players Design System';
   function $(s, c) { return (c || d).querySelector(s); }
   function $$(s, c) { return Array.prototype.slice.call((c || d).querySelectorAll(s)); }
@@ -43,6 +43,8 @@
     var h = (location.hash || '').replace('#', ''), parts = h.split('/');
     // a rota Vivo virou Graph: links antigos (#vivo, #vivo/secao) continuam valendo
     if (parts[0] === 'vivo') { parts[0] = 'graph'; history.replaceState(null, '', '#' + parts.join('/')); }
+    // a Voz entrou em Padrões (grupo Escrita): #voz e #voz/secao levam para lá
+    if (parts[0] === 'voz') { parts = ['padroes', parts[1] || 'principios']; history.replaceState(null, '', '#' + parts.join('/')); }
     var r = ROUTES[parts[0]] ? parts[0] : 'inicio';
     return { rota: r, secao: parts[1] || null };
   }
@@ -148,7 +150,7 @@
       if (pinned) links.forEach(function (a) { if (a.getAttribute('href').slice(1).replace('/', '-') === pinned) pick = a; });
       links.forEach(function (a) { a.classList.toggle('is-current', a === pick); });
       if (matchMedia('(max-width: 1000px)').matches && pick.scrollIntoView) {
-        var ol = pick.parentElement.parentElement; var l = pick.offsetLeft - 20;
+        var ol = pick.closest('.side'); var l = pick.offsetLeft - 20;
         if (ol && (l < ol.scrollLeft || l > ol.scrollLeft + ol.clientWidth - 80)) ol.scrollTo({ left: l, behavior: 'smooth' });
       }
     }, 60);

@@ -171,19 +171,43 @@ window.APDS_TOKENS = {
   },
   "lado-b": {
     "day": {
-      "$value": "#ffffff",
+      "$value": "#f5f2eb",
       "$type": "color",
-      "$description": "O dia da marca: fundo do lado B (Portal do A-Player e peças internas), com a mesma retícula de 56px.",
+      "$description": "Tema Light: o dia da marca, fundo do Portal do A-Player e das peças internas (o off-white quente, \"osso\"), com a mesma retícula de 56px.",
       "$extensions": {
         "tema-escuro": "#0f1a2e"
       }
     },
     "day-dots": {
-      "$value": "rgba(23, 35, 58, .075)",
+      "$value": "rgba(46, 40, 30, .085)",
       "$type": "color",
-      "$description": "Pontos da retícula sobre o dia.",
+      "$description": "Tema Light: pontos da retícula sobre o dia.",
       "$extensions": {
         "tema-escuro": "rgba(183, 194, 211, .075)"
+      }
+    },
+    "paper": {
+      "$value": "#fffdf8",
+      "$type": "color",
+      "$description": "Tema Light: folha e cartão sobre o dia, um tom acima do fundo. Dentro de .ap-day ele vira o --ap-card.",
+      "$extensions": {
+        "tema-escuro": "#172741"
+      }
+    },
+    "paper-2": {
+      "$value": "#f9f6f0",
+      "$type": "color",
+      "$description": "Tema Light: cartão secundário sobre o dia. Dentro de .ap-day ele vira o --ap-card-2.",
+      "$extensions": {
+        "tema-escuro": "#1b2d4a"
+      }
+    },
+    "glass": {
+      "$value": "rgba(250, 248, 242, .84)",
+      "$type": "color",
+      "$description": "Tema Light: vidro do cabeçalho do Portal (.ap-island--day), com desfoque.",
+      "$extensions": {
+        "tema-escuro": "rgba(17, 29, 50, .84)"
       }
     },
     "soft-blue": {
