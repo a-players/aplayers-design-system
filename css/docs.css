@@ -38,7 +38,7 @@ main { position: relative; z-index: 1; }
 .topo { position: fixed; inset: 0 0 auto 0; z-index: 60; padding: 14px clamp(8px, 1.6vw, 20px) 0; pointer-events: none; }
 .topo .ap-island { pointer-events: auto; max-width: calc(var(--ap-wrap-w) + 40px); margin: 0 auto; }
 .topo__ds { display: flex; align-items: center; gap: 12px; text-decoration: none; }
-.topo__ds img { width: 132px; height: auto; }  /* o mesmo tamanho do logo do site (118px no celular) */
+.topo__ds img { width: 152px; height: auto; }  /* o mesmo tamanho do logo do site (136px no celular) */
 .topo__ds span { padding-left: 12px; border-left: 1px solid var(--ap-night-line); font: 700 14px/1.15 var(--ap-text); color: var(--ap-on-night-2); white-space: nowrap; }
 .topo__prefs { display: flex; align-items: center; gap: 10px; margin-left: 10px; }
 .burger { display: none; width: 44px; height: 44px; margin-left: auto; border: 0; background: rgba(255, 255, 255, .08); border-radius: 10px 3px 10px 3px; cursor: pointer; position: relative; }
@@ -58,7 +58,7 @@ main { position: relative; z-index: 1; }
   .burger { display: block; margin-left: 8px; }
   .topo__prefs { margin-left: auto; }
 }
-@media (max-width: 640px) { .topo__ds img { width: 118px; } }
+@media (max-width: 640px) { .topo__ds img { width: 136px; } }
 @media (max-width: 520px) { .topo__ds span { display: none; } }
 /* com seis seções no menu, o atalho do cabeçalho só entra quando há espaço (ele também está na abertura da Home) */
 @media (max-width: 1360px) { .topo__cta { display: none; } }

@@ -71,7 +71,7 @@ Três temas, uma marca: cores, forma e tipografia não mudam; muda a superfície
 - IA em destaque: .ap-aiapps (três aplicações de IA com ícone oficial) e .ap-aiapps__more (as que completam, em texto).
 - Escolha: .ap-tabs/.ap-tab[role=tab][aria-selected], .ap-node (.is-on, .is-dim), .ap-filters/.ap-filter[aria-pressed].
 - Formulário: .ap-field (+ __hint, __error, aria-invalid), .ap-file, .ap-switch, .ap-status.
-- Cabeçalho: .ap-island (+ --day, o vidro claro do Portal), .ap-island__brand (logo de 132px; 118px no celular), .ap-nav, .ap-nav__link[aria-current=page], .ap-strata/.ap-stratum, .ap-lang, .ap-mode.
+- Cabeçalho: .ap-island (+ --day, o vidro claro do Portal), .ap-island__brand (logo de 152px; 136px no celular, a mesma altura do logo anterior), .ap-nav, .ap-nav__link[aria-current=page], .ap-strata/.ap-stratum, .ap-lang, .ap-mode.
 - Avisos: .ap-consent, .ap-toast.
 - Marca: .ap-partner (logos de parceiro com peso óptico), .ap-partner-mark (placa 68x280), .ap-app-icon, .ap-coll-logo (logo oficial de Collection, assets/parceiros/collections, quadro 466x164), .ap-on-light e .ap-on-dark (par de logos que o tema escolhe), .ap-geo, .ap-sticker, .ap-photo.
 - Portal, tema Light (o lado B: Portal do A-Player e peças internas): .ap-day, .ap-island--day, .ap-panel, .ap-tone--blue/green/red/yellow/violet, .ap-avatar, .ap-lanyard, .ap-idcard, .ap-snap, .ap-event, .ap-when, .ap-term, .ap-uses, .ap-material, .ap-apps/.ap-app, .ap-save, .ap-related, .ap-progress, .ap-ministeps, .ap-search, .ap-kbd, .ap-btn-quiet, .ap-dialog, .ap-close, .ap-toast__action.

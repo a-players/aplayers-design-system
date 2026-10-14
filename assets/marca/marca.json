@@ -1,6 +1,6 @@
 {
- "versao": "2.0",
- "atualizado": "2026-10-04",
+ "versao": "2.8",
+ "atualizado": "2026-10-14",
  "cores-do-logo": {
   "azul": "#3580C3",
   "verde": "#6EB751",
@@ -8,10 +8,12 @@
   "amarelo": "#F1E84E",
   "nome-cinza": "#706B69",
   "preto": "#1D1D1B",
-  "branco": "#FFFFFF"
+  "branco": "#FFFFFF",
+  "descritor-cinza": "#625E5C"
  },
  "simbolo": "Oito triângulos, dois de cada cor do espectro, formam a letra A; o vazio no centro da base é a abertura do A.",
- "protecao": "x = altura de um triângulo do símbolo (um terço da altura do símbolo), livre nos quatro lados.",
+ "assinatura": "Logo de 14/10/2026: o símbolo não mudou; o nome e o descritor TECH KNOWLEDGE foram refinados (letras do descritor 8% maiores, espaços 20% menores). Horizontal: nome h, símbolo 2,8h, distância 0,4h. Vertical: nome h, símbolo 4h, distância 0,65h. No site, o logo mantém a altura de antes: 36px no cabeçalho (152px de largura; 136px no celular).",
+ "protecao": "Metade da altura do símbolo, livre nos quatro lados (horizontal: 1,4 vez a altura do nome; vertical: 2 vezes).",
  "tamanho-minimo": {
   "tela": {
    "horizontal": "112px de largura",
@@ -38,7 +40,7 @@
    "fundos": "Branco, folha e tons suaves",
    "svg": "assets/marca/aplayers-horizontal-claro.svg",
    "png": "assets/marca/png/aplayers-horizontal-cor-fundo-claro.png",
-   "origem": "A-Players/logos/A-Players (SVG e PNG): __logo_horizontal-01_a-players"
+   "origem": "Kit consolidado do logo A-Players, 14/10/2026"
   },
   {
    "id": "aplayers-horizontal-cor-fundo-escuro",
@@ -47,7 +49,7 @@
    "fundos": "Noite e fotos escuras",
    "svg": "assets/marca/aplayers-horizontal-escuro.svg",
    "png": "assets/marca/png/aplayers-horizontal-cor-fundo-escuro.png",
-   "origem": "A-Players/logos/A-Players (SVG e PNG): __logo_horizontal-02_a-players"
+   "origem": "Kit consolidado do logo A-Players, 14/10/2026"
   },
   {
    "id": "aplayers-horizontal-branco",
@@ -56,7 +58,7 @@
    "fundos": "Azul, vermelho, noite e fotos com área escura",
    "svg": "assets/marca/aplayers-horizontal-branco.svg",
    "png": "assets/marca/png/aplayers-horizontal-branco.png",
-   "origem": "A-Players/logos/A-Players (SVG e PNG): __logo_horizontal-03_a-players"
+   "origem": "Kit consolidado do logo A-Players, 14/10/2026"
   },
   {
    "id": "aplayers-horizontal-preto",
@@ -65,7 +67,7 @@
    "fundos": "Verde, amarelo, violeta, vermelho e impressão em uma cor",
    "svg": "assets/marca/aplayers-horizontal-preto.svg",
    "png": "assets/marca/png/aplayers-horizontal-preto.png",
-   "origem": "A-Players/logos/A-Players (SVG e PNG): __logo_horizontal-04_a-players"
+   "origem": "Kit consolidado do logo A-Players, 14/10/2026"
   },
   {
    "id": "aplayers-horizontal-azul",
@@ -74,7 +76,7 @@
    "fundos": "Branco, folha, tons suaves e noite",
    "svg": "assets/marca/aplayers-horizontal-azul.svg",
    "png": "assets/marca/png/aplayers-horizontal-azul.png",
-   "origem": "A-Players/logos/A-Players (SVG e PNG): __logo_horizontal-azul_a-players"
+   "origem": "Kit consolidado do logo A-Players, 14/10/2026"
   },
   {
    "id": "aplayers-horizontal-verde",
@@ -83,7 +85,7 @@
    "fundos": "Noite",
    "svg": "assets/marca/aplayers-horizontal-verde.svg",
    "png": "assets/marca/png/aplayers-horizontal-verde.png",
-   "origem": "A-Players/logos/A-Players (SVG e PNG): __logo_horizontal-verde_a-players"
+   "origem": "Kit consolidado do logo A-Players, 14/10/2026"
   },
   {
    "id": "aplayers-horizontal-vermelho",
@@ -92,7 +94,7 @@
    "fundos": "Noite, branco e folha",
    "svg": "assets/marca/aplayers-horizontal-vermelho.svg",
    "png": "assets/marca/png/aplayers-horizontal-vermelho.png",
-   "origem": "A-Players/logos/A-Players (SVG e PNG): __logo_horizontal-vermelho_a-players"
+   "origem": "Kit consolidado do logo A-Players, 14/10/2026"
   },
   {
    "id": "aplayers-horizontal-amarelo",
@@ -101,7 +103,7 @@
    "fundos": "Noite",
    "svg": "assets/marca/aplayers-horizontal-amarelo.svg",
    "png": "assets/marca/png/aplayers-horizontal-amarelo.png",
-   "origem": "A-Players/logos/A-Players (SVG e PNG): __logo_horizontal-amarelo_a-players"
+   "origem": "Kit consolidado do logo A-Players, 14/10/2026"
   },
   {
    "id": "aplayers-vertical-cor-fundo-claro",
@@ -110,7 +112,7 @@
    "fundos": "Branco, folha e tons suaves",
    "svg": "assets/marca/aplayers-vertical-01.svg",
    "png": "assets/marca/png/aplayers-vertical-cor-fundo-claro.png",
-   "origem": "A-Players/logos/A-Players (SVG e PNG): logo_vertical-01_a-players"
+   "origem": "Kit consolidado do logo A-Players, 14/10/2026"
   },
   {
    "id": "aplayers-vertical-cor-fundo-escuro",
@@ -119,7 +121,7 @@
    "fundos": "Noite e fotos escuras",
    "svg": "assets/marca/aplayers-vertical-02.svg",
    "png": "assets/marca/png/aplayers-vertical-cor-fundo-escuro.png",
-   "origem": "A-Players/logos/A-Players (SVG e PNG): logo_vertical-02_a-players"
+   "origem": "Kit consolidado do logo A-Players, 14/10/2026"
   },
   {
    "id": "aplayers-vertical-branco",
@@ -128,7 +130,7 @@
    "fundos": "Azul, vermelho, noite e fotos com área escura",
    "svg": "assets/marca/aplayers-vertical-03.svg",
    "png": "assets/marca/png/aplayers-vertical-branco.png",
-   "origem": "A-Players/logos/A-Players (SVG e PNG): logo_vertical-03_a-players"
+   "origem": "Kit consolidado do logo A-Players, 14/10/2026"
   },
   {
    "id": "aplayers-vertical-preto",
@@ -137,7 +139,7 @@
    "fundos": "Verde, amarelo, violeta e impressão em uma cor",
    "svg": "assets/marca/aplayers-vertical-04.svg",
    "png": "assets/marca/png/aplayers-vertical-preto.png",
-   "origem": "A-Players/logos/A-Players (SVG e PNG): logo_vertical-04_a-players"
+   "origem": "Kit consolidado do logo A-Players, 14/10/2026"
   },
   {
    "id": "aplayers-simbolo-cor",
