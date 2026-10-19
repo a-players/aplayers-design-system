@@ -1014,7 +1014,7 @@
           </table></div>
           <ol class="ap-steps" style="margin-top:24px;--ap-tone:var(--ap-yellow)">
             <li><strong>Cor</strong><span>A ligação e o halo do pulso levam a cor do nó de origem.</span></li>
-            <li><strong>Ritmo</strong><span>Um pulso novo a cada 300ms, até 12 ao mesmo tempo. Nas formações de fluxo (ciclo, fluxo, monday.com, CISP1), a cada 140ms e até 20.</span></li>
+            <li><strong>Ritmo</strong><span>Um pulso novo a cada 300ms, até 12 ao mesmo tempo. Nas formações de fluxo (ciclo, fluxo, CISP1, monday.com), a cada 140ms e até 20.</span></li>
             <li><strong>Velocidade</strong><span>De 1,2 a 2,8s de ponta a ponta. O brilho segue um seno: nasce na origem, é máximo no meio e some no destino.</span></li>
             <li><strong>Luz</strong><span>Núcleo branco de 1,8px a 85% e halo de 6px a 35%, em mistura aditiva: onde dois pulsos se cruzam, a luz soma.</span></li>
           </ol>
@@ -1231,7 +1231,7 @@
               <tr><td><strong>Três camadas</strong></td><td class="muted">Intelligence</td><td class="muted">Fios que correm, pulsos no núcleo, quadro de status</td><td><a class="ap-link" href="#componentes/camadas">Três camadas</a></td></tr>
               <tr><td><strong>Luz no espectro</strong></td><td class="muted">Intelligence, parceiros</td><td class="muted">Brilho que corre a linha em 4,4s</td><td><a class="ap-link" href="#graph/inventario">Acima</a></td></tr>
               <tr><td><strong>Tecido</strong></td><td class="muted">Atlassian</td><td class="muted">Pulsos brancos atravessam o Teamwork Graph em 3,9s; tracejados correm das Collections ao Teamwork Graph, ao Rovo, abrem para Search, Chat e Agents e convergem no resultado (passo de 12px em 1,2s)</td><td class="muted">Apenas no site</td></tr>
-              <tr><td><strong>Fio das etapas</strong></td><td class="muted">monday.com, Atlassian, FinOps, CISP1</td><td class="muted">O fio das cinco etapas, das seis etapas e dos seis passos corre da primeira para a última, tracejado no tom (passo de 12px em 1,2s)</td><td class="muted">Apenas no site</td></tr>
+              <tr><td><strong>Fio das etapas</strong></td><td class="muted">Atlassian, CISP1, monday.com, FinOps</td><td class="muted">O fio das cinco etapas, das seis etapas e dos seis passos corre da primeira para a última, tracejado no tom (passo de 12px em 1,2s)</td><td class="muted">Apenas no site</td></tr>
               <tr><td><strong>Ciclo</strong></td><td class="muted">Talent as a Service</td><td class="muted">Um ponto percorre o anel até o momento lido</td><td class="muted">Apenas no site</td></tr>
               <tr><td><strong>Trilho e fio de leitura</strong></td><td class="muted">Nossos serviços, Professional Services</td><td class="muted">Itens acendem e a linha enche com a rolagem</td><td class="muted">Apenas no site</td></tr>
               <tr><td><strong>Stickers</strong></td><td class="muted">Portal do <span class="ap-nw">A-Player</span></td><td class="muted"><code>ap-stick</code>, <code>ap-drop</code> e o balanço <code>ap-sway</code>: sobe 4px e gira 3 graus em 6,5s</td><td><a class="ap-link" href="#componentes/lado-b">Lado B</a></td></tr>
@@ -2016,7 +2016,7 @@ var png = g.png(2);         // imagem parada em 2x, com noite e retícula</code>
               <tr><td class="muted">Hífen com espaços numa lista ou título</td><td>Dois-pontos ou quebra de linha.</td></tr>
             </tbody>
           </table></div>
-          <p class="doc__note">O verificador <code>tools/check-peca.py</code> confere isso em toda peça. Intervalo numérico e o traço isolado de "não disponível" em tabela são aceitos.</p>
+          <p class="doc__note">O verificador <code>tools/check_brand.py</code> confere isso em toda peça. Intervalo numérico e o traço isolado de "não disponível" em tabela são aceitos.</p>
         </section>
 
         <section class="doc" id="padroes-vocabulario" style="--ap-tone:var(--ap-red)">
@@ -2024,24 +2024,24 @@ var png = g.png(2);         // imagem parada em 2x, com noite e retícula</code>
           <div class="tbl-wrap"><table class="tbl">
             <thead><tr><th>Use</th><th>Evite</th><th>Por quê</th></tr></thead>
             <tbody>
-              <tr><td><strong>plataformas</strong>, <strong>aplicações</strong></td><td class="muted">ferramentas</td><td class="muted">Plataformas é o que a <span class="ap-nw">A-Players</span> implementa e faz funcionar; aplicações são os produtos dentro delas (Jira, monday CRM).</td></tr>
-              <tr><td><strong>plataformas de IA</strong>, <strong>três plataformas</strong></td><td class="muted">frentes, nossas plataformas</td><td class="muted">Atlassian, CISP1 e monday.com juntas: "Conhecer as plataformas de IA". Sem "nossas": Atlassian e monday.com são parceiras.</td></tr>
-              <tr><td><strong>implementar</strong>, <strong>evoluir</strong>, <strong>fazer funcionar</strong></td><td class="muted">potencializar</td><td class="muted">Diga o que acontece. "Potencializar" saiu do site em português.</td></tr>
-              <tr><td><strong>resultado</strong>, <strong>caminho</strong>, <strong>formato</strong>, <strong>acompanhamento</strong></td><td class="muted">jornada, ecossistema, transformar e eficiência como vício</td><td class="muted">Ficam onde são nome ou conceito: "as duas jornadas" de Talent as a Service, o filtro "Ecossistema" do blog e títulos publicados.</td></tr>
-              <tr><td><strong>contexto</strong>, <strong>dados para decidir</strong></td><td class="muted">sinais</td><td class="muted">O que a IA usa e o que ela entrega, em palavra de quem decide.</td></tr>
-              <tr><td><strong>maturidade da empresa</strong></td><td class="muted">porte</td><td class="muted">"Olhamos a maturidade da empresa, as equipes envolvidas e o momento dos processos."</td></tr>
-              <tr><td><strong>Planos de assinatura</strong>, <strong>Capacitações e workshops</strong></td><td class="muted">AMS, Academy, Workpacks</td><td class="muted">A <span class="ap-nw">A-Players</span> não usa mais esses termos, em português nem em inglês.</td></tr>
-              <tr><td><strong>Portal do <span class="ap-nw">A-Player</span></strong></td><td class="muted">A-Hub</td><td class="muted">O portal interno. Em rótulo curto: Meu Portal, Buscar no Portal, Entrar no Portal.</td></tr>
-              <tr><td><strong>gráfico</strong></td><td class="muted">grafo</td><td class="muted">"Um gráfico único". Nomes de produto e método ficam em inglês: Teamwork Graph, Context Graph.</td></tr>
-              <tr><td><strong>gente movida por desafios</strong></td><td class="muted">gente acima da média</td><td class="muted">Atitude e compromisso, não superioridade.</td></tr>
-              <tr><td><strong>Business Partner</strong></td><td class="muted">HRBP, HR Business Partner</td><td class="muted">O papel que acompanha os profissionais alocados, em português e em inglês.</td></tr>
-              <tr><td><strong>acompanhados por especialistas</strong></td><td class="muted">supervisão, supervisionados</td><td class="muted">Os agentes AI-Player apoiam a equipe; especialistas da <span class="ap-nw">A-Players</span> acompanham e validam cada entrega.</td></tr>
-              <tr><td><strong>especialista em tecnologia</strong>, <strong>exatamente</strong>, <strong>único</strong></td><td class="muted">só</td><td class="muted">"Só" restringe e soa pouco acolhedor. Reescreva a frase sem a palavra.</td></tr>
-              <tr><td><strong>visibilidade</strong> (FinOps)</td><td class="muted">inventário</td><td class="muted">A primeira etapa do FinOps SaaS e do FinOps IA mostra tudo o que se contrata, por fornecedor e por área. "Inventário" é genérico.</td></tr>
-              <tr><td><strong>a CISP1</strong></td><td class="muted">o CISP1</td><td class="muted">No feminino, como no site da própria CISP1.</td></tr>
-              <tr><td><strong>monday.com</strong></td><td class="muted">com M maiúsculo ou sem o .com</td><td class="muted">Sempre minúsculo, como o fabricante escreve.</td></tr>
-              <tr><td><strong>Camadas do Context Graph</strong></td><td class="muted">outras listas de camadas</td><td class="muted">Negócio, Processos, Plataformas, Agentes e Feedback.</td></tr>
-              <tr><td><strong>a lógica do Context Graph</strong></td><td class="muted">"Aceleração = Contexto × Inteligência" como nossa</td><td class="muted">A fórmula é da Atlassian; a <span class="ap-nw">A-Players</span> não a apresenta como própria.</td></tr>
+              <tr><td><strong>plataformas</strong>, <strong>aplicações</strong></td><td class="muted" data-brand-ignore>ferramentas</td><td class="muted">Plataformas é o que a <span class="ap-nw">A-Players</span> implementa e faz funcionar; aplicações são os produtos dentro delas (Jira, monday CRM).</td></tr>
+              <tr><td><strong>plataformas de IA</strong>, <strong>três plataformas</strong></td><td class="muted" data-brand-ignore>frentes, nossas plataformas</td><td class="muted">Atlassian, CISP1 e monday.com juntas: "Conhecer as plataformas de IA". Sem "nossas": Atlassian e monday.com são parceiras.</td></tr>
+              <tr><td><strong>implementar</strong>, <strong>evoluir</strong>, <strong>fazer funcionar</strong></td><td class="muted" data-brand-ignore>potencializar</td><td class="muted">Diga o que acontece. "Potencializar" saiu do site em português.</td></tr>
+              <tr><td><strong>resultado</strong>, <strong>caminho</strong>, <strong>formato</strong>, <strong>acompanhamento</strong></td><td class="muted" data-brand-ignore>jornada, ecossistema, transformar e eficiência como vício</td><td class="muted">Ficam onde são nome ou conceito: "as duas jornadas" de Talent as a Service, o filtro "Ecossistema" do blog e títulos publicados.</td></tr>
+              <tr><td><strong>contexto</strong>, <strong>dados para decidir</strong></td><td class="muted" data-brand-ignore>sinais</td><td class="muted">O que a IA usa e o que ela entrega, em palavra de quem decide.</td></tr>
+              <tr><td><strong>maturidade da empresa</strong></td><td class="muted" data-brand-ignore>porte</td><td class="muted">"Olhamos a maturidade da empresa, as equipes envolvidas e o momento dos processos."</td></tr>
+              <tr><td><strong>Planos de assinatura</strong>, <strong>Capacitações e workshops</strong></td><td class="muted" data-brand-ignore>AMS, Academy, Workpacks</td><td class="muted">A <span class="ap-nw">A-Players</span> não usa mais esses termos, em português nem em inglês.</td></tr>
+              <tr><td><strong>Portal do <span class="ap-nw">A-Player</span></strong></td><td class="muted" data-brand-ignore>A-Hub</td><td class="muted">O portal interno. Em rótulo curto: Meu Portal, Buscar no Portal, Entrar no Portal.</td></tr>
+              <tr><td><strong>gráfico</strong></td><td class="muted" data-brand-ignore>grafo</td><td class="muted">"Um gráfico único". Nomes de produto e método ficam em inglês: Teamwork Graph, Context Graph.</td></tr>
+              <tr><td><strong>gente movida por desafios</strong></td><td class="muted" data-brand-ignore>gente acima da média</td><td class="muted">Atitude e compromisso, não superioridade.</td></tr>
+              <tr><td><strong>Business Partner</strong></td><td class="muted" data-brand-ignore>HRBP, HR Business Partner</td><td class="muted">O papel que acompanha os profissionais alocados, em português e em inglês.</td></tr>
+              <tr><td><strong>acompanhados por especialistas</strong></td><td class="muted" data-brand-ignore>supervisão, supervisionados</td><td class="muted">Os agentes AI-Player apoiam a equipe; especialistas da <span class="ap-nw">A-Players</span> acompanham e validam cada entrega.</td></tr>
+              <tr><td><strong>especialista em tecnologia</strong>, <strong>exatamente</strong>, <strong>único</strong></td><td class="muted" data-brand-ignore>só</td><td class="muted">"Só" restringe e soa pouco acolhedor. Reescreva a frase sem a palavra.</td></tr>
+              <tr><td><strong>visibilidade</strong> (FinOps)</td><td class="muted" data-brand-ignore>inventário</td><td class="muted">A primeira etapa do FinOps SaaS e do FinOps IA mostra tudo o que se contrata, por fornecedor e por área. "Inventário" é genérico.</td></tr>
+              <tr><td><strong>a CISP1</strong></td><td class="muted" data-brand-ignore>o CISP1</td><td class="muted">No feminino, como no site da própria CISP1.</td></tr>
+              <tr><td><strong>monday.com</strong></td><td class="muted" data-brand-ignore>com M maiúsculo ou sem o .com</td><td class="muted">Sempre minúsculo, como o fabricante escreve.</td></tr>
+              <tr><td><strong>Camadas do Context Graph</strong></td><td class="muted" data-brand-ignore>outras listas de camadas</td><td class="muted">Negócio, Processos, Plataformas, Agentes e Feedback.</td></tr>
+              <tr><td><strong>a lógica do Context Graph</strong></td><td class="muted" data-brand-ignore>"Aceleração = Contexto × Inteligência" como nossa</td><td class="muted">A fórmula é da Atlassian; a <span class="ap-nw">A-Players</span> não a apresenta como própria.</td></tr>
             </tbody>
           </table></div>
         </section>
@@ -2291,16 +2291,17 @@ Tema Original (o padrão do site); se a peça for interna, o tema Light do Porta
 Abertura com pill, H1, apoio e um botão; programação numa folha com .ap-stepline.
 Texto em pt-BR, sem travessão, sem números que eu não tenha passado.
 Claro no que resolve, prudente no que promete; nada de "frentes", AMS, Academy ou Workpacks.</code></pre></div>
+          <p class="doc__note">No Claude, o mesmo sistema existe como Design System (gerado por <code>tools/build_claude.py</code>) e como a skill <code>aplayers-brand</code> (<code>tools/build_skill.py</code>), com a folha, os logos e o verificador <code>tools/check_brand.py</code>: <a class="ap-link" href="claude/skill/aplayers-brand.zip" download>baixar a skill</a> e enviar em Configurações, Skills.</p>
         </section>
 
         <section class="doc" id="recursos-checklist" style="--ap-tone:var(--ap-violet)">
           <header class="doc__head"><p class="ap-kicker">Recursos</p><h2>Antes de publicar</h2><p class="ap-lead">O que conferir em toda peça antes de dizer que está pronta.</p></header>
           <ol class="ap-steps">
-            <li><strong>Verificador da marca</strong><span>Rode <code>python tools/check-peca.py &lt;pasta&gt;</code> na raiz do workspace: travessão, tipografia, pill, geometria e referências.</span></li>
+            <li><strong>Verificador da marca</strong><span>Rode <code>python tools/check_brand.py &lt;pasta&gt;</code> (texto e estilo, em HTML, Markdown, CSS, Word, PowerPoint e Excel) e, no workspace, <code>tools/check-peca.py</code> (geometria e referências).</span></li>
             <li><strong>Telas</strong><span>390 × 844, 1366 × 768 e 1920 × 1080; em landing pages, também 125%, 150% e 200% de zoom.</span></li>
             <li><strong>Temas e movimento</strong><span>Claro, escuro e <code>?movimento=reduzido</code>.</span></li>
             <li><strong>Alinhamento</strong><span>Cartões lado a lado com cada bloco na mesma linha e textos irmãos com o mesmo número de linhas (1280, 1366, 1440, 1536 e 1920px); logos com o mesmo peso óptico. Quando algo quebra diferente, ajuste o texto, não o layout.</span></li>
-            <li><strong>Conteúdo</strong><span>Nomes oficiais, vocabulário da marca, nenhum número sem fonte e nenhum termo aposentado (frentes, AMS, Academy, Workpacks, A-Hub). O inglês com os mesmos critérios.</span></li>
+            <li><strong>Conteúdo</strong><span data-brand-ignore>Nomes oficiais, vocabulário da marca, nenhum número sem fonte e nenhum termo aposentado (frentes, AMS, Academy, Workpacks, A-Hub). O inglês com os mesmos critérios.</span></li>
           </ol>
         </section>
 
@@ -2309,6 +2310,7 @@ Claro no que resolve, prudente no que promete; nada de "frentes", AMS, Academy o
           <div class="tbl-wrap"><table class="tbl">
             <thead><tr><th>Versão</th><th>Data</th><th>O que entrou</th></tr></thead>
             <tbody>
+              <tr><td class="num"><span class="ap-badge">2.10</span></td><td class="num">19/10/2026</td><td>O sistema chega ao Claude: o Design System da <span class="ap-nw">A-Players</span> no Claude (tokens dos três temas, os componentes do site e do Portal com prévia, logos, geometria, parceiros e a escrita), gerado por <code>tools/build_claude.py</code>, e a skill <code>aplayers-brand</code>, gerada por <code>tools/build_skill.py</code>. O verificador <code>tools/check_brand.py</code> confere texto e estilo de qualquer peça (HTML, Markdown, CSS, Word, PowerPoint e Excel). Nas descrições dos tokens do logo, "apenas" no lugar de "só"; parceiras na ordem Atlassian, CISP1, monday.com também nos textos do Graph.</td></tr>
               <tr><td class="num"><span class="ap-badge">2.9</span></td><td class="num">14/10/2026</td><td>Logo de 14/10/2026: o símbolo é o mesmo e o nome e o descritor foram refinados. Em Fundamentos, Logos: as 16 assinaturas (oito cores na horizontal e na vertical) e o símbolo, cada uma com SVG e PNG para baixar, a construção com as medidas em h, a área de proteção, os tamanhos para ler o descritor e as cores do logo. Tokens novos: <code>--ap-logo-gray-2</code>, <code>--ap-logo-ratio-h</code>, <code>--ap-logo-ratio-v</code>, <code>--ap-logo-clear-h</code>, <code>--ap-logo-clear-v</code> e <code>--ap-logo-h-header</code>; <code>--ap-logo-black</code> passa a #000000. No site, o logo mantém a altura de antes.</td></tr>
               <tr><td class="num"><span class="ap-badge">2.8</span></td><td class="num">14/10/2026</td><td>Três temas organizados em Fundamentos, Temas: Original (o padrão do site), Dark (a opção noite) e Light (o dia do Portal do <span class="ap-nw">A-Player</span>), com tokens novos para o Light (<code>--ap-day</code> no off-white quente do Portal, <code>--ap-paper</code>, <code>--ap-paper-2</code>, <code>--ap-glass</code>) e a ilha do dia (<code>.ap-island--day</code>). Componentes em dois grupos, Site e Portal, com o Portal em seis seções. A Voz entrou em Padrões, no grupo Escrita, e o Graph veio depois de Componentes. Índice lateral com mais respiro e logo do cabeçalho no tamanho do site. O mapa de escolha acompanha o site (FinOps SaaS, FinOps IA, Adoção de IA e as cores das ligações).</td></tr>
               <tr><td class="num"><span class="ap-badge">2.7</span></td><td class="num">08/10/2026</td><td>A rota Vivo passa a se chamar Graph (o endereço antigo <code>#vivo</code> leva para <code>#graph</code>). O motor <code>js/ap-vivo.js</code> acompanha o site: todas as formações com satélites, o grupo sob o cursor revela o que reúne e os nomes não se sobrepõem. Medidas novas: título de cartão numa linha, cartões lado a lado com as mesmas linhas, aplicativos em chips numa linha. Fechamento com duas portas em todas as páginas; fios das etapas em movimento; FinOps SaaS e IA.</td></tr>
@@ -2332,16 +2334,16 @@ Claro no que resolve, prudente no que promete; nada de "frentes", AMS, Academy o
 
 <footer class="foot-global ap-wrap">
   <div class="foot">
-  <span><span class="ap-nw">A-Players</span> Design System, versão 2.9, outubro de 2026</span>
+  <span><span class="ap-nw">A-Players</span> Design System, versão 2.10, outubro de 2026</span>
   <span class="foot__links"><a href="../index.html">Site <span class="ap-nw">A-Players</span></a><a href="../portal/index.html">Portal do <span class="ap-nw">A-Player</span></a><a href="#graph">Graph</a><a href="#biblioteca">Biblioteca</a><a href="#recursos/downloads">Arquivos</a><a href="#padroes/principios">Voz da marca</a></span>
   </div>
 </footer>
 
 <p class="copied ap-toast" role="status" aria-live="polite" style="--ap-tone:var(--ap-green)"><span></span></p>
 
-<script src="tokens/tokens.js?v=2.9.0" defer></script>
+<script src="tokens/tokens.js?v=2.10.0" defer></script>
 <script src="js/grafo.js?v=2.8.0" defer></script>
-<script src="js/ap-vivo.js?v=2.8.0" defer></script>
+<script src="js/ap-vivo.js?v=2.10.0" defer></script>
 <script src="assets/biblioteca/biblioteca.js?v=2.2.1" defer></script>
 <script src="js/docs.js?v=2.8.0" defer></script>
 </body>

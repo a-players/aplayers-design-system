@@ -1,0 +1,6 @@
+<!-- Geometria oficial about-triangle do A-Players Design System.
+     Path, cor, opacidade e rotação são os do sistema. Apenas o viewBox
+     foi ampliado: com "0 0 220 200" a rotação de 12° jogava dois vértices
+     para fora da moldura (x=-18.4 e y=220.7) e o triângulo era renderizado
+     cortado. A moldura "-22 -2 224 228" contém a forma inteira. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-22 -2 224 228"><path d="M110 0 220 200H0Z" fill="#3580c3" fill-opacity=".11" transform="rotate(12 110 100)"/></svg>

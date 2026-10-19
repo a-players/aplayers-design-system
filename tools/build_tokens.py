@@ -17,9 +17,9 @@ TOKENS = {
         ('yellow', '#f1e84e', None, 'Amarelo A-Players. Último quarto do espectro; sinal, foco sobre a noite, placa dos botões.'),
         ('violet', '#a18be8', None, 'Violeta de apoio. Feedback, CISP1, tema escuro. Não faz parte do espectro do logo.'),
         ('yellow-line', '#d4b106', '#f1e84e', 'Amarelo para traço fino sobre fundo claro (o amarelo da marca some em linha de 2px).'),
-        ('logo-gray', '#706b69', None, 'Cinza do nome A-PLAYERS no logo colorido para fundo claro. Só existe no arquivo do logo: nunca em texto ou interface.'),
-        ('logo-gray-2', '#625e5c', None, 'Cinza do descritor TECH KNOWLEDGE no logo colorido (logo de 14/10/2026). Só existe no arquivo do logo.'),
-        ('logo-black', '#000000', None, 'Preto do logo de uma cor (logo de 14/10/2026). Só existe no arquivo do logo.'),
+        ('logo-gray', '#706b69', None, 'Cinza do nome A-PLAYERS no logo colorido para fundo claro. Existe apenas no arquivo do logo: nunca em texto ou interface.'),
+        ('logo-gray-2', '#625e5c', None, 'Cinza do descritor TECH KNOWLEDGE no logo colorido (logo de 14/10/2026). Existe apenas no arquivo do logo.'),
+        ('logo-black', '#000000', None, 'Preto do logo de uma cor (logo de 14/10/2026). Existe apenas no arquivo do logo.'),
     ],
     'superficie': [
         ('night', '#0d1728', None, 'A noite: fundo da marca, sempre escuro nos dois temas.'),

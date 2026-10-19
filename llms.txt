@@ -1,6 +1,6 @@
 # A-Players Design System
 
-> O padrão da marca A-Players para qualquer peça: site, landing page, apresentação, material, produto ou campanha. Extraído do site A-Players (versão Claude, outubro de 2026). Versão 2.9, 14/10/2026.
+> O padrão da marca A-Players para qualquer peça: site, landing page, apresentação, material, produto ou campanha. Extraído do site A-Players (versão Claude, outubro de 2026). Versão 2.10, 19/10/2026.
 
 Use este arquivo antes de criar qualquer coisa em nome da A-Players. Ele resume tokens, temas, classes, padrões e regras de escrita. A referência visual completa está em index.html, publicada em /design-system/ junto com o site (/) e o Portal do A-Player (/portal/). Os valores exatos de todos os tokens, com descrição e valor do tema escuro, estão em tokens/tokens.json (fonte única: tools/build_tokens.py).
 
@@ -29,7 +29,7 @@ Três temas, uma marca: cores, forma e tipografia não mudam; muda a superfície
 3. O tom de cada componente vem de --ap-tone (padrão: --ap-blue). Troque no elemento: style="--ap-tone: var(--ap-green)".
 4. Tema escuro: data-theme="dark" no html, ou deixe seguir o sistema. Na publicação, site, Design System e Portal do A-Player leem e gravam a mesma escolha (chave ap-tema; entre visitas apenas com cookies de preferências permitidos).
 5. Graph (o gráfico do site): js/ap-vivo.js é o motor do site (js/graph.js) para qualquer peça. Um contêiner .ap-vivo com data-vivo="<formação>" recebe o canvas, atrás do conteúdo. Formações: constellation, fronts, ecosystem, context, context-wide, cycle, flow, people, people-wide, teamwork, operation, cisp, calm. Camadas (data-vivo-off ou data-vivo-layers): grid, glow, edges, pulses, halos, nodes, labels, cursor, attract, breathe, camera, depth. Zona livre para o texto: data-vivo-hole="x y largura altura" (0 a 1). API: APVivo.mount(el, opções), g.set(), g.burst(), g.highlight(), g.layer(), g.png(). A abertura do próprio Design System usa js/grafo.js (versão compacta, polos próprios em window.APDS_GRAPH_GROUPS).
-6. Antes de entregar: python tools/check-peca.py <pasta> (na raiz do workspace) e render em 390x844, 1366x768 e 1920x1080, claro e escuro.
+6. Antes de entregar: python tools/check_brand.py <pasta> (texto e estilo; no workspace, também tools/check-peca.py) e render em 390x844, 1366x768 e 1920x1080, claro e escuro.
 
 ## Tokens principais (css/aplayers.css, tokens/tokens.json)
 

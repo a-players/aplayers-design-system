@@ -1,0 +1,138 @@
+# A-Players Design System
+
+> O padrão da marca A-Players para qualquer peça: site, landing page, apresentação, material, produto ou campanha. Extraído do site A-Players (versão Claude, outubro de 2026). Versão 2.10, 19/10/2026.
+
+Use este arquivo antes de criar qualquer coisa em nome da A-Players. Ele resume tokens, temas, classes, padrões e regras de escrita. A referência visual completa está em index.html, publicada em /design-system/ junto com o site (/) e o Portal do A-Player (/portal/). Os valores exatos de todos os tokens, com descrição e valor do tema escuro, estão em tokens/tokens.json (fonte única: tools/build_tokens.py).
+
+## Mapa da documentação (index.html, rotas por hash)
+
+- #fundamentos: cor, tipografia, forma, espaço e grade, placa e elevação, movimento, geometria, ícones, logos, imagem e temas (#fundamentos/temas).
+- #componentes: dois grupos. Site (temas Original e Dark): botões, links, pill, selos, chips, placa, cartão de plataforma, porta e oferta, três camadas, IA em destaque, abas e nós, listas, notas, formulários, tema e idioma, navegação, avisos, leituras. Portal (tema Light): dia e painel suave (#componentes/lado-b), cabeçalho do Portal (#componentes/ilha-dia), crachá, selo e foto, evento e termo, material, busca, atalhos e trilha, diálogo e confirmação.
+- #graph: o gráfico vivo (retícula, nós, ligações, respiração, cursor, formações, transições, geometria, inventário, uso).
+- #padroes: Páginas (abertura, folha sobre a noite, três plataformas de IA, mapa de escolha, fechamento, abertura e cortina) e Escrita (voz e princípios, pontuação, vocabulário, nomes e ofertas, texto de interface). Os endereços antigos #voz e #voz/secao levam para #padroes.
+- #biblioteca: logos e ícones oficiais das plataformas.
+- #recursos: como usar, arquivos, tokens, com IA, antes de publicar, versões.
+
+## Temas
+
+Três temas, uma marca: cores, forma e tipografia não mudam; muda a superfície.
+
+- Original (padrão do site, data-theme="light" ou sem atributo): abertura na noite (--ap-night #0d1728 com a retícula), conteúdo na folha clara (--ap-sheet #f2f6fb), cartões brancos (--ap-card #fff), tinta --ap-ink #17233a. É o tema de tudo o que o mercado vê.
+- Dark (opção noite do site, data-theme="dark" no html): a noite continua; a folha vira #111d32, o cartão #172741, o cartão secundário #1d2f4d, a tinta #eaf0f8 e a de apoio #a9b6ca, o traço amarelo vira #f1e84e. Sem escolha, segue o sistema.
+- Light (o dia do Portal do A-Player e das peças internas, class="ap-day" no contêiner): fundo off-white quente --ap-day #f5f2eb com a retícula --ap-day-dots, cartões de papel --ap-paper #fffdf8 e --ap-paper-2 #f9f6f0 (dentro de .ap-day eles substituem --ap-card e --ap-card-2), painéis nos tons suaves --ap-soft-* (azul #e4eef9, verde #e7f3e1, vermelho #fde6e3, amarelo #fbf6d0, violeta #efebfc, e as versões -2 mais fortes), cabeçalho .ap-island--day com o vidro --ap-glass, stickers e fotos do time. O Light também tem noite: com data-theme="dark", --ap-day vira #0f1a2e e o papel #172741.
+- Não misture temas numa mesma tela (fora de uma prévia) e não use tons suaves, stickers ou o off-white numa peça para o mercado.
+
+## Como montar uma peça
+
+1. Carregue as fontes Manrope (títulos) e DM Sans (texto) pelo Google Fonts e a folha css/aplayers.css.
+2. Use as classes ap-*. Não reescreva componentes; a folha da peça cuida apenas da composição (grade, posição, ritmo).
+3. O tom de cada componente vem de --ap-tone (padrão: --ap-blue). Troque no elemento: style="--ap-tone: var(--ap-green)".
+4. Tema escuro: data-theme="dark" no html, ou deixe seguir o sistema. Na publicação, site, Design System e Portal do A-Player leem e gravam a mesma escolha (chave ap-tema; entre visitas apenas com cookies de preferências permitidos).
+5. Graph (o gráfico do site): js/ap-vivo.js é o motor do site (js/graph.js) para qualquer peça. Um contêiner .ap-vivo com data-vivo="<formação>" recebe o canvas, atrás do conteúdo. Formações: constellation, fronts, ecosystem, context, context-wide, cycle, flow, people, people-wide, teamwork, operation, cisp, calm. Camadas (data-vivo-off ou data-vivo-layers): grid, glow, edges, pulses, halos, nodes, labels, cursor, attract, breathe, camera, depth. Zona livre para o texto: data-vivo-hole="x y largura altura" (0 a 1). API: APVivo.mount(el, opções), g.set(), g.burst(), g.highlight(), g.layer(), g.png(). A abertura do próprio Design System usa js/grafo.js (versão compacta, polos próprios em window.APDS_GRAPH_GROUPS).
+6. Antes de entregar: python tools/check_brand.py <pasta> (texto e estilo; no workspace, também tools/check-peca.py) e render em 390x844, 1366x768 e 1920x1080, claro e escuro.
+
+## Tokens principais (css/aplayers.css, tokens/tokens.json)
+
+- Marca, na ordem do espectro: --ap-blue #3580c3, --ap-green #6eb751, --ap-red #eb594d, --ap-yellow #f1e84e. Apoio: --ap-violet #a18be8, --ap-blue-l #5fa6e3, --ap-yellow-line #d4b106 (traço fino sobre claro).
+- Superfícies: --ap-night #0d1728 (fundo da marca, escuro no Original e no Dark), --ap-night-2 #111d32, --ap-night-3 #16253f, --ap-sheet #f2f6fb (folha), --ap-card #fff, --ap-card-2 #f7f9fc, --ap-field #fff. Tema Light: --ap-day, --ap-day-dots, --ap-paper, --ap-paper-2, --ap-glass e --ap-soft-* (valores em Temas).
+- Tinta: --ap-ink #17233a, --ap-ink-2 #4f5d73, --ap-on-night #fff, --ap-on-night-2 #b7c2d3, --ap-line, --ap-line-strong, --ap-night-line.
+- Espectro: --ap-spectrum (quatro quartos, paradas duras, divisor de 2px), --ap-spectrum-flow (trilhos e progresso).
+- Tipografia: --ap-title Manrope, --ap-text DM Sans. Escala: display 54 a 120px (780), H1 44 a 88 (800), H2 36 a 70 (800), intermediário 28 a 44, H3 24 (700), H4 17, apoio 18, texto 16, rótulo 14 (700, caixa normal), número 12. Títulos claros sobre a noite em 720.
+- Forma (sempre assimétrica: cantos grandes no alto à esquerda e embaixo à direita): --ap-r-sheet 48 14, --ap-r-card 20 6, --ap-r-path 14 4, --ap-r-pill 12 4, --ap-r-action 10 3, --ap-r-badge 9 3, --ap-r-mark 3 1.
+- Placa deslocada (o destaque da marca, no tom do item), proporcional ao tamanho: 4px botão e placa pequena em repouso, 6px aba, porta e placa pequena na interação, 10px cartão em repouso, 14px cartão no hover. Nunca placa de cartão num elemento do tamanho de um botão.
+- Espaço: módulo de 56px (retícula de pontos na noite), largura 1320px, margem 20 a 56px, entre seções 104 a 168px.
+- Movimento: --ap-ease (.2,.7,.2,1), --ap-ease-expo (.16,1,.3,1), --ap-ease-curtain (.7,0,.3,1); .2s, .3s, .45s, .9s.
+- Plataformas de IA: Atlassian azul, CISP1 violeta, monday.com vermelho (tokens --ap-front-*, nome mantido). Papéis do Context Graph: pessoas azul, processo verde, conexão vermelho, sinal amarelo, feedback violeta.
+
+## Logo (assinaturas de 14/10/2026)
+
+- 16 assinaturas: 8 tratamentos de cor em 2 composições, em SVG (contornos, sem fonte) e PNG transparente de 2400px, mais o símbolo em 3 versões. Tudo em assets/marca (catálogo em assets/marca/marca.json, PDFs em assets/marca/pdf, pacote em assets/marca/aplayers-marca.zip).
+- Horizontal: aplayers-horizontal-claro.svg (colorido, nome #706B69 e descritor #625E5C, para fundo claro), aplayers-horizontal-escuro.svg e aplayers-horizontal-site.svg (cores e escrita branca, para fundo escuro), aplayers-horizontal-branco, -preto, -azul, -verde, -vermelho, -amarelo.svg.
+- Vertical: aplayers-vertical-01.svg (colorido), -02 (cores e escrita branca), -03 (branco), -04 (preto), aplayers-vertical-azul, -verde, -vermelho, -amarelo.svg. Símbolo: aplayers-simbolo.svg, -branco, -preto (o símbolo não mudou em 14/10/2026).
+- Escolha pelo fundo: colorido no claro; cores e escrita branca no escuro; branco e amarelo sempre sobre o escuro; o colorido nunca sobre azul, verde, vermelho ou amarelo.
+- Construção (h = altura visível do nome A-PLAYERS): horizontal com símbolo 2,80h × 3,20h, distância 0,40h, nome 8,34h, descritor 0,36h centralizado 0,32h abaixo do nome, caixa 11,95h × 2,80h; vertical com símbolo 4,00h × 4,59h, distância 0,65h, caixa 8,34h × 6,34h.
+- Área de proteção: metade da altura do símbolo em todo o contorno (1,40h na horizontal, 2,00h na vertical). Tamanho mínimo na tela: horizontal 112px, vertical 64px, símbolo 16px; para ler TECH KNOWLEDGE, horizontal a partir de 320px e vertical a partir de 240px.
+- Tokens: --ap-logo-gray #706b69 (nome), --ap-logo-gray-2 #625e5c (descritor), --ap-logo-black #000000, --ap-logo-ratio-h (1195.055 / 280), --ap-logo-ratio-v (834.043 / 634), --ap-logo-clear-h (.5) e --ap-logo-clear-v (.3155) em fração da altura, --ap-logo-h-header 36px. No site, o logo horizontal tem 36px de altura no cabeçalho (152px de largura; 136px no celular) e o vertical, 103px no rodapé.
+- Nunca esticar, girar, recolorir, mudar as cores do símbolo nas versões coloridas ou a distribuição dos oito triângulos.
+
+## Graph (a base da marca)
+
+- Um gráfico único por tela, na noite, atrás do conteúdo. Retícula de pontos a cada 56px (2px, 9%), que acende em amarelo até 220px do cursor.
+- Nós: polo (selo assimétrico de 14px com contorno a 6px, brilho e halo que respira), satélite (círculo de 8,4px com anel), poeira (1,6 a 3,6px). Em HTML: .ap-hub, .ap-hub--live, .ap-sat, .ap-dust, com --ap-size e --ap-tone.
+- Ligações: ponte (polo a polo, 55%, 1,7px, curva), retorno (tracejado 4 e 6), polo (42%), árvore (22%), malha (13%). Pulsos: núcleo branco e halo da cor de origem, de 1,2 a 2,8s, em mistura aditiva.
+- Respiração: cada nó orbita o seu lugar (3 a 10px); câmera gira devagar; profundidade com foco 900, até 42% de esmaecimento.
+- Cursor como agente: atrai satélites e poeira até 170px, liga-se aos sete nós mais próximos (150px) com anel branco de 5px, mostra nomes até 120px. Perto de um grupo (polo a 150px, satélite a 90px, poeira a 50px), todos os satélites dele aparecem juntos e as ligações e o brilho do grupo sobem de leve. Os polos mostram o nome sempre; os nomes não se sobrepõem (o satélite tenta os dois lados, acima e abaixo, e senão espera a vez). Toda formação tem satélites com o que cada polo reúne. No toque, o site não move o gráfico.
+- Troca de formação em ondas (16ms por grupo de 16 nós, até 160ms); na troca de página, explosão do ponto do clique e remontagem pela mola.
+- Geometria em profundidade: .ap-geo[data-depth] desliza na rolagem (deslocamento = (centro do pai - meio da tela) × profundidade × -0,012), apenas acima de 1000px.
+- Luz no espectro: .ap-run. Sticker que balança: .ap-sway (sobe 4px e gira 3 graus em 6,5s; --i desencontra os vizinhos).
+- Cores: data-vivo-theme="night" (padrão), "day" (lado B: amarelo em traço fino #d4b106, gelo em cinza azulado, pulsos e anel na tinta) ou "auto" (segue o data-theme do html). Página inteira: .ap-vivo.ap-vivo--page, transparente, com o brilho alinhado à retícula do body; é o fundo de todas as vistas do Portal do A-Player.
+- Com prefers-reduced-motion ou ?movimento=reduzido: desenho parado e completo, sem cursor nem pulsos.
+- Satélites: uma palavra estratégica que define o polo, sem repetir sentido no mesmo gráfico; nomes de produto e de oferta ficam como são (Jira, Rovo, monday CRM, as Collections, as ofertas de Nossos serviços). Ligações podem fixar a curva com um quarto item (negativo curva para fora num anel em sentido horário), para o arco contornar o texto.
+- Não mude as constantes do motor; troque a formação e as camadas. Inventário completo na rota #graph da documentação (o endereço antigo #vivo leva para lá).
+
+## Componentes (classes)
+
+- Superfícies: .ap-night, .ap-sheet, .ap-sheet--night, .ap-wrap, .ap-base.
+- Tipografia: .ap-display (com .ap-ln por linha), .ap-h1, .ap-h2, .ap-mid, .ap-h3, .ap-h4, .ap-label, .ap-lead-label, .ap-lead, .ap-ln2, .ap-hy (hífen espectral em A-Players e AI-People), .ap-nw (A-Players e AI-People nunca quebram no hífen).
+- Pill: .ap-pill (+ .ap-pill--sheet) com svg.ap-tri usando o símbolo #tris (quatro triângulos 44x10).
+- Ações: .ap-btn (+ --ghost, --line, --ink, --light, --sm, --block), .ap-actions, .ap-link. --light: branco com a placa amarela, o principal da abertura sobre a noite quando o azul já está no cabeçalho. Botão de envio de formulário no tamanho padrão.
+- Destaque: .ap-plate (a.ap-plate interativa, --flat, --sm para elementos pequenos: 4px em repouso e 6px na interação), .ap-badge (selo numerado), .ap-kicker e .ap-mark (marca de tom de 9px), .ap-spectrum (divisor).
+- Conteúdo: .ap-chips/.ap-chip (+ --soft, --tone, --marked), .ap-bars, .ap-ticks, .ap-steps, .ap-flow (--n), .ap-acts, .ap-stepline (--n), .ap-note, .ap-fit.
+- Cartões: .ap-front (cartão de plataforma; + __logo, __text, __cta), .ap-door (+ --night, __cta), .ap-offer, .ap-post (+ __type, __meta), .ap-empty, .ap-layer3 (li.is-core, .ap-layer3__apps, .ap-layer3__art[data-weave]: o desenho vivo do núcleo, que apenas se move na tela).
+- IA em destaque: .ap-aiapps (três aplicações de IA com ícone oficial) e .ap-aiapps__more (as que completam, em texto).
+- Escolha: .ap-tabs/.ap-tab[role=tab][aria-selected], .ap-node (.is-on, .is-dim), .ap-filters/.ap-filter[aria-pressed].
+- Formulário: .ap-field (+ __hint, __error, aria-invalid), .ap-file, .ap-switch, .ap-status.
+- Cabeçalho: .ap-island (+ --day, o vidro claro do Portal), .ap-island__brand (logo de 152px; 136px no celular, a mesma altura do logo anterior), .ap-nav, .ap-nav__link[aria-current=page], .ap-strata/.ap-stratum, .ap-lang, .ap-mode.
+- Avisos: .ap-consent, .ap-toast.
+- Marca: .ap-partner (logos de parceiro com peso óptico), .ap-partner-mark (placa 68x280), .ap-app-icon, .ap-coll-logo (logo oficial de Collection, assets/parceiros/collections, quadro 466x164), .ap-on-light e .ap-on-dark (par de logos que o tema escolhe), .ap-geo, .ap-sticker, .ap-photo.
+- Portal, tema Light (o lado B: Portal do A-Player e peças internas): .ap-day, .ap-island--day, .ap-panel, .ap-tone--blue/green/red/yellow/violet, .ap-avatar, .ap-lanyard, .ap-idcard, .ap-snap, .ap-event, .ap-when, .ap-term, .ap-uses, .ap-material, .ap-apps/.ap-app, .ap-save, .ap-related, .ap-progress, .ap-ministeps, .ap-search, .ap-kbd, .ap-btn-quiet, .ap-dialog, .ap-close, .ap-toast__action.
+- Biblioteca: logos e ícones oficiais da Atlassian, da CISP1 e da monday.com em assets/biblioteca (dados em biblioteca.json, com fonte e data); a rota #biblioteca da documentação busca, filtra e baixa.
+- Movimento: .ap-rise, .ap-display.is-entering, .ap-hy.is-charging.
+
+## Padrões de página
+
+- Abertura sobre a noite: pill, H1 de até três linhas de sentido, apoio de 18px, um botão principal (e um fantasma), base opcional com as especialidades (frases numa única linha). Tudo entra num único momento orquestrado.
+- Folha sobre a noite: o conteúdo corre em .ap-sheet; a noite volta entre folhas para momentos de destaque.
+- Cabeça de seção em 12 colunas: título nas colunas 1 a 7, apoio a partir da 9.
+- Três plataformas de IA: Atlassian, CISP1, monday.com, nessa ordem, com a mesma anatomia, cada bloco na mesma linha (subgrid) e textos irmãos com o mesmo número de linhas de 1280 a 1920px (ajuste o texto, não o layout).
+- Mapa de escolha: abas de desafio que acendem o caminho; o resto esmaece para 38%. Colunas: A-Players (Talent as a Service, Professional Services, A-Players Intelligence), Como atuamos (Recrutamento e Seleção, Extensão de Equipe, AI-Player, Consultoria especializada, Planos de assinatura, Capacitações e workshops, FinOps SaaS, FinOps IA, Adoção de IA, Context Graph, Software e IA sob medida) e Onde acontece (No seu time, Na sua operação, Atlassian, CISP1, monday.com). Cada ligação tem a cor de quem a origina: o que sai de Professional Services é vermelho, o que sai da A-Players Intelligence é amarelo; os caminhos de Talent as a Service usam o tom do desafio.
+- Fechamento na noite: o convite à esquerda (pill, frase de até 40 caracteres, texto curto) e duas portas à direita (.ap-door--night): "Conte seu desafio" e um próximo destino. Depois, a assinatura "We Are AI-People Company." e a barra espectral. No rodapé, o norte: "Estratégia que gera resultado. Resultado que sustenta o crescimento."
+- Abertura de quatro palavras e cortina de quatro colunas nas cores do espectro (uma vez por sessão; desligadas com movimento reduzido).
+
+## Regras que não mudam
+
+- Evoluir os componentes de identidade (placa deslocada, bordas assimétricas, selos, pills com triângulos, espectro, geometrias oficiais). Minimalismo genérico no lugar deles foi recusado.
+- Sem barra lateral colorida em cartão, lista ou coluna. O tom vai na marca de 9px e na placa.
+- Geometria decorativa apenas com os 15 SVGs oficiais de assets/geometria, na periferia, sem opacidade por cima.
+- Logos oficiais de assets/marca e assets/parceiros; escolher a versão pelo contraste do fundo; nunca redesenhar.
+- Pill e rótulos em caixa normal, nunca caixa alta espaçada.
+- Respeitar prefers-reduced-motion e ?movimento=reduzido.
+
+## Escrita
+
+- pt-BR consultivo, frases curtas e diretas, sem frase institucional para ocupar espaço.
+- Agressiva na clareza, prudente na promessa. Título de oferta: a dor com nome, o que muda, a condição real e o primeiro passo ("Sua empresa já paga por uma IA. Falta ela conhecer a empresa."). Resultado no centro ("Menos tempo procurando informação"). A IA diz o que faz: encontra, responde, resume, executa tarefas, automatiza etapas, apoia decisões. IA como meio, não como fim. Sem "nunca mais", "100%" ou "qualquer integração".
+- Nenhum travessão, meia-risca ou hífen com espaços como pontuação. Use vírgula, dois-pontos, parênteses ou duas frases. Hífen de palavra composta e de nome continua (A-Players, AI-People, pós-venda).
+- Plataformas e aplicações, nunca ferramentas. Atlassian, CISP1 e monday.com juntas são as "plataformas de IA" ("Conhecer as plataformas de IA"), nunca "frentes" nem "nossas plataformas" (as três são parceiras estratégicas).
+- Termos aposentados: AMS, Academy, Workpacks (use Planos de assinatura, Capacitações e workshops), "potencializar", A-Hub (agora Portal do A-Player). "Jornada", "ecossistema", "transformar" e "eficiência" apenas onde são nome ou conceito. "Maturidade da empresa", não "porte". "Contexto" e "dados para decidir", não "sinais". CSM em espaço curto, com o nome completo no title.
+- Gráfico, nunca grafo (Teamwork Graph e Context Graph ficam em inglês). Camadas do Context Graph: Negócio, Processos, Plataformas, Agentes e Feedback.
+- "Tecnologia feita de gente movida por desafios." Nunca "gente acima da média".
+- Business Partner, nunca HRBP. "a CISP1", no feminino. monday.com sempre minúsculo.
+- A fórmula "Aceleração = Contexto × Inteligência" é da Atlassian; não apresentar como da A-Players.
+- Especialidades: Talent as a Service (Recrutamento e Seleção, Extensão de Equipe, AI-Player; em inglês Tech Recruiting, Managed Resources, AI-Player) e Professional Services (pilares: Consultoria especializada, Planos de assinatura (rótulo: Sustentação e evolução), Capacitações e workshops, Adoção de Inteligência Artificial (rótulo curto: Adoção de IA), FinOps SaaS, FinOps IA, seis pilares; em inglês Consulting Services, Subscription plans (Managed Services), Training & Workshops, AI Adoption, SaaS FinOps, AI FinOps). A sustentação é vendida em planos de assinatura (Essential, Growth, Enterprise), que reúnem gestão de ambientes, suporte, melhorias contínuas e evolução estratégica da plataforma, cada um somando ao anterior; o FinOps SaaS e o FinOps IA entram avulsos ou no Enterprise. A-Players Intelligence reúne as três plataformas de IA, as três de parceiros estratégicos (com a CISP1, a A-Players conduz venda, marketing e gestão do cliente; a CISP1 desenvolve). Assinatura: We Are AI-People Company. AI-Player é o nome dos agentes de IA da A-Players; nunca "agentes AI-People".
+- Impacto na abertura, detalhe por dentro: home e aberturas dizem o que muda para o cliente; plano de assinatura, escopo e condições ficam no corpo das páginas internas, como Professional Services, Atlassian e monday.com.
+- Pessoas primeiro, IA como apoio: em Talent as a Service, o tradicional vem antes (Recrutamento e Seleção, Extensão de Equipe); os agentes AI-Player apoiam a equipe, e a gestão e o conhecimento continuam humanos.
+- AI-Player são "acompanhados por especialistas", nunca "supervisão" ou "supervisionados". No FinOps SaaS e no FinOps IA, a primeira etapa é "visibilidade", nunca "inventário". Nunca "só" no texto: reescreva a frase sem a palavra.
+- A escala dos títulos não muda para caber texto; o texto cabe na escala. Medidas: abertura (H1) com uma frase de até 40 caracteres, em até 3 linhas; título de seção (H2) com duas frases de até 21 caracteres, uma por linha (.ap-ln2), ou uma frase de até 45; frase de destaque do apoio até 36 caracteres; texto de apoio até 140 caracteres, sem passar da altura do título; texto da abertura até 250; cena da Home com título de até 26 e texto de até 175; fechamento até 40; item de lista em cartão até 55. Título de cartão numa linha (na grade de três, a fonte acompanha a largura do cartão, até 32px). Cartões lado a lado com as mesmas linhas de 1280 a 2560px: escreva textos de comprimento parecido e confira com as fontes reais. Aplicativos em chips do tamanho do nome, numa linha a partir de 1280px.
+- Não inventar números, preços, cases ou capacidades de produto. Separe fato com fonte, conteúdo interno, hipótese e rascunho.
+- Botões que dizem a ação ou o destino ("Vamos conversar", "Nossos serviços", "Explorar Atlassian", "Falar sobre o meu cenário", "Enviar mensagem"); a confirmação diz o que aconteceu e o próximo passo, sem prometer o que ainda não existe; erro diz como resolver. Cookies: "Aceitar todos" e "Recusar opcionais", com o mesmo peso.
+- "Inteligência Artificial" por extenso sempre com as duas iniciais maiúsculas; "IA" na forma curta. "work management" fica em minúsculas, como a monday.com escreve. "Plano de desenvolvimento", nunca PDI. AI-Player no singular para o agente e para o profissional (nunca "AI-Players" nem "agentes AI-People").
+- Parceiras sempre na ordem Atlassian, CISP1, monday.com.
+
+## Antes de entregar (para agentes)
+
+1. Confira o tema: Original para o mercado, Dark apenas como opção da pessoa, Light apenas para o Portal e peças internas.
+2. Use apenas tokens e classes ap-* deste arquivo; nenhuma cor, raio ou sombra fora deles.
+3. Leia o texto contra a Escrita: sem travessão, sem "só", sem "100%" ou "nunca mais", sem termos aposentados, nomes oficiais e ordem das parceiras.
+4. Nada inventado: número, preço, case e capacidade apenas com fonte.
+5. Renderize em 390x844, 1366x768 e 1920x1080, nos temas que a peça usa, e confira títulos de cartão numa linha e cartões lado a lado com as mesmas linhas.

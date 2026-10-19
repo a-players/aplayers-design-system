@@ -1,0 +1,43 @@
+/* Classes de composição dos exemplos de references/componentes.md, extraídas de css/docs.css do Design System. */
+.closing__sign { font: 750 clamp(48px, 6.4vw, 104px)/.92 var(--ap-title); letter-spacing: -.05em; }
+.fronts3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(22px, 2.4vw, 34px); }
+@supports (grid-template-rows: subgrid) {
+.fronts3 { grid-template-rows: repeat(5, auto); row-gap: 0; }
+.fronts3 .ap-front { grid-row: span 5; display: grid; grid-template-rows: subgrid; gap: 0; }
+.fronts3 .ap-front > * + * { margin-top: 14px; }
+.fronts3 .ap-front > .ap-fit { align-self: stretch; }
+.fronts3 .ap-front__cta { align-self: end; justify-self: start; margin-top: 18px; }
+}
+@media (max-width: 900px) {
+.fronts3 { grid-template-columns: 1fr; row-gap: 34px; }
+.fronts3 .ap-front { grid-row: auto; display: flex; }
+}
+.mapdemo { display: grid; grid-template-columns: minmax(220px, 4fr) 8fr; grid-template-areas: "tabs cols" "out cols"; gap: 20px clamp(24px, 3vw, 48px); align-items: start; }
+.mapdemo > .ap-tabs { grid-area: tabs; }
+.mapdemo__cols { grid-area: cols; display: grid; grid-template-columns: 1fr 1.2fr; gap: 20px; }
+.mapdemo__cols > div { display: grid; gap: 10px; align-content: start; }
+.mapdemo__cols .ap-label { margin-bottom: 2px; }
+.mapdemo__out { grid-area: out; transition: background-color .4s; }
+.mapdemo__out span { display: block; }
+@media (max-width: 900px) {
+.mapdemo { grid-template-columns: 1fr; grid-template-areas: "tabs" "cols" "out"; }
+.mapdemo__cols { grid-template-columns: 1fr; }
+}
+.ladob-panel { margin: 0 14px 26px 0; }
+.ladob-panel .ap-panel__title { font-size: clamp(44px, 5vw, 80px); }
+.ladob-panel .ap-panel__lead { max-width: min(46ch, calc(100% - 150px)); }
+@media (max-width: 640px) {
+.ladob-panel .ap-panel__lead { max-width: none; padding-bottom: 70px; }
+}
+.ladob-badge { display: grid; justify-items: center; padding-bottom: 28px; }
+.ladob-badge .ap-idcard { width: min(100%, 260px); }
+.ladob-stack { display: grid; gap: 16px; align-content: start; min-width: 0; }
+.ladob-row { display: flex; flex-wrap: wrap; align-items: center; gap: 14px; margin: 0; }
+.ladob-cols { display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); gap: 26px; padding-right: 10px; align-items: start; }
+.ladob-night { display: grid; place-items: center; min-height: 140px; padding: 22px; border-radius: var(--ap-r-card); background: radial-gradient(circle at 1px 1px, rgba(183, 194, 211, .1) 0 1px, transparent 1.3px) 0 0 / 28px 28px, var(--ap-night); }
+@media (max-width: 900px) {
+.ladob-cols { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 900px) {
+.ladob-nav { display: none; }
+}

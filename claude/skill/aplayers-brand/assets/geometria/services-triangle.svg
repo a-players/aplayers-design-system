@@ -1,0 +1,6 @@
+<!-- Geometria oficial services-triangle do A-Players Design System.
+     Path, cor, opacidade e rotação são os do sistema. Apenas o viewBox foi
+     ampliado: com "0 0 240 220" a rotação de 14° jogava dois vértices para
+     fora da moldura (x=-23 e y=245.8) e o triângulo era renderizado cortado,
+     o mesmo defeito encontrado em about-triangle.svg. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-26 0 240 250"><path d="M120 0 240 220H0Z" fill="#eb594d" fill-opacity=".11" transform="rotate(14 120 110)"/></svg>

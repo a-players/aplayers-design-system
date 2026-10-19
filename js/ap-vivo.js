@@ -44,14 +44,14 @@
     blue: [53, 128, 195], blueL: [95, 166, 227], green: [110, 183, 81],
     red: [235, 89, 77], yellow: [241, 232, 78], violet: [161, 139, 232], ice: [183, 194, 211]
   };
-  // o dia (lado B): tons sobre o claro. Amarelo vira o traço fino (--ap-yellow-line) e o gelo, um cinza azulado
+  // o dia (lado B, tema Light): fundo --ap-day (#f5f2eb) e retícula --ap-day-dots; tons sobre o claro. Amarelo vira o traço fino (--ap-yellow-line) e o gelo, um cinza azulado
   var DAY = {
     blue: PAL.blue, blueL: PAL.blueL, green: PAL.green, red: PAL.red,
     yellow: [212, 177, 6], violet: PAL.violet, ice: [141, 155, 176]
   };
   var THEMES = {
     night: { pal: PAL, bg: NIGHT, dot: 'rgba(183,194,211,0.09)', glow: [241, 232, 78], glowA: 0.32, ring: 'rgba(255,255,255,0.5)', core: null, blend: 'lighter', haloA: 0.34, hubLabel: [255, 255, 255], satLabel: [214, 224, 238] },
-    day: { pal: DAY, bg: [255, 255, 255], dot: 'rgba(23,35,58,0.075)', glow: [212, 177, 6], glowA: 0.5, ring: 'rgba(23,35,58,0.42)', core: 'tone', blend: 'source-over', haloA: 0.2, hubLabel: [23, 35, 58], satLabel: [79, 93, 115] }
+    day: { pal: DAY, bg: [245, 242, 235], dot: 'rgba(46,40,30,0.085)', glow: [212, 177, 6], glowA: 0.5, ring: 'rgba(23,35,58,0.42)', core: 'tone', blend: 'source-over', haloA: 0.2, hubLabel: [23, 35, 58], satLabel: [79, 93, 115] }
   };
   var LAYERS = ['grid', 'glow', 'edges', 'pulses', 'halos', 'nodes', 'labels', 'cursor', 'attract', 'breathe', 'camera', 'depth'];
 

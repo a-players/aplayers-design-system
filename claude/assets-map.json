@@ -1,0 +1,634 @@
+{
+ "assets/capas/site.jpg": {
+  "group": "Capas",
+  "name": "site.jpg",
+  "id": "900c58a100d1dcd75757cba5fa07c734",
+  "url": "/_blob/900c58a100d1dcd75757cba5fa07c734",
+  "size": 29553,
+  "type": "image/jpeg"
+ },
+ "assets/fotos/setembro-01.jpg": {
+  "group": "Fotos",
+  "name": "setembro-01.jpg",
+  "id": "1af3b0f9bb1db1adc2fb472739fb9d85",
+  "url": "/_blob/1af3b0f9bb1db1adc2fb472739fb9d85",
+  "size": 61676,
+  "type": "image/jpeg"
+ },
+ "assets/geometria/about-diamond.svg": {
+  "group": "Geometria",
+  "name": "about-diamond.svg",
+  "id": "c4e4ccda9a0fa8fc27e4f90324dc91c3",
+  "url": "/_blob/c4e4ccda9a0fa8fc27e4f90324dc91c3",
+  "size": 182,
+  "type": "image/svg+xml"
+ },
+ "assets/geometria/about-orbit.svg": {
+  "group": "Geometria",
+  "name": "about-orbit.svg",
+  "id": "8712f738374041a0d90593dcc3c23954",
+  "url": "/_blob/8712f738374041a0d90593dcc3c23954",
+  "size": 458,
+  "type": "image/svg+xml"
+ },
+ "assets/geometria/about-triangle.svg": {
+  "group": "Geometria",
+  "name": "about-triangle.svg",
+  "id": "e81060ecfdbe5742796941f9963287c8",
+  "url": "/_blob/e81060ecfdbe5742796941f9963287c8",
+  "size": 171,
+  "type": "image/svg+xml"
+ },
+ "assets/geometria/footer-arc.svg": {
+  "group": "Geometria",
+  "name": "footer-arc.svg",
+  "id": "3a816c5f812d2f628ac2beb31f8a3873",
+  "url": "/_blob/3a816c5f812d2f628ac2beb31f8a3873",
+  "size": 382,
+  "type": "image/svg+xml"
+ },
+ "assets/geometria/footer-triangle.svg": {
+  "group": "Geometria",
+  "name": "footer-triangle.svg",
+  "id": "3821c00cffe9b6c8fe9461c788085812",
+  "url": "/_blob/3821c00cffe9b6c8fe9461c788085812",
+  "size": 427,
+  "type": "image/svg+xml"
+ },
+ "assets/geometria/home-arc.svg": {
+  "group": "Geometria",
+  "name": "home-arc.svg",
+  "id": "b1082df0e1444551a75ac20add831ba7",
+  "url": "/_blob/b1082df0e1444551a75ac20add831ba7",
+  "size": 381,
+  "type": "image/svg+xml"
+ },
+ "assets/geometria/home-triangle-down.svg": {
+  "group": "Geometria",
+  "name": "home-triangle-down.svg",
+  "id": "654632a4da7808076304c0dc36086533",
+  "url": "/_blob/654632a4da7808076304c0dc36086533",
+  "size": 136,
+  "type": "image/svg+xml"
+ },
+ "assets/geometria/home-triangle-up.svg": {
+  "group": "Geometria",
+  "name": "home-triangle-up.svg",
+  "id": "c0a11e96b0b85afd88f424df1be95613",
+  "url": "/_blob/c0a11e96b0b85afd88f424df1be95613",
+  "size": 136,
+  "type": "image/svg+xml"
+ },
+ "assets/geometria/intelligence-diamond.svg": {
+  "group": "Geometria",
+  "name": "intelligence-diamond.svg",
+  "id": "ce95407ae637f563b478020c6cdf9008",
+  "url": "/_blob/ce95407ae637f563b478020c6cdf9008",
+  "size": 183,
+  "type": "image/svg+xml"
+ },
+ "assets/geometria/intelligence-down.svg": {
+  "group": "Geometria",
+  "name": "intelligence-down.svg",
+  "id": "d3575492bd25c69db8096f224d40fc60",
+  "url": "/_blob/d3575492bd25c69db8096f224d40fc60",
+  "size": 136,
+  "type": "image/svg+xml"
+ },
+ "assets/geometria/intelligence-triangle.svg": {
+  "group": "Geometria",
+  "name": "intelligence-triangle.svg",
+  "id": "e519e74e28f00dc476507df85d953d3f",
+  "url": "/_blob/e519e74e28f00dc476507df85d953d3f",
+  "size": 168,
+  "type": "image/svg+xml"
+ },
+ "assets/geometria/services-diamond.svg": {
+  "group": "Geometria",
+  "name": "services-diamond.svg",
+  "id": "2a74bbfffd87965e59ddeb151263f9f1",
+  "url": "/_blob/2a74bbfffd87965e59ddeb151263f9f1",
+  "size": 183,
+  "type": "image/svg+xml"
+ },
+ "assets/geometria/services-rings.svg": {
+  "group": "Geometria",
+  "name": "services-rings.svg",
+  "id": "fdd0bdf0ff7bc9a83e0f7c04d0d642a6",
+  "url": "/_blob/fdd0bdf0ff7bc9a83e0f7c04d0d642a6",
+  "size": 372,
+  "type": "image/svg+xml"
+ },
+ "assets/geometria/services-triangle.svg": {
+  "group": "Geometria",
+  "name": "services-triangle.svg",
+  "id": "ef34754549d601364f3d854cddb0ca98",
+  "url": "/_blob/ef34754549d601364f3d854cddb0ca98",
+  "size": 170,
+  "type": "image/svg+xml"
+ },
+ "assets/geometria/spectral-divider.svg": {
+  "group": "Geometria",
+  "name": "spectral-divider.svg",
+  "id": "c1906fa3c4c50e487cc0f57a444d6fec",
+  "url": "/_blob/c1906fa3c4c50e487cc0f57a444d6fec",
+  "size": 367,
+  "type": "image/svg+xml"
+ },
+ "assets/marca/aplayers-horizontal-amarelo.svg": {
+  "group": "Logos",
+  "name": "aplayers-horizontal-amarelo.svg",
+  "id": "dc549361162e41d09680a9ee531195ed",
+  "url": "/_blob/dc549361162e41d09680a9ee531195ed",
+  "size": 122973,
+  "type": "image/svg+xml"
+ },
+ "assets/marca/aplayers-horizontal-azul.svg": {
+  "group": "Logos",
+  "name": "aplayers-horizontal-azul.svg",
+  "id": "28ec8c759ce8bdf95e7b1c3dcf8d622f",
+  "url": "/_blob/28ec8c759ce8bdf95e7b1c3dcf8d622f",
+  "size": 122970,
+  "type": "image/svg+xml"
+ },
+ "assets/marca/aplayers-horizontal-branco.svg": {
+  "group": "Logos",
+  "name": "aplayers-horizontal-branco.svg",
+  "id": "5d747ee501318d102b7c01a7bcca286a",
+  "url": "/_blob/5d747ee501318d102b7c01a7bcca286a",
+  "size": 122972,
+  "type": "image/svg+xml"
+ },
+ "assets/marca/aplayers-horizontal-claro.svg": {
+  "group": "Logos",
+  "name": "aplayers-horizontal-claro.svg",
+  "id": "5ffab9ae3448bd08826674e11ae8412e",
+  "url": "/_blob/5ffab9ae3448bd08826674e11ae8412e",
+  "size": 122390,
+  "type": "image/svg+xml"
+ },
+ "assets/marca/aplayers-horizontal-escuro.svg": {
+  "group": "Logos",
+  "name": "aplayers-horizontal-escuro.svg",
+  "id": "e9494c5b7c7fdec080f13d4fa5dbdfc2",
+  "url": "/_blob/e9494c5b7c7fdec080f13d4fa5dbdfc2",
+  "size": 122988,
+  "type": "image/svg+xml"
+ },
+ "assets/marca/aplayers-horizontal-preto.svg": {
+  "group": "Logos",
+  "name": "aplayers-horizontal-preto.svg",
+  "id": "1084496f5b08fba9b17d0e5aa9806abb",
+  "url": "/_blob/1084496f5b08fba9b17d0e5aa9806abb",
+  "size": 122971,
+  "type": "image/svg+xml"
+ },
+ "assets/marca/aplayers-horizontal-site.svg": {
+  "group": "Logos",
+  "name": "aplayers-horizontal-site.svg",
+  "id": "6cb80272c7e5edb2d2cd371938e785e7",
+  "url": "/_blob/6cb80272c7e5edb2d2cd371938e785e7",
+  "size": 122988,
+  "type": "image/svg+xml"
+ },
+ "assets/marca/aplayers-horizontal-verde.svg": {
+  "group": "Logos",
+  "name": "aplayers-horizontal-verde.svg",
+  "id": "d7fbfea5f32c91df098f1af9511d9990",
+  "url": "/_blob/d7fbfea5f32c91df098f1af9511d9990",
+  "size": 122971,
+  "type": "image/svg+xml"
+ },
+ "assets/marca/aplayers-horizontal-vermelho.svg": {
+  "group": "Logos",
+  "name": "aplayers-horizontal-vermelho.svg",
+  "id": "c833600f32bbf44a7cc7cde9004b37a3",
+  "url": "/_blob/c833600f32bbf44a7cc7cde9004b37a3",
+  "size": 122974,
+  "type": "image/svg+xml"
+ },
+ "assets/marca/aplayers-simbolo-branco.svg": {
+  "group": "Logos",
+  "name": "aplayers-simbolo-branco.svg",
+  "id": "9f60f2cb1857da21294bdbcb8633f551",
+  "url": "/_blob/9f60f2cb1857da21294bdbcb8633f551",
+  "size": 1155,
+  "type": "image/svg+xml"
+ },
+ "assets/marca/aplayers-simbolo-preto.svg": {
+  "group": "Logos",
+  "name": "aplayers-simbolo-preto.svg",
+  "id": "8ac3d0c603c2907a1cc010689c80d679",
+  "url": "/_blob/8ac3d0c603c2907a1cc010689c80d679",
+  "size": 1155,
+  "type": "image/svg+xml"
+ },
+ "assets/marca/aplayers-simbolo.svg": {
+  "group": "Logos",
+  "name": "aplayers-simbolo.svg",
+  "id": "23dd29f9c3fc625985eba6484edf7e1b",
+  "url": "/_blob/23dd29f9c3fc625985eba6484edf7e1b",
+  "size": 1155,
+  "type": "image/svg+xml"
+ },
+ "assets/marca/aplayers-vertical-01.svg": {
+  "group": "Logos",
+  "name": "aplayers-vertical-01.svg",
+  "id": "c6b443417f5b70df2df0814eeb328e8e",
+  "url": "/_blob/c6b443417f5b70df2df0814eeb328e8e",
+  "size": 122592,
+  "type": "image/svg+xml"
+ },
+ "assets/marca/aplayers-vertical-02.svg": {
+  "group": "Logos",
+  "name": "aplayers-vertical-02.svg",
+  "id": "08c160cfb33694a1ecbc78d8537c2cc3",
+  "url": "/_blob/08c160cfb33694a1ecbc78d8537c2cc3",
+  "size": 123190,
+  "type": "image/svg+xml"
+ },
+ "assets/marca/aplayers-vertical-03.svg": {
+  "group": "Logos",
+  "name": "aplayers-vertical-03.svg",
+  "id": "b0e5d7ab15ee3a6cf6622deebcfbd1de",
+  "url": "/_blob/b0e5d7ab15ee3a6cf6622deebcfbd1de",
+  "size": 123174,
+  "type": "image/svg+xml"
+ },
+ "assets/marca/aplayers-vertical-04.svg": {
+  "group": "Logos",
+  "name": "aplayers-vertical-04.svg",
+  "id": "4b8f02caef800f26cc43d7bca2245121",
+  "url": "/_blob/4b8f02caef800f26cc43d7bca2245121",
+  "size": 123173,
+  "type": "image/svg+xml"
+ },
+ "assets/marca/aplayers-vertical-amarelo.svg": {
+  "group": "Logos",
+  "name": "aplayers-vertical-amarelo.svg",
+  "id": "ee3d34fac754ab328225380bdff0379e",
+  "url": "/_blob/ee3d34fac754ab328225380bdff0379e",
+  "size": 123175,
+  "type": "image/svg+xml"
+ },
+ "assets/marca/aplayers-vertical-azul.svg": {
+  "group": "Logos",
+  "name": "aplayers-vertical-azul.svg",
+  "id": "08d3816de9cf0033cd03535c3a26f988",
+  "url": "/_blob/08d3816de9cf0033cd03535c3a26f988",
+  "size": 123172,
+  "type": "image/svg+xml"
+ },
+ "assets/marca/aplayers-vertical-verde.svg": {
+  "group": "Logos",
+  "name": "aplayers-vertical-verde.svg",
+  "id": "28f0dbdbe45f60cbfb4ce400c43ea387",
+  "url": "/_blob/28f0dbdbe45f60cbfb4ce400c43ea387",
+  "size": 123173,
+  "type": "image/svg+xml"
+ },
+ "assets/marca/aplayers-vertical-vermelho.svg": {
+  "group": "Logos",
+  "name": "aplayers-vertical-vermelho.svg",
+  "id": "4992d37f1342e964f3be08c4375541e0",
+  "url": "/_blob/4992d37f1342e964f3be08c4375541e0",
+  "size": 123176,
+  "type": "image/svg+xml"
+ },
+ "assets/marca/favicon.svg": {
+  "group": "Logos",
+  "name": "favicon.svg",
+  "id": "88b8d46d6b6859ef7e53d63ace5bf0b7",
+  "url": "/_blob/88b8d46d6b6859ef7e53d63ace5bf0b7",
+  "size": 1072,
+  "type": "image/svg+xml"
+ },
+ "assets/parceiros/atlassian-inverse.svg": {
+  "group": "Parceiros",
+  "name": "atlassian-inverse.svg",
+  "id": "02b5d2855a347fe66447326e81ef080f",
+  "url": "/_blob/02b5d2855a347fe66447326e81ef080f",
+  "size": 4064,
+  "type": "image/svg+xml"
+ },
+ "assets/parceiros/atlassian.png": {
+  "group": "Parceiros",
+  "name": "atlassian.png",
+  "id": "860b4c18ca0c1d5941d741ea57380982",
+  "url": "/_blob/860b4c18ca0c1d5941d741ea57380982",
+  "size": 26657,
+  "type": "image/png"
+ },
+ "assets/parceiros/cisp1-dark.png": {
+  "group": "Parceiros",
+  "name": "cisp1-dark.png",
+  "id": "32297c3ad210ac00a84d836920e24280",
+  "url": "/_blob/32297c3ad210ac00a84d836920e24280",
+  "size": 18935,
+  "type": "image/png"
+ },
+ "assets/parceiros/cisp1.png": {
+  "group": "Parceiros",
+  "name": "cisp1.png",
+  "id": "4e785162392bbddce7ba4d8120071411",
+  "url": "/_blob/4e785162392bbddce7ba4d8120071411",
+  "size": 18231,
+  "type": "image/png"
+ },
+ "assets/parceiros/monday-white.svg": {
+  "group": "Parceiros",
+  "name": "monday-white.svg",
+  "id": "85071b1352245178852836db0f1c937d",
+  "url": "/_blob/85071b1352245178852836db0f1c937d",
+  "size": 4755,
+  "type": "image/svg+xml"
+ },
+ "assets/parceiros/monday.svg": {
+  "group": "Parceiros",
+  "name": "monday.svg",
+  "id": "6b1724cf0206d4dc80eab4ef6b8e7b74",
+  "url": "/_blob/6b1724cf0206d4dc80eab4ef6b8e7b74",
+  "size": 4741,
+  "type": "image/svg+xml"
+ },
+ "assets/produtos/atl-bitbucket.svg": {
+  "group": "Produtos",
+  "name": "atl-bitbucket.svg",
+  "id": "af7bbb492a7ceb7296f0297dc40361df",
+  "url": "/_blob/af7bbb492a7ceb7296f0297dc40361df",
+  "size": 903,
+  "type": "image/svg+xml"
+ },
+ "assets/produtos/atl-confluence.svg": {
+  "group": "Produtos",
+  "name": "atl-confluence.svg",
+  "id": "dc993121cac241438a5a470d50884cc2",
+  "url": "/_blob/dc993121cac241438a5a470d50884cc2",
+  "size": 1686,
+  "type": "image/svg+xml"
+ },
+ "assets/produtos/atl-focus.svg": {
+  "group": "Produtos",
+  "name": "atl-focus.svg",
+  "id": "018b396f071bdc345c560c501ae279aa",
+  "url": "/_blob/018b396f071bdc345c560c501ae279aa",
+  "size": 783,
+  "type": "image/svg+xml"
+ },
+ "assets/produtos/atl-jira-product-discovery.svg": {
+  "group": "Produtos",
+  "name": "atl-jira-product-discovery.svg",
+  "id": "c724c7d3673a5256b3ff7080028dea91",
+  "url": "/_blob/c724c7d3673a5256b3ff7080028dea91",
+  "size": 1270,
+  "type": "image/svg+xml"
+ },
+ "assets/produtos/atl-jira.svg": {
+  "group": "Produtos",
+  "name": "atl-jira.svg",
+  "id": "c3e22147241c2b16ad1fc8abd4f54913",
+  "url": "/_blob/c3e22147241c2b16ad1fc8abd4f54913",
+  "size": 1112,
+  "type": "image/svg+xml"
+ },
+ "assets/produtos/atl-jsm.svg": {
+  "group": "Produtos",
+  "name": "atl-jsm.svg",
+  "id": "22630a36159c68c18eab5003b34a5b38",
+  "url": "/_blob/22630a36159c68c18eab5003b34a5b38",
+  "size": 816,
+  "type": "image/svg+xml"
+ },
+ "assets/produtos/atl-loom.svg": {
+  "group": "Produtos",
+  "name": "atl-loom.svg",
+  "id": "fbe54865996df0107481274f34b79876",
+  "url": "/_blob/fbe54865996df0107481274f34b79876",
+  "size": 1249,
+  "type": "image/svg+xml"
+ },
+ "assets/produtos/atl-rovo.svg": {
+  "group": "Produtos",
+  "name": "atl-rovo.svg",
+  "id": "3f3716e1b88e4b62b18aabce5d792f2a",
+  "url": "/_blob/3f3716e1b88e4b62b18aabce5d792f2a",
+  "size": 2740,
+  "type": "image/svg+xml"
+ },
+ "assets/produtos/mon-agents.png": {
+  "group": "Produtos",
+  "name": "mon-agents.png",
+  "id": "fd140a727a951fef67342bc394b9b076",
+  "url": "/_blob/fd140a727a951fef67342bc394b9b076",
+  "size": 6202,
+  "type": "image/png"
+ },
+ "assets/produtos/mon-crm.png": {
+  "group": "Produtos",
+  "name": "mon-crm.png",
+  "id": "99e3a0796dc45f22c6bf7a845079e677",
+  "url": "/_blob/99e3a0796dc45f22c6bf7a845079e677",
+  "size": 2434,
+  "type": "image/png"
+ },
+ "assets/produtos/mon-dev.png": {
+  "group": "Produtos",
+  "name": "mon-dev.png",
+  "id": "3e900f3b37218391efe002a72355a816",
+  "url": "/_blob/3e900f3b37218391efe002a72355a816",
+  "size": 2628,
+  "type": "image/png"
+ },
+ "assets/produtos/mon-service.png": {
+  "group": "Produtos",
+  "name": "mon-service.png",
+  "id": "0309b0887a03f119ff72ddb21da3198c",
+  "url": "/_blob/0309b0887a03f119ff72ddb21da3198c",
+  "size": 2518,
+  "type": "image/png"
+ },
+ "assets/produtos/mon-sidekick.png": {
+  "group": "Produtos",
+  "name": "mon-sidekick.png",
+  "id": "28cd50fb622d4948fad0386e1713bd25",
+  "url": "/_blob/28cd50fb622d4948fad0386e1713bd25",
+  "size": 3009,
+  "type": "image/png"
+ },
+ "assets/produtos/mon-vibe.png": {
+  "group": "Produtos",
+  "name": "mon-vibe.png",
+  "id": "00ec252efb21dc9528ef7ec5ac15b840",
+  "url": "/_blob/00ec252efb21dc9528ef7ec5ac15b840",
+  "size": 2901,
+  "type": "image/png"
+ },
+ "assets/produtos/mon-work-management.png": {
+  "group": "Produtos",
+  "name": "mon-work-management.png",
+  "id": "2a2b26d6469b2c0520bdf06bbd51c8ed",
+  "url": "/_blob/2a2b26d6469b2c0520bdf06bbd51c8ed",
+  "size": 2629,
+  "type": "image/png"
+ },
+ "assets/stickers/arco-iris.webp": {
+  "group": "Stickers",
+  "name": "arco-iris.webp",
+  "id": "f4fc485e3343a33e0d79765b1c7a6c42",
+  "url": "/_blob/f4fc485e3343a33e0d79765b1c7a6c42",
+  "size": 22256,
+  "type": "image/webp"
+ },
+ "assets/stickers/band-aid.webp": {
+  "group": "Stickers",
+  "name": "band-aid.webp",
+  "id": "7a71e27fde4beaa16ec03c68e1d4ef1f",
+  "url": "/_blob/7a71e27fde4beaa16ec03c68e1d4ef1f",
+  "size": 30818,
+  "type": "image/webp"
+ },
+ "assets/stickers/bolha-a-people.webp": {
+  "group": "Stickers",
+  "name": "bolha-a-people.webp",
+  "id": "b4f34c15f9798f3677fc9d6c2cc47fb1",
+  "url": "/_blob/b4f34c15f9798f3677fc9d6c2cc47fb1",
+  "size": 20892,
+  "type": "image/webp"
+ },
+ "assets/stickers/cafe.webp": {
+  "group": "Stickers",
+  "name": "cafe.webp",
+  "id": "8eee04bb67dfb205b7f297923e43852d",
+  "url": "/_blob/8eee04bb67dfb205b7f297923e43852d",
+  "size": 25440,
+  "type": "image/webp"
+ },
+ "assets/stickers/feito-por-nos.webp": {
+  "group": "Stickers",
+  "name": "feito-por-nos.webp",
+  "id": "d9f49c63a7e07c80d96a5d9c7e57b764",
+  "url": "/_blob/d9f49c63a7e07c80d96a5d9c7e57b764",
+  "size": 25214,
+  "type": "image/webp"
+ },
+ "assets/stickers/flor.webp": {
+  "group": "Stickers",
+  "name": "flor.webp",
+  "id": "3c193e8413ff8b50cfec5e84d28a038c",
+  "url": "/_blob/3c193e8413ff8b50cfec5e84d28a038c",
+  "size": 22472,
+  "type": "image/webp"
+ },
+ "assets/stickers/i-am-ai-builder.webp": {
+  "group": "Stickers",
+  "name": "i-am-ai-builder.webp",
+  "id": "0fd461bb1f69b38a1cfdf436bbdea302",
+  "url": "/_blob/0fd461bb1f69b38a1cfdf436bbdea302",
+  "size": 19802,
+  "type": "image/webp"
+ },
+ "assets/stickers/mascote.webp": {
+  "group": "Stickers",
+  "name": "mascote.webp",
+  "id": "1044a5fa2d9976c4128854895f377e90",
+  "url": "/_blob/1044a5fa2d9976c4128854895f377e90",
+  "size": 28016,
+  "type": "image/webp"
+ },
+ "assets/stickers/mentor-mode.webp": {
+  "group": "Stickers",
+  "name": "mentor-mode.webp",
+  "id": "984919a5ebd2d5aaf359039ade5bb183",
+  "url": "/_blob/984919a5ebd2d5aaf359039ade5bb183",
+  "size": 22824,
+  "type": "image/webp"
+ },
+ "assets/stickers/paz.webp": {
+  "group": "Stickers",
+  "name": "paz.webp",
+  "id": "c5ebff9e16017b3c434ceb32ede1128b",
+  "url": "/_blob/c5ebff9e16017b3c434ceb32ede1128b",
+  "size": 19448,
+  "type": "image/webp"
+ },
+ "assets/stickers/selo-ai-builder.webp": {
+  "group": "Stickers",
+  "name": "selo-ai-builder.webp",
+  "id": "46c367e65e1b425caead1858c6e6a7a4",
+  "url": "/_blob/46c367e65e1b425caead1858c6e6a7a4",
+  "size": 18548,
+  "type": "image/webp"
+ },
+ "assets/stickers/smile.webp": {
+  "group": "Stickers",
+  "name": "smile.webp",
+  "id": "118e746b7c7348e26197556f018511ce",
+  "url": "/_blob/118e746b7c7348e26197556f018511ce",
+  "size": 27838,
+  "type": "image/webp"
+ },
+ "assets/stickers/sticker-flor.png": {
+  "group": "Stickers",
+  "name": "sticker-flor.png",
+  "id": "949400b5432b755dc859233e3788e42a",
+  "url": "/_blob/949400b5432b755dc859233e3788e42a",
+  "size": 57077,
+  "type": "image/png"
+ },
+ "assets/stickers/sticker-mascote.png": {
+  "group": "Stickers",
+  "name": "sticker-mascote.png",
+  "id": "2b58a6c42aced5fa13a871c45d7c5645",
+  "url": "/_blob/2b58a6c42aced5fa13a871c45d7c5645",
+  "size": 80918,
+  "type": "image/png"
+ },
+ "assets/stickers/sticker-paz.png": {
+  "group": "Stickers",
+  "name": "sticker-paz.png",
+  "id": "337120c1bc4d25e93eb02501fc3b39f0",
+  "url": "/_blob/337120c1bc4d25e93eb02501fc3b39f0",
+  "size": 39138,
+  "type": "image/png"
+ },
+ "assets/stickers/sticker-we-are-ai-people.png": {
+  "group": "Stickers",
+  "name": "sticker-we-are-ai-people.png",
+  "id": "bad0f1dd2574847965d9c81185cf7446",
+  "url": "/_blob/bad0f1dd2574847965d9c81185cf7446",
+  "size": 55746,
+  "type": "image/png"
+ },
+ "assets/stickers/tech-player.webp": {
+  "group": "Stickers",
+  "name": "tech-player.webp",
+  "id": "0e2e4165f5b0ac70b1b2c853d5c69dc7",
+  "url": "/_blob/0e2e4165f5b0ac70b1b2c853d5c69dc7",
+  "size": 45362,
+  "type": "image/webp"
+ },
+ "assets/stickers/we-are-a-people.webp": {
+  "group": "Stickers",
+  "name": "we-are-a-people.webp",
+  "id": "b8e05b7f7dad5706a58af01108fdf3b0",
+  "url": "/_blob/b8e05b7f7dad5706a58af01108fdf3b0",
+  "size": 53872,
+  "type": "image/webp"
+ },
+ "assets/stickers/we-are-ai-people.webp": {
+  "group": "Stickers",
+  "name": "we-are-ai-people.webp",
+  "id": "b2ecbab949a0359d8b0b2c6c80c6d950",
+  "url": "/_blob/b2ecbab949a0359d8b0b2c6c80c6d950",
+  "size": 20700,
+  "type": "image/webp"
+ },
+ "assets/stickers/xicara.webp": {
+  "group": "Stickers",
+  "name": "xicara.webp",
+  "id": "19c9586d8c4fed52fae58e3730ab4ed7",
+  "url": "/_blob/19c9586d8c4fed52fae58e3730ab4ed7",
+  "size": 25926,
+  "type": "image/webp"
+ }
+}

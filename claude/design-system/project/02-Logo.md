@@ -1,0 +1,10 @@
+# Logo
+
+- 16 assinaturas: 8 tratamentos de cor em 2 composições, em SVG (contornos, sem fonte) e PNG transparente de 2400px, mais o símbolo em 3 versões. Tudo em assets/marca (catálogo em assets/marca/marca.json, PDFs em assets/marca/pdf, pacote em assets/marca/aplayers-marca.zip).
+- Horizontal: aplayers-horizontal-claro.svg (colorido, nome #706B69 e descritor #625E5C, para fundo claro), aplayers-horizontal-escuro.svg e aplayers-horizontal-site.svg (cores e escrita branca, para fundo escuro), aplayers-horizontal-branco, -preto, -azul, -verde, -vermelho, -amarelo.svg.
+- Vertical: aplayers-vertical-01.svg (colorido), -02 (cores e escrita branca), -03 (branco), -04 (preto), aplayers-vertical-azul, -verde, -vermelho, -amarelo.svg. Símbolo: aplayers-simbolo.svg, -branco, -preto (o símbolo não mudou em 14/10/2026).
+- Escolha pelo fundo: colorido no claro; cores e escrita branca no escuro; branco e amarelo sempre sobre o escuro; o colorido nunca sobre azul, verde, vermelho ou amarelo.
+- Construção (h = altura visível do nome A-PLAYERS): horizontal com símbolo 2,80h × 3,20h, distância 0,40h, nome 8,34h, descritor 0,36h centralizado 0,32h abaixo do nome, caixa 11,95h × 2,80h; vertical com símbolo 4,00h × 4,59h, distância 0,65h, caixa 8,34h × 6,34h.
+- Área de proteção: metade da altura do símbolo em todo o contorno (1,40h na horizontal, 2,00h na vertical). Tamanho mínimo na tela: horizontal 112px, vertical 64px, símbolo 16px; para ler TECH KNOWLEDGE, horizontal a partir de 320px e vertical a partir de 240px.
+- Tokens: --ap-logo-gray #706b69 (nome), --ap-logo-gray-2 #625e5c (descritor), --ap-logo-black #000000, --ap-logo-ratio-h (1195.055 / 280), --ap-logo-ratio-v (834.043 / 634), --ap-logo-clear-h (.5) e --ap-logo-clear-v (.3155) em fração da altura, --ap-logo-h-header 36px. No site, o logo horizontal tem 36px de altura no cabeçalho (152px de largura; 136px no celular) e o vertical, 103px no rodapé.
+- Nunca esticar, girar, recolorir, mudar as cores do símbolo nas versões coloridas ou a distribuição dos oito triângulos.

@@ -1,0 +1,193 @@
+/* A-Players Design System: tokens (gerado por tools/build_tokens.py; não edite à mão) */
+:root {
+  color-scheme: light;
+  /* marca */
+  --ap-blue: #3580c3;
+  --ap-blue-l: #5fa6e3;
+  --ap-green: #6eb751;
+  --ap-red: #eb594d;
+  --ap-yellow: #f1e84e;
+  --ap-violet: #a18be8;
+  --ap-yellow-line: #d4b106;
+  --ap-logo-gray: #706b69;
+  --ap-logo-gray-2: #625e5c;
+  --ap-logo-black: #000000;
+
+  /* superficie */
+  --ap-night: #0d1728;
+  --ap-night-2: #111d32;
+  --ap-night-3: #16253f;
+  --ap-sheet: #f2f6fb;
+  --ap-card: #ffffff;
+  --ap-card-2: #f7f9fc;
+  --ap-field: #ffffff;
+
+  /* tinta */
+  --ap-ink: #17233a;
+  --ap-ink-2: #4f5d73;
+  --ap-line: rgba(23, 35, 58, .12);
+  --ap-line-strong: rgba(23, 35, 58, .24);
+  --ap-on-night: #ffffff;
+  --ap-on-night-2: #b7c2d3;
+  --ap-night-line: rgba(255, 255, 255, .13);
+  --ap-error: #b3261e;
+
+  /* espectro */
+  --ap-spectrum: linear-gradient(90deg, #3580c3 0 25%, #6eb751 25% 50%, #eb594d 50% 75%, #f1e84e 75% 100%);
+  --ap-spectrum-flow: linear-gradient(90deg, #5fa6e3 0%, #6eb751 34%, #eb594d 67%, #f1e84e 100%);
+
+  /* lado-b */
+  --ap-day: #f5f2eb;
+  --ap-day-dots: rgba(46, 40, 30, .085);
+  --ap-paper: #fffdf8;
+  --ap-paper-2: #f9f6f0;
+  --ap-glass: rgba(250, 248, 242, .84);
+  --ap-soft-blue: #e4eef9;
+  --ap-soft-blue-2: #cfe1f4;
+  --ap-soft-green: #e7f3e1;
+  --ap-soft-green-2: #d1eac6;
+  --ap-soft-red: #fde6e3;
+  --ap-soft-red-2: #f9cfca;
+  --ap-soft-yellow: #fbf6d0;
+  --ap-soft-yellow-2: #f4eba1;
+  --ap-soft-violet: #efebfc;
+  --ap-soft-violet-2: #ddd4f8;
+
+  /* logo */
+  --ap-logo-ratio-h: 1195.055 / 280;
+  --ap-logo-ratio-v: 834.043 / 634;
+  --ap-logo-clear-h: .5;
+  --ap-logo-clear-v: .3155;
+  --ap-logo-h-header: 36px;
+
+  /* texto-sobre-tom */
+  --ap-on-blue: #ffffff;
+  --ap-on-green: #0d1728;
+  --ap-on-red: #ffffff;
+  --ap-on-yellow: #0d1728;
+  --ap-on-violet: #0d1728;
+
+  /* tipo */
+  --ap-title: "Manrope", system-ui, sans-serif;
+  --ap-text: "DM Sans", system-ui, sans-serif;
+  --ap-t-display: clamp(54px, 7.1vw, 120px);
+  --ap-t-h1: clamp(44px, 5.4vw, 88px);
+  --ap-t-h2: clamp(36px, 4.3vw, 70px);
+  --ap-t-mid: clamp(28px, 2.9vw, 44px);
+  --ap-t-h3: 24px;
+  --ap-t-h4: 17px;
+  --ap-t-lead: 18px;
+  --ap-t-body: 16px;
+  --ap-t-small: 15px;
+  --ap-t-label: 14px;
+  --ap-t-num: 12px;
+  --ap-w-night: 720;
+
+  /* forma */
+  --ap-r-sheet: 48px 14px 48px 14px;
+  --ap-r-card: 20px 6px 20px 6px;
+  --ap-r-path: 14px 4px 14px 4px;
+  --ap-r-pill: 12px 4px 12px 4px;
+  --ap-r-action: 10px 3px 10px 3px;
+  --ap-r-badge: 9px 3px 9px 3px;
+  --ap-r-mark: 3px 1px 3px 1px;
+
+  /* espaco */
+  --ap-grid: 56px;
+  --ap-wrap-w: 1320px;
+  --ap-gutter: clamp(20px, 4vw, 56px);
+  --ap-gap-sec: clamp(104px, 11.5vw, 168px);
+  --ap-sheet-inset: clamp(6px, 1vw, 16px);
+  --ap-plate-sm: 4px;
+  --ap-plate-md: 6px;
+  --ap-plate: 10px;
+  --ap-plate-lg: 14px;
+
+  /* movimento */
+  --ap-ease: cubic-bezier(.2, .7, .2, 1);
+  --ap-ease-expo: cubic-bezier(.16, 1, .3, 1);
+  --ap-ease-curtain: cubic-bezier(.7, 0, .3, 1);
+  --ap-dur-fast: .2s;
+  --ap-dur-base: .3s;
+  --ap-dur-slow: .45s;
+  --ap-dur-enter: .9s;
+
+  /* foco */
+  --ap-focus: #f1e84e;
+  --ap-focus-sheet: #3580c3;
+
+  /* plataformas de IA, papéis e tom */
+  --ap-front-atlassian: var(--ap-blue);
+  --ap-front-cisp1: var(--ap-violet);
+  --ap-front-monday: var(--ap-red);
+  --ap-role-pessoas: var(--ap-blue);
+  --ap-role-processo: var(--ap-green);
+  --ap-role-conexao: var(--ap-red);
+  --ap-role-sinal: var(--ap-yellow);
+  --ap-role-feedback: var(--ap-violet);
+  --ap-tone: var(--ap-blue);
+  --ap-soft: var(--ap-soft-blue);
+  --ap-soft-2: var(--ap-soft-blue-2);
+  --ap-on-tone: var(--ap-on-blue);
+}
+/* tema escuro: segue o sistema até a pessoa escolher; data-theme vence nos dois sentidos */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --ap-yellow-line: #f1e84e;
+    --ap-sheet: #111d32;
+    --ap-card: #172741;
+    --ap-card-2: #1d2f4d;
+    --ap-field: #0f1a2e;
+    --ap-ink: #eaf0f8;
+    --ap-ink-2: #a9b6ca;
+    --ap-line: rgba(255, 255, 255, .1);
+    --ap-line-strong: rgba(255, 255, 255, .2);
+    --ap-error: #ff9a8f;
+    --ap-day: #0f1a2e;
+    --ap-day-dots: rgba(183, 194, 211, .075);
+    --ap-paper: #172741;
+    --ap-paper-2: #1b2d4a;
+    --ap-glass: rgba(17, 29, 50, .84);
+    --ap-soft-blue: #1a3455;
+    --ap-soft-blue-2: #1e3f66;
+    --ap-soft-green: #22393e;
+    --ap-soft-green-2: #2c4b40;
+    --ap-soft-red: #382b3d;
+    --ap-soft-red-2: #523140;
+    --ap-soft-yellow: #2e393c;
+    --ap-soft-yellow-2: #444d3e;
+    --ap-soft-violet: #2f365d;
+    --ap-soft-violet-2: #404372;
+    --ap-focus-sheet: #f1e84e;
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --ap-yellow-line: #f1e84e;
+  --ap-sheet: #111d32;
+  --ap-card: #172741;
+  --ap-card-2: #1d2f4d;
+  --ap-field: #0f1a2e;
+  --ap-ink: #eaf0f8;
+  --ap-ink-2: #a9b6ca;
+  --ap-line: rgba(255, 255, 255, .1);
+  --ap-line-strong: rgba(255, 255, 255, .2);
+  --ap-error: #ff9a8f;
+  --ap-day: #0f1a2e;
+  --ap-day-dots: rgba(183, 194, 211, .075);
+  --ap-paper: #172741;
+  --ap-paper-2: #1b2d4a;
+  --ap-glass: rgba(17, 29, 50, .84);
+  --ap-soft-blue: #1a3455;
+  --ap-soft-blue-2: #1e3f66;
+  --ap-soft-green: #22393e;
+  --ap-soft-green-2: #2c4b40;
+  --ap-soft-red: #382b3d;
+  --ap-soft-red-2: #523140;
+  --ap-soft-yellow: #2e393c;
+  --ap-soft-yellow-2: #444d3e;
+  --ap-soft-violet: #2f365d;
+  --ap-soft-violet-2: #404372;
+  --ap-focus-sheet: #f1e84e;
+}

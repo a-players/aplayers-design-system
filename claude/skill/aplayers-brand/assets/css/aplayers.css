@@ -1,0 +1,999 @@
+/* =====================================================================
+   A-Players Design System · aplayers.css
+   A folha da marca. Importe esta folha em qualquer peça da A-Players e use
+   as classes ap-*: tokens, tipografia, superfícies e componentes saem
+   iguais ao site. A folha da peça cuida só da composição.
+
+   Origem: site A-Players (versão Claude, 01/10/2026), entrada e Portal do A-Player
+   (02/10/2026). Versão 2.2 (06/10/2026). Cada componente diz de qual peça
+   veio, para conferência. Os componentes do lado B (o dia da marca, tons
+   suaves) estão no bloco LADO B; o gráfico vivo e o que se mexe, no bloco
+   VIVO, antes do movimento.
+   Tokens: gerados por tools/build_tokens.py entre os marcadores abaixo.
+   Fontes: Manrope (títulos) e DM Sans (texto), pelo Google Fonts:
+   https://fonts.googleapis.com/css2?family=Manrope:wght@500..800&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap
+   ===================================================================== */
+
+/* @tokens:start */
+:root {
+  color-scheme: light;
+  /* marca */
+  --ap-blue: #3580c3;
+  --ap-blue-l: #5fa6e3;
+  --ap-green: #6eb751;
+  --ap-red: #eb594d;
+  --ap-yellow: #f1e84e;
+  --ap-violet: #a18be8;
+  --ap-yellow-line: #d4b106;
+  --ap-logo-gray: #706b69;
+  --ap-logo-gray-2: #625e5c;
+  --ap-logo-black: #000000;
+
+  /* superficie */
+  --ap-night: #0d1728;
+  --ap-night-2: #111d32;
+  --ap-night-3: #16253f;
+  --ap-sheet: #f2f6fb;
+  --ap-card: #ffffff;
+  --ap-card-2: #f7f9fc;
+  --ap-field: #ffffff;
+
+  /* tinta */
+  --ap-ink: #17233a;
+  --ap-ink-2: #4f5d73;
+  --ap-line: rgba(23, 35, 58, .12);
+  --ap-line-strong: rgba(23, 35, 58, .24);
+  --ap-on-night: #ffffff;
+  --ap-on-night-2: #b7c2d3;
+  --ap-night-line: rgba(255, 255, 255, .13);
+  --ap-error: #b3261e;
+
+  /* espectro */
+  --ap-spectrum: linear-gradient(90deg, #3580c3 0 25%, #6eb751 25% 50%, #eb594d 50% 75%, #f1e84e 75% 100%);
+  --ap-spectrum-flow: linear-gradient(90deg, #5fa6e3 0%, #6eb751 34%, #eb594d 67%, #f1e84e 100%);
+
+  /* lado-b */
+  --ap-day: #f5f2eb;
+  --ap-day-dots: rgba(46, 40, 30, .085);
+  --ap-paper: #fffdf8;
+  --ap-paper-2: #f9f6f0;
+  --ap-glass: rgba(250, 248, 242, .84);
+  --ap-soft-blue: #e4eef9;
+  --ap-soft-blue-2: #cfe1f4;
+  --ap-soft-green: #e7f3e1;
+  --ap-soft-green-2: #d1eac6;
+  --ap-soft-red: #fde6e3;
+  --ap-soft-red-2: #f9cfca;
+  --ap-soft-yellow: #fbf6d0;
+  --ap-soft-yellow-2: #f4eba1;
+  --ap-soft-violet: #efebfc;
+  --ap-soft-violet-2: #ddd4f8;
+
+  /* logo */
+  --ap-logo-ratio-h: 1195.055 / 280;
+  --ap-logo-ratio-v: 834.043 / 634;
+  --ap-logo-clear-h: .5;
+  --ap-logo-clear-v: .3155;
+  --ap-logo-h-header: 36px;
+
+  /* texto-sobre-tom */
+  --ap-on-blue: #ffffff;
+  --ap-on-green: #0d1728;
+  --ap-on-red: #ffffff;
+  --ap-on-yellow: #0d1728;
+  --ap-on-violet: #0d1728;
+
+  /* tipo */
+  --ap-title: "Manrope", system-ui, sans-serif;
+  --ap-text: "DM Sans", system-ui, sans-serif;
+  --ap-t-display: clamp(54px, 7.1vw, 120px);
+  --ap-t-h1: clamp(44px, 5.4vw, 88px);
+  --ap-t-h2: clamp(36px, 4.3vw, 70px);
+  --ap-t-mid: clamp(28px, 2.9vw, 44px);
+  --ap-t-h3: 24px;
+  --ap-t-h4: 17px;
+  --ap-t-lead: 18px;
+  --ap-t-body: 16px;
+  --ap-t-small: 15px;
+  --ap-t-label: 14px;
+  --ap-t-num: 12px;
+  --ap-w-night: 720;
+
+  /* forma */
+  --ap-r-sheet: 48px 14px 48px 14px;
+  --ap-r-card: 20px 6px 20px 6px;
+  --ap-r-path: 14px 4px 14px 4px;
+  --ap-r-pill: 12px 4px 12px 4px;
+  --ap-r-action: 10px 3px 10px 3px;
+  --ap-r-badge: 9px 3px 9px 3px;
+  --ap-r-mark: 3px 1px 3px 1px;
+
+  /* espaco */
+  --ap-grid: 56px;
+  --ap-wrap-w: 1320px;
+  --ap-gutter: clamp(20px, 4vw, 56px);
+  --ap-gap-sec: clamp(104px, 11.5vw, 168px);
+  --ap-sheet-inset: clamp(6px, 1vw, 16px);
+  --ap-plate-sm: 4px;
+  --ap-plate-md: 6px;
+  --ap-plate: 10px;
+  --ap-plate-lg: 14px;
+
+  /* movimento */
+  --ap-ease: cubic-bezier(.2, .7, .2, 1);
+  --ap-ease-expo: cubic-bezier(.16, 1, .3, 1);
+  --ap-ease-curtain: cubic-bezier(.7, 0, .3, 1);
+  --ap-dur-fast: .2s;
+  --ap-dur-base: .3s;
+  --ap-dur-slow: .45s;
+  --ap-dur-enter: .9s;
+
+  /* foco */
+  --ap-focus: #f1e84e;
+  --ap-focus-sheet: #3580c3;
+
+  /* plataformas de IA, papéis e tom */
+  --ap-front-atlassian: var(--ap-blue);
+  --ap-front-cisp1: var(--ap-violet);
+  --ap-front-monday: var(--ap-red);
+  --ap-role-pessoas: var(--ap-blue);
+  --ap-role-processo: var(--ap-green);
+  --ap-role-conexao: var(--ap-red);
+  --ap-role-sinal: var(--ap-yellow);
+  --ap-role-feedback: var(--ap-violet);
+  --ap-tone: var(--ap-blue);
+  --ap-soft: var(--ap-soft-blue);
+  --ap-soft-2: var(--ap-soft-blue-2);
+  --ap-on-tone: var(--ap-on-blue);
+}
+/* tema escuro: segue o sistema até a pessoa escolher; data-theme vence nos dois sentidos */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --ap-yellow-line: #f1e84e;
+    --ap-sheet: #111d32;
+    --ap-card: #172741;
+    --ap-card-2: #1d2f4d;
+    --ap-field: #0f1a2e;
+    --ap-ink: #eaf0f8;
+    --ap-ink-2: #a9b6ca;
+    --ap-line: rgba(255, 255, 255, .1);
+    --ap-line-strong: rgba(255, 255, 255, .2);
+    --ap-error: #ff9a8f;
+    --ap-day: #0f1a2e;
+    --ap-day-dots: rgba(183, 194, 211, .075);
+    --ap-paper: #172741;
+    --ap-paper-2: #1b2d4a;
+    --ap-glass: rgba(17, 29, 50, .84);
+    --ap-soft-blue: #1a3455;
+    --ap-soft-blue-2: #1e3f66;
+    --ap-soft-green: #22393e;
+    --ap-soft-green-2: #2c4b40;
+    --ap-soft-red: #382b3d;
+    --ap-soft-red-2: #523140;
+    --ap-soft-yellow: #2e393c;
+    --ap-soft-yellow-2: #444d3e;
+    --ap-soft-violet: #2f365d;
+    --ap-soft-violet-2: #404372;
+    --ap-focus-sheet: #f1e84e;
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --ap-yellow-line: #f1e84e;
+  --ap-sheet: #111d32;
+  --ap-card: #172741;
+  --ap-card-2: #1d2f4d;
+  --ap-field: #0f1a2e;
+  --ap-ink: #eaf0f8;
+  --ap-ink-2: #a9b6ca;
+  --ap-line: rgba(255, 255, 255, .1);
+  --ap-line-strong: rgba(255, 255, 255, .2);
+  --ap-error: #ff9a8f;
+  --ap-day: #0f1a2e;
+  --ap-day-dots: rgba(183, 194, 211, .075);
+  --ap-paper: #172741;
+  --ap-paper-2: #1b2d4a;
+  --ap-glass: rgba(17, 29, 50, .84);
+  --ap-soft-blue: #1a3455;
+  --ap-soft-blue-2: #1e3f66;
+  --ap-soft-green: #22393e;
+  --ap-soft-green-2: #2c4b40;
+  --ap-soft-red: #382b3d;
+  --ap-soft-red-2: #523140;
+  --ap-soft-yellow: #2e393c;
+  --ap-soft-yellow-2: #444d3e;
+  --ap-soft-violet: #2f365d;
+  --ap-soft-violet-2: #404372;
+  --ap-focus-sheet: #f1e84e;
+}
+/* @tokens:end */
+
+/* ---------------------------------------------------------------- base
+   Opcional: aplique .ap-base no body (ou num contêiner) para herdar a
+   tipografia e o reset mínimo da marca. */
+.ap-base, .ap-base *, .ap-base *::before, .ap-base *::after { box-sizing: border-box; }
+.ap-base { font: 400 var(--ap-t-body)/1.6 var(--ap-text); color: var(--ap-ink); -webkit-font-smoothing: antialiased; }
+.ap-base :where(h1, h2, h3, h4) { margin: 0; font-family: var(--ap-title); text-wrap: balance; }
+.ap-base :where(p) { margin: 0; }
+.ap-base :where(ul, ol, dl) { margin: 0; padding: 0; list-style: none; }
+.ap-base :where(img, svg) { max-width: 100%; }
+.ap-base :where(a) { color: inherit; }
+.ap-base :focus-visible { outline: 3px solid var(--ap-focus-sheet); outline-offset: 3px; border-radius: 4px; }
+.ap-night :focus-visible, .ap-sheet--night :focus-visible { outline-color: var(--ap-focus); }
+.ap-sr { position: absolute !important; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap; }
+
+/* ----------------------------------------------------------- superfícies
+   A noite é o fundo (sempre escura, com a retícula de 56px). A folha sobe
+   sobre ela e é onde se lê. Site: body, .night, .sheet, .sheet--night. */
+.ap-night {
+  background: radial-gradient(circle at 1px 1px, rgba(183, 194, 211, .09) 0 1px, transparent 1.3px) 0 0 / var(--ap-grid) var(--ap-grid), var(--ap-night);
+  color: var(--ap-on-night);
+}
+.ap-sheet {
+  position: relative;
+  background: var(--ap-sheet); color: var(--ap-ink);
+  border-radius: var(--ap-r-sheet);
+  box-shadow: 0 50px 90px -50px rgba(0, 0, 0, .7);
+}
+.ap-sheet--night { background: var(--ap-night-2); color: var(--ap-on-night); border: 1px solid var(--ap-night-line); }
+:root[data-theme="dark"] .ap-sheet:not(.ap-sheet--night) { border: 1px solid var(--ap-night-line); box-shadow: 0 50px 90px -50px rgba(0, 0, 0, .9); }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .ap-sheet:not(.ap-sheet--night) { border: 1px solid var(--ap-night-line); } }
+.ap-wrap { width: 100%; max-width: calc(var(--ap-wrap-w) + var(--ap-gutter) * 2); margin-inline: auto; padding-inline: var(--ap-gutter); }
+
+/* ----------------------------------------------------------- tipografia
+   Manrope nos títulos, DM Sans no texto (decisão de 21/09/2026).
+   Site: h1 a h4, .display, .h-mid, .label, .lead-label, .hy. */
+.ap-display { font: 780 var(--ap-t-display)/.9 var(--ap-title); letter-spacing: -.05em; }
+.ap-display .ap-ln { display: block; overflow: hidden; padding: .06em 0 .16em; margin-bottom: -.2em; }
+.ap-display .ap-ln > span { display: inline-block; }
+.ap-h1 { font: 800 var(--ap-t-h1)/1 var(--ap-title); letter-spacing: -.038em; }
+.ap-h2 { font: 800 var(--ap-t-h2)/1.02 var(--ap-title); letter-spacing: -.035em; }
+.ap-mid { font: 800 var(--ap-t-mid)/1.06 var(--ap-title); letter-spacing: -.03em; }
+.ap-h3 { font: 700 var(--ap-t-h3)/1.2 var(--ap-title); letter-spacing: -.015em; }
+.ap-h4 { font: 700 var(--ap-t-h4)/1.3 var(--ap-title); }
+.ap-night :is(.ap-h1, .ap-h2), .ap-sheet--night .ap-h2 { font-weight: var(--ap-w-night); }
+.ap-label { font: 700 var(--ap-t-label)/1.35 var(--ap-text); color: var(--ap-ink-2); }
+.ap-night .ap-label, .ap-sheet--night .ap-label { color: var(--ap-on-night-2); }
+.ap-lead-label { font: 700 18px/1.45 var(--ap-text); color: var(--ap-ink); }
+.ap-night .ap-lead-label { color: var(--ap-on-night); }
+.ap-lead { font-size: var(--ap-t-lead); line-height: 1.6; color: var(--ap-ink-2); }
+.ap-night .ap-lead { color: var(--ap-on-night-2); }
+.ap-ln2 { display: block; text-wrap: balance; }
+/* A-Players e AI-People nunca quebram no hífen */
+.ap-nw { display: inline !important; margin: 0 !important; white-space: nowrap; font: inherit; color: inherit; }
+/* o hífen de AI-People e de A-Players é o divisor espectral: é ali que pessoas e IA se ligam */
+.ap-hy { position: relative; color: transparent; display: inline-block; padding-inline: .03em; }
+.ap-hy::after { content: ""; position: absolute; left: .03em; right: .03em; top: 47%; height: .115em; background: var(--ap-spectrum); }
+.ap-hy.is-charging::after { animation: ap-charge .9s steps(4, jump-start) .3s both; }
+
+/* ----------------------------------------------------------- pill
+   Etiqueta de abertura, com os quatro triângulos da marca. Capitalização
+   editorial, nunca caixa alta. Site: .pill, .pill--sheet, svg.tri. */
+.ap-pill {
+  display: inline-flex; align-items: center; flex-wrap: wrap; gap: 10px;
+  padding: 8px 14px 8px 12px; border-radius: var(--ap-r-pill);
+  font: 700 14px/1.2 var(--ap-text); color: var(--ap-on-night);
+  background: rgba(255, 255, 255, .06); border: 1px solid var(--ap-night-line);
+}
+.ap-pill--sheet { color: var(--ap-ink); background: var(--ap-card); border-color: var(--ap-line); }
+.ap-tri { width: 31px; height: 7px; flex: none; }
+
+/* ----------------------------------------------------------- ações
+   O botão ganha a placa amarela deslocada no hover e afunda no clique.
+   Site: .btn, .btn--ghost, .btn--line, .btn--ink, .btn--light, .btn--sm. */
+.ap-btn {
+  --plate: var(--ap-yellow);
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  min-height: 50px; padding: 12px 24px;
+  border: 0; border-radius: var(--ap-r-action);
+  background: var(--ap-blue); color: #fff;
+  font: 600 16px/1.2 var(--ap-text); text-decoration: none; cursor: pointer;
+  box-shadow: 0 0 0 0 var(--plate);
+  transition: transform .24s var(--ap-ease), box-shadow .24s var(--ap-ease), background-color .24s;
+}
+.ap-btn:hover { transform: translate(-2px, -2px); box-shadow: var(--ap-plate-sm) var(--ap-plate-sm) 0 0 var(--plate); }
+.ap-btn:active { transform: translate(1px, 1px); box-shadow: 0 0 0 0 var(--plate); }
+.ap-btn--ghost { background: transparent; color: #fff; box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .34); --plate: var(--ap-blue); }
+.ap-btn--ghost:hover { box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .6), var(--ap-plate-sm) var(--ap-plate-sm) 0 0 var(--plate); }
+.ap-btn--line { background: transparent; color: var(--ap-ink); box-shadow: inset 0 0 0 1px var(--ap-line-strong); --plate: var(--ap-blue); }
+.ap-btn--line:hover { box-shadow: inset 0 0 0 1px var(--ap-ink-2), var(--ap-plate-sm) var(--ap-plate-sm) 0 0 var(--plate); }
+.ap-btn--ink { background: var(--ap-ink); --plate: var(--ap-tone); }
+:root[data-theme="dark"] .ap-btn--ink { background: #fff; color: var(--ap-night); }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .ap-btn--ink { background: #fff; color: var(--ap-night); } }
+/* sobre a noite, quando o azul já está no topo da página: branco com a placa amarela. Site: .btn--light (abertura da Home) */
+.ap-btn--light { background: #fff; color: var(--ap-night); --plate: var(--ap-yellow); }
+.ap-btn--sm { min-height: 40px; padding: 8px 16px; font-size: 15px; }
+.ap-btn--block { width: 100%; }
+.ap-btn[disabled], .ap-btn[aria-disabled="true"] { opacity: .45; cursor: not-allowed; transform: none; box-shadow: none; }
+.ap-btn svg { width: 11px; height: 11px; flex: none; }
+.ap-actions { display: flex; flex-wrap: wrap; gap: 14px; }
+
+/* link de texto: sublinhado grosso no tom, que sobe no hover. Site: .link */
+.ap-link {
+  font-weight: 700; color: inherit;
+  text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 6px;
+  text-decoration-color: var(--ap-tone);
+  transition: text-underline-offset .2s var(--ap-ease), color .2s;
+}
+.ap-link:hover { text-underline-offset: 3px; }
+
+/* ----------------------------------------------------------- placa de cor deslocada
+   O destaque da marca: o cartão carrega uma placa do seu tom deslocada para
+   baixo e à direita. Em repouso 10px; no hover o cartão sobe 3px e a placa
+   chega a 14px; no clique ele afunda. Site: .plate, a.plate, .front. */
+.ap-plate {
+  position: relative; display: block;
+  background: var(--ap-card); color: var(--ap-ink);
+  border: 1px solid var(--ap-line); border-radius: var(--ap-r-card);
+  box-shadow: var(--ap-plate) var(--ap-plate) 0 0 var(--ap-tone);
+}
+a.ap-plate, button.ap-plate { text-decoration: none; text-align: left; font: inherit; cursor: pointer; transition: transform var(--ap-dur-base) var(--ap-ease), box-shadow var(--ap-dur-base) var(--ap-ease); }
+a.ap-plate:hover, button.ap-plate:hover, a.ap-plate:focus-visible { transform: translate(-3px, -3px); box-shadow: var(--ap-plate-lg) var(--ap-plate-lg) 0 0 var(--ap-tone); }
+a.ap-plate:active, button.ap-plate:active { transform: translate(3px, 3px); box-shadow: 6px 6px 0 0 var(--ap-tone); }
+.ap-plate--flat { box-shadow: none; }
+/* placa pequena: a placa acompanha o tamanho. Aba, nó do mapa, atalho e ação
+   curta ficam perto do fundo (4px em repouso, 6px na interação), como no site:
+   .node.is-on, .hero__jumps a, .entry__options a */
+.ap-plate--sm { border-radius: var(--ap-r-path); box-shadow: var(--ap-plate-sm) var(--ap-plate-sm) 0 0 var(--ap-tone); }
+a.ap-plate--sm:hover, button.ap-plate--sm:hover, a.ap-plate--sm:focus-visible, .ap-plate--sm.is-on { transform: translate(-2px, -2px); box-shadow: var(--ap-plate-md) var(--ap-plate-md) 0 0 var(--ap-tone); }
+a.ap-plate--sm:active, button.ap-plate--sm:active { transform: translate(1px, 1px); box-shadow: 2px 2px 0 0 var(--ap-tone); }
+.ap-plate--flat:is(a, button):hover { box-shadow: var(--ap-plate-md) var(--ap-plate-md) 0 0 var(--ap-tone); transform: translate(-2px, -2px); }
+
+/* ----------------------------------------------------------- selo numerado
+   Números de uma sequência real (etapas, cenas, passos). Site: .badge */
+.ap-badge {
+  display: inline-grid; place-items: center; flex: none;
+  min-width: 32px; height: 24px; padding: 0 7px;
+  border-radius: var(--ap-r-badge);
+  background: var(--ap-tone); color: var(--ap-night);
+  font: 700 var(--ap-t-num)/1 var(--ap-text); font-variant-numeric: tabular-nums; letter-spacing: .02em;
+}
+
+/* ----------------------------------------------------------- divisor espectral
+   2px, quatro quartos de paradas duras. Site: .spectrum, ::before do submenu */
+.ap-spectrum { height: 2px; background: var(--ap-spectrum); border: 0; margin: 0; }
+.ap-spectrum--flow { background: var(--ap-spectrum-flow); }
+
+/* ----------------------------------------------------------- marca de tom
+   O tom de um item aparece num quadrado de 9px com a borda assimétrica.
+   Nunca uma barra lateral colorida (decisão de 29/09/2026).
+   Site: ::before de .front__kicker, .mega__kicker, .node. */
+.ap-kicker { display: inline-flex; align-items: baseline; gap: 9px; font: 700 13px/1.3 var(--ap-text); color: var(--ap-ink-2); }
+.ap-kicker::before, .ap-mark { content: ""; display: inline-block; flex: none; width: 9px; height: 9px; border-radius: var(--ap-r-mark); background: var(--ap-tone); }
+.ap-kicker::before { transform: translateY(-.02em); }
+.ap-night .ap-kicker, .ap-door--night .ap-kicker { color: var(--ap-on-night-2); }
+
+/* ----------------------------------------------------------- chips
+   Aplicações e produtos com o ícone oficial. Site: .chips, .front__list */
+.ap-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.ap-chip {
+  display: inline-flex; align-items: center; gap: 7px;
+  padding: 5px 11px; border-radius: var(--ap-r-badge);
+  font: 600 13px/1.3 var(--ap-text);
+  background: var(--ap-card); border: 1px solid var(--ap-line); color: var(--ap-ink);
+}
+.ap-chip img { width: 16px; height: 16px; flex: none; }
+.ap-chip--soft { background: var(--ap-sheet); border-color: transparent; }
+.ap-chip--tone { background: color-mix(in srgb, var(--ap-tone) 12%, var(--ap-card)); border-color: transparent; }
+.ap-chip--marked::before { content: ""; width: 7px; height: 7px; border-radius: 2px; background: var(--ap-tone); }
+.ap-chips--lg .ap-chip { font-size: 15px; padding: 8px 14px; }
+.ap-night .ap-chip { background: rgba(255, 255, 255, .06); border-color: var(--ap-night-line); color: var(--ap-on-night); }
+
+/* ----------------------------------------------------------- listas */
+/* tópicos com marca de tom. Site: .bars */
+.ap-bars { display: grid; gap: 14px; }
+.ap-bars > li { position: relative; padding-left: 21px; }
+.ap-bars > li::before { content: ""; position: absolute; left: 1px; top: 7px; width: 9px; height: 9px; border-radius: var(--ap-r-mark); background: var(--ap-tone); }
+.ap-bars strong { display: block; font: 700 16px/1.35 var(--ap-text); color: var(--ap-ink); }
+.ap-bars span { display: block; font-size: 15px; color: var(--ap-ink-2); margin-top: 2px; }
+/* pontos simples. Site: .ticks */
+.ap-ticks { display: grid; gap: 8px; }
+.ap-ticks > li { position: relative; padding-left: 20px; font-size: 15px; color: var(--ap-ink-2); }
+.ap-ticks > li::before { content: ""; position: absolute; left: 2px; top: .62em; width: 8px; height: 8px; border-radius: 50%; background: var(--ap-tone); }
+/* passos numerados com selo. Site: .map__steps, .after */
+.ap-steps { counter-reset: ap-s; display: grid; gap: 12px; }
+.ap-steps > li { counter-increment: ap-s; position: relative; padding-left: 42px; }
+.ap-steps > li::before { content: counter(ap-s); position: absolute; left: 0; top: 1px; display: grid; place-items: center; width: 28px; height: 22px; border-radius: var(--ap-r-badge); background: var(--ap-tone); color: var(--ap-night); font: 700 12px/1 var(--ap-text); }
+.ap-steps strong { display: block; font-size: 15.5px; }
+.ap-steps span { display: block; font-size: 14.5px; color: var(--ap-ink-2); }
+/* linha do fluxo com um pulso que percorre as etapas. Site: .flowline */
+.ap-flow { position: relative; display: grid; grid-template-columns: repeat(var(--n, 3), minmax(0, 1fr)); gap: 24px; padding-top: 34px; }
+.ap-flow::before { content: ""; position: absolute; left: 7px; right: 7px; top: 7px; height: 2px; background: color-mix(in srgb, var(--ap-tone) 40%, var(--ap-card)); }
+.ap-flow::after { content: ""; position: absolute; top: 4px; left: 0; width: 8px; height: 8px; border-radius: 50%; background: var(--ap-tone); box-shadow: 0 0 0 4px color-mix(in srgb, var(--ap-tone) 25%, transparent); animation: ap-travel 3.2s var(--ap-ease) infinite; }
+.ap-flow > li { position: relative; }
+.ap-flow > li::before { content: ""; position: absolute; top: -34px; left: 0; width: 16px; height: 16px; border-radius: 50%; background: var(--ap-tone); box-shadow: 0 0 0 5px var(--ap-card); }
+.ap-flow strong { display: block; font: 700 17px/1.3 var(--ap-text); margin-bottom: 6px; }
+.ap-flow span { display: block; font-size: 15px; color: var(--ap-ink-2); }
+/* atos de uma jornada, em trilho vertical. Site: .journey__acts */
+.ap-acts { position: relative; display: grid; gap: 16px; padding-left: 26px; }
+.ap-acts::before { content: ""; position: absolute; left: 5px; top: 8px; bottom: 8px; width: 2px; background: color-mix(in srgb, var(--ap-tone) 40%, var(--ap-card)); }
+.ap-acts > li { position: relative; }
+.ap-acts > li::before { content: ""; position: absolute; left: -26px; top: 6px; width: 12px; height: 12px; border-radius: 50%; background: var(--ap-tone); box-shadow: 0 0 0 4px var(--ap-card); }
+.ap-acts strong { display: block; font-size: 16px; }
+.ap-acts span { font-size: 15px; color: var(--ap-ink-2); }
+/* etapas com trilho espectral e selos. Site: .stepline__list, .quad, .five */
+.ap-stepline { position: relative; display: grid; grid-template-columns: repeat(var(--n, 3), minmax(0, 1fr)); gap: clamp(22px, 2.6vw, 40px); }
+.ap-stepline::before { content: ""; position: absolute; left: 16px; right: 0; top: 11px; height: 2px; background: var(--ap-spectrum-flow); }
+.ap-stepline .ap-badge { position: relative; margin-bottom: 18px; box-shadow: 0 0 0 6px var(--ap-surface, var(--ap-card)); }
+.ap-stepline h3 { margin-bottom: 8px; font: 800 clamp(20px, 1.6vw, 23px)/1.15 var(--ap-title); letter-spacing: -.02em; }
+.ap-stepline p { color: var(--ap-ink-2); font-size: 15.5px; }
+
+/* ----------------------------------------------------------- notas
+   Caixa no tom da plataforma, para o que a A-Players indica ou entrega.
+   Site: .callout, .specialty__care, .front__fit, .fitlist, .map__out */
+.ap-note { padding: 14px 16px; border-radius: var(--ap-r-path); background: color-mix(in srgb, var(--ap-tone) 11%, var(--ap-card)); color: var(--ap-ink-2); font-size: 15px; }
+.ap-note strong, .ap-note__title { display: block; margin-bottom: 2px; font: 700 15px/1.3 var(--ap-text); color: var(--ap-ink); }
+.ap-fit { padding: 11px 13px 12px; border-radius: var(--ap-r-path); background: color-mix(in srgb, var(--ap-tone) 11%, var(--ap-card)); }
+.ap-fit__title { margin-bottom: 5px; font: 700 13px/1.3 var(--ap-text); color: var(--ap-ink); }
+.ap-fit ul { display: grid; gap: 3px; margin: 0; padding: 0; list-style: none; }
+.ap-fit li { position: relative; padding-left: 14px; font-size: 13px; line-height: 1.42; color: var(--ap-ink-2); }
+.ap-fit li::before { content: ""; position: absolute; left: 0; top: .52em; width: 6px; height: 6px; border-radius: 2px 1px 2px 1px; background: var(--ap-tone); }
+
+/* ----------------------------------------------------------- cartões */
+/* cartão de plataforma (plataforma de IA, parceiro ou produto): kicker, logo, texto, lista, nota, ação.
+   A classe mantém o nome .ap-front por compatibilidade. Site: .front */
+.ap-front { display: flex; flex-direction: column; gap: 14px; padding: 26px 26px 24px; }
+.ap-front__logo { display: flex; align-items: center; height: 44px; }
+.ap-front__text { font-size: 16px; color: var(--ap-ink); }
+.ap-front__cta { margin-top: auto; padding-top: 4px; font-weight: 700; text-decoration: underline; text-decoration-color: var(--ap-tone); text-decoration-thickness: 2px; text-underline-offset: 5px; }
+/* porta: atalho com título forte, texto e chamada. Site: .door, .split__door */
+.ap-door { display: flex; flex-direction: column; gap: 8px; padding: 24px 26px; overflow: hidden; }
+.ap-door strong { font: 800 24px/1.15 var(--ap-title); letter-spacing: -.02em; }
+.ap-door > span:not(.ap-kicker):not(.ap-door__cta) { font-size: 15px; color: var(--ap-ink-2); }
+.ap-door__cta { margin-top: auto; padding-top: 6px; font-weight: 700; color: var(--ap-ink); text-decoration: underline; text-decoration-color: var(--ap-tone); text-decoration-thickness: 2px; text-underline-offset: 5px; }
+.ap-door--night { background: var(--ap-night-3); color: #fff; border-color: rgba(255, 255, 255, .14); }
+.ap-door--night > span:not(.ap-kicker):not(.ap-door__cta) { color: var(--ap-on-night-2); }
+.ap-door--night .ap-door__cta { color: #fff; }
+/* oferta: quem, nome, o que é. Site: .offer, .offer3 */
+.ap-offer { display: flex; flex-direction: column; padding: 18px 22px; border-radius: var(--ap-r-path); background: var(--ap-card); border: 1px solid var(--ap-line); text-decoration: none; color: var(--ap-ink); }
+.ap-offer strong { display: block; font: 800 20px/1.2 var(--ap-title); letter-spacing: -.015em; }
+.ap-offer > p:not(.ap-kicker) { margin-top: 6px; font-size: 14.5px; line-height: 1.45; color: var(--ap-ink-2); }
+a.ap-offer { transition: transform .25s var(--ap-ease), box-shadow .25s var(--ap-ease); }
+a.ap-offer:hover, a.ap-offer:focus-visible { transform: translate(-2px, -2px); box-shadow: var(--ap-plate-md) var(--ap-plate-md) 0 0 var(--ap-tone); }
+/* leitura do blog. Site: .post */
+.ap-post { display: flex; flex-direction: column; gap: 8px; padding-bottom: 18px; overflow: hidden; text-decoration: none; color: var(--ap-ink); border-radius: var(--ap-r-card); background: var(--ap-card); border: 1px solid var(--ap-line); transition: transform .3s var(--ap-ease), box-shadow .3s var(--ap-ease); }
+.ap-post:hover, .ap-post:focus-visible { transform: translate(-3px, -3px); box-shadow: 9px 9px 0 0 var(--ap-tone); }
+.ap-post img { width: 100%; height: auto; aspect-ratio: 16 / 10; object-fit: cover; background: var(--ap-sheet); }
+.ap-post__type { display: grid; place-items: end start; aspect-ratio: 16 / 10; padding: 20px; background: var(--ap-tone); color: var(--ap-night); font: 800 30px/1.02 var(--ap-title); letter-spacing: -.03em; }
+.ap-post > :not(img):not(.ap-post__type) { padding-inline: 20px; }
+.ap-post__meta { margin-top: 10px; font: 700 13px/1.3 var(--ap-text); color: var(--ap-ink-2); }
+.ap-post strong { font: 750 19px/1.3 var(--ap-title); letter-spacing: -.01em; }
+.ap-post > span:last-child { font-size: 15px; color: var(--ap-ink-2); }
+/* estado vazio. Site: .empty */
+.ap-empty { padding: 40px; text-align: center; border: 1px dashed var(--ap-line); border-radius: var(--ap-r-card); }
+.ap-empty__title { font: 800 22px/1.2 var(--ap-title); margin-bottom: 6px; }
+.ap-empty p:not(.ap-empty__title) { color: var(--ap-ink-2); }
+.ap-empty .ap-btn { margin-top: 18px; }
+
+/* ----------------------------------------------------------- três camadas
+   O que entra, o núcleo em destaque e o que ele entrega. Site: .layer3 */
+.ap-layer3 { display: grid; margin: 0; padding: 0; list-style: none; }
+.ap-layer3 > li { position: relative; display: grid; gap: 1px; padding: 8px 12px; border-radius: var(--ap-r-path); background: var(--ap-card); border: 1px solid var(--ap-line); }
+.ap-layer3 > li + li { margin-top: 14px; }
+.ap-layer3 > li + li::before { content: ""; position: absolute; left: 24px; top: -15px; width: 2px; height: 14px; background: color-mix(in srgb, var(--ap-tone) 55%, transparent); }
+.ap-layer3 strong { font: 700 13px/1.35 var(--ap-text); color: var(--ap-ink); }
+.ap-layer3 span { font-size: 12.5px; line-height: 1.4; color: var(--ap-ink-2); }
+.ap-layer3 > .is-core { background: color-mix(in srgb, var(--ap-tone) 13%, var(--ap-card)); border-color: color-mix(in srgb, var(--ap-tone) 60%, transparent); box-shadow: 4px 4px 0 0 var(--ap-tone); }
+/* caixa viva: o desenho do núcleo mostra o que a plataforma faz e só se move enquanto está na tela
+   (docs.js e o site ligam .is-live com um IntersectionObserver em [data-weave]). Site: .layer3__art
+   Atlassian: cinco fios nas cores das Collections correm juntos (um só gráfico).
+   CISP1: pulsos saem dos modelos, passam pelo núcleo e chegam aos sistemas.
+   monday.com: um quadro de status que muda de cor como num quadro real. */
+.ap-layer3__art { display: block; width: 100%; height: auto; margin-top: 7px; overflow: hidden; }
+.ap-layer3__art path { fill: none; stroke-width: 1.7; stroke-linecap: round; }
+.ap-layer3__art .t-blue { stroke: var(--ap-blue); }
+.ap-layer3__art .t-yellow { stroke: var(--ap-yellow-line); }
+.ap-layer3__art .t-green { stroke: var(--ap-green); }
+.ap-layer3__art .t-violet { stroke: var(--ap-violet); }
+.ap-layer3__art .t-red { stroke: var(--ap-red); }
+.ap-layer3__art .b-item { fill: color-mix(in srgb, var(--ap-ink) 16%, transparent); }
+.ap-layer3__art .c-line { stroke: color-mix(in srgb, var(--ap-violet) 60%, transparent); stroke-width: 1.3; }
+.ap-layer3__art .c-in { fill: color-mix(in srgb, var(--ap-ink) 42%, transparent); }
+.ap-layer3__art .c-out { fill: color-mix(in srgb, var(--ap-ink) 30%, transparent); }
+.ap-layer3__art .c-ring { fill: none; stroke: color-mix(in srgb, var(--ap-violet) 55%, transparent); stroke-width: 1.2; transform-box: fill-box; transform-origin: center; }
+.ap-layer3__art .c-core { fill: var(--ap-violet); }
+.ap-layer3__art .w-strand { animation: ap-strand 13s linear infinite paused; }
+.ap-layer3__art .w-strand:nth-child(2) { animation-duration: 16s; }
+.ap-layer3__art .w-strand:nth-child(3) { animation-duration: 11s; }
+.ap-layer3__art .w-strand:nth-child(4) { animation-duration: 18s; }
+.ap-layer3__art .w-strand:nth-child(5) { animation-duration: 14.5s; }
+.ap-layer3__art .c-pulse { stroke: var(--ap-violet); stroke-width: 2.4; stroke-dasharray: 7 93; opacity: 0; }
+.ap-layer3__art.is-live .c-pulse { opacity: 1; animation: ap-c-flow 2.8s linear var(--d, 0s) infinite; }
+.ap-layer3__art.is-live .c-ring { animation: ap-c-breathe 2.8s ease-in-out infinite; }
+.ap-layer3__art .st { transform-box: fill-box; transform-origin: center; animation: 14s ease-in-out var(--d, 0s) infinite paused; animation-name: ap-st-g, ap-st-pop; }
+.ap-layer3__art .st--o { animation-name: ap-st-o, ap-st-pop; }
+.ap-layer3__art .st--b { animation-name: ap-st-b, ap-st-pop; }
+.ap-layer3__art .st--r { animation-name: ap-st-r, ap-st-pop; }
+.ap-layer3__art.is-live .w-strand, .ap-layer3__art.is-live .st { animation-play-state: running; }
+@keyframes ap-strand { to { transform: translateX(-220px); } }
+@keyframes ap-c-flow { from { stroke-dashoffset: 0; } to { stroke-dashoffset: -100; } }
+@keyframes ap-c-breathe { 50% { transform: scale(1.12); opacity: .55; } }
+/* as cores de status são as do quadro da monday.com: três trocas a cada 14s, com um pulo curto na troca */
+@keyframes ap-st-g { 0%, 31% { fill: #00c875; } 35%, 64% { fill: #fdab3d; } 68%, 97% { fill: #579bfc; } 100% { fill: #00c875; } }
+@keyframes ap-st-o { 0%, 31% { fill: #fdab3d; } 35%, 64% { fill: #00c875; } 68%, 97% { fill: #e2445c; } 100% { fill: #fdab3d; } }
+@keyframes ap-st-b { 0%, 31% { fill: #579bfc; } 35%, 64% { fill: #00c875; } 68%, 97% { fill: #fdab3d; } 100% { fill: #579bfc; } }
+@keyframes ap-st-r { 0%, 31% { fill: #e2445c; } 35%, 64% { fill: #fdab3d; } 68%, 97% { fill: #00c875; } 100% { fill: #e2445c; } }
+@keyframes ap-st-pop { 0%, 31%, 35%, 64%, 68%, 97%, 100% { transform: none; } 33%, 66%, 98.5% { transform: scale(1.1); } }
+.reduce-motion .ap-layer3__art * { animation: none !important; }
+@media (prefers-reduced-motion: reduce) { .ap-layer3__art * { animation: none !important; } }
+/* aplicações dentro da primeira camada: ícone oficial com o nome curto embaixo. Site: .layer3--brand .layer3__apps */
+.ap-layer3__apps { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(0, 1fr); justify-items: center; gap: 4px; margin-top: 8px; }
+.ap-layer3__apps > span { display: grid; justify-items: center; gap: 5px; min-width: 0; }
+.ap-layer3__apps img { width: 22px; height: 22px; object-fit: contain; }
+.ap-layer3__apps em { max-width: 100%; font: 700 11px/1.15 var(--ap-text); font-style: normal; color: var(--ap-ink-2); text-align: center; }
+
+/* ----------------------------------------------------------- abas e nós
+   A escolha ativa ganha a placa do tom. Site: [role="tab"], .node */
+.ap-tabs { display: grid; gap: 10px; }
+.ap-tab {
+  display: flex; align-items: center; gap: 12px; width: 100%;
+  padding: 13px 16px; text-align: left; cursor: pointer;
+  border: 1px solid var(--ap-line); border-radius: var(--ap-r-path);
+  background: var(--ap-card); color: var(--ap-ink);
+  font: 600 16px/1.25 var(--ap-text);
+  transition: transform .28s var(--ap-ease), box-shadow .28s var(--ap-ease), border-color .28s;
+}
+.ap-tab:hover { border-color: var(--ap-tone); }
+.ap-tab[aria-selected="true"] { border-color: var(--ap-tone); box-shadow: 5px 5px 0 0 var(--ap-tone); transform: translate(-2px, -2px); font-weight: 700; }
+.ap-node { position: relative; display: flex; align-items: center; min-height: 44px; padding: 10px 14px 10px 16px; background: var(--ap-card); border: 1px solid var(--ap-line); border-radius: var(--ap-r-path); font: 700 15px/1.25 var(--ap-text); color: var(--ap-ink); transition: transform .45s var(--ap-ease-expo), box-shadow .45s var(--ap-ease-expo), opacity .45s, border-color .45s; }
+.ap-node::before { content: ""; flex: none; width: 8px; height: 8px; margin-right: 10px; border-radius: var(--ap-r-mark); background: var(--ap-tone); }
+.ap-node.is-dim { opacity: .38; }
+.ap-node.is-on { border-color: var(--ap-tone); transform: translate(-2px, -2px); box-shadow: 5px 5px 0 0 var(--ap-tone); }
+.ap-filters { display: flex; flex-wrap: wrap; gap: 8px; }
+.ap-filter { padding: 8px 16px; border-radius: var(--ap-r-pill); border: 1px solid var(--ap-line); background: var(--ap-card); color: var(--ap-ink); font: 600 14.5px/1.2 var(--ap-text); cursor: pointer; transition: background-color .2s, color .2s; }
+.ap-filter[aria-pressed="true"] { background: var(--ap-ink); color: var(--ap-card); border-color: var(--ap-ink); }
+
+/* ----------------------------------------------------------- formulários
+   Site: .field, .file, .form__status, .switch */
+.ap-field { display: grid; gap: 6px; font: 600 14px/1.3 var(--ap-text); color: var(--ap-ink); }
+.ap-field em { font-style: normal; color: var(--ap-red); }
+.ap-field :is(input, select, textarea) {
+  width: 100%; min-height: 50px; padding: 12px 14px;
+  border-radius: var(--ap-r-action); border: 1px solid var(--ap-line-strong);
+  background: var(--ap-field); color: var(--ap-ink); font: 400 16px/1.4 var(--ap-text);
+  transition: border-color .2s, box-shadow .2s;
+}
+.ap-field textarea { resize: vertical; min-height: 130px; }
+.ap-field :is(input, select, textarea):focus { outline: none; border-color: var(--ap-blue); box-shadow: 0 0 0 3px color-mix(in srgb, var(--ap-blue) 25%, transparent); }
+.ap-field :is(input, select, textarea)[aria-invalid="true"] { border-color: var(--ap-red); }
+.ap-field__hint { font-weight: 400; font-size: 13.5px; color: var(--ap-ink-2); }
+.ap-field__error { font-weight: 600; font-size: 13.5px; color: var(--ap-error); }
+.ap-status { padding: 14px 16px; border-radius: var(--ap-r-path); background: color-mix(in srgb, var(--ap-green) 16%, var(--ap-card)); color: var(--ap-ink); font-weight: 600; font-size: 15px; }
+.ap-file { display: flex; align-items: center; flex-wrap: wrap; gap: 12px; min-height: 50px; padding: 6px; border: 1px dashed var(--ap-line-strong); border-radius: var(--ap-r-action); background: var(--ap-field); }
+.ap-file input { position: absolute; width: 1px; height: 1px; opacity: 0; }
+.ap-file__btn { display: inline-flex; align-items: center; min-height: 38px; padding: 8px 16px; border-radius: var(--ap-r-action); background: var(--ap-ink); color: var(--ap-card); font: 600 14px/1.2 var(--ap-text); cursor: pointer; }
+.ap-file input:focus-visible + .ap-file__btn { outline: 3px solid var(--ap-blue); outline-offset: 3px; }
+.ap-file__name { font-size: 14px; color: var(--ap-ink-2); }
+.ap-switch { position: relative; display: inline-block; flex: none; width: 50px; height: 28px; cursor: pointer; }
+.ap-switch input { position: absolute; inset: 0; width: 100%; height: 100%; margin: 0; opacity: 0; cursor: pointer; }
+.ap-switch__track { position: absolute; inset: 0; border-radius: var(--ap-r-pill); background: var(--ap-line-strong); transition: background-color .3s var(--ap-ease); pointer-events: none; }
+.ap-switch__track::after { content: ""; position: absolute; top: 3px; left: 3px; width: 22px; height: 22px; border-radius: 8px 3px 8px 3px; background: #fff; box-shadow: 0 2px 6px rgba(0, 0, 0, .25); transition: transform .45s var(--ap-ease-expo); }
+.ap-switch input:checked + .ap-switch__track { background: var(--ap-tone); }
+.ap-switch input:checked + .ap-switch__track::after { transform: translateX(22px); }
+.ap-switch input:focus-visible + .ap-switch__track { outline: 3px solid var(--ap-focus-sheet); outline-offset: 3px; }
+
+/* ----------------------------------------------------------- preferências
+   Seletor de idioma com botão deslizante e seletor de tema sol/lua.
+   Site: .lang, .mode (cabeçalho). Vivem sobre a noite. */
+.ap-lang { position: relative; display: inline-grid; grid-template-columns: 1fr 1fr; align-items: center; height: 34px; padding: 3px; border-radius: var(--ap-r-pill); background: rgba(255, 255, 255, .06); border: 1px solid var(--ap-night-line); }
+.ap-lang__opt { position: relative; z-index: 1; display: grid; place-items: center; min-width: 34px; height: 26px; padding: 0 7px; border: 0; background: none; cursor: pointer; border-radius: 9px 3px 9px 3px; text-decoration: none; font: 700 12.5px/1 var(--ap-text); letter-spacing: .04em; color: var(--ap-on-night-2); transition: color .35s var(--ap-ease); }
+.ap-lang__opt:hover { color: #fff; }
+.ap-lang__opt[aria-current="true"] { color: var(--ap-night); }
+.ap-lang__knob { position: absolute; z-index: 0; top: 3px; left: 3px; width: calc(50% - 3px); height: 26px; border-radius: 9px 3px 9px 3px; background: #fff; box-shadow: 2px 2px 0 0 var(--ap-yellow); transition: transform .5s var(--ap-ease-expo), box-shadow .3s var(--ap-ease); }
+.ap-lang[data-active="2"] .ap-lang__knob { transform: translateX(100%); }
+.ap-lang:hover .ap-lang__knob { box-shadow: 3px 3px 0 0 var(--ap-yellow); }
+.ap-mode { position: relative; flex: none; width: 60px; height: 34px; padding: 0; border: 0; background: none; cursor: pointer; border-radius: var(--ap-r-pill); }
+.ap-mode__track { position: absolute; inset: 0; border-radius: var(--ap-r-pill); overflow: hidden; background: rgba(255, 255, 255, .06); border: 1px solid var(--ap-night-line); transition: background-color .5s var(--ap-ease), border-color .5s var(--ap-ease); }
+.ap-mode__track i { position: absolute; width: 3px; height: 3px; border-radius: 50%; background: #fff; opacity: 0; transform: scale(.2); transition: opacity .5s var(--ap-ease), transform .6s var(--ap-ease-expo); }
+.ap-mode__track i:nth-child(1) { left: 10px; top: 9px; }
+.ap-mode__track i:nth-child(2) { left: 18px; top: 20px; width: 2px; height: 2px; }
+.ap-mode__track i:nth-child(3) { left: 25px; top: 11px; width: 2px; height: 2px; }
+.ap-mode__knob { position: absolute; top: 4px; left: 4px; width: 26px; height: 26px; display: grid; place-items: center; border-radius: 9px 3px 9px 3px; background: var(--ap-yellow); color: var(--ap-night); box-shadow: 0 4px 14px -4px rgba(241, 232, 78, .7); transition: transform .55s var(--ap-ease-expo), background-color .45s var(--ap-ease), box-shadow .45s var(--ap-ease), color .45s; }
+.ap-mode__knob svg { position: absolute; width: 16px; height: 16px; transition: transform .55s var(--ap-ease-expo), opacity .3s var(--ap-ease); }
+.ap-mode__sun { fill: currentColor; stroke: currentColor; stroke-width: 2; }
+.ap-mode__moon { fill: currentColor; opacity: 0; transform: rotate(-70deg) scale(.4); }
+.ap-mode:hover .ap-mode__track { border-color: rgba(255, 255, 255, .3); }
+.ap-mode:hover .ap-mode__sun { transform: rotate(45deg); }
+.ap-mode[aria-checked="true"] .ap-mode__track { background: rgba(161, 139, 232, .16); border-color: rgba(161, 139, 232, .45); }
+.ap-mode[aria-checked="true"] .ap-mode__track i { opacity: .85; transform: none; }
+.ap-mode[aria-checked="true"] .ap-mode__knob { transform: translateX(26px); background: var(--ap-violet); color: #fff; box-shadow: 0 4px 16px -4px rgba(161, 139, 232, .8); }
+.ap-mode[aria-checked="true"] .ap-mode__sun { opacity: 0; transform: rotate(90deg) scale(.4); }
+.ap-mode[aria-checked="true"] .ap-mode__moon { opacity: 1; transform: none; }
+.ap-mode:focus-visible { outline: 3px solid var(--ap-focus); outline-offset: 4px; }
+
+/* ----------------------------------------------------------- navegação
+   A ilha do cabeçalho: vidro noturno, borda assimétrica, link atual com o
+   espectro embaixo. Site: .island, .nav__link */
+.ap-island {
+  display: flex; align-items: center; gap: 12px; height: 64px; padding: 0 10px 0 18px;
+  background: rgba(13, 23, 40, .84); color: #fff;
+  border: 1px solid rgba(255, 255, 255, .1); border-radius: var(--ap-r-card);
+  box-shadow: 0 20px 44px -24px rgba(0, 0, 0, .7);
+  -webkit-backdrop-filter: blur(14px) saturate(1.2); backdrop-filter: blur(14px) saturate(1.2);
+}
+.ap-island__brand img { width: 152px; height: auto; display: block; }
+.ap-nav { display: flex; align-items: center; gap: 2px; margin: 0 0 0 auto; padding: 0; list-style: none; }
+.ap-nav__link { position: relative; display: inline-flex; align-items: center; gap: 7px; padding: 9px 12px; border: 0; background: transparent; cursor: pointer; border-radius: 10px 3px 10px 3px; font: 600 15px/1.2 var(--ap-text); color: rgba(255, 255, 255, .8); text-decoration: none; transition: background-color .2s, color .2s; }
+.ap-nav__link:hover, .ap-nav__link[aria-expanded="true"] { background: rgba(255, 255, 255, .08); color: #fff; }
+.ap-nav__link[aria-current="page"], .ap-nav__link.is-current { color: #fff; }
+.ap-nav__link[aria-current="page"]::after, .ap-nav__link.is-current::after { content: ""; position: absolute; left: 12px; right: 12px; bottom: 3px; height: 2px; background: var(--ap-spectrum); }
+/* ilha do dia (tema Light): o mesmo formato com o vidro claro do Portal. Portal do A-Player: .ilha */
+.ap-island--day { background: var(--ap-glass); color: var(--ap-ink); border-color: var(--ap-line); box-shadow: 0 18px 40px -26px rgba(13, 23, 40, .42); }
+.ap-island--day .ap-nav__link { color: var(--ap-ink-2); }
+.ap-island--day .ap-nav__link:hover, .ap-island--day .ap-nav__link[aria-expanded="true"] { background: color-mix(in srgb, var(--ap-ink) 6%, transparent); color: var(--ap-ink); }
+.ap-island--day .ap-nav__link[aria-current="page"], .ap-island--day .ap-nav__link.is-current { color: var(--ap-ink); }
+/* base de abertura: especialidades ligadas por uma linha que cresce no hover. Site: .strata */
+.ap-strata { display: grid; grid-template-columns: repeat(var(--n, 3), minmax(0, 1fr)); }
+.ap-stratum { position: relative; display: block; padding: 20px 24px 6px 0; margin-right: 24px; color: inherit; text-decoration: none; border-top: 1px solid var(--ap-night-line); }
+.ap-stratum::before { content: ""; position: absolute; top: -1px; left: 0; height: 3px; width: 44px; background: var(--ap-tone); transition: width .45s var(--ap-ease-expo); }
+.ap-stratum:hover::before, .ap-stratum:focus-visible::before { width: 100%; }
+.ap-stratum strong { display: block; font: 750 20px/1.2 var(--ap-title); letter-spacing: -.015em; }
+.ap-stratum span { display: block; font-size: 15px; color: var(--ap-on-night-2); margin-top: 4px; }
+@media (max-width: 1100px) { .ap-strata { grid-template-columns: repeat(3, minmax(0, 1fr)); row-gap: 8px; } }
+@media (max-width: 640px) { .ap-strata { grid-template-columns: 1fr; row-gap: 0; } .ap-stratum { margin-right: 0; padding: 14px 0 12px; } }
+
+/* ----------------------------------------------------------- avisos
+   Site: .consent, .consent-toast */
+.ap-consent { position: relative; width: min(540px, 100%); padding: 24px 24px 20px; overflow: hidden; border-radius: var(--ap-r-card); background: rgba(17, 29, 50, .95); color: var(--ap-on-night); border: 1px solid var(--ap-night-line); box-shadow: 0 34px 80px -30px rgba(0, 0, 0, .9); }
+.ap-consent::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--ap-spectrum); }
+.ap-consent__head { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; }
+.ap-consent__title { font: 750 20px/1.2 var(--ap-title); letter-spacing: -.015em; }
+.ap-consent__text { font-size: 14.5px; line-height: 1.55; color: var(--ap-on-night-2); margin-bottom: 18px; }
+.ap-consent__actions { display: flex; flex-wrap: wrap; gap: 10px 12px; }
+.ap-consent__actions .ap-btn { flex: 1 1 150px; }
+.ap-toast { display: inline-flex; align-items: center; gap: 10px; max-width: min(440px, 100%); padding: 12px 16px; border-radius: var(--ap-r-path); background: rgba(17, 29, 50, .96); color: var(--ap-on-night); border: 1px solid var(--ap-night-line); font-size: 14px; box-shadow: 0 20px 50px -20px rgba(0, 0, 0, .8); }
+.ap-toast::before { content: ""; flex: none; width: 9px; height: 9px; border-radius: var(--ap-r-mark); background: var(--ap-tone); }
+
+/* ----------------------------------------------------------- logos das plataformas de IA
+   Mesmo peso óptico: a altura compensa a proporção e a densidade de cada
+   marca. Site: --k nos logos, .partner-mark */
+.ap-partner { width: auto; height: calc(var(--ap-logo-h, 26px) * var(--k, 1)); }
+.ap-partner[src$="atlassian.png"] { --k: .82; }
+.ap-partner[src$="atlassian-inverse.svg"] { --k: .78; }
+.ap-partner[src$="monday.svg"], .ap-partner[src$="monday-white.svg"] { --k: 1; }
+.ap-partner[src$="cisp1.png"], .ap-partner[src$="cisp1-dark.png"] { --k: 1.64; }
+.ap-partner-mark { display: inline-flex; align-items: center; justify-content: center; height: 68px; width: 280px; max-width: 100%; background: #fff; border-radius: var(--ap-r-pill); box-shadow: var(--ap-plate-md) var(--ap-plate-md) 0 0 var(--ap-tone); }
+.ap-partner-mark .ap-partner { --ap-logo-h: 28px; }
+.ap-partner-mark .ap-partner[src$="atlassian.png"] { --k: .8214; }
+.ap-partner-mark .ap-partner[src$="cisp1.png"] { --k: 1.6429; }
+/* ícones de produto: proporção original e o mesmo azulejo nas duas marcas */
+.ap-app-icon { width: 22px; height: 22px; object-fit: contain; flex: none; }
+/* par de logos: a versão de fundo claro e a de fundo escuro no mesmo lugar; o tema escolhe. Site: .logo-on-light, .logo-on-dark */
+.ap-on-dark { display: none !important; }
+:root[data-theme="dark"] .ap-on-light { display: none !important; }
+:root[data-theme="dark"] .ap-on-dark { display: block !important; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .ap-on-light { display: none !important; }
+  :root:not([data-theme="light"]) .ap-on-dark { display: block !important; }
+}
+/* logo oficial de uma Collection da Atlassian no lugar do nome. Os cinco arquivos de assets/parceiros/collections
+   dividem o mesmo quadro (466 x 164), com "Collection" na mesma altura e na mesma linha de base. Site: .coll__logo */
+.ap-coll-logo { margin: 0; line-height: 0; }
+.ap-coll-logo img { display: block; width: 100%; max-width: 260px; height: auto; }
+/* a IA da plataforma em destaque: três aplicações com ícone oficial e, embaixo, as que completam. Site: .aiapps */
+.ap-aiapps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; max-width: 460px; margin: 0; padding: 0; list-style: none; }
+.ap-aiapps li {
+  display: flex; flex-direction: column; align-items: center; gap: 8px;
+  padding: 14px 8px 12px; border-radius: var(--ap-r-path);
+  background: var(--ap-card); border: 1px solid var(--ap-line);
+  box-shadow: 0 10px 24px -18px rgba(16, 18, 20, .35);
+  font: 700 15.5px/1.2 var(--ap-text); color: var(--ap-ink); text-align: center;
+}
+.ap-aiapps img { width: 30px; height: 30px; object-fit: contain; flex: none; }
+.ap-aiapps__more { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 0; margin: 12px 0 0; font: 500 13.5px/1.4 var(--ap-text); color: var(--ap-ink-2); }
+.ap-aiapps__more span + span::before { content: ""; display: inline-block; width: 4px; height: 4px; margin: 0 10px; border-radius: 50%; background: currentColor; opacity: .5; vertical-align: middle; }
+@media (max-width: 640px) {
+  .ap-aiapps { gap: 8px; }
+  .ap-aiapps li { gap: 7px; padding: 12px 8px 11px; font-size: 15px; }
+  .ap-aiapps img { width: 26px; height: 26px; }
+}
+
+/* ----------------------------------------------------------- geometria e stickers
+   Geometrias são os SVGs oficiais (já trazem cor, opacidade e rotação):
+   posição periférica, sem opacidade por cima. Stickers giram de 7 a 12 graus. */
+.ap-geo { position: absolute; z-index: 0; pointer-events: none; }
+.ap-sticker { position: absolute; z-index: 3; pointer-events: none; filter: drop-shadow(0 14px 18px rgba(13, 23, 40, .22)); }
+.ap-photo { width: 100%; object-fit: cover; border-radius: 19px 5px 19px 5px; background: var(--ap-night-2); }
+
+/* =====================================================================
+   LADO B (versão 2.0, 04/10/2026)
+   O lado A é o que o mercado vê: a noite do site e da entrada. O lado B
+   somos nós: o dia da marca, os cinco tons em versão suave, as fotos do
+   time e os stickers. Os componentes abaixo nasceram no Portal do A-Player
+   (portal/css/hub.css) e na entrada (portal/css/entrar.css) e servem aos
+   dois lados: sobre a folha, sobre o dia ou dentro de um painel suave.
+   ===================================================================== */
+
+/* tom completo: troca o tom, o tom suave e o texto sobre o tom de uma vez. Portal do A-Player: [data-tom] */
+.ap-tone--blue { --ap-tone: var(--ap-blue); --ap-soft: var(--ap-soft-blue); --ap-soft-2: var(--ap-soft-blue-2); --ap-on-tone: var(--ap-on-blue); }
+.ap-tone--green { --ap-tone: var(--ap-green); --ap-soft: var(--ap-soft-green); --ap-soft-2: var(--ap-soft-green-2); --ap-on-tone: var(--ap-on-green); }
+.ap-tone--red { --ap-tone: var(--ap-red); --ap-soft: var(--ap-soft-red); --ap-soft-2: var(--ap-soft-red-2); --ap-on-tone: var(--ap-on-red); }
+.ap-tone--yellow { --ap-tone: var(--ap-yellow); --ap-soft: var(--ap-soft-yellow); --ap-soft-2: var(--ap-soft-yellow-2); --ap-on-tone: var(--ap-on-yellow); }
+.ap-tone--violet { --ap-tone: var(--ap-violet); --ap-soft: var(--ap-soft-violet); --ap-soft-2: var(--ap-soft-violet-2); --ap-on-tone: var(--ap-on-violet); }
+
+/* ----------------------------------------------------------- superfícies do lado B
+   O dia: fundo claro com a mesma retícula de 56px da noite. Portal do A-Player: body.ahub
+   Painel suave: bloco no tom suave com canto de folha. Portal do A-Player: .vista__cabeca, .mural, .trilha, .cartao */
+.ap-day {
+  background: radial-gradient(circle at 1px 1px, var(--ap-day-dots) 0 1px, transparent 1.3px) 0 0 / var(--ap-grid) var(--ap-grid), var(--ap-day);
+  color: var(--ap-ink);
+  /* sobre o dia, cartões e folhas usam o papel quente do Portal */
+  --ap-card: var(--ap-paper); --ap-card-2: var(--ap-paper-2);
+}
+.ap-panel { position: relative; padding: clamp(26px, 4vw, 56px); border-radius: var(--ap-r-sheet); background: var(--ap-soft); color: var(--ap-ink); isolation: isolate; }
+.ap-panel--card { padding: 26px 26px 24px; border-radius: var(--ap-r-card); }
+.ap-panel__title { margin: 0 0 14px; font: 800 clamp(44px, 5.6vw, 96px)/.9 var(--ap-title); letter-spacing: -.055em; }
+.ap-panel__lead { max-width: 60ch; font-size: clamp(16.5px, 1.3vw, 19px); line-height: 1.55; color: var(--ap-ink-2); }
+.ap-panel > .ap-sticker { right: clamp(18px, 4vw, 72px); bottom: -30px; width: clamp(104px, 11vw, 168px); height: auto; transform: rotate(7deg); }
+
+/* ----------------------------------------------------------- selo da pessoa
+   Iniciais no tom da pessoa, com a placa deslocada. Portal do A-Player: .selo; entrada: .cracha__avatar;
+   site: o selo AP do botão Portal do A-Player no rodapé (.rodape__portal b) */
+.ap-avatar {
+  display: inline-grid; place-items: center; flex: none; width: 40px; height: 40px;
+  border-radius: var(--ap-r-pill); background: var(--ap-tone); color: var(--ap-on-tone);
+  font: 800 19px/1 var(--ap-title); letter-spacing: -.03em;
+  box-shadow: 3px 3px 0 0 var(--ap-ink);
+}
+.ap-avatar--sm { width: 25px; height: 25px; border-radius: 7px 2px 7px 2px; font-size: 10px; letter-spacing: .02em; box-shadow: 2px 2px 0 0 var(--ap-yellow); }
+.ap-avatar--lg { width: 66px; height: 66px; border-radius: 18px 5px 18px 5px; font-size: 24px; box-shadow: 5px 5px 0 0 var(--ap-yellow); }
+.ap-avatar--xl { width: 92px; height: 92px; border-radius: 24px 7px 24px 7px; font-size: 34px; box-shadow: 6px 6px 0 0 var(--ap-ink); }
+:is(a, button).ap-avatar { border: 0; cursor: pointer; text-decoration: none; transition: transform .25s var(--ap-ease), box-shadow .25s var(--ap-ease); }
+:is(a, button).ap-avatar:hover { transform: translate(-2px, -2px); box-shadow: 5px 5px 0 0 var(--ap-ink); }
+
+/* ----------------------------------------------------------- crachá
+   O cartão de quem é da casa, pendurado no cordão do espectro. Entrada: .cordao, .cracha;
+   Meu Portal: .cracha__fio, .cracha__corpo */
+.ap-lanyard { display: block; width: 14px; height: 96px; margin: 0 auto -18px; position: relative; z-index: 1; border-radius: 3px 3px 0 0; background: linear-gradient(90deg, #3580c3 0 25%, #6eb751 25% 50%, #eb594d 50% 75%, #f1e84e 75%); }
+.ap-idcard {
+  position: relative; display: grid; justify-items: center; gap: 8px; padding: 36px 22px 26px; text-align: center;
+  background: var(--ap-card); color: var(--ap-ink); border: 1px solid var(--ap-line); border-radius: var(--ap-r-card);
+  box-shadow: var(--ap-plate) var(--ap-plate) 0 0 var(--ap-tone);
+  transform-origin: 50% -60px; transition: transform .6s var(--ap-ease-expo);
+}
+.ap-idcard:hover { transform: rotate(-1.5deg); }
+.ap-idcard__hole { position: absolute; top: 12px; left: 50%; width: 46px; height: 10px; transform: translateX(-50%); border-radius: 6px 2px 6px 2px; background: var(--ap-night); box-shadow: inset 0 1px 3px rgba(0, 0, 0, .45); }
+.ap-idcard__top { display: inline-flex; align-items: center; gap: 9px; margin-top: 8px; font: 800 14px/1 var(--ap-title); letter-spacing: -.01em; color: var(--ap-ink-2); }
+.ap-idcard__top img { width: 22px; height: auto; }
+.ap-idcard .ap-avatar { margin: 10px 0 6px; }
+.ap-idcard__name { font: 800 25px/1.1 var(--ap-title); letter-spacing: -.03em; }
+.ap-idcard__meta { font-size: 14px; color: var(--ap-ink-2); overflow-wrap: anywhere; }
+.ap-idcard .ap-spectrum { width: 100%; margin-top: 12px; }
+.ap-idcard__sticker { position: absolute; right: -26px; bottom: -24px; width: 88px; height: auto; transform: rotate(10deg); filter: drop-shadow(0 12px 14px rgba(13, 23, 40, .26)); pointer-events: none; }
+
+/* ----------------------------------------------------------- foto da marca
+   Gente de verdade numa moldura branca, levemente girada, com a placa do tom.
+   Portal do A-Player: .foto-p (mural do LinkedIn), .rodape__collage, .foto__caixa */
+.ap-snap {
+  --r: -3deg;
+  position: relative; display: block; width: var(--w, 100%); margin: 0; padding: 9px 9px 0;
+  border: 0; border-radius: 14px 4px 14px 4px; background: #fff; color: #17233a; text-align: left; text-decoration: none;
+  box-shadow: 9px 9px 0 0 var(--ap-tone), 0 22px 36px -22px rgba(13, 23, 40, .6);
+  transform: rotate(var(--r)); transition: transform .55s var(--ap-ease-expo), box-shadow .45s var(--ap-ease-expo);
+}
+.ap-snap img { display: block; width: 100%; height: auto; aspect-ratio: var(--ar, 4 / 5); object-fit: cover; border-radius: 8px 3px 8px 3px; background: var(--ap-soft-2); }
+.ap-snap__caption, .ap-snap figcaption { display: block; padding: 9px 4px 11px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font: 600 12.5px/1.25 var(--ap-text); color: #4f5d73; }
+:is(a, button).ap-snap { cursor: pointer; }
+:is(a, button).ap-snap:hover, :is(a, button).ap-snap:focus-visible { transform: rotate(0deg) scale(1.04); box-shadow: 14px 14px 0 0 var(--ap-tone), 0 30px 44px -22px rgba(13, 23, 40, .65); }
+.ap-snap--wide { --ar: 16 / 10; }
+
+/* ----------------------------------------------------------- leitura no lado B
+   O bloco tipográfico do ap-post no tom suave. Portal do A-Player: .post--suave */
+.ap-post--soft .ap-post__type { background: var(--ap-soft); color: var(--ap-ink); font-size: clamp(22px, 1.8vw, 26px); }
+
+/* ----------------------------------------------------------- evento
+   Data grande no tom suave, nome, onde e quando, ações. Portal do A-Player: .evento, .encontro, .quando */
+.ap-event {
+  position: relative; display: grid; grid-template-columns: 132px minmax(0, 1fr) auto; align-items: stretch; min-height: 120px;
+  background: var(--ap-card); color: var(--ap-ink); border: 1px solid var(--ap-line); border-radius: var(--ap-r-card);
+  transition: transform .3s var(--ap-ease), box-shadow .3s var(--ap-ease);
+}
+.ap-event:hover { transform: translate(-2px, -2px); box-shadow: 8px 8px 0 0 var(--ap-tone); }
+.ap-event__date { display: grid; align-content: center; justify-items: center; gap: 4px; padding: 16px 10px; border-radius: 19px 0 0 5px; background: var(--ap-soft); text-align: center; }
+.ap-event__date b { font: 800 50px/.85 var(--ap-title); letter-spacing: -.05em; font-variant-numeric: tabular-nums; }
+.ap-event__date span { display: grid; gap: 2px; font: 700 13.5px/1.2 var(--ap-text); color: var(--ap-ink-2); }
+.ap-event__date strong { color: var(--ap-ink); font-weight: 700; }
+.ap-event__body { display: grid; grid-template-columns: minmax(0, 1fr); align-content: center; gap: 6px; padding: 18px 24px; min-width: 0; }
+.ap-event__body h3 { margin: 0; font: 800 21px/1.18 var(--ap-title); letter-spacing: -.022em; overflow-wrap: break-word; }
+.ap-event__body p { margin: 0; font-size: 15px; line-height: 1.5; color: var(--ap-ink-2); }
+.ap-event__meta { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 14px; font: 600 14px/1.3 var(--ap-text); color: var(--ap-ink-2); }
+.ap-event__actions { display: flex; flex-direction: column; align-items: flex-end; justify-content: center; gap: 8px; padding: 18px 20px; }
+.ap-event--past { opacity: .62; }
+@media (max-width: 640px) {
+  .ap-event { grid-template-columns: 96px minmax(0, 1fr); }
+  .ap-event__date b { font-size: 40px; }
+  .ap-event__actions { grid-column: 1 / -1; flex-direction: row; justify-content: flex-start; padding: 0 20px 16px; }
+}
+.ap-when { display: inline-flex; align-self: flex-start; justify-self: start; align-items: center; gap: 7px; padding: 5px 10px; border-radius: var(--ap-r-badge); background: color-mix(in srgb, var(--ap-tone) 14%, var(--ap-card)); font: 700 13px/1.2 var(--ap-text); color: var(--ap-ink); }
+.ap-when--now::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--ap-tone); box-shadow: 0 0 0 0 color-mix(in srgb, var(--ap-tone) 60%, transparent); animation: ap-pulse 2s var(--ap-ease) infinite; }
+
+/* ----------------------------------------------------------- termo do vocabulário
+   A palavra, o que ela quer dizer e como usar (e o que evitar). Portal do A-Player: .termo, .uso */
+.ap-term {
+  position: relative; display: flex; flex-direction: column; gap: 10px; padding: 22px 22px 18px;
+  background: var(--ap-card); color: var(--ap-ink); border: 1px solid var(--ap-line); border-radius: var(--ap-r-card);
+  transition: transform .3s var(--ap-ease), box-shadow .3s var(--ap-ease);
+}
+.ap-term:hover { transform: translate(-2px, -2px); box-shadow: 8px 8px 0 0 var(--ap-tone); }
+.ap-term__word { margin: 0; font: 800 clamp(22px, 1.9vw, 27px)/1.1 var(--ap-title); letter-spacing: -.03em; overflow-wrap: break-word; }
+.ap-term > p { margin: 0; font-size: 15.5px; line-height: 1.55; color: var(--ap-ink-2); }
+.ap-uses { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; padding: 0; list-style: none; }
+.ap-use { display: inline-flex; align-items: baseline; gap: 6px; padding: 6px 10px; border-radius: var(--ap-r-badge); background: var(--ap-soft); font: 600 13.5px/1.3 var(--ap-text); color: var(--ap-ink); }
+.ap-use b { font-weight: 700; color: var(--ap-ink-2); }
+.ap-use--avoid span { text-decoration: line-through; text-decoration-color: var(--ap-red); text-decoration-thickness: 2px; color: var(--ap-ink-2); }
+
+/* ----------------------------------------------------------- material oficial
+   Capa do material, nome, para que serve e onde está. Portal do A-Player: .material */
+.ap-material {
+  position: relative; display: flex; flex-direction: column; min-width: 0; overflow: hidden; text-decoration: none;
+  background: var(--ap-card); color: var(--ap-ink); border: 1px solid var(--ap-line); border-radius: var(--ap-r-card);
+  transition: transform .3s var(--ap-ease), box-shadow .3s var(--ap-ease);
+}
+a.ap-material:hover, a.ap-material:focus-visible { transform: translate(-3px, -3px); box-shadow: 9px 9px 0 0 var(--ap-tone); }
+.ap-material img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 10; object-fit: cover; object-position: top; border-bottom: 1px solid var(--ap-line); background: var(--ap-card-2); }
+.ap-material__text { display: grid; grid-template-columns: minmax(0, 1fr); gap: 6px; padding: 16px 18px 18px; }
+.ap-material__text strong { font: 800 18.5px/1.2 var(--ap-title); letter-spacing: -.02em; }
+.ap-material__text span { font-size: 14.5px; line-height: 1.45; color: var(--ap-ink-2); }
+.ap-material__text em { margin-top: 4px; font: 600 12.5px/1.2 var(--ap-text); font-style: normal; color: var(--ap-ink-2); }
+
+/* ----------------------------------------------------------- aplicação
+   O atalho de uma aplicação: ícone oficial, nome e a tecla. Portal do A-Player: .atalho
+   Ícone da Atlassian já vem num azulejo: use .ap-app--bare (a regra oficial pede
+   para não pôr o ícone dentro de outro contêiner). */
+.ap-apps { display: flex; flex-wrap: wrap; gap: 14px 8px; margin: 0; padding: 0; list-style: none; }
+.ap-app { position: relative; display: inline-grid; justify-items: center; align-content: start; gap: 7px; width: 68px; text-decoration: none; color: var(--ap-ink-2); }
+.ap-app__tile {
+  position: relative; display: grid; place-items: center; width: 56px; height: 56px;
+  border: 1px solid var(--ap-line); border-radius: 16px 5px 16px 5px; background: var(--ap-card);
+  box-shadow: 0 8px 18px -14px rgba(13, 23, 40, .6);
+  transition: transform .3s var(--ap-ease), box-shadow .3s var(--ap-ease);
+}
+.ap-app__tile img { width: 30px; height: 30px; object-fit: contain; }
+.ap-app--bare .ap-app__tile { border: 0; background: transparent; box-shadow: none; }
+.ap-app--bare .ap-app__tile img { width: 44px; height: 44px; }
+.ap-app__name { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; max-width: 100%; overflow: hidden; text-align: center; font: 600 12.5px/1.2 var(--ap-text); }
+.ap-app__key { position: absolute; top: -7px; right: -7px; z-index: 1; display: grid; place-items: center; min-width: 20px; height: 20px; padding: 0 5px; border-radius: 7px 2px 7px 2px; background: var(--ap-ink); color: var(--ap-card); font: 700 11px/1 var(--ap-text); }
+a.ap-app:hover .ap-app__tile, a.ap-app:focus-visible .ap-app__tile { transform: translate(-3px, -3px); box-shadow: 6px 6px 0 0 var(--ap-tone); }
+a.ap-app:hover { color: var(--ap-ink); }
+.ap-app--add .ap-app__tile { border-style: dashed; border-color: var(--ap-line-strong); background: transparent; box-shadow: none; font: 800 26px/1 var(--ap-title); color: var(--ap-ink-2); }
+
+/* ----------------------------------------------------------- salvar e conectar
+   Salvar: o quadrado de tom que enche e gira quando o item fica guardado. Portal do A-Player: .salvar
+   Conecta com: os itens que compartilham a mesma ligação. Portal do A-Player: .liga */
+.ap-save {
+  display: inline-flex; align-items: center; gap: 7px; padding: 7px 11px 7px 9px; cursor: pointer;
+  border: 1px solid var(--ap-line); border-radius: var(--ap-r-action); background: var(--ap-card);
+  font: 700 13px/1 var(--ap-text); color: var(--ap-ink-2);
+  transition: border-color .2s, color .2s, transform .25s var(--ap-ease), background-color .2s;
+}
+.ap-save::before { content: ""; flex: none; width: 12px; height: 12px; border-radius: var(--ap-r-mark); box-shadow: inset 0 0 0 2px var(--ap-tone); background: transparent; transition: background-color .2s, transform .45s var(--ap-ease-expo); }
+.ap-save:hover { color: var(--ap-ink); border-color: var(--ap-ink-2); }
+.ap-save:active { transform: scale(.94); }
+.ap-save[aria-pressed="true"] { color: var(--ap-ink); border-color: color-mix(in srgb, var(--ap-tone) 55%, transparent); background: color-mix(in srgb, var(--ap-tone) 10%, var(--ap-card)); }
+.ap-save[aria-pressed="true"]::before { background: var(--ap-tone); transform: rotate(90deg); }
+.ap-related { display: flex; flex-wrap: wrap; gap: 6px; margin: 0; padding: 0; list-style: none; }
+.ap-related li { min-width: 0; max-width: 100%; }
+.ap-related a { display: inline-flex; align-items: center; gap: 6px; max-width: 100%; padding: 5px 9px; border-radius: var(--ap-r-badge); background: color-mix(in srgb, var(--ap-tone) 12%, var(--ap-card)); color: var(--ap-ink); text-decoration: none; font: 600 12.5px/1.25 var(--ap-text); transition: background-color .2s; }
+.ap-related a::before { content: ""; flex: none; width: 6px; height: 6px; border-radius: 2px 1px 2px 1px; background: var(--ap-tone); }
+.ap-related a:hover { background: color-mix(in srgb, var(--ap-tone) 24%, var(--ap-card)); }
+
+/* ----------------------------------------------------------- progresso
+   Segmentos de uma trilha e os passos com o próximo em destaque. Portal do A-Player: .progresso, .mini-passos */
+.ap-progress { display: grid; grid-template-columns: repeat(var(--n, 5), 1fr); gap: 4px; }
+.ap-progress i { height: 6px; border-radius: 3px 1px 3px 1px; background: color-mix(in srgb, var(--ap-tone) 22%, var(--ap-card)); }
+.ap-progress i.is-done { background: var(--ap-tone); }
+.ap-ministeps { display: grid; gap: 8px; margin: 0; padding: 0; list-style: none; }
+.ap-ministeps li { display: flex; align-items: center; gap: 10px; font: 600 14.5px/1.3 var(--ap-text); color: var(--ap-ink-2); }
+.ap-ministeps .ap-badge { min-width: 28px; height: 22px; background: color-mix(in srgb, var(--ap-tone) 30%, var(--ap-card)); color: var(--ap-ink); }
+.ap-ministeps li.is-done .ap-badge { background: var(--ap-ink); color: var(--ap-card); }
+.ap-ministeps li.is-next { color: var(--ap-ink); font-weight: 700; }
+.ap-ministeps li.is-next .ap-badge { background: var(--ap-tone); color: var(--ap-night); box-shadow: 3px 3px 0 0 var(--ap-ink); }
+
+/* ----------------------------------------------------------- busca
+   O campo grande que abre a busca, com o cursor no espectro. Portal do A-Player: .buscao, kbd */
+.ap-search {
+  --ap-tone: var(--ap-yellow);
+  display: flex; align-items: center; gap: 14px; width: 100%; max-width: 540px; padding: 15px 14px 15px 18px; cursor: text; text-align: left;
+  border: 1px solid var(--ap-line-strong); border-radius: var(--ap-r-path); background: var(--ap-card); color: var(--ap-ink); font: inherit;
+  transition: transform .3s var(--ap-ease), box-shadow .3s var(--ap-ease), border-color .2s;
+}
+.ap-search::before { content: ""; flex: none; width: 3px; height: 26px; border-radius: 2px; background: linear-gradient(#3580c3 0 25%, #6eb751 25% 50%, #eb594d 50% 75%, #f1e84e 75%); }
+.ap-search:hover { transform: translate(-3px, -3px); box-shadow: 7px 7px 0 0 var(--ap-tone); border-color: var(--ap-ink-2); }
+.ap-search:hover::before { animation: ap-blink 1s steps(2, jump-none) infinite; }
+.ap-search__text { flex: 1; display: grid; grid-template-columns: minmax(0, 1fr); gap: 3px; min-width: 0; }
+.ap-search__text strong { font: 700 17px/1.2 var(--ap-text); }
+.ap-search__text span { font-size: 14px; color: var(--ap-ink-2); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.ap-kbd { display: inline-block; padding: 4px 6px; border-radius: 6px 2px 6px 2px; border: 1px solid var(--ap-line-strong); background: var(--ap-card-2); color: var(--ap-ink-2); font: 600 12px/1 var(--ap-text); white-space: nowrap; }
+
+/* ----------------------------------------------------------- ação discreta e diálogo
+   Ação discreta: a segunda ação de um cartão (calendário, abrir, copiar). Portal do A-Player: .botao-s
+   Diálogo: a camada que pede uma decisão, com a placa do tom e o Fechar com Esc. Portal do A-Player: .camada__caixa, .fechar */
+.ap-btn-quiet {
+  display: inline-flex; align-items: center; gap: 7px; padding: 7px 11px; cursor: pointer; text-decoration: none;
+  border: 1px solid var(--ap-line); border-radius: var(--ap-r-action); background: var(--ap-card);
+  font: 700 13px/1 var(--ap-text); color: var(--ap-ink-2); transition: color .2s, border-color .2s;
+}
+.ap-btn-quiet:hover { color: var(--ap-ink); border-color: var(--ap-ink-2); }
+.ap-dialog { position: relative; display: grid; gap: 16px; width: min(500px, 100%); padding: 26px; background: var(--ap-card); color: var(--ap-ink); border: 1px solid var(--ap-line); border-radius: var(--ap-r-card); box-shadow: 12px 12px 0 0 var(--ap-tone); }
+.ap-dialog__top { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.ap-dialog__title { margin: 0; font: 800 26px/1.1 var(--ap-title); letter-spacing: -.03em; }
+.ap-dialog__lead { margin: 0; font-size: 15px; color: var(--ap-ink-2); }
+.ap-dialog__actions { display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-end; gap: 10px; margin-top: 4px; }
+.ap-close { display: inline-flex; align-items: center; gap: 8px; padding: 6px 6px 6px 10px; cursor: pointer; border: 1px solid var(--ap-line); border-radius: var(--ap-r-action); background: var(--ap-card); font: 700 13px/1 var(--ap-text); color: var(--ap-ink-2); }
+.ap-close:hover { color: var(--ap-ink); border-color: var(--ap-ink-2); }
+/* confirmação que deixa desfazer. Portal do A-Player: .aviso__desfazer */
+.ap-toast__action { margin-left: 4px; padding: 6px 10px; cursor: pointer; border: 1px solid rgba(255, 255, 255, .3); border-radius: var(--ap-r-badge); background: none; color: #fff; font: 700 13px/1 var(--ap-text); }
+.ap-toast__action:hover { border-color: var(--ap-yellow); }
+
+/* movimentos do lado B: colar o sticker, cair (crachá e fotos), salvar, cursor e pulso */
+@keyframes ap-stick { from { opacity: 0; transform: scale(1.6) rotate(-18deg); } 62% { opacity: 1; transform: scale(.94) rotate(9deg); } }
+@keyframes ap-drop { from { opacity: 0; transform: translateY(-70px) rotate(-8deg) scale(1.08); } 60% { opacity: 1; } }
+@keyframes ap-pop { 40% { transform: scale(1.8) rotate(45deg); } }
+@keyframes ap-blink { 50% { opacity: 0; } }
+@keyframes ap-pulse { 70% { box-shadow: 0 0 0 7px transparent; } }
+.ap-stick-in { animation: ap-stick .6s var(--ap-ease-expo) both; }
+.ap-drop-in { animation: ap-drop .95s var(--ap-ease-expo) both; }
+@media (prefers-reduced-motion: reduce) {
+  .ap-stick-in, .ap-drop-in, .ap-when--now::before, .ap-search:hover::before { animation: none; }
+  .ap-snap, .ap-idcard, .ap-event, .ap-term, .ap-material, .ap-app__tile, .ap-save { transition: none; }
+}
+
+/* =====================================================================
+   VIVO (versão 2.2, 06/10/2026)
+   O gráfico vivo do site (js/graph.js, canvas #grafo) em qualquer peça:
+   .ap-vivo recebe o canvas de js/ap-vivo.js, com a mesma retícula, os
+   mesmos nós, ligações, pulsos, respiração, câmera e cursor. Os nós também
+   existem em HTML (.ap-hub, .ap-sat, .ap-dust) para slides, cartões e
+   peças paradas, e a luz que corre no espectro (.ap-run) vem do bloco de
+   parceiros da Intelligence. Site: #grafo, .allies__list::after
+   ===================================================================== */
+.ap-vivo { position: relative; isolation: isolate; overflow: hidden; background: var(--ap-night); color: var(--ap-on-night); }
+.ap-vivo > .ap-vivo__canvas { position: absolute; inset: 0; z-index: -1; display: block; width: 100%; height: 100%; pointer-events: none; }
+/* fundo da página inteira, atrás do conteúdo (como o site): transparente, o fundo e a retícula vêm do body */
+.ap-vivo--page { position: fixed; inset: 0; z-index: -1; background: transparent; pointer-events: none; }
+
+/* nós em HTML: o desenho do canvas. Tamanho por --ap-size, tom por --ap-tone */
+.ap-hub, .ap-sat, .ap-dust { --ap-tone: var(--ap-blue); position: relative; display: inline-block; flex: none; vertical-align: middle; background: var(--ap-tone); }
+.ap-hub { --ap-size: 14px; width: var(--ap-size); height: var(--ap-size); border-radius: 39% 13% 39% 13%; box-shadow: 0 0 calc(var(--ap-size) * 1.4) calc(var(--ap-size) * .45) color-mix(in srgb, var(--ap-tone) 32%, transparent); }
+.ap-hub::before { content: ""; position: absolute; inset: calc(var(--ap-size) * -.43); border: max(1px, calc(var(--ap-size) * .086)) solid color-mix(in srgb, var(--ap-tone) 50%, transparent); border-radius: inherit; }
+.ap-hub::after { content: ""; position: absolute; left: 21.5%; top: 21.5%; width: 33%; height: 33%; border-radius: inherit; background: rgba(255, 255, 255, .5); }
+.ap-sat { --ap-size: 8.4px; width: var(--ap-size); height: var(--ap-size); border-radius: 50%; }
+.ap-sat::before { content: ""; position: absolute; inset: calc(var(--ap-size) * -.42); border: max(1px, calc(var(--ap-size) * .12)) solid color-mix(in srgb, var(--ap-tone) 42%, transparent); border-radius: 50%; }
+.ap-dust { --ap-size: 4px; width: var(--ap-size); height: var(--ap-size); border-radius: 50%; opacity: .94; }
+/* o halo do polo respira (período de 3,14s, como no canvas) */
+.ap-hub--live { animation: ap-halo 3.14s ease-in-out infinite; }
+@keyframes ap-halo { 50% { box-shadow: 0 0 calc(var(--ap-size) * 1.8) calc(var(--ap-size) * .65) color-mix(in srgb, var(--ap-tone) 32%, transparent); } }
+
+/* luz que corre no espectro: a linha que liga as plataformas de IA */
+.ap-run { position: relative; display: block; height: 2px; border-radius: 2px; }
+.ap-run::before, .ap-run::after { content: ""; position: absolute; inset: 0; border-radius: inherit; }
+.ap-run::before { background: var(--ap-spectrum-flow); opacity: .6; }
+.ap-run::after { background: linear-gradient(90deg, transparent 44%, rgba(255, 255, 255, .95) 50%, transparent 56%) no-repeat 100% 0 / 300% 100%; animation: ap-run 4.4s cubic-bezier(.45, 0, .55, 1) .9s infinite; }
+@keyframes ap-run { from { background-position: 100% 0; } to { background-position: 0 0; } }
+.ap-geo[data-depth] { will-change: transform; }
+/* sticker que balança: sobe 4px e gira 3 graus, devagar, como papel colado que respira.
+   Usa translate e rotate, então soma à rotação própria do sticker (transform). --i desencontra os vizinhos */
+@keyframes ap-sway { 0%, 100% { translate: 0 0; rotate: -1.4deg; } 50% { translate: 0 -4px; rotate: 1.6deg; } }
+.ap-sway { animation: ap-sway 6.5s ease-in-out calc(var(--i, 0) * -2.3s) infinite; }
+.reduce-motion .ap-hub--live, .reduce-motion .ap-run::after, .reduce-motion .ap-sway { animation: none; }
+.reduce-motion .ap-run::after { opacity: 0; }
+@media (prefers-reduced-motion: reduce) { .ap-hub--live, .ap-run::after, .ap-sway { animation: none; } .ap-run::after { opacity: 0; } }
+
+/* ----------------------------------------------------------- movimento
+   Um momento orquestrado por abertura; o resto responde à pessoa. */
+@keyframes ap-rise { from { opacity: 0; transform: translateY(26px); } }
+@keyframes ap-line-up { from { transform: translateY(105%); } }
+@keyframes ap-charge { from { clip-path: inset(0 100% 0 0); } to { clip-path: inset(0 0 0 0); } }
+@keyframes ap-grow-x { from { transform: scaleX(0); } }
+@keyframes ap-travel { from { left: 0; } to { left: calc(100% - 8px); } }
+@keyframes ap-fade { from { opacity: 0; } }
+.ap-rise { animation: ap-rise var(--ap-dur-enter) var(--ap-ease-expo) both; }
+.ap-display.is-entering .ap-ln > span { animation: ap-line-up 1.05s var(--ap-ease-expo) both; }
+.ap-display.is-entering .ap-ln:nth-child(2) > span { animation-delay: .08s; }
+.ap-display.is-entering .ap-ln:nth-child(3) > span { animation-delay: .16s; }
+@media (prefers-reduced-motion: reduce) {
+  .ap-flow::after { animation: none; display: none; }
+  .ap-rise, .ap-display.is-entering .ap-ln > span, .ap-hy.is-charging::after { animation: none; }
+  .ap-btn, .ap-plate, .ap-tab, .ap-node, .ap-post, .ap-offer { transition: none; }
+}

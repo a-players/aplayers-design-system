@@ -1,0 +1,649 @@
+{
+  "v": 3,
+  "layout": "files",
+  "createdOnFiles": {
+    "v": 1,
+    "at": "2026-10-19T13:24:52Z"
+  },
+  "title": "A-Players Design System",
+  "namespace": "APlayers",
+  "libraries": [
+    {
+      "name": "ap-vivo",
+      "version": "1.1.0",
+      "global": "APVivo",
+      "file": "components/lib/ap-vivo.js"
+    }
+  ],
+  "sections": {},
+  "groups": [
+    "Logos",
+    "Geometria",
+    "Parceiros",
+    "Produtos",
+    "Stickers",
+    "Fotos",
+    "Capas"
+  ],
+  "assetGroups": {
+    "Logos": {
+      "name": "Logos",
+      "tile": "l",
+      "order": [
+        "aplayers-horizontal-amarelo.svg",
+        "aplayers-horizontal-azul.svg",
+        "aplayers-horizontal-branco.svg",
+        "aplayers-horizontal-claro.svg",
+        "aplayers-horizontal-escuro.svg",
+        "aplayers-horizontal-preto.svg",
+        "aplayers-horizontal-site.svg",
+        "aplayers-horizontal-verde.svg",
+        "aplayers-horizontal-vermelho.svg",
+        "aplayers-simbolo-branco.svg",
+        "aplayers-simbolo-preto.svg",
+        "aplayers-simbolo.svg",
+        "aplayers-vertical-01.svg",
+        "aplayers-vertical-02.svg",
+        "aplayers-vertical-03.svg",
+        "aplayers-vertical-04.svg",
+        "aplayers-vertical-amarelo.svg",
+        "aplayers-vertical-azul.svg",
+        "aplayers-vertical-verde.svg",
+        "aplayers-vertical-vermelho.svg",
+        "favicon.svg"
+      ],
+      "files": {
+        "aplayers-horizontal-amarelo.svg": {
+          "name": "aplayers-horizontal-amarelo.svg",
+          "blob": "dc549361162e41d09680a9ee531195ed",
+          "size": 122973,
+          "type": "image/svg+xml"
+        },
+        "aplayers-horizontal-azul.svg": {
+          "name": "aplayers-horizontal-azul.svg",
+          "blob": "28ec8c759ce8bdf95e7b1c3dcf8d622f",
+          "size": 122970,
+          "type": "image/svg+xml"
+        },
+        "aplayers-horizontal-branco.svg": {
+          "name": "aplayers-horizontal-branco.svg",
+          "blob": "5d747ee501318d102b7c01a7bcca286a",
+          "size": 122972,
+          "type": "image/svg+xml"
+        },
+        "aplayers-horizontal-claro.svg": {
+          "name": "aplayers-horizontal-claro.svg",
+          "blob": "5ffab9ae3448bd08826674e11ae8412e",
+          "size": 122390,
+          "type": "image/svg+xml"
+        },
+        "aplayers-horizontal-escuro.svg": {
+          "name": "aplayers-horizontal-escuro.svg",
+          "blob": "e9494c5b7c7fdec080f13d4fa5dbdfc2",
+          "size": 122988,
+          "type": "image/svg+xml"
+        },
+        "aplayers-horizontal-preto.svg": {
+          "name": "aplayers-horizontal-preto.svg",
+          "blob": "1084496f5b08fba9b17d0e5aa9806abb",
+          "size": 122971,
+          "type": "image/svg+xml"
+        },
+        "aplayers-horizontal-site.svg": {
+          "name": "aplayers-horizontal-site.svg",
+          "blob": "6cb80272c7e5edb2d2cd371938e785e7",
+          "size": 122988,
+          "type": "image/svg+xml"
+        },
+        "aplayers-horizontal-verde.svg": {
+          "name": "aplayers-horizontal-verde.svg",
+          "blob": "d7fbfea5f32c91df098f1af9511d9990",
+          "size": 122971,
+          "type": "image/svg+xml"
+        },
+        "aplayers-horizontal-vermelho.svg": {
+          "name": "aplayers-horizontal-vermelho.svg",
+          "blob": "c833600f32bbf44a7cc7cde9004b37a3",
+          "size": 122974,
+          "type": "image/svg+xml"
+        },
+        "aplayers-simbolo-branco.svg": {
+          "name": "aplayers-simbolo-branco.svg",
+          "blob": "9f60f2cb1857da21294bdbcb8633f551",
+          "size": 1155,
+          "type": "image/svg+xml"
+        },
+        "aplayers-simbolo-preto.svg": {
+          "name": "aplayers-simbolo-preto.svg",
+          "blob": "8ac3d0c603c2907a1cc010689c80d679",
+          "size": 1155,
+          "type": "image/svg+xml"
+        },
+        "aplayers-simbolo.svg": {
+          "name": "aplayers-simbolo.svg",
+          "blob": "23dd29f9c3fc625985eba6484edf7e1b",
+          "size": 1155,
+          "type": "image/svg+xml"
+        },
+        "aplayers-vertical-01.svg": {
+          "name": "aplayers-vertical-01.svg",
+          "blob": "c6b443417f5b70df2df0814eeb328e8e",
+          "size": 122592,
+          "type": "image/svg+xml"
+        },
+        "aplayers-vertical-02.svg": {
+          "name": "aplayers-vertical-02.svg",
+          "blob": "08c160cfb33694a1ecbc78d8537c2cc3",
+          "size": 123190,
+          "type": "image/svg+xml"
+        },
+        "aplayers-vertical-03.svg": {
+          "name": "aplayers-vertical-03.svg",
+          "blob": "b0e5d7ab15ee3a6cf6622deebcfbd1de",
+          "size": 123174,
+          "type": "image/svg+xml"
+        },
+        "aplayers-vertical-04.svg": {
+          "name": "aplayers-vertical-04.svg",
+          "blob": "4b8f02caef800f26cc43d7bca2245121",
+          "size": 123173,
+          "type": "image/svg+xml"
+        },
+        "aplayers-vertical-amarelo.svg": {
+          "name": "aplayers-vertical-amarelo.svg",
+          "blob": "ee3d34fac754ab328225380bdff0379e",
+          "size": 123175,
+          "type": "image/svg+xml"
+        },
+        "aplayers-vertical-azul.svg": {
+          "name": "aplayers-vertical-azul.svg",
+          "blob": "08d3816de9cf0033cd03535c3a26f988",
+          "size": 123172,
+          "type": "image/svg+xml"
+        },
+        "aplayers-vertical-verde.svg": {
+          "name": "aplayers-vertical-verde.svg",
+          "blob": "28f0dbdbe45f60cbfb4ce400c43ea387",
+          "size": 123173,
+          "type": "image/svg+xml"
+        },
+        "aplayers-vertical-vermelho.svg": {
+          "name": "aplayers-vertical-vermelho.svg",
+          "blob": "4992d37f1342e964f3be08c4375541e0",
+          "size": 123176,
+          "type": "image/svg+xml"
+        },
+        "favicon.svg": {
+          "name": "favicon.svg",
+          "blob": "88b8d46d6b6859ef7e53d63ace5bf0b7",
+          "size": 1072,
+          "type": "image/svg+xml"
+        }
+      }
+    },
+    "Geometria": {
+      "name": "Geometria",
+      "tile": "m",
+      "order": [
+        "about-diamond.svg",
+        "about-orbit.svg",
+        "about-triangle.svg",
+        "footer-arc.svg",
+        "footer-triangle.svg",
+        "home-arc.svg",
+        "home-triangle-down.svg",
+        "home-triangle-up.svg",
+        "intelligence-diamond.svg",
+        "intelligence-down.svg",
+        "intelligence-triangle.svg",
+        "services-diamond.svg",
+        "services-rings.svg",
+        "services-triangle.svg",
+        "spectral-divider.svg"
+      ],
+      "files": {
+        "about-diamond.svg": {
+          "name": "about-diamond.svg",
+          "blob": "c4e4ccda9a0fa8fc27e4f90324dc91c3",
+          "size": 182,
+          "type": "image/svg+xml"
+        },
+        "about-orbit.svg": {
+          "name": "about-orbit.svg",
+          "blob": "8712f738374041a0d90593dcc3c23954",
+          "size": 458,
+          "type": "image/svg+xml"
+        },
+        "about-triangle.svg": {
+          "name": "about-triangle.svg",
+          "blob": "e81060ecfdbe5742796941f9963287c8",
+          "size": 171,
+          "type": "image/svg+xml"
+        },
+        "footer-arc.svg": {
+          "name": "footer-arc.svg",
+          "blob": "3a816c5f812d2f628ac2beb31f8a3873",
+          "size": 382,
+          "type": "image/svg+xml"
+        },
+        "footer-triangle.svg": {
+          "name": "footer-triangle.svg",
+          "blob": "3821c00cffe9b6c8fe9461c788085812",
+          "size": 427,
+          "type": "image/svg+xml"
+        },
+        "home-arc.svg": {
+          "name": "home-arc.svg",
+          "blob": "b1082df0e1444551a75ac20add831ba7",
+          "size": 381,
+          "type": "image/svg+xml"
+        },
+        "home-triangle-down.svg": {
+          "name": "home-triangle-down.svg",
+          "blob": "654632a4da7808076304c0dc36086533",
+          "size": 136,
+          "type": "image/svg+xml"
+        },
+        "home-triangle-up.svg": {
+          "name": "home-triangle-up.svg",
+          "blob": "c0a11e96b0b85afd88f424df1be95613",
+          "size": 136,
+          "type": "image/svg+xml"
+        },
+        "intelligence-diamond.svg": {
+          "name": "intelligence-diamond.svg",
+          "blob": "ce95407ae637f563b478020c6cdf9008",
+          "size": 183,
+          "type": "image/svg+xml"
+        },
+        "intelligence-down.svg": {
+          "name": "intelligence-down.svg",
+          "blob": "d3575492bd25c69db8096f224d40fc60",
+          "size": 136,
+          "type": "image/svg+xml"
+        },
+        "intelligence-triangle.svg": {
+          "name": "intelligence-triangle.svg",
+          "blob": "e519e74e28f00dc476507df85d953d3f",
+          "size": 168,
+          "type": "image/svg+xml"
+        },
+        "services-diamond.svg": {
+          "name": "services-diamond.svg",
+          "blob": "2a74bbfffd87965e59ddeb151263f9f1",
+          "size": 183,
+          "type": "image/svg+xml"
+        },
+        "services-rings.svg": {
+          "name": "services-rings.svg",
+          "blob": "fdd0bdf0ff7bc9a83e0f7c04d0d642a6",
+          "size": 372,
+          "type": "image/svg+xml"
+        },
+        "services-triangle.svg": {
+          "name": "services-triangle.svg",
+          "blob": "ef34754549d601364f3d854cddb0ca98",
+          "size": 170,
+          "type": "image/svg+xml"
+        },
+        "spectral-divider.svg": {
+          "name": "spectral-divider.svg",
+          "blob": "c1906fa3c4c50e487cc0f57a444d6fec",
+          "size": 367,
+          "type": "image/svg+xml"
+        }
+      }
+    },
+    "Parceiros": {
+      "name": "Parceiros",
+      "tile": "m",
+      "order": [
+        "atlassian-inverse.svg",
+        "atlassian.png",
+        "cisp1-dark.png",
+        "cisp1.png",
+        "monday-white.svg",
+        "monday.svg"
+      ],
+      "files": {
+        "atlassian-inverse.svg": {
+          "name": "atlassian-inverse.svg",
+          "blob": "02b5d2855a347fe66447326e81ef080f",
+          "size": 4064,
+          "type": "image/svg+xml"
+        },
+        "atlassian.png": {
+          "name": "atlassian.png",
+          "blob": "860b4c18ca0c1d5941d741ea57380982",
+          "size": 26657,
+          "type": "image/png"
+        },
+        "cisp1-dark.png": {
+          "name": "cisp1-dark.png",
+          "blob": "32297c3ad210ac00a84d836920e24280",
+          "size": 18935,
+          "type": "image/png"
+        },
+        "cisp1.png": {
+          "name": "cisp1.png",
+          "blob": "4e785162392bbddce7ba4d8120071411",
+          "size": 18231,
+          "type": "image/png"
+        },
+        "monday-white.svg": {
+          "name": "monday-white.svg",
+          "blob": "85071b1352245178852836db0f1c937d",
+          "size": 4755,
+          "type": "image/svg+xml"
+        },
+        "monday.svg": {
+          "name": "monday.svg",
+          "blob": "6b1724cf0206d4dc80eab4ef6b8e7b74",
+          "size": 4741,
+          "type": "image/svg+xml"
+        }
+      }
+    },
+    "Produtos": {
+      "name": "Produtos",
+      "tile": "s",
+      "order": [
+        "atl-bitbucket.svg",
+        "atl-confluence.svg",
+        "atl-focus.svg",
+        "atl-jira-product-discovery.svg",
+        "atl-jira.svg",
+        "atl-jsm.svg",
+        "atl-loom.svg",
+        "atl-rovo.svg",
+        "mon-agents.png",
+        "mon-crm.png",
+        "mon-dev.png",
+        "mon-service.png",
+        "mon-sidekick.png",
+        "mon-vibe.png",
+        "mon-work-management.png"
+      ],
+      "files": {
+        "atl-bitbucket.svg": {
+          "name": "atl-bitbucket.svg",
+          "blob": "af7bbb492a7ceb7296f0297dc40361df",
+          "size": 903,
+          "type": "image/svg+xml"
+        },
+        "atl-confluence.svg": {
+          "name": "atl-confluence.svg",
+          "blob": "dc993121cac241438a5a470d50884cc2",
+          "size": 1686,
+          "type": "image/svg+xml"
+        },
+        "atl-focus.svg": {
+          "name": "atl-focus.svg",
+          "blob": "018b396f071bdc345c560c501ae279aa",
+          "size": 783,
+          "type": "image/svg+xml"
+        },
+        "atl-jira-product-discovery.svg": {
+          "name": "atl-jira-product-discovery.svg",
+          "blob": "c724c7d3673a5256b3ff7080028dea91",
+          "size": 1270,
+          "type": "image/svg+xml"
+        },
+        "atl-jira.svg": {
+          "name": "atl-jira.svg",
+          "blob": "c3e22147241c2b16ad1fc8abd4f54913",
+          "size": 1112,
+          "type": "image/svg+xml"
+        },
+        "atl-jsm.svg": {
+          "name": "atl-jsm.svg",
+          "blob": "22630a36159c68c18eab5003b34a5b38",
+          "size": 816,
+          "type": "image/svg+xml"
+        },
+        "atl-loom.svg": {
+          "name": "atl-loom.svg",
+          "blob": "fbe54865996df0107481274f34b79876",
+          "size": 1249,
+          "type": "image/svg+xml"
+        },
+        "atl-rovo.svg": {
+          "name": "atl-rovo.svg",
+          "blob": "3f3716e1b88e4b62b18aabce5d792f2a",
+          "size": 2740,
+          "type": "image/svg+xml"
+        },
+        "mon-agents.png": {
+          "name": "mon-agents.png",
+          "blob": "fd140a727a951fef67342bc394b9b076",
+          "size": 6202,
+          "type": "image/png"
+        },
+        "mon-crm.png": {
+          "name": "mon-crm.png",
+          "blob": "99e3a0796dc45f22c6bf7a845079e677",
+          "size": 2434,
+          "type": "image/png"
+        },
+        "mon-dev.png": {
+          "name": "mon-dev.png",
+          "blob": "3e900f3b37218391efe002a72355a816",
+          "size": 2628,
+          "type": "image/png"
+        },
+        "mon-service.png": {
+          "name": "mon-service.png",
+          "blob": "0309b0887a03f119ff72ddb21da3198c",
+          "size": 2518,
+          "type": "image/png"
+        },
+        "mon-sidekick.png": {
+          "name": "mon-sidekick.png",
+          "blob": "28cd50fb622d4948fad0386e1713bd25",
+          "size": 3009,
+          "type": "image/png"
+        },
+        "mon-vibe.png": {
+          "name": "mon-vibe.png",
+          "blob": "00ec252efb21dc9528ef7ec5ac15b840",
+          "size": 2901,
+          "type": "image/png"
+        },
+        "mon-work-management.png": {
+          "name": "mon-work-management.png",
+          "blob": "2a2b26d6469b2c0520bdf06bbd51c8ed",
+          "size": 2629,
+          "type": "image/png"
+        }
+      }
+    },
+    "Stickers": {
+      "name": "Stickers",
+      "tile": "m",
+      "order": [
+        "arco-iris.webp",
+        "band-aid.webp",
+        "bolha-a-people.webp",
+        "cafe.webp",
+        "feito-por-nos.webp",
+        "flor.webp",
+        "i-am-ai-builder.webp",
+        "mascote.webp",
+        "mentor-mode.webp",
+        "paz.webp",
+        "selo-ai-builder.webp",
+        "smile.webp",
+        "sticker-flor.png",
+        "sticker-mascote.png",
+        "sticker-paz.png",
+        "sticker-we-are-ai-people.png",
+        "tech-player.webp",
+        "we-are-a-people.webp",
+        "we-are-ai-people.webp",
+        "xicara.webp"
+      ],
+      "files": {
+        "arco-iris.webp": {
+          "name": "arco-iris.webp",
+          "blob": "f4fc485e3343a33e0d79765b1c7a6c42",
+          "size": 22256,
+          "type": "image/webp"
+        },
+        "band-aid.webp": {
+          "name": "band-aid.webp",
+          "blob": "7a71e27fde4beaa16ec03c68e1d4ef1f",
+          "size": 30818,
+          "type": "image/webp"
+        },
+        "bolha-a-people.webp": {
+          "name": "bolha-a-people.webp",
+          "blob": "b4f34c15f9798f3677fc9d6c2cc47fb1",
+          "size": 20892,
+          "type": "image/webp"
+        },
+        "cafe.webp": {
+          "name": "cafe.webp",
+          "blob": "8eee04bb67dfb205b7f297923e43852d",
+          "size": 25440,
+          "type": "image/webp"
+        },
+        "feito-por-nos.webp": {
+          "name": "feito-por-nos.webp",
+          "blob": "d9f49c63a7e07c80d96a5d9c7e57b764",
+          "size": 25214,
+          "type": "image/webp"
+        },
+        "flor.webp": {
+          "name": "flor.webp",
+          "blob": "3c193e8413ff8b50cfec5e84d28a038c",
+          "size": 22472,
+          "type": "image/webp"
+        },
+        "i-am-ai-builder.webp": {
+          "name": "i-am-ai-builder.webp",
+          "blob": "0fd461bb1f69b38a1cfdf436bbdea302",
+          "size": 19802,
+          "type": "image/webp"
+        },
+        "mascote.webp": {
+          "name": "mascote.webp",
+          "blob": "1044a5fa2d9976c4128854895f377e90",
+          "size": 28016,
+          "type": "image/webp"
+        },
+        "mentor-mode.webp": {
+          "name": "mentor-mode.webp",
+          "blob": "984919a5ebd2d5aaf359039ade5bb183",
+          "size": 22824,
+          "type": "image/webp"
+        },
+        "paz.webp": {
+          "name": "paz.webp",
+          "blob": "c5ebff9e16017b3c434ceb32ede1128b",
+          "size": 19448,
+          "type": "image/webp"
+        },
+        "selo-ai-builder.webp": {
+          "name": "selo-ai-builder.webp",
+          "blob": "46c367e65e1b425caead1858c6e6a7a4",
+          "size": 18548,
+          "type": "image/webp"
+        },
+        "smile.webp": {
+          "name": "smile.webp",
+          "blob": "118e746b7c7348e26197556f018511ce",
+          "size": 27838,
+          "type": "image/webp"
+        },
+        "sticker-flor.png": {
+          "name": "sticker-flor.png",
+          "blob": "949400b5432b755dc859233e3788e42a",
+          "size": 57077,
+          "type": "image/png"
+        },
+        "sticker-mascote.png": {
+          "name": "sticker-mascote.png",
+          "blob": "2b58a6c42aced5fa13a871c45d7c5645",
+          "size": 80918,
+          "type": "image/png"
+        },
+        "sticker-paz.png": {
+          "name": "sticker-paz.png",
+          "blob": "337120c1bc4d25e93eb02501fc3b39f0",
+          "size": 39138,
+          "type": "image/png"
+        },
+        "sticker-we-are-ai-people.png": {
+          "name": "sticker-we-are-ai-people.png",
+          "blob": "bad0f1dd2574847965d9c81185cf7446",
+          "size": 55746,
+          "type": "image/png"
+        },
+        "tech-player.webp": {
+          "name": "tech-player.webp",
+          "blob": "0e2e4165f5b0ac70b1b2c853d5c69dc7",
+          "size": 45362,
+          "type": "image/webp"
+        },
+        "we-are-a-people.webp": {
+          "name": "we-are-a-people.webp",
+          "blob": "b8e05b7f7dad5706a58af01108fdf3b0",
+          "size": 53872,
+          "type": "image/webp"
+        },
+        "we-are-ai-people.webp": {
+          "name": "we-are-ai-people.webp",
+          "blob": "b2ecbab949a0359d8b0b2c6c80c6d950",
+          "size": 20700,
+          "type": "image/webp"
+        },
+        "xicara.webp": {
+          "name": "xicara.webp",
+          "blob": "19c9586d8c4fed52fae58e3730ab4ed7",
+          "size": 25926,
+          "type": "image/webp"
+        }
+      }
+    },
+    "Fotos": {
+      "name": "Fotos",
+      "tile": "m",
+      "order": [
+        "setembro-01.jpg"
+      ],
+      "files": {
+        "setembro-01.jpg": {
+          "name": "setembro-01.jpg",
+          "blob": "1af3b0f9bb1db1adc2fb472739fb9d85",
+          "size": 61676,
+          "type": "image/jpeg"
+        }
+      }
+    },
+    "Capas": {
+      "name": "Capas",
+      "tile": "m",
+      "order": [
+        "site.jpg"
+      ],
+      "files": {
+        "site.jpg": {
+          "name": "site.jpg",
+          "blob": "900c58a100d1dcd75757cba5fa07c734",
+          "size": 29553,
+          "type": "image/jpeg"
+        }
+      }
+    }
+  },
+  "blobs": {},
+  "docs": {
+    "sections": []
+  },
+  "lastChange": {
+    "by": "Fernando",
+    "at": "2026-10-19T14:35:23Z",
+    "via": "Claude Code · a-players/site-aplayers-final",
+    "note": "Gerado do Design System oficial 2.10 por tools/build_claude.py"
+  }
+}
