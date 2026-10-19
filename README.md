@@ -65,6 +65,17 @@ assets/stickers       stickers da marca (WebP para a web; em alta/, os PNG grand
 4. Envie `claude/skill/aplayers-brand.zip` em Configurações, Skills, no Claude (substitui a versão anterior da skill).
 5. Confira com `python tools/check_brand.py <pasta ou arquivo>` antes de publicar qualquer peça.
 
+## Como atualizar o repositório aplayers-design-system
+
+O repositório https://github.com/a-players/aplayers-design-system é esta pasta, com o mesmo histórico. Ninguém edita lá: a mudança entra aqui, no site, e depois vai para lá. Na raiz do repositório do site, depois do merge no main:
+
+```
+git subtree split --prefix=design-system -b aplayers-design-system
+git push https://github.com/a-players/aplayers-design-system aplayers-design-system:main
+```
+
+O `split` refaz a mesma história de forma determinística, então o envio é sempre um avanço simples (sem forçar).
+
 ## Decisões desta versão
 
 - Pedido do Fernando (01/10/2026): um Design System único e próprio, a partir do site, desconsiderando os sistemas anteriores (`site-aplayers/site-design-system`, `aplayers-stylesheet`).
